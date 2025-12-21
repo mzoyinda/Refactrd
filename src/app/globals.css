@@ -1,26 +1,166 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Reset box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Remove default list styles */
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove table border spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Set the font to sans-serif for consistent text rendering */
+body {
+  line-height: 1.5;
+  background-color: #fff;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Normalize form elements */
+input,
+textarea,
+button,
+select {
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Allow form elements to inherit styles from parent */
+input,
+textarea,
+button,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Normalize the behavior of buttons */
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+}
+
+/* Normalize the focus outline for accessibility */
+/* *:focus {
+  outline: 1px solid #E8B67E;
+  outline-offset: 2px;
+} */
+
+/* Remove default image size and behavior */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Normalize the font size for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+/* Reset the default styling for the hr tag */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin: 1em 0;
+}
+
+/* Provide some spacing between sections */
+section {
+  margin-bottom: 1.5em;
+}
+
+/* Ensure consistent rendering of block elements */
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+table,
+form {
+  display: block;
+}
+
+/* Normalize the scrollbar behavior (optional) */
+html {
+  scrollbar-width: auto;
+  scrollbar-color: #888 #e0e0e0;
+}
+
+.font-heading {
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Smooth scrolling + motion-safe transitions */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* @media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+} */
