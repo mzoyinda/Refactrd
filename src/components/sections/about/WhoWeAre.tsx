@@ -1,48 +1,52 @@
 "use client";
 
-import Image from 'next/image';
-import { FaGlobe, FaUsers, FaRocket, FaShieldAlt } from 'react-icons/fa';
+import Image from "next/image";
+import { FaGlobe, FaUsers, FaRocket, FaShieldAlt } from "react-icons/fa";
 
 export function WhoWeAre() {
   const values = [
     {
       icon: <FaGlobe className="w-6 h-6" />,
-      title: 'Global Reach',
-      description: 'Connecting talent from Africa with opportunities worldwide, breaking geographical barriers.',
-      color: 'bg-blue-100 text-blue-600',
+      title: "Global Reach",
+      description:
+        "Connecting talent from Africa with opportunities worldwide, breaking geographical barriers.",
+      color: "bg-blue-100 text-blue-600",
     },
     {
       icon: <FaUsers className="w-6 h-6" />,
-      title: 'Quality First',
-      description: 'Rigorous vetting process ensures only top-tier professionals join our network.',
-      color: 'bg-purple-100 text-purple-600',
+      title: "Quality First",
+      description:
+        "Rigorous vetting process ensures only top-tier professionals join our network.",
+      color: "bg-purple-100 text-purple-600",
     },
     {
       icon: <FaRocket className="w-6 h-6" />,
-      title: 'Speed & Efficiency',
-      description: 'Match with pre-vetted candidates in days, not weeks. Fast-track your hiring process.',
-      color: 'bg-green-100 text-green-600',
+      title: "Speed & Efficiency",
+      description:
+        "Match with pre-vetted candidates in days, not weeks. Fast-track your hiring process.",
+      color: "bg-green-100 text-green-600",
     },
     {
       icon: <FaShieldAlt className="w-6 h-6" />,
-      title: 'Trust & Security',
-      description: 'Secure payments, verified identities, and escrow protection for complete peace of mind.',
-      color: 'bg-orange-100 text-orange-600',
+      title: "Trust & Security",
+      description:
+        "Secure payments, verified identities, and escrow protection for complete peace of mind.",
+      color: "bg-orange-100 text-orange-600",
     },
   ];
 
   const stats = [
-    { value: '31K+', label: 'Verified Talents' },
-    { value: '500+', label: 'Companies Trust Us' },
-    { value: '50+', label: 'Countries Served' },
-    { value: '95%', label: 'Client Satisfaction' },
+    { value: "31K+", label: "Verified Talents" },
+    { value: "500+", label: "Companies Trust Us" },
+    { value: "50+", label: "Countries Served" },
+    { value: "95%", label: "Client Satisfaction" },
   ];
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-28">
           {/* Left: Text Content */}
           <div>
             <div className="inline-flex items-center space-x-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full mb-6">
@@ -50,34 +54,62 @@ export function WhoWeAre() {
               <span className="text-sm font-semibold">About Refactrd</span>
             </div>
 
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-heading leading-[45px] lg:leading-[54px]">
-              Empowering African Tech Talent to Go Global
+            <h1 className="text-xl lg:text-5xl font-bold text-gray-900 mb-6 font-heading leading-[45px] lg:leading-[54px]">
+              Connecting African engineering talent to global teams
             </h1>
 
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Refactrd is the first AI-powered career accelerator specifically designed for African engineers ready to take their careers to the next level.
+              Refactrd is a global hiring partner focused on sourcing, vetting,
+              and placing high-quality African engineers into remote, full-time
+              roles with startups and enterprises worldwide.
             </p>
 
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              We bridge the gap between exceptional African engineering talent and companies worldwide seeking 100% remote professionals. Through rigorous vetting, AI-powered matching, and comprehensive support, we ensure both talents and companies achieve their goals seamlessly.
+              We help companies hire with confidence by removing the
+              uncertainty, inefficiency, and overhead often associated with
+              global recruitment.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center space-x-2 text-gray-700">
-                <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <svg
+                  className="w-5 h-5 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span className="font-medium">100% Remote Opportunities</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-700">
-                <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <svg
+                  className="w-5 h-5 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span className="font-medium">AI-Powered Matching</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-700">
-                <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <svg
+                  className="w-5 h-5 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span className="font-medium">Vetted Professionals</span>
               </div>
@@ -102,8 +134,16 @@ export function WhoWeAre() {
               <div className="absolute bottom-6 right-6 bg-white rounded-2xl p-6 shadow-xl">
                 <div className="flex items-center space-x-3 mb-2">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    <svg
+                      className="w-6 h-6 text-green-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <div>
@@ -121,17 +161,6 @@ export function WhoWeAre() {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:shadow-sm transition-all duration-300"
-            >
-              <div className="text-4xl font-bold text-purple-600 mb-2">{stat.value}</div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
-            </div>
-          ))}
-        </div>
 
         {/* Our Values */}
         {/* <div className="mb-12 lg:mb-20">
@@ -184,13 +213,16 @@ export function WhoWeAre() {
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Founded in 2025, Refactrd was born from a simple observation: Africa has world-class engineering talent, but they often lack access to global opportunities that match their skills and ambitions.
+                Refactrd was built to address a clear gap in global hiring:
+                Companies need dependable engineering talent, while Africa
+                continues to produce engineers capable of contributing at a
+                global level — yet accessing this talent remains inefficient and
+                inconsistent.
               </p>
               <p>
-                We set out to change that by creating a platform that not only connects talent with opportunities but also provides the tools, support, and community needed to thrive in the global remote work economy.
-              </p>
-              <p>
-                Today, we're proud to have helped thousands of African engineers land their dream remote roles while helping companies build high-performing distributed teams.
+                We created Refactrd to act as a focused hiring partner, ensuring
+                companies engage with engineers who meet global expectations
+                across skill, communication, and professionalism.
               </p>
             </div>
           </div>

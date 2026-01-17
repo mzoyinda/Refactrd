@@ -19,18 +19,16 @@ export function FreelanceCTA() {
 
             {/* Heading */}
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-              Find Freelance Talents
+              Building Trust Through Process,
             </h2>
 
             <p className="text-3xl lg:text-4xl font-bold text-purple-600 mb-6">
-              For Your Business Today!
+              Not Promises!
             </p>
 
             {/* Description */}
             <p className="text-gray-600 leading-relaxed mb-8 max-w-xl">
-              From tech experts to creative professionals, we've got you covered
-              for all your business needs, connecting you with top freelance
-              talents quickly, reliably, and hassle-free.
+             If you are exploring remote, full-time engineering hires and want a structured, dependable process, Refactrd is built to support you.
             </p>
 
             {/* CTA Buttons */}
@@ -46,7 +44,7 @@ export function FreelanceCTA() {
                 href="/contact"
                 className="inline-flex items-center justify-center bg-white text-gray-900 font-normal px-6 py-3 rounded-full hover:bg-gray-50 transition-all duration-200 border border-gray-300 hover:border-gray-400 text-base"
               >
-                Apply as Freelancer
+                Apply as a Talent
                 <svg
                   className="w-4 h-4 ml-2"
                   fill="none"

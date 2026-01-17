@@ -37,7 +37,7 @@ export function GlobalOpportunities() {
               {/* Badge */}
               <div className="inline-flex items-center space-x-2 bg-purple-100 text-purple-700 px-3 py-1.5 rounded-full mb-3 md:mb-4 w-fit">
                 <FaBriefcase className="w-4 h-4" />
-                <span className="text-xs font-semibold">B.Y.O</span>
+                <span className="text-xs font-semibold">B.Y.O.T</span>
               </div>
 
               {/* Content */}
@@ -45,9 +45,9 @@ export function GlobalOpportunities() {
                 Bring Your Own Talents
               </h3>
               <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed flex-grow">
-                Want to work with talent you found outside Refactrd? Our
-                bring-your-own feature makes it easy to manage yourselves talents,
-                from contract to payment wherever they are.
+                Already have candidates and need structured vetting? We can
+                assess technical and professional readiness using the same
+                standards applied across our network.
               </p>
 
               {/* CTA Buttons */}
@@ -60,7 +60,8 @@ export function GlobalOpportunities() {
                 </Link>
                 <Link
                   href="/about"
-                  className="inline-flex items-center justify-center bg-white text-gray-900 font-normal px-6 py-3 rounded-full hover:bg-gray-50 transition-all duration-200 border border-gray-300 hover:border-gray-400 text-base"                >
+                  className="inline-flex items-center justify-center bg-white text-gray-900 font-normal px-6 py-3 rounded-full hover:bg-gray-50 transition-all duration-200 border border-gray-300 hover:border-gray-400 text-base"
+                >
                   Learn More
                   <svg
                     className="w-4 h-4 ml-2"
@@ -116,7 +117,8 @@ export function GlobalOpportunities() {
                 </Link>
                 <Link
                   href="/about"
-                  className="inline-flex items-center justify-center bg-white text-gray-900 font-normal px-6 py-3 rounded-full hover:bg-gray-50 transition-all duration-200 border border-gray-300 hover:border-gray-400 text-base">
+                  className="inline-flex items-center justify-center bg-white text-gray-900 font-normal px-6 py-3 rounded-full hover:bg-gray-50 transition-all duration-200 border border-gray-300 hover:border-gray-400 text-base"
+                >
                   Learn More
                   <svg
                     className="w-4 h-4 ml-2"
@@ -141,17 +143,15 @@ export function GlobalOpportunities() {
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 bg-purple-100 text-purple-700 px-3 py-1.5 rounded-full mb-3 md:mb-4 w-fit">
               <FaBriefcase className="w-4 h-4" />
-              <span className="text-xs font-semibold">Refriend</span>
+              <span className="text-xs font-semibold">Quality Roles</span>
             </div>
 
             {/* Content */}
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">
-              Global Careers, Trusted Referrers
+              Available Roles
             </h3>
             <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed">
-              Refriend connects job seekers to global visa-sponsored jobs and
-              offers a referrer for recommendations, streamlining the search for
-              diverse opportunities.
+              We support hiring across product, platform, and infrastructure teams for companies building and scaling distributed systems.
             </p>
 
             {/* CTA Buttons */}
@@ -159,12 +159,13 @@ export function GlobalOpportunities() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center bg-purple-600 text-white font-normal px-5 md:px-6 py-2.5 md:py-3 rounded-full hover:bg-purple-700 transition-all duration-200 shadow-md hover:shadow-lg text-sm md:text-base"
-                >
+              >
                 Explore Refriend Roles
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center bg-white text-gray-900 font-normal px-6 py-3 rounded-full hover:bg-gray-50 transition-all duration-200 border border-gray-300 hover:border-gray-400 text-base">
+                className="inline-flex items-center justify-center bg-white text-gray-900 font-normal px-6 py-3 rounded-full hover:bg-gray-50 transition-all duration-200 border border-gray-300 hover:border-gray-400 text-base"
+              >
                 Learn More
                 <svg
                   className="w-4 h-4 ml-2"

@@ -61,8 +61,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <h3 className="text-3xl font-bold mb-4">{SITE_NAME}</h3>
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
-              The world's work marketplace for freelancers and businesses.
-              Connect with top talent or find your next opportunity.
+              A global hiring partner focused on connecting companies with exceptional African engineering talent.
             </p>
 
             {/* Contact Info */}
@@ -226,7 +225,7 @@ export default function Footer() {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center space-x-4">
+            {/* <div className="flex items-center space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -239,7 +238,7 @@ export default function Footer() {
                   {social.icon}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

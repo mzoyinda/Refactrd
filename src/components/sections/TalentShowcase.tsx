@@ -199,7 +199,7 @@ export function TalentShowcase() {
           <div className="mb-12">
             <p className="text-gray-400 text-base font-medium mb-2">Expertise</p>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-              World-Class Talent Across Key Technical Roles
+              Engineering Roles We Support
             </h2>
           </div>
 
@@ -287,14 +287,14 @@ export function TalentShowcase() {
           </div>
 
           {/* CTA Button */}
-          <div className="text-center">
+          {/* <div className="text-center">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Request Access to Full Talent Pool
               <svg
-                className="w-5 h-5 ml-2"
+                className="w-5 h-5 ml-2 hidden lg:block"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -310,7 +310,7 @@ export function TalentShowcase() {
             <p className="text-sm text-gray-500 mt-4">
               Access our network of 31,000+ verified professionals
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

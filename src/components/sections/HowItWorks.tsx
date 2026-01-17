@@ -8,22 +8,22 @@ export function HowItWorks() {
       icon: <FaBriefcase className="w-8 h-8" />,
       iconBg: 'bg-purple-100',
       iconColor: 'text-purple-600',
-      title: 'Connect with a Tech Recruiter',
-      description: 'Meet with a Refactrd recruiter to discuss your technical needs and team culture.',
+      title: 'Define Requirements',
+      description: 'We work with you to understand role expectations, team structure, and technical needs.',
     },
     {
       icon: <FaListUl className="w-8 h-8" />,
       iconBg: 'bg-purple-100',
       iconColor: 'text-purple-600',
-      title: 'Get Your Curated Shortlist',
-      description: 'Receive 2-4 top-matching candidates within days, handpicked for your project.',
+      title: 'Curated Shortlist',
+      description: 'We source and vet candidates who meet both technical and professional criteria.',
     },
     {
       icon: <FaMoneyCheckAlt className="w-8 h-8" />,
       iconBg: 'bg-purple-100',
       iconColor: 'text-purple-600',
-      title: 'Start & Pay with Confidence',
-      description: 'Begin work and pay securely via our Escrow system only when results are delivered.',
+      title: 'Confident Hiring',
+      description: 'You engage with a focused shortlist, reducing interview cycles and decision fatigue.',
     },
   ];
 

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { FaUser, FaCheckCircle, FaBriefcase, FaList } from "react-icons/fa";
-
+import { CiGlobe } from "react-icons/ci";
 export function TrustedCompanies() {
   // Company logos - you'll replace these with actual logo images
   const companies = [
@@ -21,44 +21,44 @@ export function TrustedCompanies() {
   const stats = [
     {
       icon: <FaUser className="w-6 h-6" />,
-      label: "Clients Served",
-      value: "+4,200",
+      label: "Selective Talent Network",
+      value: "Engineers screened for senior-level capability",
       bgColor: "bg-orange-100",
       iconColor: "text-orange-500",
     },
     {
-      icon: <FaCheckCircle className="w-6 h-6" />,
-      label: "Verified Talents",
-      value: "+31,000",
+      icon: <CiGlobe  className="w-6 h-6" />,
+      label: "Global Hiring Coverage",
+      value: "Supporting distributed teams across regions",
       bgColor: "bg-blue-100",
       iconColor: "text-blue-500",
     },
     {
       icon: <FaBriefcase className="w-6 h-6" />,
-      label: "Successful Hires",
-      value: "+500",
+      label: "Structured Vetting Process",
+      value: "Manual review supported by AI-assisted evaluation",
       bgColor: "bg-purple-100",
       iconColor: "text-purple-500",
     },
-    {
-      icon: <FaList className="w-6 h-6" />,
-      label: "Skills & specialties",
-      value: "1,264",
-      bgColor: "bg-green-100",
-      iconColor: "text-green-500",
-    },
+    // {
+    //   icon: <FaList className="w-6 h-6" />,
+    //   label: "Skills & specialties",
+    //   value: "1,264",
+    //   bgColor: "bg-green-100",
+    //   iconColor: "text-green-500",
+    // },
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <h2 className="text-center text-gray-400 text-lg lg:text-[22px] mb-12">
-          More than 500 companies have trusted us and worked with us
+          Trusted by forward-thinking teams building globally distributed engineering organizations.
         </h2>
 
         {/* Company Logos Slider */}
-        <div className="relative overflow-hidden mb-20">
+        <div className="relative overflow-hidden">
           <div className="flex space-x-12 animate-scroll">
             {companies.map((company, index) => (
               <div
@@ -79,8 +79,7 @@ export function TrustedCompanies() {
           </div>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -94,7 +93,7 @@ export function TrustedCompanies() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1">{stat.label}</p>
-                  <p className="text-3xl font-bold text-gray-900">
+                  <p className="text-[15.3px] font-normal text-gray-900">
                     {stat.value}
                   </p>
                 </div>
@@ -102,6 +101,7 @@ export function TrustedCompanies() {
             </div>
           ))}
         </div>
+       
       </div>
 
       <style jsx>{`

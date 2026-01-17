@@ -19,7 +19,7 @@ export default function LandingPage() {
         <GlobalOpportunities/>
         <HowItWorks/>
         <FreelanceCTA/>
-        <Testimonials/>
+        {/* <Testimonials/> */}
         <FAQ/>
       </main>
       <Footer />
