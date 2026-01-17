@@ -54,7 +54,7 @@ export default function Navbar() {
                 width={300}
                 height={100}
                 priority
-                // className="h-7 sm:h-8 md:h-9 w-auto"
+                 className="sm:h-14 -ml-10 lg:ml-0 lg:h-[250px] w-auto"
               />
             </Link>
 
@@ -136,14 +136,14 @@ export default function Navbar() {
         >
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-100">
-            <Image
+            {/* <Image
               src="/images/refactrd.png"
               alt="Refactrd logo"
-              width={140}
-              height={32}
+              width={100}
+              height={82}
               priority
-              className="h-8 w-auto"
-            />
+              // className="h-8 w-auto"
+            /> */}
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="p-2 rounded-lg text-gray-700 hover:bg-purple-50 transition-colors duration-200"
@@ -191,14 +191,14 @@ export default function Navbar() {
               className="block w-full text-center text-gray-700 font-medium hover:text-purple-600 transition-colors duration-200 px-4 py-3 rounded-lg hover:bg-purple-50"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Login
+              Learn More
             </Link>
             <Link
               href="/contact"
               className="block w-full text-center bg-purple-600 text-white font-medium px-6 py-3 rounded-lg hover:bg-purple-700 transition-all duration-200 shadow-sm hover:shadow-md"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Sign Up
+             Get Started
             </Link>
           </div>
         </div>
