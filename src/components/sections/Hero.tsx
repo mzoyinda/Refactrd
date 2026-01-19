@@ -66,7 +66,7 @@ export function Hero() {
           <div className="relative w-full h-[280px] sm:h-[360px] lg:h-[600px] flex items-center justify-center order-first lg:order-last">
             <div className="relative w-full h-full animate-fade-in animation-delay-200">
               <Image
-                src="/images/hero-image.png"
+                src="/images/newhero.png"
                 alt="Talented remote engineers from Refactrd"
                 fill
                 className="object-contain"
