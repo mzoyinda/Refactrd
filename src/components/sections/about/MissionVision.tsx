@@ -52,7 +52,7 @@ export function MissionVision() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mission Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
@@ -196,97 +196,6 @@ export function MissionVision() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Vision Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          {/* Left: Content */}
-          <div>
-            {/* <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-6">
-              <FaEye className="w-4 h-4" />
-              <span className="text-sm font-semibold">Our Vision</span>
-            </div> */}
-
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              A growing source of engineering excellence
-            </h2>
-
-            <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-              <p>
-                Africa has become an increasingly reliable source of engineers
-                working on global products and distributed teams.
-              </p>
-              <p>At Refactrd, we focus on engineers who demonstrate:</p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Strong technical foundations</li>
-                <li>Experience working in remote environments</li>
-                <li>Clear communication and accountability</li>
-                <li>Readiness for long-term, full-time roles</li>
-              </ul>
-              <p>
-                We evaluate talent based on demonstrated capability, not
-                geography.
-              </p>
-            </div>
-
-            {/* Vision Goals */}
-            {/* <div className="mt-8 space-y-4">
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4 border border-blue-100">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-gray-900 mb-1">
-                      100K+ Career Transformations
-                    </p>
-                    <p className="text-sm text-gray-600">By 2030</p>
-                  </div>
-                  <div className="text-3xl font-bold text-blue-600">2030</div>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-100">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-gray-900 mb-1">
-                      Leading Remote Work Platform
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      For African tech talent globally
-                    </p>
-                  </div>
-                  <div className="text-2xl">🌍</div>
-                </div>
-              </div>
-            </div> */}
-          </div>
-
-          {/* Right: Image */}
-          <div className="relative order-first lg:order-last">
-            <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
-                <Image
-                  src="/images/vision.webp"
-                  alt="Our vision - Africa as a global tech powerhouse"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Floating Icon Card */}
-              <div className="absolute bottom-8 right-8 bg-white rounded-2xl p-5 shadow-xl">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <FaEye className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <span className="font-bold text-gray-900 text-lg">
-                    Our Vision
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute -top-6 -left-6 w-40 h-40 bg-blue-200 rounded-full blur-3xl opacity-50"></div>
           </div>
         </div>
 

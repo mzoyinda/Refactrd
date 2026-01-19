@@ -138,7 +138,7 @@ export function Benefits() {
             >
               For Companies
             </button>
-            <button
+            {/* <button
               onClick={() => setActiveTab('talents')}
               className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeTab === 'talents'
@@ -147,7 +147,7 @@ export function Benefits() {
               }`}
             >
               For Talents
-            </button>
+            </button> */}
           </div>
         </div>
 

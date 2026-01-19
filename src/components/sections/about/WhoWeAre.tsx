@@ -46,7 +46,7 @@ export function WhoWeAre() {
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-28">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-4 mt-20">
           {/* Left: Text Content */}
           <div>
             <div className="inline-flex items-center space-x-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full mb-6">
@@ -192,9 +192,8 @@ export function WhoWeAre() {
         {/* Story Section with Image */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Image */}
-          <div className="order-2 lg:order-1">
+          {/* <div className="order-2 lg:order-1">
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
-              {/* Replace with: Team collaboration, office space, or diverse engineers working */}
               <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
                 <Image
                   src="/images/our-story.webp"
@@ -204,10 +203,10 @@ export function WhoWeAre() {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Right: Story Text */}
-          <div className="order-1 lg:order-2">
+          {/* <div className="order-1 lg:order-2">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Our Story
             </h2>
@@ -225,7 +224,7 @@ export function WhoWeAre() {
                 across skill, communication, and professionalism.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

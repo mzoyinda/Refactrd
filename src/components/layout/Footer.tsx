@@ -46,8 +46,6 @@ export default function Footer() {
 
   const legalLinks = [
     { name: "Terms and Conditions", href: "/" },
-    { name: "Privacy Policy", href: "/" },
-    { name: "Cookie Policy", href: "/" },
   ];
 
   const currentYear = new Date().getFullYear();
@@ -56,7 +54,7 @@ export default function Footer() {
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white lg:mx-20 lg:rounded-lg lg:mb-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <h3 className="text-3xl font-bold mb-4">{SITE_NAME}</h3>
@@ -66,7 +64,7 @@ export default function Footer() {
 
             {/* Contact Info */}
             <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-gray-400">
+              <div className="flex items- space-x-3 text-gray-400">
                 <svg
                   className="w-5 h-5 flex-shrink-0"
                   fill="currentColor"
@@ -122,7 +120,7 @@ export default function Footer() {
           </div>
 
           {/* For Talent */}
-          <div>
+          {/* <div>
             <h4 className="font-semibold text-lg mb-4">For Talent</h4>
             <ul className="space-y-3">
               {footerLinks.forTalent.map((link) => (
@@ -136,7 +134,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Company */}
           <div>

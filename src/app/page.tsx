@@ -14,8 +14,8 @@ export default function LandingPage() {
     <>
       <main id="main-content">
         <Hero />
-        <TrustedCompanies/>
-        <TalentShowcase/>
+        {/* <TrustedCompanies/> */}
+        {/* <TalentShowcase/> */}
         <GlobalOpportunities/>
         <HowItWorks/>
         <FreelanceCTA/>

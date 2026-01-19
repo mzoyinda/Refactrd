@@ -6,7 +6,7 @@ import { FaRocket } from "react-icons/fa";
 export function FreelanceCTA() {
   return (
     // <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-    <section className="py-2 lg:py-20  bg-[radial-gradient(#e9d5ff_1px,transparent_1px)] [background-size:24px_24px]">
+    <section className="py-2 bg-[radial-gradient(#e9d5ff_1px,transparent_1px)] [background-size:24px_24px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  ">
         {/* CTA Card */}
         <div className="bg-white rounded-3xl border border-gray-200 p-8 lg:p-12">
@@ -40,7 +40,7 @@ export function FreelanceCTA() {
                 Start Hiring Now
               </Link>
 
-              <Link
+              {/* <Link
                 href="/contact"
                 className="inline-flex items-center justify-center bg-white text-gray-900 font-normal px-6 py-3 rounded-full hover:bg-gray-50 transition-all duration-200 border border-gray-300 hover:border-gray-400 text-base"
               >
@@ -58,7 +58,7 @@ export function FreelanceCTA() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
