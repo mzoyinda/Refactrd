@@ -142,7 +142,7 @@ export default function ProofOfWork() {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {projects.map((project, index) => (
-            <Link
+            <a
               key={index}
               href={project.href}
               className={`group relative overflow-hidden rounded-2xl bg-white border-2 border-[#CBD5E1] hover:border-[#A2D2FF] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${
@@ -201,7 +201,7 @@ export default function ProofOfWork() {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
 
