@@ -4,33 +4,33 @@ import Link from "next/link";
 import { Instagram, Linkedin, ArrowUpRight } from "lucide-react";
 
 const services = [
-  { name: "Website Development", href: "/services/website-development" },
+  { name: "Website Development", href: "/services" },
   {
     name: "Application Development",
-    href: "/services/application-development",
+    href: "/services",
   },
-  { name: "AI and Automation", href: "/services/ai-automation" },
+  { name: "AI and Automation", href: "/services" },
   {
     name: "DevOps and Infrastructure",
-    href: "/services/devops-infrastructure",
+    href: "/services",
   },
   {
     name: "Technical Documentation",
-    href: "/services/technical-documentation",
+    href: "/services",
   },
-  { name: "Delivery Support", href: "/services/delivery-support" },
+  { name: "Delivery Support", href: "/services" },
 ];
 
 const socialLinks = [
   {
     name: "Instagram",
     icon: Instagram,
-    href: "https://instagram.com/refactrd",
+    href: "https://www.instagram.com/refactrd",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/company/refactrdhq",
+    href: "https://www.linkedin.com/company/refactrdhq/",
   },
 ];
 
@@ -134,7 +134,7 @@ export default function Footer() {
                 href="https://substack.com/@refactrd"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 w-full px-6 py-4 bg-white text-secondary rounded-xl font-jakarta font-bold hover:bg-accent hover:text-white transition-all duration-300 hover:scale-[1.02] justify-between shadow-lg hover:shadow-xl"
+                className="font-clash group inline-flex items-center gap-3 w-full px-6 py-4 bg-white text-secondary rounded-xl  font-bold hover:bg-accent hover:text-white transition-all duration-300 hover:scale-[1.02] justify-between shadow-lg hover:shadow-xl"
               >
                 <span>Subscribe on Substack</span>
                 <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -159,7 +159,7 @@ export default function Footer() {
                       aria-label={social.name}
                     >
                       <Icon className="w-5 h-5 text-white/70 group-hover:text-accent transition-colors duration-300" />
-                      <span className="text-sm font-medium text-white/70 group-hover:text-white transition-colors duration-300">
+                      <span className="font-clash text-sm font-medium text-white/70 group-hover:text-white transition-colors duration-300">
                         {social.name}
                       </span>
                     </a>
@@ -190,7 +190,7 @@ export default function Footer() {
               <span className="font-clash text-white/20">•</span>
               <Link
                 href="/"
-                className="text-white/60 hover:text-accent text-sm transition-colors duration-200"
+                className="font-clash text-white/60 hover:text-accent text-sm transition-colors duration-200"
               >
                 Privacy Policy
               </Link>
