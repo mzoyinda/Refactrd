@@ -88,16 +88,10 @@ export default function HowToGetStarted() {
                   : "opacity-0 translate-x-12"
               }`}
             >
-              <p className="font-jakarta text-lg text-white/80 mb-6 leading-relaxed">
+              <p className="font-clash text-lg text-white/80 mb-6 leading-relaxed">
                 It begins with a conversation. When you book a call, we work together to turn your vision into reality with clarity and precision.
               </p>
-             <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
-                >
-                  Book a Call
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
+           
             </div>
           </div>
 
@@ -165,14 +159,14 @@ export default function HowToGetStarted() {
             <Link
               href="/contact"
               // className="button-primary group flex items-center gap-2 px-8 py-4 text-lg"
-              className="inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
+              className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
             >
               Book a call
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
             <Link
               href="/hire"
-              className="border border-[#1F2A44] px-8 py-4 rounded-full font-jakarta"
+              className="font-clash border border-[#1F2A44] px-8 py-4 rounded-full font-jakarta"
             >
               Hire a team
             </Link>

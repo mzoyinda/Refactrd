@@ -288,13 +288,13 @@ export default function WhatWeDoSection() {
                   </p>
 
                   {/* Learn More Link */}
-                  <Link
+                  {/* <Link
                     href={service.href}
                     className="inline-flex items-center gap-2 text-sm font-jakarta font-semibold text-white/90 hover:text-white group/link transition-colors duration-300"
                   >
                     Learn more
                     <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
-                  </Link>
+                  </Link> */}
                 </div>
 
                 {/* Corner accent */}
@@ -315,12 +315,12 @@ export default function WhatWeDoSection() {
               : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="text-lg text-white/70 mb-6">
+          <p className="font-clash text-lg text-white/70 mb-6">
             Ready to bring your project to life?
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
+            className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
           >
             Book a Call
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />

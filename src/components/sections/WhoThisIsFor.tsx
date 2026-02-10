@@ -137,7 +137,7 @@ export default function WhoThisIsFor() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-white text-secondary px-8 py-4 rounded-lg font-jakarta font-semibold hover:bg-white/90 transition-all duration-300 hover:scale-105"
+              className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
             >
               Book a call
             </Link>
