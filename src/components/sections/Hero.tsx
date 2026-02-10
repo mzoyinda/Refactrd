@@ -43,14 +43,14 @@ export default function Hero() {
             <Link
               href="/contact"
               // className="button-primary group flex items-center gap-2 px-8 py-4 text-lg"
-              className="inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
+              className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
             >
               Book a call
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
             <Link
               href="/hire"
-              className="border border-[#1F2A44] px-8 py-4 rounded-full font-jakarta"
+              className="font-clash border border-[#1F2A44] px-8 py-4 rounded-full "
             >
               Hire a team
             </Link>
@@ -62,11 +62,11 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-secondary/30 rounded-full flex items-start justify-center p-2">
           <div className="w-1.5 h-3 bg-secondary/40 rounded-full animate-pulse" />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
