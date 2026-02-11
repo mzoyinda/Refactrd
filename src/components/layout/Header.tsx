@@ -65,34 +65,34 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-10">
             <Link
               href="/"
-              className="text-secondary font-clash font-semibold text-[16px] hover:text-accent transition-colors duration-200 relative group"
+              className="text-secondary font-clash font-semibold text-[16px] hover:text-[#A2D2FF] transition-colors duration-200 relative group"
             >
               Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
             </Link>
 
             <Link
               href="/about"
-              className="text-secondary font-clash font-semibold text-[16px] hover:text-accent transition-colors duration-200 relative group"
+              className="text-secondary font-clash font-semibold text-[16px] hover:text-[#A2D2FF] transition-colors duration-200 relative group"
             >
               About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
             </Link>
 
             <Link
               href="/services"
-              className="text-secondary font-clash font-semibold text-[16px] hover:text-accent transition-colors duration-200 relative group"
+              className="text-secondary font-clash font-semibold text-[16px] hover:text-[#A2D2FF] transition-colors duration-200 relative group"
             >
               Services
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
             </Link>
 
             <Link
               href="/projects"
-              className="text-secondary font-clash font-semibold text-[16px] hover:text-accent transition-colors duration-200 relative group"
+              className="text-secondary font-clash font-semibold text-[16px] hover:text-[#A2D2FF] transition-colors duration-200 relative group"
             >
               Projects
-              <span className="absolute -bottom-1 left-0 w-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
             </Link>
           </div>
 
@@ -100,7 +100,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-7 py-3 bg-secondary text-white rounded-full font-clash font-semibold text-[15px] hover:bg-accent transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              className="inline-flex items-center justify-center px-7 py-3 bg-secondary text-white rounded-full font-clash font-semibold text-[15px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Book a Call
             </Link>

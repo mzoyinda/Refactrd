@@ -253,7 +253,7 @@ export default function WhatWeDoSection() {
           </h2>
 
           <p
-            className={`text-lg font-montserrat lg:text-xl text-white/70 transition-all duration-1000 ease-out delay-200 ${
+            className={`text-lg font-clash lg:text-xl text-white/70 transition-all duration-1000 ease-out delay-200 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"

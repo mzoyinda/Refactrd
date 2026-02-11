@@ -143,7 +143,7 @@ export default function Footer() {
 
             {/* Social Links */}
             <div>
-              <h4 className="font-jakarta font-semibold text-sm text-white/60 mb-4 uppercase tracking-wider">
+              <h4 className="font-clash font-semibold text-sm text-white/60 mb-4 uppercase tracking-wider">
                 Connect With Us
               </h4>
               <div className="flex items-center gap-4">

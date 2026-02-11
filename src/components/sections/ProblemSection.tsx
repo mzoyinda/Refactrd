@@ -78,7 +78,7 @@ export default function ProblemSection() {
             <div className="space-y-6">
               {/* Feature 1 */}
               <div className="flex items-start gap-4 group cursor-pointer">
-                <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center group-hover:bg-accent transition-colors duration-300 group-hover:scale-110 transform">
+                <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center group-hover:bg-[#A2D2FF] transition-colors duration-300 group-hover:scale-110 transform">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -94,7 +94,7 @@ export default function ProblemSection() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="heading-sm text-secondary mb-2 group-hover:text-accent transition-colors duration-300">
+                  <h3 className="heading-sm text-secondary mb-2 group-hover:text-[#A2D2FF] transition-colors duration-300">
                     We Handle the Complexity
                   </h3>
                   <p className="font-montserrat text-secondary/70">
@@ -105,7 +105,7 @@ export default function ProblemSection() {
 
               {/* Feature 2 */}
               <div className="flex items-start gap-4 group cursor-pointer">
-                <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center group-hover:bg-accent transition-colors duration-300 group-hover:scale-110 transform">
+                <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center group-hover:bg-[#A2D2FF] transition-colors duration-300 group-hover:scale-110 transform">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -121,7 +121,7 @@ export default function ProblemSection() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="heading-sm text-secondary mb-2 group-hover:text-accent transition-colors duration-300">
+                  <h3 className="heading-sm text-secondary mb-2 group-hover:text-[#A2D2FF] transition-colors duration-300">
                     Built Once. Built Right.
                   </h3>
                   <p className="font-montserrat text-secondary/70">

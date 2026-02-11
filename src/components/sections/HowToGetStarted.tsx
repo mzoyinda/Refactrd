@@ -71,7 +71,7 @@ export default function HowToGetStarted() {
               }`}
             >
               <div className="mb-4">
-                <span className="text-[#E6EAF0] font-montserrat font-semibold text-sm uppercase tracking-wider">
+                <span className="text-[#E6EAF0] font-clash font-semibold text-sm uppercase tracking-wider">
                   HOW WE WORK
                 </span>
               </div>
@@ -121,8 +121,8 @@ export default function HowToGetStarted() {
                   >
                     {/* Icon */}
                     <div className="mb-6 relative">
-                      <div className="w-[144px] h-[144px] bg-[#E6EAF0] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0">
-                        <Icon className="w-16 h-16 text-secondary" strokeWidth={2.5} />
+                      <div className="w-[94px] h-[94px] lg:w-[144px] lg:h-[144px] bg-[#E6EAF0] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0">
+                        <Icon className="lg:w-16 lg:h-16 w-10 h-10 text-secondary" strokeWidth={2.5} />
                       </div>
                       {/* Glow effect */}
                       <div className="absolute inset-0 w-[144px] h-[144px] bg-accent/20 rounded-full blur-2xl -z-10 mx-auto lg:mx-0" />
@@ -166,7 +166,7 @@ export default function HowToGetStarted() {
             </Link>
             <Link
               href="/hire"
-              className="font-clash border border-[#1F2A44] px-8 py-4 rounded-full font-jakarta"
+              className="font-clash border border-[#1F2A44] px-8 py-4 rounded-full"
             >
               Hire a team
             </Link>

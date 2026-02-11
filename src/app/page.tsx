@@ -20,9 +20,9 @@ const HowToGetStarted = dynamic(() => import("@/components/sections/HowToGetStar
   loading: () => <div className="section-padding bg-tertiary/30" />,
 });
 
-const FinalCTA = dynamic(() => import("@/components/sections/FinalCTA"), {
-  loading: () => <div className="section-padding bg-secondary" />,
-});
+// const FinalCTA = dynamic(() => import("@/components/sections/FinalCTA"), {
+//   loading: () => <div className="section-padding bg-secondary" />,
+// });
 
 export default function Home() {
   return (
@@ -35,7 +35,7 @@ export default function Home() {
       <WhyChooseUs />
       <WhoThisIsFor />
       <HowToGetStarted />
-      <FinalCTA />
+      {/* <FinalCTA /> */}
       <Footer />
     </main>
   );

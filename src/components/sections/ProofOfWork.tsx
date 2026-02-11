@@ -26,21 +26,22 @@ const projects = [
     description: "The AI Contract Generator is an AI-powered web application built to allow users to create professional contracts efficiently",
     category: "AI",
     image: "/images/ai-contract-read-cover.png",
-    href: "https://",
+    href: "https://ai-contract-generator-five.vercel.app/",
   },
   {
     title: "AI- poweredFraud Detection & AML System",
     description: "An AI-driven fraud monitoring and detection tool. It provides real-time detection across multiple channels, monitors transactions for AML/CTF risks, offers explainable AI outputs for regulatory acceptance, and automates compliance workflows to reduce operational costs.",
     category: "AI",
-    image: "/images/fraud-detection.png",
-    href: "/projects/ai-contract-generator",
+    image: "/images/fraud-new.png",
+    href: "/",
   },
-  {
-    title: "ERIN Personal Branding",
-    description: "ERIN is a personal brand website built to bring together everything ERIN does in one place. He is a software engineer, a technical writer, a content creator, and a lifestyle enthusiast. ",
+ {
+    title: "WriteTech Hub",
+    description:
+      "Technical writing platform and documentation management system for engineering teams.",
     category: "Website",
-    image: "/images/erin-prototype.webp",
-    href: "https://erinhq.com",
+    image: "/images/wth.png",
+    href: "https://writetechhub.org",
   },
 ];
 
@@ -216,7 +217,7 @@ export default function ProofOfWork() {
           </p>
           <Link
             href="/projects"
-            className="inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
+            className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
           >
             View our work
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />

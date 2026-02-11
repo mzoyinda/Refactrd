@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-export default function AboutHero() {
+export default function ProjectsHero() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -29,7 +29,7 @@ export default function AboutHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[85vh] flex items-center bg-gradient-to-br from-[#E6EAF0] via-white to-white overflow-hidden pt-32 pb-20"
+      className="relative min-h-[85vh] flex items-center bg-gradient-to-br from-[#E6EAF0] via-white to-white overflow-hidden pt-32 pb-8 lg:pb-20"
     >
       <div className="container-custom w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -37,13 +37,13 @@ export default function AboutHero() {
           <div className="max-w-2xl">
             {/* Main Heading */}
             <h1
-              className={`text-4xl lg:text-5xl xl:text-6xl font-clash font-medium text-[#1F2A44] leading-tight mb-6 transition-all duration-700 ${
+              className={`text-4xl lg:text-6xl xl:text-7xl font-clash font-medium text-[#1F2A44] leading-tight mb-6 transition-all duration-700 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
               }`}
             >
-              Software built to trust, understand & last
+              Building reliable software, systems & automation
             </h1>
 
             {/* Description */}
@@ -54,8 +54,8 @@ export default function AboutHero() {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              ✱ A professional engineering studio partnering with businesses since
-              2023
+              ✱ We are a professional software delivery team working with clarity
+              and precision since 2023
             </p>
 
             {/* Large Featured Image */}
@@ -69,12 +69,13 @@ export default function AboutHero() {
               {/* Placeholder - Replace with actual image */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#A2D2FF]/20 to-[#5B6CFF]/10 flex items-center justify-center">
                 <span className="text-[#64748B] text-sm">
-                  Team working together
+                  Team collaboration image
                 </span>
               </div>
+              
               <Image
-                src="/images/abouthero-one.jpg"
-                alt="Refactrd engineering team"
+                src="/images/projects-one.jpg"
+                alt="Refactrd team collaborating on projects"
                 fill
                 className="object-cover"
               />
@@ -83,19 +84,19 @@ export default function AboutHero() {
               {/* Tags/Badges on the image */}
               <div className="absolute bottom-6 left-6 flex flex-wrap gap-3">
                 <span className="px-4 py-2 bg-white/90 backdrop-blur-sm text-[#1F2A44] rounded-full text-sm font-clash font-semibold shadow-lg">
-                  ✦ Clarity
+                  ✦ Innovative
                 </span>
                 <span className="px-4 py-2 bg-white/90 backdrop-blur-sm text-[#1F2A44] rounded-full text-sm font-clash font-semibold shadow-lg">
-                  ✦ Ownership
+                  ✦ Scalable
                 </span>
                 <span className="px-4 py-2 bg-white/90 backdrop-blur-sm text-[#1F2A44] rounded-full text-sm font-clash font-semibold shadow-lg">
-                  ✦ Quality ✱
+                  ✦ Advanced ✱
                 </span>
                 <span className="px-4 py-2 bg-white/90 backdrop-blur-sm text-[#1F2A44] rounded-full text-sm font-clash font-semibold shadow-lg">
-                  ✦ Built to Last ✱
+                  ✦ Real-Time Analytics ✱
                 </span>
                 <span className="px-4 py-2 bg-white/90 backdrop-blur-sm text-[#1F2A44] rounded-full text-sm font-clash font-semibold shadow-lg">
-                  ✦ Senior Execution ✱
+                  ✦ Agile Approach ✱
                 </span>
               </div>
             </div>
@@ -113,11 +114,12 @@ export default function AboutHero() {
             >
               {/* Placeholder - Replace with actual image */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#5B6CFF]/20 to-[#A2D2FF]/10 flex items-center justify-center">
-                <span className="text-[#64748B] text-sm">Team discussion</span>
+                <span className="text-[#64748B] text-sm">Team meeting image</span>
               </div>
+             
               <Image
-                src="/images/abouthero-two.jpg"
-                alt="Team planning session"
+                src="/images/projects-two.jpg"
+                alt="Team brainstorming session"
                 fill
                 className="object-cover"
               />
@@ -132,24 +134,17 @@ export default function AboutHero() {
                   : "opacity-0 translate-x-12"
               }`}
             >
-              <h3 className="text-xl font-clash font-bold text-[#1F2A44] mb-4">
-                Built around one principle
-              </h3>
-              <p className="font-clash text-base text-[#64748B] leading-relaxed mb-4">
-                Refactrd is a software delivery company built around one principle:
-                software should be easy to trust, easy to understand, and built to
-                last.
-              </p>
               <p className="font-clash text-base text-[#64748B] leading-relaxed mb-6">
-                We partner with businesses that need software built or improved,
-                and want the confidence that it is being handled properly from
-                start to finish.
+                We deliver customer-facing applications, internal systems,
+                automation workflows, and comprehensive technical documentation.
+                Every project is handled with senior expertise and complete
+                ownership from start to finish.
               </p>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 hover:text-[#A2D2FF] font-clash font-semibold text-[#1F2A44] transition-colors duration-300 group"
               >
-                Let's work together
+                Start a project with us
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </div>

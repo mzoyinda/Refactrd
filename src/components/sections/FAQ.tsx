@@ -136,13 +136,13 @@ export default function FAQ() {
               <h3 className="text-2xl font-clash font-bold mb-4">
                 Still have questions?
               </h3>
-              <p className="text-white/80 mb-6 max-w-md mx-auto">
+              <p className="font-clash text-white/80 mb-6 max-w-md mx-auto">
                 Can't find the answer you're looking for? Our team is here to help
                 you understand how Refactrd can support your project.
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-7 py-3 bg-white text-black rounded-full font-clash font-semibold hover:bg-accent-light transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center px-7 py-3 bg-white text-black rounded-full font-clash font-semibold hover:bg-[#A2D2FF] transition-all duration-300 hover:scale-105"
               >
                 Get in Touch
               </Link>

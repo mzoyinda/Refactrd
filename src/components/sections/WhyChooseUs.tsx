@@ -101,7 +101,7 @@ export default function WhyChooseUs() {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              <span className="text-[#E6EAF0] font-montserrat font-semibold text-sm uppercase tracking-wider">
+              <span className="font-clash text-[#E6EAF0] font-semibold text-sm uppercase tracking-wider">
                 BENEFITS
               </span>
             </div>
@@ -124,12 +124,12 @@ export default function WhyChooseUs() {
                     : "opacity-0 translate-y-4"
                 }`}
               >
-                <p className=" font-jakarta text-lg text-white/80 mb-6 leading-relaxed">
+                <p className="font-clash text-lg text-white/80 mb-6 leading-relaxed">
                   We partner with you to ensure that your software elevates your brand to new levels with reliability, quality, and ownership.
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
+                  className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
                 >
                   Book a Call
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -166,7 +166,7 @@ export default function WhyChooseUs() {
                         <span className="text-[#E6EAF0]/60 mr-2">{benefit.number}.</span>
                         {benefit.title}
                       </h3>
-                      <p className="text-sm text-white/70 leading-relaxed">
+                      <p className="font-clash text-sm text-white/70 leading-relaxed">
                         {benefit.description}
                       </p>
                     </div>
