@@ -57,7 +57,7 @@ export default function Header() {
               width={320}
               height={50}
               priority
-              className="h-44 w-auto object-contain"
+              className="h-32 md:h-36 lg:h-40 w-auto object-contain"
             />
           </Link>
 
@@ -92,7 +92,7 @@ export default function Header() {
               className="text-secondary font-clash font-semibold text-[16px] hover:text-[#A2D2FF] transition-colors duration-200 relative group"
             >
               Projects
-              <span className="absolute -bottom-1 left-0 w-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
             </Link>
           </div>
 
@@ -100,7 +100,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-7 py-3 bg-secondary text-white rounded-full font-clash font-semibold text-[15px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              className="inline-flex items-center justify-center px-7 py-3 bg-secondary text-white rounded-full font-clash font-semibold text-[15px] hover:bg-[#A2D2FF] transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Book a Call
             </Link>
@@ -182,7 +182,7 @@ export default function Header() {
                 <div className="mt-6 pt-6 border-t border-tertiary">
                   <Link
                     href="/contact"
-                    className="block w-full text-center px-7 py-4 bg-secondary text-white rounded-full font-clash font-semibold hover:bg-accent transition-all duration-300"
+                    className="block w-full text-center px-7 py-4 bg-secondary text-white rounded-full font-clash font-semibold hover:bg-[#A2D2FF] transition-all duration-300"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Book a Call
