@@ -2,6 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --font-jakarta: "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-clash: "Clash Display", system-ui, sans-serif;
+    --font-montserrat: "Montserrat", system-ui, sans-serif;
+  }
+
+  /* * {
+    @apply border-border;
+  } */
+
+  body {
+    @apply bg-white text-secondary font-jakarta;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+
+  .heading-xl {
+    @apply text-4xl lg:text-6xl xl:text-7xl font-clash font-bold leading-tight tracking-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl lg:text-5xl xl:text-6xl font-clash font-bold leading-tight tracking-tight;
+  }
+
+  .heading-md {
+    @apply text-2xl lg:text-4xl font-clash font-semibold leading-tight;
+  }
+
+  .heading-sm {
+    @apply text-xl lg:text-2xl font-clash font-semibold;
+  }
+
+  .body-lg {
+    @apply text-lg lg:text-xl font-clash leading-relaxed;
+  }
+
+  .body-base {
+    @apply text-base lg:text-lg font-jakarta leading-relaxed;
+  }
+
+  .button-primary {
+    @apply px-6 py-3 bg-secondary text-white rounded-lg font-jakarta font-semibold 
+           hover:bg-secondary-light transition-all duration-300 hover:scale-105 
+           active:scale-95 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+
+  .button-secondary {
+    @apply px-6 py-3 bg-transparent border-2 border-secondary text-secondary rounded-lg 
+           font-jakarta font-semibold hover:bg-secondary hover:text-white transition-all 
+           duration-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
 /* Reset box-sizing */
 *,
 *::before,
