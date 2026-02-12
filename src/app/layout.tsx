@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   icons: {
-    icon: "/favicon.png",
+    icon: "/refactored_favicon.png",
   },
 };
 
