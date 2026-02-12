@@ -36,7 +36,7 @@ export default function HowToGetStarted() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -89,9 +89,10 @@ export default function HowToGetStarted() {
               }`}
             >
               <p className="font-clash text-lg text-white/80 mb-6 leading-relaxed">
-                It begins with a conversation. When you book a call, we work together to turn your vision into reality with clarity and precision.
+                It begins with a conversation. When you book a call, we work
+                together to turn your vision into reality with clarity and
+                precision.
               </p>
-           
             </div>
           </div>
 
@@ -122,7 +123,10 @@ export default function HowToGetStarted() {
                     {/* Icon */}
                     <div className="mb-6 relative">
                       <div className="w-[94px] h-[94px] lg:w-[144px] lg:h-[144px] bg-[#E6EAF0] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0">
-                        <Icon className="lg:w-16 lg:h-16 w-10 h-10 text-secondary" strokeWidth={2.5} />
+                        <Icon
+                          className="lg:w-16 lg:h-16 w-10 h-10 text-secondary"
+                          strokeWidth={2.5}
+                        />
                       </div>
                       {/* Glow effect */}
                       <div className="absolute inset-0 w-[144px] h-[144px] bg-accent/20 rounded-full blur-2xl -z-10 mx-auto lg:mx-0" />
@@ -156,21 +160,25 @@ export default function HowToGetStarted() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up delay-500">
-            <Link
-              href="/contact"
-              // className="button-primary group flex items-center gap-2 px-8 py-4 text-lg"
-              className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
-            >
-              Book a call
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-            <Link
-              href="/hire"
-              className="font-clash border border-[#1F2A44] px-8 py-4 rounded-full"
-            >
-              Hire a team
-            </Link>
-          </div>
+              <Link
+                href="https://cal.com/refactrd/technical-discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                // className="button-primary group flex items-center gap-2 px-8 py-4 text-lg"
+                className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
+              >
+                Book a call
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+              <Link
+                href="https://cal.com/refactrd/technical-discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-clash border border-[#1F2A44] px-8 py-4 rounded-full"
+              >
+                Hire a team
+              </Link>
+            </div>
           </div>
         </div>
       </div>

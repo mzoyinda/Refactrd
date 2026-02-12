@@ -185,7 +185,7 @@ export default function ProjectsGrid() {
               Want to see how we can help your business?
             </p>
             <Link
-              href="/contact"
+              href="https://cal.com/refactrd/technical-discovery-call"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 hover:bg-[#A2D2FF] text-white rounded-full font-clash font-bold bg-[#1F2A44] transition-all duration-300 hover:scale-105 group"

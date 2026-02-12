@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { 
-  Target, 
-  Boxes, 
-  FileText, 
-  Zap, 
-  Award, 
-  Globe, 
-  ArrowRight
+import {
+  Target,
+  Boxes,
+  FileText,
+  Zap,
+  Award,
+  Globe,
+  ArrowRight,
 } from "lucide-react";
 
 const benefits = [
@@ -45,8 +45,7 @@ const benefits = [
     icon: Award,
     number: "5",
     title: "Senior, hands-on execution",
-    description:
-      "Work is led by experienced engineers focused on outcomes.",
+    description: "Work is led by experienced engineers focused on outcomes.",
   },
   {
     icon: Globe,
@@ -68,7 +67,7 @@ export default function WhyChooseUs() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -125,10 +124,13 @@ export default function WhyChooseUs() {
                 }`}
               >
                 <p className="font-clash text-lg text-white/80 mb-6 leading-relaxed">
-                  We partner with you to ensure that your software elevates your brand to new levels with reliability, quality, and ownership.
+                  We partner with you to ensure that your software elevates your
+                  brand to new levels with reliability, quality, and ownership.
                 </p>
                 <Link
-                  href="/contact"
+                  href="https://cal.com/refactrd/technical-discovery-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
                 >
                   Book a Call
@@ -163,7 +165,9 @@ export default function WhyChooseUs() {
                     {/* Number and Title */}
                     <div className="mb-4 flex-1">
                       <h3 className="text-xl font-clash font-semibold text-white mb-3 group-hover:text-[#E6EAF0] transition-colors duration-300">
-                        <span className="text-[#E6EAF0]/60 mr-2">{benefit.number}.</span>
+                        <span className="text-[#E6EAF0]/60 mr-2">
+                          {benefit.number}.
+                        </span>
                         {benefit.title}
                       </h3>
                       <p className="font-clash text-sm text-white/70 leading-relaxed">

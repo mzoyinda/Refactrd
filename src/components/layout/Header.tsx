@@ -99,7 +99,9 @@ export default function Header() {
           {/* CTA Button - Desktop */}
           <div className="hidden lg:flex items-center">
             <Link
-              href="/contact"
+              href="https://cal.com/refactrd/technical-discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-7 py-3 bg-secondary text-white rounded-full font-clash font-semibold text-[15px] hover:bg-[#A2D2FF] transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Book a Call
@@ -181,7 +183,9 @@ export default function Header() {
                 {/* CTA Button */}
                 <div className="mt-6 pt-6 border-t border-tertiary">
                   <Link
-                    href="/contact"
+                    href="https://cal.com/refactrd/technical-discovery-call"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block w-full text-center px-7 py-4 bg-secondary text-white rounded-full font-clash font-semibold hover:bg-[#A2D2FF] transition-all duration-300"
                     onClick={() => setMobileMenuOpen(false)}
                   >

@@ -41,7 +41,9 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up delay-500">
             <Link
-              href="/contact"
+              href="https://cal.com/refactrd/technical-discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
               // className="button-primary group flex items-center gap-2 px-8 py-4 text-lg"
               className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
             >
@@ -49,7 +51,9 @@ export default function Hero() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
             <Link
-              href="/hire"
+              href="https://cal.com/refactrd/technical-discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-clash border border-[#1F2A44] px-8 py-4 rounded-full "
             >
               Hire a team
@@ -57,7 +61,6 @@ export default function Hero() {
           </div>
 
           {/* Trust indicators */}
-          
         </div>
       </div>
 
@@ -70,7 +73,6 @@ export default function Hero() {
     </section>
   );
 }
-
 
 // "use client";
 

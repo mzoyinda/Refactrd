@@ -16,7 +16,7 @@ export default function ProjectsHero() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -54,8 +54,8 @@ export default function ProjectsHero() {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              ✱ We are a professional software delivery team working with clarity
-              and precision since 2023
+              ✱ We are a professional software delivery team working with
+              clarity and precision since 2023
             </p>
 
             {/* Large Featured Image */}
@@ -72,14 +72,13 @@ export default function ProjectsHero() {
                   Team collaboration image
                 </span>
               </div>
-              
+
               <Image
                 src="/images/projects-one.jpg"
                 alt="Refactrd team collaborating on projects"
                 fill
                 className="object-cover"
               />
-             
 
               {/* Tags/Badges on the image */}
               <div className="absolute bottom-6 left-6 flex flex-wrap gap-3">
@@ -114,16 +113,17 @@ export default function ProjectsHero() {
             >
               {/* Placeholder - Replace with actual image */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#5B6CFF]/20 to-[#A2D2FF]/10 flex items-center justify-center">
-                <span className="text-[#64748B] text-sm">Team meeting image</span>
+                <span className="text-[#64748B] text-sm">
+                  Team meeting image
+                </span>
               </div>
-             
+
               <Image
                 src="/images/projects-two.jpg"
                 alt="Team brainstorming session"
                 fill
                 className="object-cover"
               />
-             
             </div>
 
             {/* Info Card */}
@@ -141,7 +141,9 @@ export default function ProjectsHero() {
                 ownership from start to finish.
               </p>
               <Link
-                href="/contact"
+                href="https://cal.com/refactrd/technical-discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 hover:text-[#A2D2FF] font-clash font-semibold text-[#1F2A44] transition-colors duration-300 group"
               >
                 Start a project with us

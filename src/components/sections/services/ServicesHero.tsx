@@ -15,7 +15,7 @@ export default function ServicesHero() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -35,7 +35,6 @@ export default function ServicesHero() {
           {/* Left Content */}
           <div className="max-w-2xl">
             {/* Small tag */}
-            
 
             {/* Main Heading */}
             <h1
@@ -79,7 +78,9 @@ export default function ServicesHero() {
               }`}
             >
               <Link
-                href="/contact"
+                href="https://cal.com/refactrd/technical-discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white rounded-full font-clash font-semibold hover:bg-accent transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
                 Build With Refactrd

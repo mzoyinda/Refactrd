@@ -146,7 +146,9 @@ export default function AboutHero() {
                 start to finish.
               </p>
               <Link
-                href="/contact"
+                href="https://cal.com/refactrd/technical-discovery-call"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 hover:text-[#A2D2FF] font-clash font-semibold text-[#1F2A44] transition-colors duration-300 group"
               >
                 Let's work together

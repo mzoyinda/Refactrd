@@ -16,11 +16,14 @@ export default function ServicesCTA() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="heading-lg mb-6">Ready to Build Something Great?</h2>
           <p className="body-lg text-white/80 mb-12 max-w-2xl mx-auto">
-            Let's discuss your project and explore how Refactrd can help you deliver reliable, scalable software.
+            Let's discuss your project and explore how Refactrd can help you
+            deliver reliable, scalable software.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/contact"
+              href="https://cal.com/refactrd/technical-discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-full font-clash font-bold hover:bg-accent-light transition-all duration-300 hover:scale-105 group"
             >
               Book a Call

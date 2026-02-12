@@ -76,18 +76,19 @@ export default function FAQ() {
               </h1>
               <p className="font-clash text-lg text-[#64748B] mb-8 leading-relaxed">
                 As a leading software development partner, we are dedicated to
-                providing comprehensive answers to help our clients make informed
-                decisions.
+                providing comprehensive answers to help our clients make
+                informed decisions.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/contact"
+                  href="https://cal.com/refactrd/technical-discovery-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-7 py-3 bg-secondary text-white rounded-full font-clash font-semibold transition-all duration-300 hover:scale-105"
                 >
                   Contact Us
                 </Link>
-               
               </div>
             </div>
           </div>
@@ -137,11 +138,13 @@ export default function FAQ() {
                 Still have questions?
               </h3>
               <p className="font-clash text-white/80 mb-6 max-w-md mx-auto">
-                Can't find the answer you're looking for? Our team is here to help
-                you understand how Refactrd can support your project.
+                Can't find the answer you're looking for? Our team is here to
+                help you understand how Refactrd can support your project.
               </p>
               <Link
-                href="/contact"
+                href="https://cal.com/refactrd/technical-discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-7 py-3 bg-white text-black rounded-full font-clash font-semibold hover:bg-[#A2D2FF] transition-all duration-300 hover:scale-105"
               >
                 Get in Touch

@@ -45,7 +45,7 @@ export default function WhoThisIsFor() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -112,7 +112,9 @@ export default function WhoThisIsFor() {
                   {client.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-2">
                       <CheckCircle className="w-5 h-5 text-[#0F172A] flex-shrink-0 mt-0.5" />
-                      <p className="text-sm font-clash text-secondary/70">{feature}</p>
+                      <p className="text-sm font-clash text-secondary/70">
+                        {feature}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -136,7 +138,9 @@ export default function WhoThisIsFor() {
               help you achieve your goals.
             </p>
             <Link
-              href="/contact"
+              href="https://cal.com/refactrd/technical-discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
             >
               Book a call

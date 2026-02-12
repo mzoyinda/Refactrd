@@ -218,7 +218,7 @@ export default function WhatWeDoSection() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -248,8 +248,7 @@ export default function WhatWeDoSection() {
                 : "opacity-0 translate-y-8"
             }`}
           >
-            What We{" "}
-            <span className="text-white/90">Do</span>
+            What We <span className="text-white/90">Do</span>
           </h2>
 
           <p
@@ -259,7 +258,8 @@ export default function WhatWeDoSection() {
                 : "opacity-0 translate-y-8"
             }`}
           >
-            We provide end-to-end software development and technical documentation as a managed service. Our core capabilities include:
+            We provide end-to-end software development and technical
+            documentation as a managed service. Our core capabilities include:
           </p>
         </div>
 
@@ -310,16 +310,16 @@ export default function WhatWeDoSection() {
         {/* Bottom CTA */}
         <div
           className={`text-center transition-all duration-1000 ease-out delay-1000 ${
-            isVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-8"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           <p className="font-clash text-lg text-white/70 mb-6">
             Ready to bring your project to life?
           </p>
           <Link
-            href="/contact"
+            href="https://cal.com/refactrd/technical-discovery-call"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
           >
             Book a Call

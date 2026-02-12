@@ -33,7 +33,9 @@ export default function FinalCTA() {
           {/* CTA Button */}
           <div className="animate-fade-up delay-300">
             <Link
-              href="/contact"
+              href="https://cal.com/refactrd/technical-discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
             >
               Book a call
