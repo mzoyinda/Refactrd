@@ -133,7 +133,7 @@ export default function Footer() {
                 </div>
               </div>
               <a
-                href="https://substack.com/@refactrd"
+                href="https://refactrd.substack.com/subscribe?params=%5Bobject%20Object%5D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-clash group inline-flex items-center gap-3 w-full px-6 py-4 bg-white text-secondary rounded-xl  font-bold hover:bg-accent hover:text-white transition-all duration-300 hover:scale-[1.02] justify-between shadow-lg hover:shadow-xl"
