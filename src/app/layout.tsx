@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { AnalyticsProvider } from "./providers";
 
 // Google Fonts
 const jakarta = Plus_Jakarta_Sans({
@@ -110,8 +112,9 @@ export default function RootLayout({
       <body
         className={`${jakarta.variable} ${montserrat.variable} ${clash.variable} antialiased`}
       >
-        {children}
+        <AnalyticsProvider>{children}</AnalyticsProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
     </html>
   );
 }

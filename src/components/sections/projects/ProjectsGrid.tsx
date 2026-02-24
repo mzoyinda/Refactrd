@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { trackProjectView } from "@/lib/analytics";
+
 
 const projects = [
   {
@@ -110,6 +112,7 @@ export default function ProjectsGrid() {
             <Link
               key={index}
               href={project.href}
+              onClick={() => trackProjectView(project.title)}
               target="_blank"
               rel="noopener noreferrer"
               className={`group relative bg-white rounded-3xl overflow-hidden border-2 border-[#CBD5E1] hover:border-[#A2D2FF] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${
