@@ -44,7 +44,9 @@ const benefits = [
 
 export default function WhyWorkHere() {
   const sectionRef = useRef<HTMLElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -63,13 +65,45 @@ export default function WhyWorkHere() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const sectionTop = rect.top + window.scrollY;
+      const relativeScroll = window.scrollY - sectionTop;
+      setScrollY(relativeScroll);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section
       ref={sectionRef}
-      className="section-padding bg-black text-white relative overflow-hidden"
+      className="section-padding relative overflow-hidden text-white"
       id="why-work-here"
     >
-      <div className="container-custom">
+      {/* Parallax Background Image */}
+      <div
+        ref={bgRef}
+        className="absolute inset-0 w-full h-[130%] -top-[15%] will-change-transform"
+        style={{
+          transform: `translateY(${scrollY * 0.3}px)`,
+        }}
+      >
+        <img
+          src="/images/about-refactrd.webp"
+          alt="Team collaboration"
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+        <div className="absolute inset-0 bg-[#5B6CFF]/20 mix-blend-multiply" />
+      </div>
+
+      {/* Content */}
+      <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <h2
