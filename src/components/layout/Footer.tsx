@@ -81,6 +81,17 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/careers"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className=" font-clash text-[#E6EAF0]font-semibold hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group"
+                  >
+                    <span className="w-1 h-1 bg-accent/0 group-hover:bg-accent rounded-full transition-colors duration-200" />
+                    Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="https://cal.com/refactrd/technical-discovery-call"
                     target="_blank"
                     rel="noopener noreferrer"

@@ -101,6 +101,15 @@ export default function Header() {
                 Projects
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
               </Link>
+
+                <Link
+                href="/careers"
+                onClick={() => trackNavigation("careers", "/careers")}
+                className="text-secondary font-clash font-semibold text-[16px] hover:text-[#A2D2FF] transition-colors duration-200 relative group"
+              >
+                Careers
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
+              </Link>
             </div>
 
             {/* CTA Button - Desktop */}
@@ -199,6 +208,16 @@ export default function Header() {
                   }}
                 >
                   Projects
+                </Link>
+                 <Link
+                  href="/careers"
+                  className="block px-4 py-3 text-secondary font-clash font-semibold hover:bg-tertiary rounded-lg transition-colors duration-200"
+                  onClick={() => {
+                    trackNavigation("careers_mobile", "/careers");
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  Careers
                 </Link>
               </div>
 
