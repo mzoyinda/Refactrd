@@ -93,7 +93,7 @@ export const jobs: Job[] = [
     ],
     closingStatement:
       "If you want to grow in sales the right way, this is a real opportunity.",
-    applicationLink: "https://forms.gle/your-sales-intern-application-form",
+    applicationLink: "https://forms.gle/pfid7M2WwGzo2w5N9",
   },
   // Add more jobs here in the future
   // {
