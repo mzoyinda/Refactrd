@@ -107,7 +107,7 @@ export default function PainPointsQuestion({
         disabled={!canSubmit}
         className={`inline-flex items-center gap-2 px-8 py-4 rounded-full font-clash font-bold transition-all duration-300 ${
           canSubmit
-            ? 'bg-[#5B6CFF] text-white hover:bg-[#1F2A44] hover:scale-105'
+            ? 'bg-secondary text-white hover:bg-[#1F2A44] hover:scale-105'
             : 'bg-[#E6EAF0] text-[#64748B] cursor-not-allowed'
         }`}
       >
@@ -115,7 +115,7 @@ export default function PainPointsQuestion({
         <ArrowRight className="w-5 h-5" />
       </button>
 
-      <p className="mt-4 text-sm text-[#64748B]">
+      <p className="font-clash mt-4 text-sm text-[#64748B]">
         Selected {selected.length} pain point{selected.length !== 1 ? 's' : ''}
       </p>
     </div>
