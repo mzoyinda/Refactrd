@@ -102,7 +102,7 @@ export default function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
               </Link>
 
-                <Link
+              <Link
                 href="/careers"
                 onClick={() => trackNavigation("careers", "/careers")}
                 className="text-secondary font-clash font-semibold text-[16px] hover:text-[#A2D2FF] transition-colors duration-200 relative group"
@@ -113,7 +113,28 @@ export default function Header() {
             </div>
 
             {/* CTA Button - Desktop */}
-            <div className="hidden lg:flex items-center">
+            {/* <div className="hidden lg:flex items-center">
+              <Link
+                href="https://cal.com/refactrd/technical-discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackCTAClick("header_book_call", "cal.com")}
+                className="inline-flex items-center justify-center px-7 py-3 bg-secondary text-white rounded-full font-clash font-semibold text-[15px] hover:bg-[#A2D2FF] transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                Book a Call
+              </Link>
+            </div> */}
+            <div className="hidden lg:flex items-center gap-4">
+              <Link
+                href="/pricing-calculator"
+                onClick={() =>
+                  trackNavigation("get_quote", "/pricing-calculator")
+                }
+                className="inline-flex items-center justify-center px-7 py-3 bg-white text-secondary border-2 border-secondary rounded-full font-clash font-semibold text-[15px] hover:bg-secondary hover:text-white transition-all duration-300 hover:scale-105"
+              >
+                Get a Quote
+              </Link>
+
               <Link
                 href="https://cal.com/refactrd/technical-discovery-call"
                 target="_blank"
@@ -209,7 +230,7 @@ export default function Header() {
                 >
                   Projects
                 </Link>
-                 <Link
+                <Link
                   href="/careers"
                   className="block px-4 py-3 text-secondary font-clash font-semibold hover:bg-tertiary rounded-lg transition-colors duration-200"
                   onClick={() => {

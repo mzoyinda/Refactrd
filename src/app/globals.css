@@ -141,7 +141,7 @@ input,
 textarea,
 button,
 select {
-  background: transparent;
+  /* background: transparent; */
   font-family: inherit;
   font-size: inherit;
   border: none;
