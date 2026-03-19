@@ -149,7 +149,7 @@ export const jobs: Job[] = [
     },
 
     remuneration: [
-      "Monthly Stipend: ₦70,000 – ₦100,000 (based on experience and performance)",
+      "Monthly Stipend: ₦70,000",
       "6-Month Internship",
       "Remote (Nigeria only)",
       "Opportunity for full-time conversion based on performance",
