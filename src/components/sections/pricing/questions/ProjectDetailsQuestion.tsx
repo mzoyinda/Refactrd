@@ -2,7 +2,7 @@
 
 import { Check } from 'lucide-react';
 import { ProjectDetail } from '@/data/pricingCalculator';
-import { Currency, formatPriceRange } from '@/lib/currencyUtils';
+import { Currency } from '@/lib/currencyUtils';
 import { trackEvent } from '@/lib/analytics';
 
 interface ProjectDetailsQuestionProps {
@@ -31,7 +31,7 @@ export default function ProjectDetailsQuestion({
         <button
           key={detail.id}
           onClick={() => handleSelect(detail)}
-          className="group text-left p-6 bg-white rounded-2xl border-2 border-[#CBD5E1] hover:border-[#5B6CFF] hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+          className="group text-left p-6 bg-white rounded-2xl border-2 border-[#CBD5E1]  hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
         >
           {/* Title */}
           <h3 className="text-xl font-clash font-bold text-[#1F2A44] mb-2 transition-colors duration-300">
@@ -41,21 +41,9 @@ export default function ProjectDetailsQuestion({
           {/* Description */}
           <p className="font-clash text-[#64748B] text-sm mb-4">{detail.description}</p>
 
-          {/* Price estimate */}
-          <div className="pt-4 border-t border-[#E6EAF0] flex items-center justify-between">
-            <div>
-              <p className="font-clash text-xs text-[#64748B] mb-1">Estimated range</p>
-              <p className="text-lg font-clash font-medium">
-                {formatPriceRange(
-                  detail.estimatedPrice.min,
-                  detail.estimatedPrice.max,
-                  currency
-                )}
-              </p>
-            </div>
-
-            {/* Select indicator */}
-            <div className="w-10 h-10 rounded-full border-2 border-[#CBD5E1] group-hover:border-[#A2D2FF] group-hover:bg-[#A2D2FF] flex items-center justify-center transition-all duration-300">
+          {/* Select indicator */}
+          <div className="pt-4 border-t border-[#E6EAF0] flex items-center justify-end">
+            <div className="w-10 h-10 rounded-full border-2 border-[#CBD5E1] group-hover:border-primary group-hover:bg-primary flex items-center justify-center transition-all duration-300">
               <Check className="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>

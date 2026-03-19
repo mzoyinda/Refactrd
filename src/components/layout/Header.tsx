@@ -125,7 +125,7 @@ export default function Header() {
               </Link>
             </div> */}
             <div className="hidden lg:flex items-center gap-4">
-              <Link
+              {/* <Link
                 href="/pricing-calculator"
                 onClick={() =>
                   trackNavigation("get_quote", "/pricing-calculator")
@@ -133,7 +133,7 @@ export default function Header() {
                 className="inline-flex items-center justify-center px-7 py-3 bg-white text-secondary border-2 border-secondary rounded-full font-clash font-semibold text-[15px] hover:bg-secondary hover:text-white transition-all duration-300 hover:scale-105"
               >
                 Get a Quote
-              </Link>
+              </Link> */}
 
               <Link
                 href="https://cal.com/refactrd/technical-discovery-call"

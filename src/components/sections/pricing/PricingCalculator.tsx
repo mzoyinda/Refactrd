@@ -1,9 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { Currency, detectCurrency } from '@/lib/currencyUtils';
+import { calculatePricing } from '@/lib/pricingCalculation';
+import { submitPricingCalculatorLead } from '@/app/actions/submitPricingCalculator';
 import {
   websiteDetails,
   operationalDetails,
@@ -23,8 +25,7 @@ import SupportQuestion from './questions/SupportQuestion';
 import BudgetQuestion from './questions/BudgetQuestion';
 import PainPointsQuestion from './questions/PainPointsQuestion';
 import ContactForm from './questions/ContactForm';
-import ResultsPage from './ResultsPage';
-import { calculatePricing, CalculationResult } from '@/lib/pricingCalculation';
+import ThankYouPage from './ThankYouPage';
 
 interface CalculatorState {
   currentStep: number;
@@ -43,7 +44,7 @@ interface CalculatorState {
       phone?: string;
     };
   };
-  result?: CalculationResult;
+  isSubmitted: boolean;
 }
 
 export default function PricingCalculator() {
@@ -52,14 +53,17 @@ export default function PricingCalculator() {
     currentStep: 0,
     path: 'main',
     answers: {},
+    isSubmitted: false,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const startTimeRef = useRef<number>(Date.now());
 
   // Detect currency on mount
   useEffect(() => {
     const detected = detectCurrency();
     setCurrency(detected);
+    startTimeRef.current = Date.now();
 
-    // Track calculator started
     trackEvent('pricing_calculator_started', {
       source: 'pricing_calculator_page',
       detected_currency: detected,
@@ -68,6 +72,10 @@ export default function PricingCalculator() {
 
   const handleBack = () => {
     if (state.currentStep > 0) {
+      trackEvent('pricing_calculator_back_used', {
+        from_step: state.currentStep,
+        to_step: state.currentStep - 1,
+      });
       setState((prev) => ({
         ...prev,
         currentStep: prev.currentStep - 1,
@@ -133,33 +141,61 @@ export default function PricingCalculator() {
     }));
   };
 
-  const handleContactSubmit = (contactInfo: {
+  const handleContactSubmit = async (contactInfo: {
     name: string;
     email: string;
     company?: string;
     phone?: string;
   }) => {
-    // Calculate results
-    const result = calculatePricing(state.answers);
+    setIsSubmitting(true);
 
-    // Track completion
-    trackEvent('pricing_calculator_completed', {
-      project_type: state.answers.projectType,
-      path: state.path,
-      estimated_range: `${result.estimatedRange.min}-${result.estimatedRange.max}`,
-      has_support: !!state.answers.support && state.answers.support !== 'none',
-      lead_captured: true,
-    });
+    try {
+      // Calculate results
+      const result = calculatePricing(state.answers);
 
-    setState((prev) => ({
-      ...prev,
-      currentStep: state.path === 'main' ? 5 : 6,
-      answers: { ...prev.answers, contactInfo },
-      result,
-    }));
+      // Calculate time to complete
+      const completionTime = Math.round((Date.now() - startTimeRef.current) / 1000);
+
+      // Track completion
+      trackEvent('pricing_calculator_completed', {
+        project_type: state.answers.projectType || 'unknown',
+        path: state.path,
+        estimated_range: `${result.estimatedRange.min}-${result.estimatedRange.max}`,
+        has_support: !!state.answers.support && state.answers.support !== 'none',
+        currency,
+        time_to_complete_seconds: completionTime,
+      });
+
+      // Submit to server action
+      const response = await submitPricingCalculatorLead({
+        contactInfo: {
+          ...contactInfo,
+          company: contactInfo.company ?? '',
+          phone: contactInfo.phone ?? '',
+        },
+        result,
+        currency,
+        completionTimeSeconds: completionTime,
+      });
+
+      if (response.success) {
+        // Update state to show thank you page
+        setState((prev) => ({
+          ...prev,
+          answers: { ...prev.answers, contactInfo },
+          isSubmitted: true,
+        }));
+      } else {
+        throw new Error(response.error || 'Submission failed');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Failed to submit. Please try again or contact us at hello@refactrd.com');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  // Get project details options based on type
   const getProjectDetailsOptions = () => {
     switch (state.answers.projectType) {
       case 'website':
@@ -175,48 +211,12 @@ export default function PricingCalculator() {
     }
   };
 
-  // Calculate total steps
   const totalSteps = state.path === 'main' ? 5 : 4;
-  const showResults = state.result && state.answers.contactInfo;
 
-  // Track drop-off when user leaves
-  useEffect(() => {
-    const handleBeforeUnload = () => {
-      if (!showResults && state.currentStep > 0) {
-        trackEvent('pricing_calculator_abandoned', {
-          last_step: state.currentStep,
-          last_question: getCurrentQuestionName(),
-        });
-      }
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, [state.currentStep, showResults]);
-
-  const getCurrentQuestionName = () => {
-    if (state.path === 'main') {
-      const questions = ['project_type', 'project_details', 'timeline', 'support', 'contact'];
-      return questions[state.currentStep] || 'unknown';
-    } else {
-      const questions = ['project_type', 'budget', 'pain_points', 'contact'];
-      return questions[state.currentStep] || 'unknown';
-    }
-  };
-
-  // Show results page
-  if (showResults && state.result && state.answers.contactInfo) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-[#E6EAF0] via-white to-white py-32 px-6">
-        <div className="container-custom">
-          <ResultsPage
-            result={state.result}
-            currency={currency}
-            contactInfo={state.answers.contactInfo}
-          />
-        </div>
-      </div>
-    );
+  // Show thank you page after submission
+  if (state.isSubmitted && state.answers.contactInfo) {
+    const { name, email, company = '', phone = '' } = state.answers.contactInfo;
+    return <ThankYouPage contactInfo={{ name, email, company, phone }} />;
   }
 
   return (
@@ -224,8 +224,7 @@ export default function PricingCalculator() {
       <div className="container-custom max-w-6xl">
         {/* Header */}
         <div className="flex items-center justify-between mb-12">
-          {/* Back button */}
-          {state.currentStep > 0 && (
+          {state.currentStep > 0 && !isSubmitting && (
             <button
               onClick={handleBack}
               className="inline-flex items-center gap-2 text-[#64748B] hover:text-[#5B6CFF] transition-colors duration-300 group"
@@ -235,7 +234,6 @@ export default function PricingCalculator() {
             </button>
           )}
 
-          {/* Currency selector */}
           <div className="ml-auto">
             <CurrencySelector
               selectedCurrency={currency}
@@ -249,7 +247,6 @@ export default function PricingCalculator() {
 
         {/* Questions */}
         <AnimatePresence mode="wait">
-          {/* Step 0: Project Type */}
           {state.currentStep === 0 && (
             <QuestionCard
               key="project-type"
@@ -263,10 +260,8 @@ export default function PricingCalculator() {
             </QuestionCard>
           )}
 
-          {/* Main Path */}
           {state.path === 'main' && (
             <>
-              {/* Step 1: Project Details */}
               {state.currentStep === 1 && (
                 <QuestionCard
                   key="project-details"
@@ -281,7 +276,6 @@ export default function PricingCalculator() {
                 </QuestionCard>
               )}
 
-              {/* Step 2: Timeline */}
               {state.currentStep === 2 && (
                 <QuestionCard
                   key="timeline"
@@ -292,7 +286,6 @@ export default function PricingCalculator() {
                 </QuestionCard>
               )}
 
-              {/* Step 3: Support */}
               {state.currentStep === 3 && (
                 <QuestionCard
                   key="support"
@@ -306,23 +299,23 @@ export default function PricingCalculator() {
                 </QuestionCard>
               )}
 
-              {/* Step 4: Contact Form */}
               {state.currentStep === 4 && (
                 <QuestionCard
                   key="contact"
                   question="Almost there! How can we reach you?"
                   description="We'll send your custom estimate to this email"
                 >
-                  <ContactForm onSubmit={handleContactSubmit} />
+                  <ContactForm
+                    onSubmit={handleContactSubmit}
+                    isSubmitting={isSubmitting}
+                  />
                 </QuestionCard>
               )}
             </>
           )}
 
-          {/* Not Sure Path */}
           {state.path === 'notSure' && (
             <>
-              {/* Step 1: Budget */}
               {state.currentStep === 1 && (
                 <QuestionCard
                   key="budget"
@@ -336,7 +329,6 @@ export default function PricingCalculator() {
                 </QuestionCard>
               )}
 
-              {/* Step 2: Pain Points */}
               {state.currentStep === 2 && (
                 <QuestionCard
                   key="pain-points"
@@ -347,14 +339,16 @@ export default function PricingCalculator() {
                 </QuestionCard>
               )}
 
-              {/* Step 3: Contact Form */}
               {state.currentStep === 3 && (
                 <QuestionCard
                   key="contact-notSure"
                   question="How can we reach you?"
                   description="We'll send you personalized recommendations"
                 >
-                  <ContactForm onSubmit={handleContactSubmit} />
+                  <ContactForm
+                    onSubmit={handleContactSubmit}
+                    isSubmitting={isSubmitting}
+                  />
                 </QuestionCard>
               )}
             </>

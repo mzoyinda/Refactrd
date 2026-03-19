@@ -64,7 +64,7 @@ export default function ProjectTypeQuestion({
             </p>
 
             {/* Price range */}
-            {projectType.priceRange.min > 0 && (
+            {/* {projectType.priceRange.min > 0 && (
               <div className="pt-4 border-t border-[#E6EAF0]">
                 <p className="font-clash text-sm text-[#64748B] mb-1">Starting from</p>
                 <p className="text-lg font-clash font-medium">
@@ -75,7 +75,7 @@ export default function ProjectTypeQuestion({
                   )}
                 </p>
               </div>
-            )}
+            )} */}
           </button>
 
           {/* Tooltip popover */}
@@ -107,7 +107,7 @@ export default function ProjectTypeQuestion({
 
                 {projectType.priceRange.min > 0 && (
                   <div className="pt-4 border-t border-[#E6EAF0]">
-                    <div className="flex items-center justify-between text-sm mb-2">
+                    {/* <div className="flex items-center justify-between text-sm mb-2">
                       <span className="font-clash text-[#64748B]">Investment range</span>
                       <span className="font-clash font-semibold text-[#1F2A44]">
                         {formatPriceRange(
@@ -116,7 +116,7 @@ export default function ProjectTypeQuestion({
                           currency
                         )}
                       </span>
-                    </div>
+                    </div> */}
                     <div className="flex items-center justify-between text-sm">
                       <span className="font-clash text-[#64748B]">Typical timeline</span>
                       <span className="font-clash font-semibold text-[#1F2A44]">
