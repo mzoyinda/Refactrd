@@ -6,6 +6,7 @@ import {
   supportOptions,
   budgetOptions,
   projectTypes,
+  ProjectDetail, // Import the type
 } from '@/data/pricingCalculator';
 
 export interface CalculationResult {
@@ -50,8 +51,8 @@ export function calculatePricing(answers: {
     throw new Error('Invalid project type');
   }
 
-  // Get project details
-  let detailsOptions = [];
+  // Get project details - FIX: Add explicit type
+  let detailsOptions: ProjectDetail[] = [];
   switch (answers.projectType) {
     case 'website':
       detailsOptions = websiteDetails;
