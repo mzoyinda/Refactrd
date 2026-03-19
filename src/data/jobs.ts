@@ -102,7 +102,7 @@ export const jobs: Job[] = [
     department: "Growth & Marketing",
     location: "Remote (Nigeria only)",
     type: "6-Month Internship",
-    salary: "₦70,000 – ₦100,000/month",
+    salary: "₦70,000/month",
     shortDescription:
       "Design high-quality visuals for social media, marketing assets, and pitch decks while helping shape Refactrd’s brand across platforms.",
 
