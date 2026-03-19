@@ -75,7 +75,6 @@ export default function OpenPositions() {
                 style={{ transitionDelay: `${300 + index * 100}ms` }}
               >
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                  {/* Left: Position Info */}
                   <div className="flex-1">
                     <h3 className="text-2xl font-clash font-bold text-[#1F2A44] mb-2  transition-colors duration-300">
                       {job.title}
@@ -99,7 +98,6 @@ export default function OpenPositions() {
                     </p>
                   </div>
 
-                  {/* Right: Apply Button */}
                   <div className="flex-shrink-0">
                     <div className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white rounded-full font-clash font-semibold group-hover:bg-[#1F2A44] transition-all duration-300 group-hover:gap-3 cursor-pointer">
                       <span>View Details</span>
@@ -108,13 +106,11 @@ export default function OpenPositions() {
                   </div>
                 </div>
 
-                {/* Bottom border animation */}
                 <div className="mt-6 h-1 bg-gradient-to-r from-[#A2D2FF] to-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full" />
               </Link>
             ))}
           </div>
         ) : (
-          /* No positions fallback */
           <div className="text-center py-16 bg-white rounded-2xl border-2 border-[#CBD5E1]">
             <Briefcase className="w-16 h-16 text-[#64748B] mx-auto mb-4" />
             <h3 className="text-2xl font-clash font-bold text-[#1F2A44] mb-3">

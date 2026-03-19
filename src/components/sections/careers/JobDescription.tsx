@@ -297,6 +297,40 @@ export default function JobDescription({ job }: JobDescriptionProps) {
             </p>
           </div>
 
+            <div
+            className={`bg-white rounded-2xl p-8 lg:p-10 border-2 border-[#CBD5E1] transition-all duration-700 delay-850 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <h2 className="text-3xl font-clash font-bold text-[#1F2A44] mb-6">
+              Interview Process
+            </h2>
+            <p className="text-[#64748B] font-clash mb-8 leading-relaxed">
+              Our hiring process is simple and focused on real work.
+            </p>
+
+            <div className="space-y-6">
+              {job.interviewProcess.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-4 p-6 bg-[#E6EAF0]/30 rounded-xl border-2 border-transparent hover:border-secondary transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center font-clash font-bold text-xl flex-shrink-0">
+                    {item.step}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-clash font-bold text-[#1F2A44] mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-[#64748B] font-clash leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Apply CTA - Bottom */}
           <div
             className={`bg-white rounded-2xl p-8 lg:p-10 border-2 border-[#A2D2FF] text-center transition-all duration-700 delay-900 ${
