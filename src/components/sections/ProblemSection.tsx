@@ -14,7 +14,7 @@ export default function ProblemSection() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -49,10 +49,8 @@ export default function ProblemSection() {
                   className="object-cover"
                   priority
                 />
-               
               </div>
 
-          
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
 
@@ -78,7 +76,7 @@ export default function ProblemSection() {
             <div className="space-y-6">
               {/* Feature 1 */}
               <div className="flex items-start gap-4 group cursor-pointer">
-                <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center group-hover:bg-[#A2D2FF] transition-colors duration-300 group-hover:scale-110 transform">
+                <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center  duration-300 group-hover:scale-110 transform">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -94,18 +92,18 @@ export default function ProblemSection() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="heading-sm text-secondary mb-2 group-hover:text-[#A2D2FF] transition-colors duration-300">
-                    We Handle the Complexity
+                  <h3 className="heading-sm text-secondary mb-2">
+                    Your team is wasting time on manual work
                   </h3>
-                  <p className="font-montserrat text-secondary/70">
-                    Most teams know what they want to build but not the operational burden that comes with it. We remove the need to hire, manage, and coordinate across engineering, infrastructure, and documentation.
+                  <p className="font-jakarta tracking-[-0.02em] text-secondary/75">
+                    Work that should take minutes ends up taking hours because tasks keep repeating, information is hard to find, and people rely on each other for things that should be instant. Over time, even simple processes become slower and less consistent, making it harder for your team to move as fast as it should.
                   </p>
                 </div>
               </div>
 
               {/* Feature 2 */}
               <div className="flex items-start gap-4 group cursor-pointer">
-                <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center group-hover:bg-[#A2D2FF] transition-colors duration-300 group-hover:scale-110 transform">
+                <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center duration-300 group-hover:scale-110 transform">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -121,18 +119,21 @@ export default function ProblemSection() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="heading-sm text-secondary mb-2 group-hover:text-[#A2D2FF] transition-colors duration-300">
-                    Built Once. Built Right.
+                  <h3 className="heading-sm text-secondary mb-2 duration-300">
+                    You know AI can help, but you do not know where to start
                   </h3>
-                  <p className="font-montserrat text-secondary/70">
-                    From architecture to delivery, we take full ownership so the software you ship is stable, documented, and designed to grow with your business.
+                  <p className="font-jakarta tracking-[-0.02em] text-secondary/75">
+                    There is a lot of noise around AI. Most teams do not need a
+                    full AI strategy or a platform rebuild. They need one
+                    focused improvement that actually works, something that
+                    saves real time and shows real results. That is exactly what
+                    we deliver.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* CTA Button */}
-           
           </div>
         </div>
       </div>

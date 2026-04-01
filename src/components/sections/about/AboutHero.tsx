@@ -43,7 +43,7 @@ export default function AboutHero() {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              Software built to trust, understand & last
+              We build AI that actually works for your team.
             </h1>
 
             {/* Description */}
@@ -54,7 +54,7 @@ export default function AboutHero() {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              ✱ A professional engineering studio partnering with businesses since
+              ✱ A professional AI engineering studio partnering with businesses since
               2023
             </p>
 
@@ -133,17 +133,13 @@ export default function AboutHero() {
               }`}
             >
               <h3 className="text-xl font-clash font-bold text-[#1F2A44] mb-4">
-                Built around one principle
+                Built around one idea
               </h3>
               <p className="font-clash text-base text-[#64748B] leading-relaxed mb-4">
-                Refactrd is a software delivery company built around one principle:
-                software should be easy to trust, easy to understand, and built to
-                last.
+                Refactrd exists because most companies know AI can help their team, they just do not know where to start, what to build, or who to trust with it.
               </p>
               <p className="font-clash text-base text-[#64748B] leading-relaxed mb-6">
-                We partner with businesses that need software built or improved,
-                and want the confidence that it is being handled properly from
-                start to finish.
+                We created Refactrd to be the answer to that problem. We come in, learn how your team works, identify the highest-impact place for AI, and build it. Fast. Then we grow from there.
               </p>
               <Link
                 href="https://cal.com/refactrd/technical-discovery-call"

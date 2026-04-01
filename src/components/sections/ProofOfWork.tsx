@@ -2,46 +2,73 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
-import Image from "next/image";
-
-const workCategories = [
-  "Customer-facing applications",
-  "Internal business and operational systems",
-  "Automated workflows",
-  "Technical documentation and onboarding materials",
-];
+import { ArrowRight, Sparkles, ChevronRight } from "lucide-react";
 
 const projects = [
   {
-    title: "SongDis",
-    description: "A music distribution platform connecting artists with global streaming services",
-    category: "Web Application",
-    image: "/images/songdis-cover.png",
-    href: "https://songdis.com",
-    
-  },
-  {
+    id: 1,
+    category: "AI · Document Automation",
     title: "AI Contract Generator",
-    description: "The AI Contract Generator is an AI-powered web application built to allow users to create professional contracts efficiently",
-    category: "AI",
-    image: "/images/ai-contract-read-cover.png",
-    href: "https://ai-contract-generator-five.vercel.app/",
+    description:
+      "A web application that generates fully structured, professional contracts in seconds from user input. No manual templates, the AI interprets the requirements and produces a ready-to-use document.",
+    whatReplaced:
+      "Hours spent manually drafting, reviewing, and formatting legal documents from scratch.",
+    tags: ["AI Generation", "Document Automation", "Legal Tech"],
   },
   {
-    title: "AI- poweredFraud Detection & AML System",
-    description: "An AI-driven fraud monitoring and detection tool. It provides real-time detection across multiple channels, monitors transactions for AML/CTF risks, offers explainable AI outputs for regulatory acceptance, and automates compliance workflows to reduce operational costs.",
-    category: "AI",
-    image: "/images/fraud-new.png",
-    href: "/",
-  },
- {
-    title: "WriteTech Hub",
+    id: 2,
+    category: "AI · Compliance & Risk",
+    title: "AI Fraud Detection & AML System",
     description:
-      "Technical writing platform and documentation management system for engineering teams.",
-    category: "Website",
-    image: "/images/wth.png",
-    href: "https://writetechhub.org",
+      "A machine learning system that monitors transactions in real time, flags suspicious activity, and generates explainable outputs for compliance teams, reducing manual review while improving accuracy.",
+    whatReplaced:
+      "Manual transaction review and fragmented AML compliance workflows across multiple teams.",
+    tags: [
+      "Machine Learning",
+      "Real-Time Detection",
+      "AML Compliance",
+      "Fintech",
+    ],
+  },
+  {
+    id: 3,
+    category: "AI · Sales Intelligence",
+    title: "AI Sales Intelligence Tool",
+    description:
+      "An AI system that scores inbound leads automatically, surfaces deal risks before they go cold, and gives sales teams a live view of pipeline health, without manually updating a single spreadsheet or CRM field.",
+    whatReplaced:
+      "Manual lead qualification, inconsistent follow-up, and hours spent updating CRM records that were already out of date.",
+    tags: ["AI Scoring", "Pipeline Intelligence", "Sales Tech", "CRM Automation"],
+  },
+  {
+    id: 4,
+    category: "AI · RAG System",
+    title: "AI Legal Research Assistant",
+    description:
+      "An internal AI assistant built for a law firm,  trained on case law, internal precedents, and regulatory documents. Lawyers ask questions in plain language and get sourced answers in seconds instead of hours.",
+    whatReplaced:
+      "Hours of manual research across filing systems, databases, and document libraries.",
+    tags: ["RAG System", "Internal Copilot", "Legal Tech", "Knowledge Retrieval"],
+  },
+  {
+    id: 5,
+    category: "AI · Workflow Automation",
+    title: "AI Onboarding Copilot",
+    description:
+      "An AI-powered system that guides new employees through their first weeks automatically, delivering the right information at the right time, answering questions instantly, and escalating to a human only when genuinely needed.",
+    whatReplaced:
+      "Manual onboarding coordination, repeated messages, and inconsistent first-week experiences across hires.",
+    tags: ["Workflow Automation", "AI Assistant", "HR Tech", "Onboarding"],
+  },
+  {
+    id: 6,
+    category: "AI · E-commerce · Agentic",
+    title: "AI Shopping Agent",
+    description:
+      "An agentic AI system embedded into an e-commerce platform that handles product discovery, personalised recommendations, and post-purchase follow-up autonomously, responding to customer behaviour in real time without any manual input from the team.",
+    whatReplaced:
+      "Generic product listings, manual upsell campaigns, and a support team fielding repeat order and tracking queries every day.",
+    tags: ["Agentic AI", "Product AI", "E-commerce", "Personalisation"],
   },
 ];
 
@@ -66,160 +93,118 @@ export default function ProofOfWork() {
     return () => observer.disconnect();
   }, []);
 
-  const getCategoryColor = (category: string) => {
-    switch (category.toLowerCase()) {
-      case "web application":
-        return "bg-accent text-white";
-      case "website":
-        return "bg-primary text-secondary";
-      case "ai":
-        return "bg-[#10B981] text-white";
-      default:
-        return "bg-tertiary text-secondary";
-    }
-  };
-
   return (
-    <section
-      ref={sectionRef}
-      className="section-padding bg-white"
-      id="work"
-    >
-      <div className="container-custom">
-        {/* Section header */}
-        <div className="max-w-3xl mb-16">
+    <section ref={sectionRef} className="section-padding bg-white" id="work">
+      <div className="container-custom max-w-7xl">
+        {/* Header */}
+        <div className="max-w-4xl mb-16">
+          {/* Section Label */}
+         
+
           <h2
-            className={`heading-lg text-secondary mb-6 transition-all duration-700 ${
+            className={`text-4xl lg:text-6xl font-clash font-bold text-[#1F2A44] mb-6 leading-tight transition-all duration-1000 ease-out delay-100 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
           >
-            Excellence from Concept to Completion
+            We Build AI Systems That Work in the Real World
           </h2>
+
           <p
-            className={`body-lg text-[#64748B] mb-8 transition-all duration-700 delay-200 ${
+            className={`text-lg lg:text-[18px] text-black leading-relaxed font-jakarta tracking-[-0.03em] transition-all duration-1000 ease-out delay-200 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
           >
-            Turning visionary ideas into impactful realities with precision and passion.
-          </p>
-          <p
-            className={`body-lg text-[#64748B] transition-all duration-700 delay-300 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            }`}
-          >
-            We have delivered software products, internal systems, automations,
-            and documentation for organizations at different stages.
+            A focused selection of AI systems and automation tools we have
+            delivered. Each one started with a discovery conversation and
+            shipped within a defined scope and timeline.
           </p>
         </div>
 
-        {/* Work categories */}
-        <div
-          className={`bg-tertiary/30 rounded-2xl p-8 lg:p-10 mb-12 transition-all duration-700 delay-400 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <h3 className="text-xl font-clash font-semibold text-secondary mb-6">
-            Our work includes:
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {workCategories.map((category, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3"
-              >
-                <div className="w-2 h-2 bg-accent rounded-full" />
-                <p className="font-clash text-[#0F172A]">{category}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        {/* Projects Grid - 2 Columns */}
+        <div className="grid lg:grid-cols-2 gap-6 mb-12">
           {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.href}
-              className={`group relative overflow-hidden rounded-2xl bg-white border-2 border-[#CBD5E1] hover:border-[#A2D2FF] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${
+            <div
+              key={project.id}
+              className={`group relative overflow-hidden rounded-2xl border-2 border-[#CBD5E1] hover:border-[#0e5d7d] transition-all duration-500 hover:shadow-xl bg-white ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
               }`}
-              style={{ transitionDelay: `${500 + index * 100}ms` }}
+              style={{ transitionDelay: `${400 + index * 100}ms` }}
             >
-              {/* Project Image */}
-              <div className="relative aspect-[16/10] bg-gradient-to-br from-tertiary to-tertiary-dark overflow-hidden">
-               
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <ExternalLink className="w-16 h-16 text-secondary/20 mx-auto mb-4" />
-                    <p className="text-secondary/40 font-jakarta text-sm">
-                      Project Image
-                    </p>
+              <div className="p-8">
+                {/* Category Badge */}
+                <div className="mb-4">
+                  <div className="inline-flex items-center px-3 py-1.5 bg-[#E6EAF0] text-[#1F2A44] text-xs font-clash font-bold rounded-full">
+                    {project.category}
                   </div>
                 </div>
-               
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-               
-                
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className={`font-clash inline-block px-4 py-2 rounded-full text-sm font-semibold ${getCategoryColor(project.category)}`}>
-                    {project.category}
-                  </span>
-                </div>
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-secondary/0 group-hover:bg-secondary/20 transition-all duration-500" />
-              </div>
-
-              {/* Project Info */}
-              <div className="p-6 lg:p-8">
-                <h3 className="text-2xl font-clash font-bold text-secondary mb-3 group-hover:text-[#A2D2FF] transition-colors duration-300">
+                {/* Title */}
+                <h3 className="text-2xl font-clash font-bold text-[#1F2A44] mb-3 group-hover:text-[#0e5d7d] transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="font-clash text-[#64748B] mb-4 leading-relaxed">
+
+                {/* Description */}
+                <p className="text-secondary leading-relaxed mb-6 font-jakarta tracking-[-0.03em]">
                   {project.description}
                 </p>
 
+                {/* What it Replaced */}
+                <div className="mb-6 p-4 bg-[#E6EAF0]/30 rounded-lg border-l-4 border-[#0e5d7d]">
+                  <p className="text-xs font-clash font-bold text-secondary mb-2">
+                    What it replaced
+                  </p>
+                  <p className="text-sm text-[#1F2A44] font-jakarta tracking-[-0.03em] leading-relaxed">
+                    {project.whatReplaced}
+                  </p>
+                </div>
+
                 {/* Tags */}
-                
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className={`px-3 py-1 text-xs font-clash font-semibold rounded-full bg-white border border-[#CBD5E1] text-[#64748B]`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
                 {/* View Project Link */}
-                <div className="font-clash flex items-center gap-2 text-[#1F2A44] font-semibold group-hover:gap-3 transition-all duration-300">
-                  <span>View Project</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <div className="flex items-center gap-2 text-[#0e5d7d] font-clash font-semibold group-hover:gap-3 transition-all duration-300 cursor-pointer">
+                  <span>View Details</span>
+                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
               </div>
-            </a>
+
+              {/* Bottom border animation */}
+              
+            </div>
           ))}
         </div>
 
         {/* Bottom CTA */}
         <div
-          className={`text-center transition-all duration-700 delay-900 ${
+          className={`text-center transition-all duration-1000 ease-out delay-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="font-clash text-lg text-[#64748B] mb-6">
-            Selected projects and case studies are available below
+          <p className="font-jakarta tracking-[-0.03em] text-lg text-black mb-6">
+            Ready to build with Refactrd?
           </p>
           <Link
-            href="/projects"
-            className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
+            href="https://cal.com/refactrd/technical-discovery-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold hover:bg-[#0e5d7d] transition-all duration-300 hover:scale-105 group"
           >
-            View our work
+            Book a Free AI Mapping Call
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>

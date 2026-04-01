@@ -69,7 +69,7 @@ export default function Header() {
               <Link
                 href="/"
                 onClick={() => trackNavigation("home", "/")}
-                className="text-secondary font-clash font-semibold text-[16px] hover:text-[#A2D2FF] transition-colors duration-200 relative group"
+                className="text-secondary font-clash font-semibold text-[16px]  transition-colors duration-200 relative group"
               >
                 Home
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
@@ -78,7 +78,7 @@ export default function Header() {
               <Link
                 href="/about"
                 onClick={() => trackNavigation("about", "/about")}
-                className="text-secondary font-clash font-semibold text-[16px] hover:text-[#A2D2FF] transition-colors duration-200 relative group"
+                className="text-secondary font-clash font-semibold text-[16px]  transition-colors duration-200 relative group"
               >
                 About
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
@@ -87,7 +87,7 @@ export default function Header() {
               <Link
                 href="/services"
                 onClick={() => trackNavigation("services", "/services")}
-                className="text-secondary font-clash font-semibold text-[16px] hover:text-[#A2D2FF] transition-colors duration-200 relative group"
+                className="text-secondary font-clash font-semibold text-[16px]  transition-colors duration-200 relative group"
               >
                 Services
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
@@ -96,7 +96,7 @@ export default function Header() {
               <Link
                 href="/projects"
                 onClick={() => trackNavigation("projects", "/projects")}
-                className="text-secondary font-clash font-semibold text-[16px] hover:text-[#A2D2FF] transition-colors duration-200 relative group"
+                className="text-secondary font-clash font-semibold text-[16px]  transition-colors duration-200 relative group"
               >
                 Projects
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
@@ -105,7 +105,7 @@ export default function Header() {
               <Link
                 href="/careers"
                 onClick={() => trackNavigation("careers", "/careers")}
-                className="text-secondary font-clash font-semibold text-[16px] hover:text-[#A2D2FF] transition-colors duration-200 relative group"
+                className="text-secondary font-clash font-semibold text-[16px]  transition-colors duration-200 relative group"
               >
                 Careers
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
@@ -248,7 +248,7 @@ export default function Header() {
                   href="https://cal.com/refactrd/technical-discovery-call"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center px-7 py-4 bg-secondary text-white rounded-full font-clash font-semibold hover:bg-[#A2D2FF] transition-all duration-300"
+                  className="block w-full text-center px-7 py-4 bg-secondary text-white rounded-full font-clash font-semibold  transition-all duration-300"
                   onClick={() => {
                     trackCTAClick("header_book_call", "cal.com");
                     setMobileMenuOpen(false);

@@ -43,7 +43,7 @@ export default function ProjectsHero() {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              Building reliable software, systems & automation
+              AI systems built for real operations.
             </h1>
 
             {/* Description */}
@@ -54,7 +54,7 @@ export default function ProjectsHero() {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              ✱ We are a professional software delivery team working with
+              ✱ We are a professional AI engineers working with
               clarity and precision since 2023
             </p>
 
@@ -135,10 +135,7 @@ export default function ProjectsHero() {
               }`}
             >
               <p className="font-clash text-base text-[#64748B] leading-relaxed mb-6">
-                We deliver customer-facing applications, internal systems,
-                automation workflows, and comprehensive technical documentation.
-                Every project is handled with senior expertise and complete
-                ownership from start to finish.
+                Every project here started with a specific problem, a workflow that was too slow, a process that kept repeating, a product that needed to be smarter. We diagnosed it, scoped it, and built something that works.
               </p>
               <Link
                 href="https://cal.com/refactrd/technical-discovery-call"

@@ -6,14 +6,15 @@ import WhyWorkHere from "@/components/sections/careers/WhyWorkHere";
 
 
 export const metadata = {
-  title: "Careers | Join Refactrd - Software Engineering Opportunities",
+  title: "Careers | Join Refactrd - AI Engineering Opportunities",
   description:
-    "Join our team of talented engineers building reliable software. Explore career opportunities at Refactrd including internships and full-time positions.",
+    "Join our team of talented AI engineers building reliable AI products and systems. Explore career opportunities at Refactrd including internships and full-time positions.",
   keywords: [
     "careers",
     "jobs",
-    "software engineering careers",
+    "AI engineering careers",
     "sales intern",
+    "ai engineering jobs",
     "remote jobs",
     "tech careers",
   ],

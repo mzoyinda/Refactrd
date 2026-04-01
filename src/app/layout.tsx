@@ -50,6 +50,19 @@ const clash = localFont({
   fallback: ["system-ui", "sans-serif"],
 });
 
+const codec = localFont({
+  src: [
+    {
+      path: "../../public/fonts/CodecPro-Regular.woff",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-codec",
+  display: "swap",
+  fallback: ["system-ui", "sans-serif"],
+});
+
 export const metadata: Metadata = {
   title: "Refactrd | Outsource Your Software Development",
   description:
@@ -110,7 +123,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${jakarta.variable} ${montserrat.variable} ${clash.variable} antialiased`}
+        className={`${jakarta.variable} ${montserrat.variable} ${clash.variable} ${codec.variable} antialiased`}
       >
         <AnalyticsProvider>{children}</AnalyticsProvider>
       </body>

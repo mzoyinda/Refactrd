@@ -16,43 +16,42 @@ const benefits = [
   {
     icon: Target,
     number: "1",
-    title: "Single point of ownership",
+    title: "We start small and prove it fast.",
     description:
-      "We manage delivery from build through documentation and handover.",
+      "Every engagement begins with one focused improvement. We deliver it quickly so you see results before committing to anything larger.",
   },
   {
     icon: Boxes,
     number: "2",
-    title: "Systems designed to last",
+    title: "We diagnose before we build.",
     description:
-      "We prioritize clarity, maintainability, and scalability from the outset.",
+      "We do not recommend a solution before understanding your workflows. The first call is about listening, not selling.",
   },
   {
     icon: FileText,
     number: "3",
-    title: "Documentation as a standard deliverable",
+    title: "We build working systems, not demos.",
     description:
-      "Every system is delivered with clear and usable documentation.",
+      "Everything we deliver is production-ready, documented, and designed to keep running after we hand it over.",
   },
   {
     icon: Zap,
     number: "4",
-    title: "Automation with intent",
+    title: "We know how to scope AI correctly.",
     description:
-      "Manual processes are reduced where it improves efficiency and reliability.",
+      "Most teams do not need a massive AI transformation. We find the highest-impact starting point and implement it cleanly.",
   },
   {
     icon: Award,
     number: "5",
     title: "Senior, hands-on execution",
-    description: "Work is led by experienced engineers focused on outcomes.",
+    description: "There is no junior team handling the actual work while someone else manages the relationship. Experienced engineers own delivery from start to finish.",
   },
   {
     icon: Globe,
-    number: "6",
-    title: "Global standards, efficient delivery",
+    number: "The relationship grows with results.",
     description:
-      "High-quality software delivered with speed, focus, and consistency.",
+      "Our clients do not do one project and leave. As we prove value, we expand into more complex AI — at a pace that makes sense for the business.",
   },
 ];
 
@@ -124,8 +123,7 @@ export default function WhyChooseUs() {
                 }`}
               >
                 <p className="font-clash text-lg text-white/80 mb-6 leading-relaxed">
-                  We partner with you to ensure that your software elevates your
-                  brand to new levels with reliability, quality, and ownership.
+                  We partner with you to build AI that is focused, fast to deliver, and designed to grow with your business.
                 </p>
                 <Link
                   href="https://cal.com/refactrd/technical-discovery-call"
@@ -133,7 +131,7 @@ export default function WhyChooseUs() {
                   rel="noopener noreferrer"
                   className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
                 >
-                  Book a Call
+                  Book a Free AI Mapping Call
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
               </div>
