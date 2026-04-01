@@ -7,6 +7,16 @@ import { ArrowRight, Sparkles, ChevronRight } from "lucide-react";
 const projects = [
   {
     id: 1,
+    category: "AI · Document Automation",
+    title: "AI Contract Generator",
+    description:
+      "A web application that generates fully structured, professional contracts in seconds from user input. No manual templates, the AI interprets the requirements and produces a ready-to-use document.",
+    whatReplaced:
+      "Hours spent manually drafting, reviewing, and formatting legal documents from scratch.",
+    tags: ["AI Generation", "Document Automation", "Legal Tech"],
+  },
+  {
+    id: 2,
     category: "AI · Compliance & Risk",
     title: "AI Fraud Detection & AML System",
     description:
@@ -21,7 +31,7 @@ const projects = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     category: "AI · Sales Intelligence",
     title: "AI Sales Intelligence Tool",
     description:
@@ -31,7 +41,7 @@ const projects = [
     tags: ["AI Scoring", "Pipeline Intelligence", "Sales Tech", "CRM Automation"],
   },
   {
-    id: 3,
+    id: 4,
     category: "AI · RAG System",
     title: "AI Legal Research Assistant",
     description:
@@ -41,7 +51,17 @@ const projects = [
     tags: ["RAG System", "Internal Copilot", "Legal Tech", "Knowledge Retrieval"],
   },
   {
-    id: 4,
+    id: 5,
+    category: "AI · Workflow Automation",
+    title: "AI Onboarding Copilot",
+    description:
+      "An AI-powered system that guides new employees through their first weeks automatically, delivering the right information at the right time, answering questions instantly, and escalating to a human only when genuinely needed.",
+    whatReplaced:
+      "Manual onboarding coordination, repeated messages, and inconsistent first-week experiences across hires.",
+    tags: ["Workflow Automation", "AI Assistant", "HR Tech", "Onboarding"],
+  },
+  {
+    id: 6,
     category: "AI · E-commerce · Agentic",
     title: "AI Shopping Agent",
     description:
@@ -52,7 +72,7 @@ const projects = [
   },
 ];
 
-export default function ProofOfWork() {
+export default function ProofOfWorkProject() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -125,7 +145,7 @@ export default function ProofOfWork() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-clash font-bold text-[#1F2A44] mb-3transition-colors duration-300">
+                <h3 className="text-2xl font-clash font-bold text-[#1F2A44] mb-3 transition-colors duration-300">
                   {project.title}
                 </h3>
 
@@ -175,14 +195,16 @@ export default function ProofOfWork() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-         
+          <p className="font-jakarta tracking-[-0.03em] text-lg text-black mb-6">
+            Ready to build with Refactrd?
+          </p>
           <Link
-            href="/projects"
+            href="https://cal.com/refactrd/technical-discovery-call"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold  transition-all duration-300 hover:scale-105 group"
           >
-            See More Projects
+            Book a Free AI Mapping Call
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>

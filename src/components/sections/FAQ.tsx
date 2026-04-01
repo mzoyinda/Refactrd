@@ -16,9 +16,9 @@ const faqs = [
       "We start with a free AI Opportunity Mapping call, a short diagnostic conversation where we learn how your team works and identify two to three places where AI could make a meaningful difference. After the call, we map the highest-impact opportunity and recommend a focused starting point. You do not need to know what you want built before talking to us.",
   },
   {
-    question: "How long does it take to see results?",
+    question: "What does delivery actually look like?",
     answer:
-      "Our standard for a first engagement is delivery within two weeks. We keep the scope focused deliberately so results are visible fast. This is not a six-month project before anything ships. You see something working, then we grow from there.",
+      "We scope the first engagement as a focused, single integration or automation. We build it, test it, and hand it over with documentation so your team knows how it works and can use it immediately. Timeline target for the first delivery is two weeks.",
   },
   {
     question: "Do you work with teams that are new to AI?",
@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "What happens after the first project is delivered?",
     answer:
-      "During the initial discovery, we typically identify two to three opportunities. We lead with the highest-impact one. After delivery, the others become natural next steps. The expansion feels like a continuation of the work — not a new sales conversation. Clients who see fast results almost always come back for the next one.",
+      "During the initial discovery, we typically identify two to three opportunities. We lead with the highest-impact one. After delivery, the others become natural next steps. The expansion feels like a continuation of the work, not a new sales conversation. Clients who see fast results almost always come back for the next one.",
   },
   {
     question: "How is Refactrd different from hiring an in-house AI engineer?",

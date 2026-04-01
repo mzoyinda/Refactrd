@@ -49,7 +49,8 @@ const benefits = [
   },
   {
     icon: Globe,
-    number: "The relationship grows with results.",
+    number: "6",
+    title: "The relationship grows with results.",
     description:
       "Our clients do not do one project and leave. As we prove value, we expand into more complex AI — at a pace that makes sense for the business.",
   },

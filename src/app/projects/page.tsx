@@ -3,12 +3,9 @@ import Footer from "@/components/layout/Footer";
 import ProjectsHero from "@/components/sections/projects/ProjectsHero";
 import dynamic from "next/dynamic";
 import FAQ from "@/components/sections/FAQ";
+import ProofOfWorkProject from "@/components/sections/projects/ProofOfWorkProject";
 
 const HowToGetStarted = dynamic(() => import("@/components/sections/HowToGetStarted"), {
-  loading: () => <div className="section-padding bg-tertiary/30" />,
-});
-
-const ProofOfWork = dynamic(() => import("@/components/sections/ProofOfWork"), {
   loading: () => <div className="section-padding bg-tertiary/30" />,
 });
 
@@ -37,7 +34,7 @@ export default function ProjectsPage() {
       <Header />
       <ProjectsHero />
       {/* <ProjectsGrid/> */}
-      <ProofOfWork />
+      <ProofOfWorkProject />
       <HowToGetStarted />
       <FAQ/>
       {/* Add ProjectsGrid component here later */}

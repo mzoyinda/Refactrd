@@ -24,15 +24,10 @@ export default function Hero() {
           </h1>
 
           {/* Subheading */}
-          <p className="font-jakarta text-lg  leading-relaxed text-secondary max-w-3xl mx-auto mb-8 animate-fade-up delay-200 tracking-[-0.03em]">
-            We help companies introduce AI into their operations, starting with one focused improvement that delivers fast, visible results.
-          </p>
 
           {/* Supporting text */}
           <p className="font-jakarta text-lg  leading-relaxed text-secondary max-w-3xl mx-auto mb-12 animate-fade-up delay-300 tracking-[-0.03em]">
-            Refactrd is an AI engineering studio. We start by identifying one
-            high-impact opportunity in your workflow, then design and implement
-            a practical solution. From workflow automation to internal AI
+            Refactrd is an AI engineering studio. We help companies introduce AI into their operations, starting with one focused improvement that delivers fast, visible results. From workflow automation to internal AI
             assistants and product AI, we help your team move faster and work
             smarter without adding complexity.
           </p>
@@ -49,7 +44,7 @@ export default function Hero() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
             <Link
-              href="https://cal.com/refactrd/technical-discovery-call"
+              href="/projects"
               target="_blank"
               rel="noopener noreferrer"
               className="font-clash border border-[#1F2A44] px-8 py-4 rounded-full "
