@@ -49,7 +49,7 @@ export default function HowToGetStarted() {
   return (
     <section
       ref={sectionRef}
-      className="section-padding bg-black text-white overflow-hidden relative"
+      className="section-padding bg-black/90 text-white overflow-hidden relative"
       id="get-started"
     >
       {/* Background decoration */}

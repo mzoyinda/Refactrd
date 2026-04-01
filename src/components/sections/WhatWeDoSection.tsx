@@ -64,11 +64,11 @@ export default function WhatWeDoSectionv2() {
   return (
     <section
       ref={sectionRef}
-      className="section-padding bg-black text-white relative overflow-hidden"
+      className="section-padding bg-black/90 text-white relative overflow-hidden"
       id="services"
     >
       {/* Decorative dotted borders */}
-      <div className="absolute inset-8 border border-dashed border-white/10 rounded-2xl pointer-events-none" />
+      <div className="absolute inset-8 rounded-2xl pointer-events-none" />
 
       <div className="container-custom relative z-10">
         {/* Header Section */}
@@ -112,14 +112,12 @@ export default function WhatWeDoSectionv2() {
               }`}
               style={{ transitionDelay: `${400 + index * 100}ms` }}
             >
-              <div className="p-8 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-300 min-h-[340px] flex flex-col">
-                {/* Level Badge */}
-                {/* <div className="inline-flex items-center justify-center w-fit px-4 py-1.5 bg-[#0e5d7d] text-white text-sm font-clash font-bold rounded-full mb-4">
-                  {service.level}
-                </div> */}
+              {/* <div className="p-8 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-300 min-h-[340px] flex flex-col"> */}
+             
+                 <div className="p-8  bg-gradient-to-br from-secondary to-secondary-light text-white hover:border-white/20 hover:bg-white/10 transition-all duration-300 min-h-[340px] flex flex-col">
 
                 {/* Title */}
-                <h3 className="text-2xl font-clash font-bold mb-4 group-hover:text-[#A2D2FF] transition-colors duration-300">
+                <h3 className="text-2xl font-clash font-bold mb-4 transition-colors duration-300">
                   {service.title}
                 </h3>
 

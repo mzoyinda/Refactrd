@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
   return (
     <section
       ref={sectionRef}
-      className="section-padding bg-black  text-white overflow-hidden relative"
+      className="section-padding bg-black/90  text-white overflow-hidden relative"
       id="why-choose-us"
     >
       {/* Background decoration */}
@@ -153,11 +153,11 @@ export default function WhyChooseUs() {
                   }`}
                   style={{ transitionDelay: `${300 + index * 100}ms` }}
                 >
-                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 transition-all duration-300 hover:bg-white/10 h-full flex flex-col">
+                  <div className=" bg-gradient-to-br from-secondary to-secondary-light text-white rounded-xl p-6 border border-white/10 transition-all duration-300 hover:bg-white/10 h-full flex flex-col">
                     {/* Icon */}
                     <div className="mb-6">
-                      <div className="w-14 h-14 bg-[#CCFF00]/10 rounded-lg flex items-center justify-center  transition-colors duration-300">
-                        <Icon className="w-7 h-7 text-[#E6EAF0]" />
+                      <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center  transition-colors duration-300">
+                        <Icon className="w-7 h-7 text-secondary" />
                       </div>
                     </div>
 
