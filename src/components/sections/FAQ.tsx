@@ -18,7 +18,7 @@ const faqs = [
   {
     question: "What does delivery actually look like?",
     answer:
-      "We scope the first engagement as a focused, single integration or automation. We build it, test it, and hand it over with documentation so your team knows how it works and can use it immediately. Timeline target for the first delivery is two weeks.",
+      "We scope the first engagement as a focused, single integration or automation. We build it, test it, and hand it over with documentation so your team knows how it works and can use it immediately. We also provide a roadmap for next steps, which often includes expanding the initial system or building the other opportunities we identified. But the first delivery is always a discrete, usable system that solves a specific problem.",
   },
   {
     question: "Do you work with teams that are new to AI?",
