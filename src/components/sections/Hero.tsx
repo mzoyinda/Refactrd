@@ -26,10 +26,12 @@ export default function Hero() {
           {/* Subheading */}
 
           {/* Supporting text */}
-          <p className="font-jakarta text-lg  leading-relaxed text-secondary max-w-3xl mx-auto mb-12 animate-fade-up delay-300 tracking-[-0.03em]">
-            Refactrd is an AI engineering studio. We help companies introduce AI into their operations, starting with one focused improvement that delivers fast, visible results. From workflow automation to internal AI
-            assistants and product AI, we help your team move faster and work
-            smarter without adding complexity.
+          <p className="font-jakarta text-lg  leading-relaxed text-secondary max-w-3xl mx-auto animate-fade-up delay-300 tracking-[-0.03em]">
+         Refactrd is an AI Engineering Studio. We help companies introduce AI into their operations, starting with one focused improvement that delivers fast, visible results.
+          </p>
+          <p className="font-jakarta text-lg leading-relaxed text-secondary max-w-3xl mx-auto mt-2 mb-12 animate-fade-up delay-300 tracking-[-0.03em]">
+         From Workflow Automation to Internal AI Assistants and Product AI, we help your team move faster and work smarter without adding complexity.
+
           </p>
 
           {/* CTA Buttons */}
