@@ -8,13 +8,13 @@ const benefits = [
     icon: Code,
     title: "Work on Real Projects",
     description:
-      "Contribute to meaningful software projects that solve real business problems for clients across different industries.",
+      "Contribute to meaningful AI projects that solve real business problems for clients across different industries.",
   },
   {
     icon: Zap,
     title: "Learn and Grow",
     description:
-      "Work alongside senior engineers, gain hands-on experience, and develop skills that accelerate your career.",
+      "Work alongside senior AI engineers, gain hands-on experience, and develop skills that accelerate your career.",
   },
   {
     icon: Users,
@@ -123,8 +123,8 @@ export default function WhyWorkHere() {
             }`}
           >
             We're building a team of talented individuals who are passionate
-            about creating high-quality software and delivering exceptional
-            value to our clients.
+            about creating high-quality products and delivering exceptional
+            value, and services to our clients.
           </p>
         </div>
 
@@ -133,25 +133,6 @@ export default function WhyWorkHere() {
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
-              //   <div
-              //     key={index}
-              //     className={`bg-gradient-to-br from-white to-[#E6EAF0]/30 rounded-2xl p-8 border-2 border-[#CBD5E1] hover:border-[#A2D2FF] transition-all duration-500 hover:-translate-y-2 hover:shadow-xl ${
-              //       isVisible
-              //         ? "opacity-100 translate-y-0"
-              //         : "opacity-0 translate-y-8"
-              //     }`}
-              //     style={{ transitionDelay: `${300 + index * 100}ms` }}
-              //   >
-              //     <div className="w-14 h-14 bg-[#5B6CFF]/10 rounded-xl flex items-center justify-center mb-6">
-              //       <Icon className="w-7 h-7 text-[#5B6CFF]" />
-              //     </div>
-              //     <h3 className="text-xl font-clash font-semibold text-[#1F2A44] mb-3">
-              //       {benefit.title}
-              //     </h3>
-              //     <p className="text-[#64748B] leading-relaxed">
-              //       {benefit.description}
-              //     </p>
-              //   </div>
               <div
                 key={index}
                 className={`group relative overflow-hidden rounded-2xl transition-all duration-700 ease-out hover:scale-[1.02] ${

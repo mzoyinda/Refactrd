@@ -96,103 +96,103 @@ export const jobs: Job[] = [
   //     "If you want to grow in sales the right way, this is a real opportunity.",
   //   applicationLink: "https://forms.gle/pfid7M2WwGzo2w5N9",
   // },
-  {
-    slug: "brand-and-visual-designer-intern",
-    title: "Brand & Visual Designer Intern",
-    department: "Growth & Marketing",
-    location: "Remote (Nigeria only)",
-    type: "6-Month Internship",
-    salary: "₦70,000/month",
-    shortDescription:
-      "Design high-quality visuals for social media, marketing assets, and pitch decks while helping shape Refactrd’s brand across platforms.",
+  // {
+  //   slug: "brand-and-visual-designer-intern",
+  //   title: "Brand & Visual Designer Intern",
+  //   department: "Growth & Marketing",
+  //   location: "Remote (Nigeria only)",
+  //   type: "6-Month Internship",
+  //   salary: "₦70,000/month",
+  //   shortDescription:
+  //     "Design high-quality visuals for social media, marketing assets, and pitch decks while helping shape Refactrd’s brand across platforms.",
 
-    aboutCompany: [
-      "Refactrd is an engineering studio that builds websites, mobile applications, and AI-powered systems for startups and growing businesses.",
-      "We help founders move from raw ideas to clean, scalable engineering solutions. For existing businesses, we refine, refactor, and integrate AI and automation into their systems.",
-      "As we grow our brand and marketing efforts, we are looking for a Brand & Visual Designer (Intern) to take ownership of how we show up visually across platforms.",
-    ],
+  //   aboutCompany: [
+  //     "Refactrd is an engineering studio that builds websites, mobile applications, and AI-powered systems for startups and growing businesses.",
+  //     "We help founders move from raw ideas to clean, scalable engineering solutions. For existing businesses, we refine, refactor, and integrate AI and automation into their systems.",
+  //     "As we grow our brand and marketing efforts, we are looking for a Brand & Visual Designer (Intern) to take ownership of how we show up visually across platforms.",
+  //   ],
 
-    roleOverview: {
-      description: [
-        "This is a hands-on, output-driven design role.",
-        "You will own visual content end-to-end across social media and marketing channels.",
-        "You will translate ideas into clean, high-quality designs and help shape our visual identity.",
-      ],
-      reportingTo: "CTO",
-    },
+  //   roleOverview: {
+  //     description: [
+  //       "This is a hands-on, output-driven design role.",
+  //       "You will own visual content end-to-end across social media and marketing channels.",
+  //       "You will translate ideas into clean, high-quality designs and help shape our visual identity.",
+  //     ],
+  //     reportingTo: "CTO",
+  //   },
 
-    responsibilities: [
-      "Design LinkedIn and Instagram carousels and posts",
-      "Create clean, high-quality marketing visuals",
-      "Design pitch decks and sales materials",
-      "Maintain consistency with Refactrd’s brand guidelines",
-      "Create simple motion graphics and animated visuals",
-      "Use AI tools to improve speed and creativity in design",
-      "Turn rough ideas into polished visual outputs",
-      "Manage your design workflow from concept to final delivery",
-      "Iterate quickly based on feedback",
-      "Contribute ideas to improve our visual identity and content",
-    ],
+  //   responsibilities: [
+  //     "Design LinkedIn and Instagram carousels and posts",
+  //     "Create clean, high-quality marketing visuals",
+  //     "Design pitch decks and sales materials",
+  //     "Maintain consistency with Refactrd’s brand guidelines",
+  //     "Create simple motion graphics and animated visuals",
+  //     "Use AI tools to improve speed and creativity in design",
+  //     "Turn rough ideas into polished visual outputs",
+  //     "Manage your design workflow from concept to final delivery",
+  //     "Iterate quickly based on feedback",
+  //     "Contribute ideas to improve our visual identity and content",
+  //   ],
 
-    requirements: {
-      required: [
-        "1–2 years experience in graphic or visual design",
-        "Strong working knowledge of Canva",
-        "Good design sense (layout, spacing, typography, color)",
-        "Ability to create clean and modern social media designs",
-        "Basic motion design or animation skills",
-        "Familiarity with AI design tools (or willingness to learn fast)",
-        "Ability to work independently and own tasks end-to-end",
-        "Strong attention to detail",
-        "Organized and consistent",
-      ],
-    },
+  //   requirements: {
+  //     required: [
+  //       "1–2 years experience in graphic or visual design",
+  //       "Strong working knowledge of Canva",
+  //       "Good design sense (layout, spacing, typography, color)",
+  //       "Ability to create clean and modern social media designs",
+  //       "Basic motion design or animation skills",
+  //       "Familiarity with AI design tools (or willingness to learn fast)",
+  //       "Ability to work independently and own tasks end-to-end",
+  //       "Strong attention to detail",
+  //       "Organized and consistent",
+  //     ],
+  //   },
 
-    remuneration: [
-      "Monthly Stipend: ₦70,000",
-      "6-Month Internship",
-      "Remote (Nigeria only)",
-      "Opportunity for full-time conversion based on performance",
-    ],
+  //   remuneration: [
+  //     "Monthly Stipend: ₦70,000",
+  //     "6-Month Internship",
+  //     "Remote (Nigeria only)",
+  //     "Opportunity for full-time conversion based on performance",
+  //   ],
 
-    successMetrics: [
-      "Consistency and quality of visual outputs",
-      "Speed of execution without losing quality",
-      "Ability to translate ideas into strong visuals",
-      "Improvement over time",
-      "Contribution to brand consistency",
-      "Engagement performance of content (where applicable)",
-    ],
+  //   successMetrics: [
+  //     "Consistency and quality of visual outputs",
+  //     "Speed of execution without losing quality",
+  //     "Ability to translate ideas into strong visuals",
+  //     "Improvement over time",
+  //     "Contribution to brand consistency",
+  //     "Engagement performance of content (where applicable)",
+  //   ],
 
-    benefits: [
-      "Real ownership of brand visuals",
-      "Experience working directly with founders",
-      "Exposure to startup marketing and positioning",
-      "Hands-on experience with AI in design workflows",
-      "Opportunity to build a strong portfolio with real work",
-      "Potential full-time role after 6 months",
-    ],
+  //   benefits: [
+  //     "Real ownership of brand visuals",
+  //     "Experience working directly with founders",
+  //     "Exposure to startup marketing and positioning",
+  //     "Hands-on experience with AI in design workflows",
+  //     "Opportunity to build a strong portfolio with real work",
+  //     "Potential full-time role after 6 months",
+  //   ],
 
-    interviewProcess: [
-      {
-        step: "1",
-        title: "Design Task",
-        description:
-          "Shortlisted candidates will complete a practical design task based on real Refactrd content. This helps us understand your design thinking, execution, and attention to detail.",
-      },
-      {
-        step: "2",
-        title: "CTO/Co-Founder Interview",
-        description:
-          "Walk through your design decisions and approach. We'll assess how you think, your creative process, and overall fit with the team.",
-      },
-    ],
+  //   interviewProcess: [
+  //     {
+  //       step: "1",
+  //       title: "Design Task",
+  //       description:
+  //         "Shortlisted candidates will complete a practical design task based on real Refactrd content. This helps us understand your design thinking, execution, and attention to detail.",
+  //     },
+  //     {
+  //       step: "2",
+  //       title: "CTO/Co-Founder Interview",
+  //       description:
+  //         "Walk through your design decisions and approach. We'll assess how you think, your creative process, and overall fit with the team.",
+  //     },
+  //   ],
 
-    closingStatement:
-      "If you care about design quality, want to grow fast, and are ready to own real work, this is a real opportunity.",
+  //   closingStatement:
+  //     "If you care about design quality, want to grow fast, and are ready to own real work, this is a real opportunity.",
 
-    applicationLink: "https://forms.gle/A59v6WSBw2EamE6A8",
-  },
+  //   applicationLink: "https://forms.gle/A59v6WSBw2EamE6A8",
+  // },
   // Add more jobs here in the future
   // {
   //   slug: "senior-frontend-engineer",

@@ -70,7 +70,7 @@ export default function WhyWeExist() {
                     <p className="text-sm font-clash font-semibold text-[#1F2A44] uppercase tracking-wider">
                       We're a creative and
                       <br />
-                      talented team of engineers
+                      talented team of AI Engineers
                     </p>
                   </div>
                 </div>
@@ -115,14 +115,11 @@ export default function WhyWeExist() {
               {/* Content */}
               <div className="space-y-6">
                 <p className="font-clash text-lg text-[#0F172A] leading-relaxed">
-                  Many businesses reach a point where software becomes unavoidable.
+                  Most growing companies hit a point where manual work starts to become a real problem.
                 </p>
 
                 <p className="font-clash text-base text-[#64748B] leading-relaxed">
-                  Internal tools, customer platforms, operational systems, or
-                  automation are needed to support growth. But building and
-                  maintaining software internally is expensive, time-consuming, and
-                  often distracting from core business priorities.
+                  We exist to take on the responsibility of introducing and implementing AI so your team can move forward without dealing with complexity or fragmented solutions. AI can fix most of this. Teams spend hours on tasks that repeat themselves. Information gets scattered. Processes that made sense at ten people break down at fifty.
                 </p>
 
                 <p className="font-clash text-lg text-[#1F2A44] leading-relaxed font-semibold">
@@ -130,9 +127,7 @@ export default function WhyWeExist() {
                 </p>
 
                 <p className="font-clash text-base text-[#64748B] leading-relaxed">
-                  We were created to take on the responsibility of software delivery
-                  so organizations can move forward without assembling large internal
-                  teams or managing fragmented technical work.
+                  AI can fix most of this. But there is a gap between knowing that and actually making it happen. Many teams do not know where to start, cannot afford a lengthy consulting engagement, and do not want to build an internal AI team from scratch.
                 </p>
 
                 <div className="pt-6 mt-6 border-t-2 border-[#A2D2FF]/30">
@@ -145,11 +140,7 @@ export default function WhyWeExist() {
                 {/* Additional context */}
                 <div className="bg-gradient-to-br from-[#E6EAF0] to-[#A2D2FF]/10 rounded-2xl p-6 lg:p-8 mt-8">
                   <p className="font-clash text-base text-[#0F172A] leading-relaxed">
-                    We understand that every line of code, every architectural
-                    decision, and every piece of documentation represents a commitment
-                    to your business's future. That's why we don't just build
-                    software, we build trust, understanding, and systems designed to
-                    last.
+                    We understand that every AI system we build affects how your team works. That is why we focus on solutions that are clear, reliable, and designed to deliver real results over time.
                   </p>
                 </div>
               </div>

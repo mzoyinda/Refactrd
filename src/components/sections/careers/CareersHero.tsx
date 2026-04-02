@@ -64,33 +64,10 @@ export default function CareersHero() {
           >
             We're looking for talented, driven individuals who want to work on
             meaningful projects, grow their skills, and contribute to building
-            reliable software that lasts.
+            reliable AI products and systems that lasts.
           </p>
 
-          {/* Stats Grid */}
-          {/* <div
-            className={`grid grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-[#A2D2FF]/30 hover:border-[#5B6CFF] transition-all duration-300 hover:-translate-y-1"
-                >
-                  <Icon className="w-8 h-8 text-[#5B6CFF] mx-auto mb-3" />
-                  <div className="text-3xl font-clash font-bold text-[#1F2A44] mb-1">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-[#64748B] font-medium">
-                    {stat.label}
-                  </div>
-                </div>
-              );
-            })}
-          </div> */}
+         
         </div>
       </div>
 

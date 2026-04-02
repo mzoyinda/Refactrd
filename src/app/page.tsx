@@ -35,7 +35,6 @@ export default function Home() {
       <WhyChooseUs />
       <WhoThisIsFor />
       <HowToGetStarted />
-      {/* <FinalCTA /> */}
       <Footer />
     </main>
   );

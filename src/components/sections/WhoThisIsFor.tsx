@@ -10,26 +10,26 @@ const idealClients = [
     title: "Startups",
     description: "Building or extending core products",
     features: [
-      "Need software delivered without managing an internal engineering team",
-      "Want to focus on product-market fit while we handle technical execution",
+      "Want to automate repetitive work early",
+      "Need delivery without managing an engineering team",
     ],
   },
   {
     icon: TrendingUp,
     title: "SMEs",
-    description: "Improving and scaling existing systems",
+    description: "Have existing systems that need to be smarter",
     features: [
-      "Have existing systems that require improvement, extension, or documentation",
-      "Ready to scale operations with reliable technical infrastructure",
+      "Want AI without disrupting what is already working",
+      "Need a team that can own the delivery end to end"
     ],
   },
   {
     icon: Building2,
     title: "Enterprises",
-    description: "Outsourcing specific software initiatives",
+    description: "Moving from exploring AI to implementing it",
     features: [
-      "Want a reliable partner to own execution end-to-end",
-      "Value quality, clarity, and long-term maintainability",
+      "Want a reliable technical partner for specific initiatives",
+      "Value fast delivery and measurable results"
     ],
   },
 ];
@@ -134,8 +134,7 @@ export default function WhoThisIsFor() {
               Does this sound like your organization?
             </h3>
             <p className="body-lg text-white/80 mb-8">
-              Let's have a conversation about your needs and explore how we can
-              help you achieve your goals.
+              Let us identify one specific place where AI can make a difference for your team.
             </p>
             <Link
               href="https://cal.com/refactrd/technical-discovery-call"
@@ -143,7 +142,7 @@ export default function WhoThisIsFor() {
               rel="noopener noreferrer"
               className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
             >
-              Book a call
+              Book a Free AI Mapping Call
             </Link>
           </div>
         </div>

@@ -18,21 +18,21 @@ const HowToGetStarted = dynamic(() => import("@/components/sections/HowToGetStar
 });
 
 export const metadata = {
-  title: "Our Services | Refactrd - Software Development & Engineering",
+  title: "Our Services | Refactrd - AI Engineering",
   description:
-    "End-to-end software development services including web applications, AI automation, DevOps, technical documentation, and delivery support. We take full ownership of your project.",
+    "Refactrd delivers AI systems across four levels of engagement — from workflow automation to full AI architecture. Every engagement starts small and grows through results.",
   keywords: [
-    "software development services",
-    "web application development",
-    "AI automation",
-    "DevOps services",
-    "technical documentation",
-    "software engineering",
+    "workflow automation",
+    "AI assistants",
+    "AI internal copilots",
+    "AI features for products",
+    "agentic workflow solutions",
+    "AI operations",
   ],
   openGraph: {
     title: "Our Services | Refactrd",
     description:
-      "End-to-end software development services. We support teams across the full engineering lifecycle.",
+      "End-to-end AI engineering services. We support teams across the full AI Engineering lifecycle.",
     type: "website",
   },
 };

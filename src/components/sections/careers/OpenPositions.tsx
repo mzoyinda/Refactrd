@@ -116,13 +116,13 @@ export default function OpenPositions() {
             <h3 className="text-2xl font-clash font-bold text-[#1F2A44] mb-3">
               No Open Positions Right Now
             </h3>
-            <p className="text-[#64748B] mb-6">
+            <p className="text-black mb-6 font-jakarta">
               We're not currently hiring, but we'd love to hear from you for future
               opportunities.
             </p>
             <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#5B6CFF] text-white rounded-full font-clash font-semibold hover:bg-[#1F2A44] transition-all duration-300"
+                href="mailto:info@refactrd.com?subject=Enquiries%20about%20Hiring%20Opportunities"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white rounded-full font-clash font-semibold hover:bg-[#1F2A44] transition-all duration-300"
             >
               Get in Touch
               <ArrowRight className="w-5 h-5" />

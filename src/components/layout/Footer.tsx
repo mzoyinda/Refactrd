@@ -4,21 +4,20 @@ import Link from "next/link";
 import { Instagram, Linkedin, ArrowUpRight } from "lucide-react";
 
 const services = [
-  { name: "Website Development", href: "/services" },
+  { name: "Workflow Automation", href: "/services" },
   {
-    name: "Application Development",
+    name: "AI Assistants",
     href: "/services",
   },
-  { name: "AI and Automation", href: "/services" },
+  { name: "Product AI Features", href: "/services" },
   {
-    name: "DevOps and Infrastructure",
+    name: "Agentic Workflows",
     href: "/services",
   },
   {
-    name: "Technical Documentation",
+    name: "AI Operations",
     href: "/services",
   },
-  { name: "Delivery Support", href: "/services" },
 ];
 
 const socialLinks = [
@@ -98,7 +97,7 @@ export default function Footer() {
                     className=" font-clash text-[#E6EAF0]font-semibold hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group"
                   >
                     <span className="w-1 h-1 bg-accent/0 group-hover:bg-accent rounded-full transition-colors duration-200" />
-                    Book a Call
+                    Book a Free AI Mapping Call
                   </Link>
                 </li>
               </ul>
@@ -114,7 +113,7 @@ export default function Footer() {
                   <li key={service.name}>
                     <Link
                       href={service.href}
-                      className="font-clash text-white/70 hover:text-accent transition-colors duration-200 text-sm inline-flex items-center gap-2 group"
+                      className="font-clash text-white/70 hover:text-accent transition-colors duration-200  inline-flex items-center gap-2 group"
                     >
                       <span className="w-1 h-1 bg-accent/0 group-hover:bg-accent rounded-full transition-colors duration-200" />
                       {service.name}
@@ -134,7 +133,7 @@ export default function Footer() {
                   <h3 className="text-3xl font-clash font-bold mb-2">
                     Newsletter
                   </h3>
-                  <p className="text-white/70 text-sm leading-relaxed">
+                  <p className="text-white/70 text-sm leading-relaxed font-jakarta">
                     Let's come together and actively participate in the
                     transformative changes taking place.
                   </p>

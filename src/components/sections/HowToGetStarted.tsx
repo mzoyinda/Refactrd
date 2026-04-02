@@ -9,7 +9,7 @@ const steps = [
     icon: Rocket,
     title: "Understand what you need to build or improve",
     description:
-      "We listen carefully to your business goals and technical requirements to fully understand your vision and challenges.",
+      "You walk us through your current workflows. We listen for where AI can make a meaningful difference, without pitching anything.",
   },
   {
     icon: Bell,
@@ -49,7 +49,7 @@ export default function HowToGetStarted() {
   return (
     <section
       ref={sectionRef}
-      className="section-padding bg-gradient-to-br from-[#0A1814] via-[#0D1F1A] to-[#0A1814] text-white overflow-hidden relative"
+      className="section-padding bg-black/90 text-white overflow-hidden relative"
       id="get-started"
     >
       {/* Background decoration */}
@@ -167,17 +167,10 @@ export default function HowToGetStarted() {
                 // className="button-primary group flex items-center gap-2 px-8 py-4 text-lg"
                 className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
               >
-                Book a call
+                Book a Free AI Mapping Call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
-              <Link
-                href="https://cal.com/refactrd/technical-discovery-call"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-clash border border-[#1F2A44] px-8 py-4 rounded-full"
-              >
-                Hire a team
-              </Link>
+              
             </div>
           </div>
         </div>

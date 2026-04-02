@@ -6,54 +6,44 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: "Why should I outsource software development to Refactrd?",
+    question: "What exactly does Refactrd build?",
     answer:
-      "Outsourcing to Refactrd eliminates the overhead of hiring, managing, and coordinating technical resources. We take full ownership of delivery from development and infrastructure to documentation, so you can focus on running and scaling your business. You get senior, hands-on execution without the commitment of permanent hiring.",
+      "We build AI-powered systems that help companies do less manual work. This includes workflow automations, internal AI assistants that give teams instant access to knowledge, AI features for existing products, and more advanced agentic systems for companies ready to go further. Every engagement starts with understanding your specific workflows, we do not offer generic solutions.",
   },
   {
-    question: "What types of projects does Refactrd work on?",
+    question: "How do you decide what to build first?",
     answer:
-      "We work on a wide range of projects including customer-facing web and mobile applications, internal business systems, AI-driven automation workflows, DevOps infrastructure setup, technical documentation, and team delivery support. Whether you're starting from an idea or improving an existing product, we can help.",
+      "We start with a free AI Opportunity Mapping call, a short diagnostic conversation where we learn how your team works and identify two to three places where AI could make a meaningful difference. After the call, we map the highest-impact opportunity and recommend a focused starting point. You do not need to know what you want built before talking to us.",
   },
   {
-    question: "How does Refactrd ensure code quality and maintainability?",
+    question: "What does delivery actually look like?",
     answer:
-      "We prioritize clean architecture, scalability, and long-term maintainability from the outset. Our senior engineers follow industry best practices, conduct thorough code reviews, implement automated testing, and deliver comprehensive documentation with every project. Systems are built to last, not just to launch.",
+      "We scope the first engagement as a focused, single integration or automation. We build it, test it, and hand it over with documentation so your team knows how it works and can use it immediately. We also provide a roadmap for next steps, which often includes expanding the initial system or building the other opportunities we identified. But the first delivery is always a discrete, usable system that solves a specific problem.",
   },
   {
-    question: "What is included in your technical documentation service?",
+    question: "Do you work with teams that are new to AI?",
     answer:
-      "Our documentation covers system architecture, API references, setup and deployment guides, user manuals, onboarding materials, and maintenance procedures. Every deliverable includes clear, usable documentation to support continuity, making it easy for your team to understand and maintain the system.",
-  },
-  {
-    question: "How long does it take to see results from a project?",
-    answer:
-      "Timelines vary based on project scope and complexity. During our initial consultation, we clarify deliverables, realistic timelines, and expectations upfront. We work iteratively, providing regular updates and incremental deliveries so you can see progress throughout the engagement rather than waiting until the end.",
+      "Yes, most of our clients are at the beginning of their AI journey. You do not need any prior AI experience or infrastructure in place. Our job is to identify the right starting point and make the implementation straightforward. We handle the technical complexity so you do not have to.",
   },
   {
     question: "Do you work with startups, SMEs, or enterprises?",
     answer:
-      "We work with organizations at all stages. Startups building core products, SMEs scaling existing systems, and enterprises outsourcing specific software initiatives all benefit from our services. Our approach adapts to your stage—whether you need rapid prototyping or enterprise-grade architecture.",
+      "All three — what matters is whether your team has real operational friction that AI can fix. Startups often need automation early so their small teams can punch above their weight. Growing companies need smarter internal systems. Enterprise teams need a reliable technical partner for specific AI initiatives. We adapt our approach to where you are.",
   },
   {
-    question: "What happens after the initial delivery?",
+    question: "What happens after the first project is delivered?",
     answer:
-      "We provide ongoing support and incremental improvements beyond delivery. If needed, we help with system maintenance, feature additions, performance optimization, and scaling. Our goal is to ensure your software remains stable, secure, and ready to grow with your business.",
+      "During the initial discovery, we typically identify two to three opportunities. We lead with the highest-impact one. After delivery, the others become natural next steps. The expansion feels like a continuation of the work, not a new sales conversation. Clients who see fast results almost always come back for the next one.",
   },
   {
-    question: "How is Refactrd different from hiring an in-house team?",
+    question: "How is Refactrd different from hiring an in-house AI engineer?",
     answer:
-      "With Refactrd, you get immediate access to senior engineers without the time and cost of recruiting, onboarding, and managing a full team. We handle development, infrastructure, and documentation under a single engagement model with clear accountability—no coordination complexity, just predictable delivery.",
+      "Hiring a senior AI engineer takes months and comes with overhead: salary, benefits, onboarding, and management. Refactrd gives you senior-level execution on a focused engagement, without the commitment of permanent hiring. And because we have built similar systems before, we move faster and avoid the trial-and-error that comes with figuring it out from scratch internally.",
   },
   {
-    question: "Can you help fix or improve an existing messy codebase?",
+    question: "What do you need from us to get started?",
     answer:
-      "Absolutely. Many clients come to us with systems that have grown messy over time. We assess the current state, identify issues, refactor code for clarity and performance, add missing documentation, and implement proper structure. We step in, take ownership, and help you move forward with confidence.",
-  },
-  {
-    question: "What technologies and tools does Refactrd use?",
-    answer:
-      "We work with modern, proven technologies including React, Next.js, TypeScript, Node.js, Python, AWS, Docker, Kubernetes, PostgreSQL, MongoDB, and more. Our tech stack choices are driven by your specific needs, prioritizing performance, scalability, and long-term maintainability over trends.",
+      "Very little. Book a free AI Opportunity Mapping call and show up ready to talk through how your team operates day to day. We take it from there. No brief or technical specification required upfront.",
   },
 ];
 
@@ -75,9 +65,7 @@ export default function FAQ() {
                 Frequently Asked Questions
               </h1>
               <p className="font-clash text-lg text-[#64748B] mb-8 leading-relaxed">
-                As a leading software development partner, we are dedicated to
-                providing comprehensive answers to help our clients make
-                informed decisions.
+                As Refactrd's AI engineering studio, we want you to walk into any conversation informed. Here are the questions we hear most often.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -122,7 +110,7 @@ export default function FAQ() {
                   {openIndex === index && (
                     <div className="px-6 pb-6 animate-fade-in">
                       <div className="pt-2 border-t border-[#CBD5E1]">
-                        <p className="font-clash text-[#64748B] leading-relaxed mt-4">
+                        <p className="font-clash text-secondary leading-relaxed mt-4">
                           {faq.answer}
                         </p>
                       </div>

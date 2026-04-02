@@ -56,12 +56,10 @@ export default function ServicesHero() {
               }`}
             >
               <p className="font-clash text-lg text-[#0F172A] leading-relaxed font-medium">
-                Refactrd supports teams across the full engineering lifecycle.
+                We introduce AI to your operations, one focused improvement at a time.
               </p>
               <p className=" font-clash text-base text-[#64748B] leading-relaxed">
-                Some clients come to us with an idea. Others already have a
-                product that needs improvement, scale, or structure. Some need
-                help fixing systems that have grown messy over time.
+                Some clients come to us with a specific problem. Others know they want to use AI but are not sure where to start. Either way, we help you identify the right place to begin, build something that works, and expand from there.
               </p>
               <p className="font-clash text-base text-[#0F172A] leading-relaxed font-semibold">
                 Wherever you are, we step in, take ownership, and help you move

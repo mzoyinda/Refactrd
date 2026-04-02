@@ -14,19 +14,19 @@ const HowToGetStarted = dynamic(
 );
 
 export const metadata = {
-  title: "About Us | Refactrd - Software Delivery Built on Trust",
+  title: "About Us | Refactrd - We build AI that actually works for your team.",
   description:
-    "Refactrd is a software delivery company built around one principle: software should be easy to trust, easy to understand, and built to last. Learn our story.",
+    "Refactrd is an AI engineering studio founded to help companies introduce AI in a focused, practical way. We build working systems, start small, and grow the relationship through results.",
   keywords: [
     "about Refactrd",
-    "software delivery company",
+    "ai engineering studio",
     "engineering team",
-    "software development partner",
+    "ai engineering partner",
   ],
   openGraph: {
     title: "About Refactrd | Our Story",
     description:
-      "Built around one principle: software should be easy to trust, easy to understand, and built to last.",
+      "Built around one idea: most companies know AI can help their team, they just do not know where to start, what to build, or who to trust with it.",
     type: "website",
   },
 };
