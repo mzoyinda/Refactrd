@@ -25,6 +25,203 @@ export interface Job {
 }
 
 export const jobs: Job[] = [
+  {
+    slug: "ai-growth-associate",
+    title: "AI Growth Associate",
+    department: "Growth & Business Development",
+    location: "Remote",
+    type: "Internship / Entry-Level",
+    salary: "₦80,000 – ₦100,000/month",
+    shortDescription:
+      "Help organizations understand and adopt practical AI solutions. Build structured growth channels connecting businesses with Refactrd's AI capabilities at the intersection of growth, business development, and AI solution positioning.",
+
+    aboutCompany: [
+      "Refactrd is an AI-powered engineering studio that helps startups, growing businesses, and enterprises enhance their existing systems through intelligent AI integration.",
+      "We focus on designing and implementing solutions such as RAG assistants, automation workflows, agent-based systems, and AI-powered product enhancements that improve operational efficiency, decision-making, and scalability.",
+      "Rather than building from scratch alone, Refactrd partners with organizations to refine ideas, refactor existing infrastructure, and introduce AI in a structured, secure, and measurable way. Our approach combines strong engineering principles with responsible AI adoption to ensure long-term reliability and business impact.",
+    ],
+
+    roleOverview: {
+      description: [
+        "The AI Growth Associate will play a key role in helping organizations understand and adopt practical AI solutions.",
+        "This role sits at the intersection of growth, business development, and AI solution positioning.",
+        "You will be responsible for identifying opportunities, initiating conversations around AI adoption, and helping build structured growth channels that connect organizations with Refactrd's AI capabilities.",
+        "The role is high-ownership, outcome-driven, and suited for candidates interested in AI, automation, and technology-driven growth.",
+      ],
+    },
+
+    responsibilities: [
+      "Build a structured pipeline of organizations interested in AI adoption",
+      "Conduct outreach to introduce Refactrd's AI capabilities and offerings",
+      "Position solutions including RAG assistants, workflow automation, and AI-powered product enhancements",
+      "Run discovery conversations to understand operational and product-level AI opportunities",
+      "Contribute to developing repeatable outbound and inbound growth channels",
+      "Maintain organized tracking of leads, conversations, and opportunities",
+      "Gather market insights to refine messaging and positioning",
+      "Support Refactrd's growth initiatives across startups, SMEs, and enterprises",
+    ],
+
+    requirements: {
+      required: [
+        "Strong interest in Artificial Intelligence and automation",
+        "Excellent communication and interpersonal skills",
+        "Curiosity about business operations and productivity workflows",
+        "Ability to simplify technical concepts for non-technical audiences",
+        "Self-driven with a high level of ownership and initiative",
+        "Comfortable working in a remote, fast-paced environment",
+      ],
+    },
+
+    remuneration: [
+      "Monthly Stipend: ₦80,000 – ₦100,000 (depending on experience and availability)",
+      "Performance bonus based on qualified lead generation and growth milestones",
+      "Opportunity for compensation review after the initial 3–6 month engagement",
+      "Potential role extension based on performance and mutual fit",
+      "Remote work",
+    ],
+
+    successMetrics: [
+      "A structured and trackable AI adoption pipeline",
+      "Active outreach across defined outbound channels",
+      "Early inbound interest generated through content and positioning",
+      "Clear feedback loop informing Refactrd's growth messaging",
+      "Qualified opportunities aligned with AI integration, automation, and product enhancement services",
+    ],
+
+    benefits: [
+      "Exposure to real-world AI implementations across industries",
+      "Experience in AI-driven growth and business development",
+      "Understanding of RAG systems, automation workflows, and AI product enhancements",
+      "Opportunity to contribute to scaling an AI-powered engineering studio",
+      "Hands-on experience at the intersection of AI, product, and growth strategy",
+      "Direct mentorship from the founder",
+      "Opportunity for full-time employment after 6 months",
+    ],
+
+    interviewProcess: [
+      {
+        step: "1",
+        title: "CTO Interview",
+        description:
+          "We assess your ability to communicate clearly, express yourself effectively, understand AI concepts, and approach growth conversations. This round tests how you would position AI solutions to potential clients.",
+      },
+      {
+        step: "2",
+        title: "CEO Conversation",
+        description:
+          "Final discussion to assess overall fit, alignment with Refactrd's mission, mindset, and long-term potential with the team.",
+      },
+    ],
+
+    closingStatement:
+      "This role is ideal for individuals who are passionate about AI adoption, enjoy engaging with organizations, and want to contribute to bringing practical AI solutions into real-world environments. The position offers a strong foundation for careers in AI strategy, product growth, business development, or automation consulting.",
+
+    applicationLink: "https://forms.gle/nEG41yuwatUjiihP8",
+  },
+
+  {
+    slug: "mobile-video-editor",
+    title: "Mobile Video Editor",
+    department: "Growth & Marketing",
+    location: "Lagos, Nigeria (In-Person)",
+    type: "Associate Level",
+    salary: "₦70,000/month",
+    shortDescription:
+      "Own video content from shoot to final edit. Create engaging, high-retention short-form and long-form videos that shape how Refactrd shows up through video content.",
+
+    aboutCompany: [
+      "Refactrd is an AI-powered engineering studio that helps startups, growing businesses, and enterprises enhance their existing systems through intelligent AI integration.",
+      "We focus on designing and implementing solutions such as RAG assistants, automation workflows, agent-based systems, and AI-powered product enhancements that improve operational efficiency, decision-making, and scalability.",
+      "Rather than building from scratch alone, Refactrd partners with organizations to refine ideas, refactor existing infrastructure, and introduce AI in a structured, secure, and measurable way. Our approach combines strong engineering principles with responsible AI adoption to ensure long-term reliability and business impact.",
+    ],
+
+    roleOverview: {
+      description: [
+        "This is a hands-on, output-driven content role.",
+        "You will not just edit videos.",
+        "You will own video content from shoot to final edit, turn scripts into engaging, high-retention videos, and help shape how Refactrd shows up through video.",
+        "You will work directly with the founders and growth team.",
+      ],
+    },
+
+    responsibilities: [
+      "Shoot content during monthly batch recording sessions",
+      "Capture founder talking-head videos and client/project-related content",
+      "Edit 2–3 short-form videos weekly (Reels, TikTok)",
+      "Edit 1-2 long-form videos monthly (when required)",
+      "Add clean cuts, strong hooks, engaging captions, and smooth transitions",
+      "Work with provided scripts and shot lists",
+      "Bring creative input to improve content quality",
+      "Manage video workflow from raw footage to final output",
+      "Iterate quickly based on feedback",
+      "Maintain consistency in style and quality across videos",
+    ],
+
+    requirements: {
+      required: [
+        "Based in Lagos (in-person role)",
+        "Experience shooting with a mobile phone",
+        "Strong working knowledge of CapCut, Instagram Edits, or similar tools",
+        "Ability to create high-quality, storytelling-driven edits",
+        "Strong sense of pacing, timing, and audience retention",
+        "Ability to follow direction and execute cleanly",
+        "Ability to work independently and own tasks end-to-end",
+        "Strong attention to detail",
+        "Organized and consistent",
+      ],
+      preferred: [
+        "Experience editing content for tech, startups, or founders",
+        "Basic understanding of content performance (hooks, retention)",
+        "Experience with lighting, framing, and audio setup",
+        "Familiarity with additional editing tools",
+      ],
+    },
+
+    remuneration: [
+      "Monthly Salary: ₦70,000",
+      "Transport Allowance",
+      "Performance review after 3 months",
+      "In-person role (Lagos, Nigeria)",
+    ],
+
+    successMetrics: [
+      "Quality and consistency of video output",
+      "Ability to hold attention and improve retention",
+      "Speed of execution without losing quality",
+      "Cleanliness of edits and storytelling",
+      "Improvement over time",
+      "Contribution to overall content quality",
+    ],
+
+    benefits: [
+      "Ownership of real content seen by a growing audience",
+      "Direct access to founders and decision-making",
+      "Hands-on experience in startup content and positioning",
+      "Opportunity to build a strong, public-facing portfolio",
+      "Clear growth path based on performance",
+    ],
+
+    interviewProcess: [
+      {
+        step: "1",
+        title: "Portfolio Review",
+        description:
+          "We review your past work to understand your editing style, quality, and storytelling ability. Submit links to your best short-form and long-form video work.",
+      },
+      {
+        step: "2",
+        title: "CTO/CEO Interview",
+        description:
+          "You will walk us through your approach, tools, and how you think about video content. We are looking at how you think, not just what you've made.",
+      },
+    ],
+
+    closingStatement:
+      "If you care about video quality, understand what makes content engaging, and want to own real work, this is a real opportunity.",
+
+    applicationLink: "https://forms.gle/yjBsnGfTun2uQ2nx9",
+  },
+
   // {
   //   slug: "sales-intern",
   //   title: "Sales Intern",
