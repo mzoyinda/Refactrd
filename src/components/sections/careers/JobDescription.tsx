@@ -214,14 +214,14 @@ export default function JobDescription({ job }: JobDescriptionProps) {
               </div>
               {job.requirements.preferred && (
                 <div>
-                  <h3 className="text-xl font-clash font-semibold text-[#A2D2FF] mb-4">
+                  <h3 className="text-xl font-clash font-semibold text-secondary mb-4">
                     Preferred
                   </h3>
                   <div className="space-y-3">
                     {job.requirements.preferred.map((item, index) => (
                       <div key={index} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-[#A2D2FF] flex-shrink-0 mt-0.5" />
-                        <span className="text-[#64748B]">{item}</span>
+                        <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                        <span className="text-[#64748B] font-clash">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -292,7 +292,7 @@ export default function JobDescription({ job }: JobDescriptionProps) {
                 </div>
               ))}
             </div>
-            <p className="mt-8 text-xl font-clash font-semibold text-white">
+            <p className="mt-8 text-lg font-clash font-semibold text-white">
               {job.closingStatement}
             </p>
           </div>
