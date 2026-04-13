@@ -119,108 +119,108 @@ export const jobs: Job[] = [
   //   applicationLink: "https://forms.gle/nEG41yuwatUjiihP8",
   // },
 
-  // {
-  //   slug: "mobile-video-editor",
-  //   title: "Mobile Video Editor",
-  //   department: "Growth & Marketing",
-  //   location: "Lagos, Nigeria (In-Person)",
-  //   type: "Associate Level",
-  //   salary: "₦70,000/month",
-  //   shortDescription:
-  //     "Own video content from shoot to final edit. Create engaging, high-retention short-form and long-form videos that shape how Refactrd shows up through video content.",
+  {
+    slug: "mobile-video-editor",
+    title: "Mobile Video Editor",
+    department: "Growth & Marketing",
+    location: "Lagos, Nigeria (In-Person)",
+    type: "Associate Level",
+    salary: "₦70,000/month",
+    shortDescription:
+      "Own video content from shoot to final edit. Create engaging, high-retention short-form and long-form videos that shape how Refactrd shows up through video content.",
 
-  //   aboutCompany: [
-  //     "Refactrd is an AI-powered engineering studio that helps startups, growing businesses, and enterprises enhance their existing systems through intelligent AI integration.",
-  //     "We focus on designing and implementing solutions such as RAG assistants, automation workflows, agent-based systems, and AI-powered product enhancements that improve operational efficiency, decision-making, and scalability.",
-  //     "Rather than building from scratch alone, Refactrd partners with organizations to refine ideas, refactor existing infrastructure, and introduce AI in a structured, secure, and measurable way. Our approach combines strong engineering principles with responsible AI adoption to ensure long-term reliability and business impact.",
-  //   ],
+    aboutCompany: [
+      "Refactrd is an AI-powered engineering studio that helps startups, growing businesses, and enterprises enhance their existing systems through intelligent AI integration.",
+      "We focus on designing and implementing solutions such as RAG assistants, automation workflows, agent-based systems, and AI-powered product enhancements that improve operational efficiency, decision-making, and scalability.",
+      "Rather than building from scratch alone, Refactrd partners with organizations to refine ideas, refactor existing infrastructure, and introduce AI in a structured, secure, and measurable way. Our approach combines strong engineering principles with responsible AI adoption to ensure long-term reliability and business impact.",
+    ],
 
-  //   roleOverview: {
-  //     description: [
-  //       "This is a hands-on, output-driven content role.",
-  //       "You will not just edit videos.",
-  //       "You will own video content from shoot to final edit, turn scripts into engaging, high-retention videos, and help shape how Refactrd shows up through video.",
-  //       "You will work directly with the founders and growth team.",
-  //     ],
-  //   },
+    roleOverview: {
+      description: [
+        "This is a hands-on, output-driven content role.",
+        "You will not just edit videos.",
+        "You will own video content from shoot to final edit, turn scripts into engaging, high-retention videos, and help shape how Refactrd shows up through video.",
+        "You will work directly with the founders and growth team.",
+      ],
+    },
 
-  //   responsibilities: [
-  //     "Shoot content during monthly batch recording sessions",
-  //     "Capture founder talking-head videos and client/project-related content",
-  //     "Edit 2–3 short-form videos weekly (Reels, TikTok)",
-  //     "Edit 1-2 long-form videos monthly (when required)",
-  //     "Add clean cuts, strong hooks, engaging captions, and smooth transitions",
-  //     "Work with provided scripts and shot lists",
-  //     "Bring creative input to improve content quality",
-  //     "Manage video workflow from raw footage to final output",
-  //     "Iterate quickly based on feedback",
-  //     "Maintain consistency in style and quality across videos",
-  //   ],
+    responsibilities: [
+      "Shoot content during monthly batch recording sessions",
+      "Capture founder talking-head videos and client/project-related content",
+      "Edit 2–3 short-form videos weekly (Reels, TikTok)",
+      "Edit 1-2 long-form videos monthly (when required)",
+      "Add clean cuts, strong hooks, engaging captions, and smooth transitions",
+      "Work with provided scripts and shot lists",
+      "Bring creative input to improve content quality",
+      "Manage video workflow from raw footage to final output",
+      "Iterate quickly based on feedback",
+      "Maintain consistency in style and quality across videos",
+    ],
 
-  //   requirements: {
-  //     required: [
-  //       "Based in Lagos (in-person role)",
-  //       "Experience shooting with a mobile phone",
-  //       "Strong working knowledge of CapCut, Instagram Edits, or similar tools",
-  //       "Ability to create high-quality, storytelling-driven edits",
-  //       "Strong sense of pacing, timing, and audience retention",
-  //       "Ability to follow direction and execute cleanly",
-  //       "Ability to work independently and own tasks end-to-end",
-  //       "Strong attention to detail",
-  //       "Organized and consistent",
-  //     ],
-  //     preferred: [
-  //       "Experience editing content for tech, startups, or founders",
-  //       "Basic understanding of content performance (hooks, retention)",
-  //       "Experience with lighting, framing, and audio setup",
-  //       "Familiarity with additional editing tools",
-  //     ],
-  //   },
+    requirements: {
+      required: [
+        "Based in Lagos (in-person role)",
+        "Experience shooting with a mobile phone",
+        "Strong working knowledge of CapCut, Instagram Edits, or similar tools",
+        "Ability to create high-quality, storytelling-driven edits",
+        "Strong sense of pacing, timing, and audience retention",
+        "Ability to follow direction and execute cleanly",
+        "Ability to work independently and own tasks end-to-end",
+        "Strong attention to detail",
+        "Organized and consistent",
+      ],
+      preferred: [
+        "Experience editing content for tech, startups, or founders",
+        "Basic understanding of content performance (hooks, retention)",
+        "Experience with lighting, framing, and audio setup",
+        "Familiarity with additional editing tools",
+      ],
+    },
 
-  //   remuneration: [
-  //     "Monthly Salary: ₦70,000",
-  //     "Transport Allowance",
-  //     "Performance review after 3 months",
-  //     "In-person role (Lagos, Nigeria)",
-  //   ],
+    remuneration: [
+      "Monthly Salary: ₦70,000",
+      "Transport Allowance",
+      "Performance review after 3 months",
+      "In-person role (Lagos, Nigeria)",
+    ],
 
-  //   successMetrics: [
-  //     "Quality and consistency of video output",
-  //     "Ability to hold attention and improve retention",
-  //     "Speed of execution without losing quality",
-  //     "Cleanliness of edits and storytelling",
-  //     "Improvement over time",
-  //     "Contribution to overall content quality",
-  //   ],
+    successMetrics: [
+      "Quality and consistency of video output",
+      "Ability to hold attention and improve retention",
+      "Speed of execution without losing quality",
+      "Cleanliness of edits and storytelling",
+      "Improvement over time",
+      "Contribution to overall content quality",
+    ],
 
-  //   benefits: [
-  //     "Ownership of real content seen by a growing audience",
-  //     "Direct access to founders and decision-making",
-  //     "Hands-on experience in startup content and positioning",
-  //     "Opportunity to build a strong, public-facing portfolio",
-  //     "Clear growth path based on performance",
-  //   ],
+    benefits: [
+      "Ownership of real content seen by a growing audience",
+      "Direct access to founders and decision-making",
+      "Hands-on experience in startup content and positioning",
+      "Opportunity to build a strong, public-facing portfolio",
+      "Clear growth path based on performance",
+    ],
 
-  //   interviewProcess: [
-  //     {
-  //       step: "1",
-  //       title: "Portfolio Review",
-  //       description:
-  //         "We review your past work to understand your editing style, quality, and storytelling ability. Submit links to your best short-form and long-form video work.",
-  //     },
-  //     {
-  //       step: "2",
-  //       title: "CTO/CEO Interview",
-  //       description:
-  //         "You will walk us through your approach, tools, and how you think about video content. We are looking at how you think, not just what you've made.",
-  //     },
-  //   ],
+    interviewProcess: [
+      {
+        step: "1",
+        title: "Portfolio Review",
+        description:
+          "We review your past work to understand your editing style, quality, and storytelling ability. Submit links to your best short-form and long-form video work.",
+      },
+      {
+        step: "2",
+        title: "CTO/CEO Interview",
+        description:
+          "You will walk us through your approach, tools, and how you think about video content. We are looking at how you think, not just what you've made.",
+      },
+    ],
 
-  //   closingStatement:
-  //     "If you care about video quality, understand what makes content engaging, and want to own real work, this is a real opportunity.",
+    closingStatement:
+      "If you care about video quality, understand what makes content engaging, and want to own real work, this is a real opportunity.",
 
-  //   applicationLink: "https://forms.gle/yjBsnGfTun2uQ2nx9",
-  // },
+    applicationLink: "https://forms.gle/yjBsnGfTun2uQ2nx9",
+  },
 
   // {
   //   slug: "sales-intern",
