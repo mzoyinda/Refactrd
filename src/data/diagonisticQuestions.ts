@@ -11,65 +11,65 @@ const createOptions = (
   { text: notDone, points: 0 },
 ];
 
-// ZONE 1: CUSTOMER EXPERIENCE
+// ZONE 1: TOOL STACK AND INTEGRATION
 const zone1: Zone = {
   id: '1',
-  name: 'Customer Experience',
+  name: 'Tool Stack and Integration',
   maxScore: 16,
   subZones: [
     {
       id: '1A',
-      name: 'Initial Response and Lead Acknowledgement',
+      name: 'Tools You Are Currently Using',
       maxScore: 4,
       questions: [
         {
           id: 'Q1',
-          text: 'When a new enquiry comes in via WhatsApp, email, DM, or your website, how is the first response handled?',
+          text: 'How would you describe the tools your organisation currently runs on?',
           options: createOptions(
-            'We have an automated response that goes out immediately, every time',
-            'Someone on the team responds manually, usually within the same day',
-            'It depends on who is available. Response time is inconsistent'
+            'We have a deliberate tool stack. Each tool has a clear purpose and someone who owns it',
+            'We use a mix of tools picked up over time. Some overlap, some have clear gaps',
+            'Most things run on WhatsApp, email, and shared documents. The tool setup is still being figured out'
           ),
         },
       ],
     },
     {
       id: '1B',
-      name: 'Follow-up and Nurture After First Contact',
+      name: 'How Your Tools Connect',
       maxScore: 4,
       questions: [
         {
           id: 'Q2',
-          text: 'After a first conversation with a potential customer or client, how is follow-up managed?',
+          text: 'When information is captured in one tool, such as a new lead, a payment, or a completed task, does it automatically flow to where it needs to go next?',
           options: createOptions(
-            'A follow-up sequence triggers automatically based on where they are in the process',
-            'Someone on the team follows up manually based on notes or memory',
-            'Follow-up is inconsistent. Some leads get it, some do not'
+            'Yes. The core tools are connected and information moves between them without anyone transferring it manually',
+            'Sometimes. A few connections exist but a lot still gets copied across by hand',
+            'No. Each tool sits separately. Moving information between them always requires a manual step'
           ),
         },
       ],
     },
     {
       id: '1C',
-      name: 'Customer Support and Issue Resolution',
+      name: 'Repetitive Manual Work',
       maxScore: 8,
       questions: [
         {
           id: 'Q3',
-          text: 'When an existing customer raises an issue or question, how is it handled?',
+          text: 'Think about the tasks your team handles repeatedly every week, things like sending updates, chasing approvals, compiling information, or following up on outstanding items. How are those handled?',
           options: createOptions(
-            'Common queries are handled by an automated system before escalating to the team',
-            'The team handles everything manually. No triage or automation in place',
-            'It depends on who is available. There is no consistent process'
+            'Most recurring tasks run automatically. The team focuses on exceptions and decisions, not routine execution',
+            'Some recurring tasks are systematised. Others still depend on someone remembering to initiate them',
+            'Most of this work is done manually every time. Nothing runs unless someone actively starts it'
           ),
         },
         {
           id: 'Q4',
-          text: 'How do you track whether customer issues are being resolved on time?',
+          text: 'How much of a typical week for senior people in your organisation goes into work that a well-configured system could handle?',
           options: createOptions(
-            'We have an automated system that tracks open issues and flags delays',
-            'We track this manually, usually through spreadsheets or WhatsApp threads',
-            'We do not have a structured way to track this'
+            'Very little. Routine work has largely been offloaded to systems or clearly structured processes',
+            'Some. There are things senior people still handle personally that should not require their attention',
+            'A significant amount. Operational and administrative work takes up more leadership time than it should'
           ),
         },
       ],
@@ -90,43 +90,43 @@ const zone2: Zone = {
       questions: [
         {
           id: 'Q5',
-          text: 'How does your team get aligned on priorities at the start of each week?',
+          text: 'How does your organisation stay aligned on priorities, progress, and what each person or team is working on?',
           options: createOptions(
-            'A structured summary is generated and distributed automatically before the week begins',
-            'We hold a manual meeting or someone compiles updates by hand',
-            'Alignment is ad hoc. People check in informally or not at all'
+            'There is a lightweight system that keeps everyone informed without requiring a meeting or manual update to make it happen',
+            'Alignment happens through regular meetings or check-ins but someone has to actively facilitate it each time',
+            'Alignment is mostly informal. People generally know their own work but there is no structured way to see the full picture'
           ),
         },
       ],
     },
     {
       id: '2B',
-      name: 'Knowledge Management and Documentation',
+      name: 'Knowledge and Documentation',
       maxScore: 4,
       questions: [
         {
           id: 'Q6',
-          text: 'When a team member needs to find a process, policy, or past document, where do they go?',
+          text: 'When someone in your organisation needs to find out how something works, whether that is a process, a policy, or a past decision, where do they go?',
           options: createOptions(
-            'We have a centralised searchable knowledge base that is kept up to date',
-            'Documents exist but are spread across Drive folders, WhatsApp, and email',
-            'There is no central system. People ask each other or figure things out themselves'
+            'There is a central place where this information lives and it is actually kept current',
+            'Some things are documented but they are scattered across different places and not always up to date',
+            "Most of this knowledge lives in people's heads or buried in chat threads that are hard to search"
           ),
         },
       ],
     },
     {
       id: '2C',
-      name: 'Reporting and Performance Tracking',
+      name: 'Reporting and Visibility',
       maxScore: 4,
       questions: [
         {
           id: 'Q7',
-          text: 'How are your key business metrics compiled each week or month?',
+          text: 'How does leadership currently understand how the organisation is performing week to week?',
           options: createOptions(
-            'Reports are generated automatically and available without anyone producing them manually',
-            'Someone on the team pulls the numbers together manually each reporting period',
-            'Reporting is irregular. We look at numbers when something prompts us to'
+            'There is a dashboard or automated report that gives a clear picture without anyone having to pull it together',
+            'Someone compiles this manually or leadership relies on team updates to piece together what is happening',
+            'Performance visibility is mostly reactive. Things surface when something goes wrong or someone raises it'
           ),
         },
       ],
@@ -134,65 +134,65 @@ const zone2: Zone = {
   ],
 };
 
-// ZONE 3: OUTREACH AND GROWTH
+// ZONE 3: DELIVERY AND PROJECT EXECUTION
 const zone3: Zone = {
   id: '3',
-  name: 'Outreach and Growth',
+  name: 'Delivery and Project Execution',
   maxScore: 16,
   subZones: [
     {
       id: '3A',
-      name: 'Pipeline and Opportunity Management',
+      name: 'How Work Gets Tracked',
       maxScore: 4,
       questions: [
         {
           id: 'Q8',
-          text: 'How do you track where each active lead, donor, or partner opportunity currently stands?',
+          text: 'Once work is agreed on, whether with a client, a partner, or internally, how is it tracked through to completion?',
           options: createOptions(
-            'We have a CRM or pipeline tool that updates automatically based on activity',
-            'We track this manually in a spreadsheet or document',
-            'Pipeline tracking is informal. We rely on memory or WhatsApp to know where things are'
+            'There is a project or task management system that shows what is in progress, what is delayed, and what is done',
+            'Work is tracked informally through shared documents, WhatsApp threads, or individual notes',
+            'Tracking is minimal. Issues usually surface when a deadline is missed or someone follows up to ask'
           ),
         },
       ],
     },
     {
       id: '3B',
-      name: 'Partner and Stakeholder Communication',
+      name: 'Client and Stakeholder Updates',
       maxScore: 4,
       questions: [
         {
           id: 'Q9',
-          text: 'How do you maintain regular communication with partners, donors, or key stakeholders?',
+          text: 'How do clients, partners, or key stakeholders get updated on progress without having to chase the team?',
           options: createOptions(
-            'We have structured automated touchpoints that keep stakeholders updated without manual effort',
-            'We communicate manually when there is news or when someone remembers to follow up',
-            'Stakeholder communication is reactive. We reach out only when there is a specific reason'
+            'There is a structured update process that is scheduled, consistent, and does not depend on someone remembering to send it',
+            'Updates go out when there is something to share or when someone asks. There is no set rhythm to it',
+            'Most updates happen reactively. Stakeholders follow up with the team more often than the other way around'
           ),
         },
       ],
     },
     {
       id: '3C',
-      name: 'Proposal and Pitch Production',
+      name: 'Proposals and Scopes of Work',
       maxScore: 8,
       questions: [
         {
           id: 'Q10',
-          text: 'How does your team produce proposals, pitches, or scopes of work for new opportunities?',
+          text: 'How does your organisation put together a proposal, quote, or scope of work when a new opportunity comes in?',
           options: createOptions(
-            'We have templates and AI-assisted tools that allow us to produce proposals quickly and consistently',
-            'We write proposals manually each time, adapting from previous versions',
-            'Proposal production is slow and inconsistent. Each one is largely built from scratch'
+            'There are templates and a clear process that allow the team to turn around strong proposals consistently and quickly',
+            'There are some templates but proposals still require significant effort and time to pull together each time',
+            'Every proposal is largely built from scratch. Quality and turnaround time vary depending on who is doing it'
           ),
         },
         {
           id: 'Q11',
-          text: 'How long does it typically take to get a proposal or pitch out from first conversation to delivery?',
+          text: 'How quickly can your team get a proposal or scope of work in front of a potential client or partner after the first conversation?',
           options: createOptions(
-            'We can turn around a strong proposal within 24 hours using our systems',
-            'It usually takes 3 to 5 days depending on who is available',
-            'Turnaround is unpredictable. It depends on workload and can take over a week'
+            'Within 24 hours, consistently',
+            'Usually 3 to 5 days, depending on availability and how complex the scope is',
+            'It varies widely. Sometimes fast, sometimes over a week. It mostly depends on who has capacity'
           ),
         },
       ],
@@ -208,66 +208,66 @@ const zone4: Zone = {
   subZones: [
     {
       id: '4A',
-      name: 'Hiring and Screening',
+      name: 'Bringing People In',
       maxScore: 4,
       questions: [
         {
           id: 'Q12',
-          text: 'When you open a new role, how is the hiring process managed from job description to shortlist?',
+          text: 'When your organisation needs to add someone, whether full time, part time, or contract, what does that process look like?',
           options: createOptions(
-            'We have templated job descriptions, automated screening, and a structured candidate flow',
-            'We write job descriptions manually and screen applications by hand',
-            'Hiring is ad hoc. The process changes each time depending on who is leading it'
+            'There is a clear, repeatable process covering role definition, structured screening, and how candidates get evaluated',
+            'There is a rough approach based on experience but it is not fully documented or consistent each time',
+            'Hiring is largely ad hoc. Each time feels like the process is being figured out from scratch'
           ),
         },
       ],
     },
     {
       id: '4B',
-      name: 'Onboarding and Role Clarity',
+      name: 'Getting New People Up to Speed',
       maxScore: 8,
       questions: [
         {
           id: 'Q13',
-          text: 'When a new team member joins, what does their first two weeks look like?',
+          text: 'When someone new joins the organisation, what do their first two weeks typically look like?',
           options: createOptions(
-            'We have a structured onboarding sequence that runs automatically and is consistent for every hire',
-            'Onboarding is managed manually. Quality depends on who has time to run it',
-            'Onboarding is informal. New hires largely figure things out themselves'
+            'There is a structured onboarding process that runs consistently regardless of who is managing it',
+            'Onboarding happens but the quality depends heavily on who has time and what else is going on that week',
+            'New people largely figure things out themselves. The organisation is too stretched to run a proper onboarding'
           ),
         },
         {
           id: 'Q14',
-          text: 'How does a new team member know exactly what success looks like in their role?',
+          text: 'How does a new team member understand what they are responsible for and what success looks like in their role from day one?',
           options: createOptions(
-            'Role expectations, KPIs, and 30/60/90 day milestones are documented and shared automatically at hire',
-            'We communicate expectations verbally or in a document shared manually',
-            'Role clarity is informal. Expectations are not consistently documented'
+            'Role expectations and early milestones are documented and shared as a standard part of joining',
+            'This is communicated verbally or informally. It is not written down in a consistent way',
+            'Expectations are mostly assumed. People piece together what is required from conversations over time'
           ),
         },
       ],
     },
     {
       id: '4C',
-      name: 'Performance Cycles and Feedback',
+      name: 'Performance and Feedback',
       maxScore: 8,
       questions: [
         {
           id: 'Q15',
-          text: 'How are performance reviews and check-ins managed across your team?',
+          text: 'How do people in your organisation know how they are performing against what is expected of them?',
           options: createOptions(
-            'Check-ins and review cycles are scheduled and tracked automatically. Nothing depends on someone remembering',
-            'We do performance reviews manually on a schedule someone has to manage',
-            'Performance conversations happen reactively, usually when there is a problem'
+            'There is a regular structured process for performance conversations and feedback. It runs on a set schedule',
+            'These conversations happen but informally, or only when something specific prompts them',
+            'Performance feedback is mostly reactive. It surfaces when there is a problem rather than as a regular rhythm'
           ),
         },
         {
           id: 'Q16',
-          text: 'How does your team give and receive structured feedback outside of formal reviews?',
+          text: 'Outside of formal reviews, how does feedback flow across teams day to day?',
           options: createOptions(
-            'We have a lightweight system that creates regular feedback loops without requiring manual coordination',
-            'Feedback happens informally in conversation or not at all between formal reviews',
-            'There is no structured feedback culture or system in place'
+            'There is a culture and a lightweight structure that makes regular feedback normal and not dependent on a specific event to trigger it',
+            'Feedback happens in conversation occasionally but there is no real cadence or structure to it',
+            'Feedback culture is something the organisation wants to build but has not established yet'
           ),
         },
       ],
@@ -313,5 +313,3 @@ export function getSubZoneById(subZoneId: string): SubZone | undefined {
 export function getZoneById(zoneId: string): Zone | undefined {
   return DIAGNOSTIC_ZONES.find(z => z.id === zoneId);
 }
-
-// Total number of questions

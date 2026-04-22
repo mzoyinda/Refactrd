@@ -47,7 +47,7 @@ export default function QuestionCard({
       </div>
 
       {/* Question */}
-      <h2 className="text-xl md:text-2xl font-clash font-bold text-[#1F2A44] mb-8 leading-tight">
+      <h2 className="text-xl md:text-2xl font-montserrat font-bold text-[#1F2A44] mb-8 leading-[29px]">
         {question.text}
       </h2>
 
@@ -67,7 +67,7 @@ export default function QuestionCard({
             <div
               className={`w-6 h-6 rounded-full border-2 flex-shrink-0 mr-4 transition-all duration-300 ${
                 selectedOption === index
-                  ? 'border-[#a2d2ff] bg-[#a2d2ff]'
+                  ? 'border-[#1F2A44] bg-[#1F2A44]'
                   : 'border-[#CBD5E1]'
               }`}
             >
@@ -77,7 +77,7 @@ export default function QuestionCard({
             </div>
 
             {/* Option text */}
-            <span className="font-jakarta text-[#1F2A44] leading-relaxed">
+            <span className="font-montserrat text-[#1F2A44] leading-relaxed">
               {option.text}
             </span>
           </button>
@@ -91,7 +91,7 @@ export default function QuestionCard({
         className={`w-full py-4 rounded-lg font-clash font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
           selectedOption === null
             ? 'bg-[#CBD5E1] text-[#94A3B8] cursor-not-allowed'
-            : 'bg-[#a2d2ff] text-[#1F2A44] hover:bg-[#8cc2ff] hover:scale-[1.02]'
+            : 'bg-[#1F2A44] text-[#E6EAF0] hover:scale-[1.02]'
         }`}
       >
         <span>{isLastQuestion ? 'Submit Assessment' : 'Next Question'}</span>

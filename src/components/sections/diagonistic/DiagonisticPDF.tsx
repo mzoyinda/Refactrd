@@ -6,27 +6,50 @@ import {
   View,
   StyleSheet,
   Font,
+  Image,
 } from '@react-pdf/renderer';
 import { CalculationResult, ContextData, SCORE_BAND_DESCRIPTIONS } from '@/app/types/diagonistic';
 
-// Register fonts (using default fonts for now)
-// You can add custom fonts later if needed
+
+try {
+  Font.register({
+    family: 'Montserrat',
+    fonts: [
+      { src: '/fonts/Montserrat-Regular.ttf', fontWeight: 400 },
+      { src: '/fonts/Montserrat-Medium.ttf', fontWeight: 500 },
+      { src: '/fonts/Montserrat-SemiBold.ttf', fontWeight: 600 },
+      { src: '/fonts/Montserrat-Bold.ttf', fontWeight: 700 },
+    ],
+  });
+} catch (error) {
+  console.warn('Montserrat font not loaded, falling back to Helvetica');
+}
 
 // Create styles
 const styles = StyleSheet.create({
   page: {
     padding: 40,
     backgroundColor: '#ffffff',
-    fontFamily: 'Helvetica',
+    fontFamily: 'Montserrat',
   },
   
   // Header
   header: {
     marginBottom: 30,
   },
+  logoContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  logoImage: {
+    width: 120,
+    height: 30,
+    objectFit: 'contain',
+  },
   logo: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: 700,
     color: '#1F2A44',
     marginBottom: 5,
   },
@@ -34,6 +57,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: '#64748B',
     marginBottom: 20,
+    fontWeight: 400,
   },
   divider: {
     borderBottomWidth: 2,
@@ -44,7 +68,7 @@ const styles = StyleSheet.create({
   // Cover Page
   coverTitle: {
     fontSize: 28,
-    fontWeight: 'bold',
+    fontWeight: 700,
     color: '#1F2A44',
     marginBottom: 10,
     textAlign: 'center',
@@ -69,7 +93,7 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: '#64748B',
     width: 100,
-    fontWeight: 'bold',
+    fontWeight: 600,
   },
   companyInfoValue: {
     fontSize: 11,
@@ -92,7 +116,7 @@ const styles = StyleSheet.create({
   },
   scoreValue: {
     fontSize: 72,
-    fontWeight: 'bold',
+    fontWeight: 700,
     color: '#1F2A44',
     marginBottom: 5,
   },
@@ -109,7 +133,7 @@ const styles = StyleSheet.create({
   },
   scoreBadgeText: {
     fontSize: 14,
-    fontWeight: 'bold',
+    fontWeight: 700,
     color: '#1F2A44',
   },
   scoreDescription: {
@@ -143,7 +167,7 @@ const styles = StyleSheet.create({
   },
   insightLabel: {
     fontSize: 9,
-    fontWeight: 'bold',
+    fontWeight: 600,
     marginBottom: 5,
     textTransform: 'uppercase',
   },
@@ -167,7 +191,7 @@ const styles = StyleSheet.create({
   // Zone Breakdown
   sectionTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: 700,
     color: '#1F2A44',
     marginBottom: 20,
     marginTop: 10,
@@ -182,12 +206,12 @@ const styles = StyleSheet.create({
   },
   zoneName: {
     fontSize: 12,
-    fontWeight: 'bold',
+    fontWeight: 600,
     color: '#1F2A44',
   },
   zonePercentage: {
     fontSize: 12,
-    fontWeight: 'bold',
+    fontWeight: 700,
   },
   zonePercentageGreen: {
     color: '#16A34A',
@@ -299,8 +323,14 @@ const DiagnosticPDF: React.FC<DiagnosticPDFProps> = ({
       <Page size="A4" style={styles.page}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.logo}>Refactrd</Text>
-          <Text style={styles.tagline}>AI Engineering Studio</Text>
+          {/* Logo - will show image if /public/logo.png exists, otherwise shows text */}
+          <View style={styles.logoContainer}>
+            {/* Uncomment when you add logo.png to /public/ folder */}
+            <Image src="/images/refactrd-logo.png" style={styles.logoImage} />
+            
+            
+          </View>
+          <Text style={styles.tagline}>Your Favourite AI Engineering Studio</Text>
           <View style={styles.divider} />
         </View>
 
@@ -376,16 +406,19 @@ const DiagnosticPDF: React.FC<DiagnosticPDFProps> = ({
       <Page size="A4" style={styles.page}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.logo}>Refactrd</Text>
+          <View style={styles.logoContainer}>
+            {/* <Image src="/logo.png" style={styles.logoImage} /> */}
+            <Text style={styles.logo}>Refactrd</Text>
+          </View>
           <View style={styles.divider} />
         </View>
 
         <Text style={styles.sectionTitle}>Zone Breakdown</Text>
 
-        {/* Zone 1: Customer Experience */}
+        {/* Zone 1: Tool Stack and Integration */}
         <View style={styles.zoneItem}>
           <View style={styles.zoneHeader}>
-            <Text style={styles.zoneName}>Customer Experience</Text>
+            <Text style={styles.zoneName}>Tool Stack and Integration</Text>
             <Text
               style={[styles.zonePercentage, getPercentageColor(results.zonePercentages.zone1)]}
             >
@@ -430,10 +463,10 @@ const DiagnosticPDF: React.FC<DiagnosticPDFProps> = ({
           </Text>
         </View>
 
-        {/* Zone 3: Outreach & Growth */}
+        {/* Zone 3: Delivery and Project Execution */}
         <View style={styles.zoneItem}>
           <View style={styles.zoneHeader}>
-            <Text style={styles.zoneName}>Outreach & Growth</Text>
+            <Text style={styles.zoneName}>Delivery and Project Execution</Text>
             <Text
               style={[styles.zonePercentage, getPercentageColor(results.zonePercentages.zone3)]}
             >
@@ -454,10 +487,10 @@ const DiagnosticPDF: React.FC<DiagnosticPDFProps> = ({
           </Text>
         </View>
 
-        {/* Zone 4: People & Talent */}
+        {/* Zone 4: People and Talent */}
         <View style={styles.zoneItem}>
           <View style={styles.zoneHeader}>
-            <Text style={styles.zoneName}>People & Talent</Text>
+            <Text style={styles.zoneName}>People and Talent</Text>
             <Text
               style={[styles.zonePercentage, getPercentageColor(results.zonePercentages.zone4)]}
             >
@@ -501,7 +534,10 @@ const DiagnosticPDF: React.FC<DiagnosticPDFProps> = ({
       <Page size="A4" style={styles.page}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.logo}>Refactrd</Text>
+          <View style={styles.logoContainer}>
+            {/* <Image src="/logo.png" style={styles.logoImage} /> */}
+            <Text style={styles.logo}>Refactrd</Text>
+          </View>
           <View style={styles.divider} />
         </View>
 
@@ -530,7 +566,7 @@ const DiagnosticPDF: React.FC<DiagnosticPDFProps> = ({
             Get in Touch
           </Text>
           <Text style={{ fontSize: 10, color: '#64748B', marginBottom: 5 }}>
-            Email: info@refactrd.com
+            Email: hello@refactrd.com
           </Text>
           <Text style={{ fontSize: 10, color: '#64748B', marginBottom: 5 }}>
             Website: refactrd.com

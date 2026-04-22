@@ -3,10 +3,15 @@
 import { useEffect, useState } from 'react';
 import { pdf } from '@react-pdf/renderer';
 import DiagnosticPDF from './DiagonisticPDF';
+import {
+  DiagnosticAnswers,
+  ContextData,
+  CalculationResult,
+  SCORE_BAND_DESCRIPTIONS,
+} from '../../../app/types/diagonistic';
 import { calculateScores } from '@/lib/diagnosticCalculations';
 import { updateDiagnosticResults } from '@/lib/diagnosticDatabase';
 import { Loader2, TrendingUp, TrendingDown, AlertCircle, CheckCircle2, Download } from 'lucide-react';
-import { CalculationResult, ContextData, DiagnosticAnswers, SCORE_BAND_DESCRIPTIONS } from '@/app/types/diagonistic';
 
 interface ResultsScreenProps {
   answers: DiagnosticAnswers;
@@ -139,7 +144,7 @@ export default function ResultsScreen({
 
   if (isCalculating || !results) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#1F2A44] to-[#0e5d7d] flex items-center justify-center p-4">
+      <div className="min-h-screen bg-black/75 flex items-center justify-center p-4">
         <div className="text-center">
           <Loader2 className="w-16 h-16 text-[#a2d2ff] animate-spin mx-auto mb-4" />
           <h2 className="text-2xl font-clash font-bold text-white mb-2">
@@ -254,11 +259,11 @@ export default function ResultsScreen({
           </h2>
 
           <div className="space-y-6">
-            {/* Zone 1: Customer Experience */}
+            {/* Zone 1: Tool Stack and Integration */}
             <div>
               <div className="flex justify-between items-center mb-2">
                 <h3 className="font-clash font-semibold text-[#1F2A44]">
-                  Customer Experience
+                  Tool Stack and Integration
                 </h3>
                 <span
                   className={`font-clash font-bold text-lg ${getZonePercentageColor(
@@ -308,11 +313,11 @@ export default function ResultsScreen({
               </p>
             </div>
 
-            {/* Zone 3: Outreach & Growth */}
+            {/* Zone 3: Delivery and Project Execution */}
             <div>
               <div className="flex justify-between items-center mb-2">
                 <h3 className="font-clash font-semibold text-[#1F2A44]">
-                  Outreach & Growth
+                  Delivery and Project Execution
                 </h3>
                 <span
                   className={`font-clash font-bold text-lg ${getZonePercentageColor(
@@ -335,11 +340,11 @@ export default function ResultsScreen({
               </p>
             </div>
 
-            {/* Zone 4: People & Talent */}
+            {/* Zone 4: People and Talent */}
             <div>
               <div className="flex justify-between items-center mb-2">
                 <h3 className="font-clash font-semibold text-[#1F2A44]">
-                  People & Talent
+                  People and Talent
                 </h3>
                 <span
                   className={`font-clash font-bold text-lg ${getZonePercentageColor(
