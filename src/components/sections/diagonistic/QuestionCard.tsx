@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Question } from '@/app/types/diagonistic';
 
@@ -31,6 +31,10 @@ export default function QuestionCard({
       onAnswer(question.id, points);
     }
   };
+
+  useEffect(() => {
+  setSelectedOption(null);
+}, [question.id]);
 
   return (
     <div className="w-full max-w-2xl mx-auto px-4 py-8">
