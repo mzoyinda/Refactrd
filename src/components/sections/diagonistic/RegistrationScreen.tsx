@@ -82,7 +82,7 @@ export default function RegistrationScreen({ onComplete }: RegistrationScreenPro
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1F2A44] to-[#0e5d7d] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-black/75 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
@@ -234,10 +234,10 @@ export default function RegistrationScreen({ onComplete }: RegistrationScreenPro
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full py-4 bg-[#a2d2ff] text-[#1F2A44] rounded-lg font-clash font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
+            className={`w-full py-4 bg-[#1F2A44] text-[#E6EAF0] rounded-lg font-clash font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
               isSubmitting
                 ? 'opacity-50 cursor-not-allowed'
-                : 'hover:bg-[#8cc2ff] hover:scale-[1.02]'
+                : 'hover:bg-[#1F2A44] hover:scale-[1.02]'
             }`}
           >
             {isSubmitting ? (

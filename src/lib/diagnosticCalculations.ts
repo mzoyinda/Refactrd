@@ -1,5 +1,4 @@
 import { CalculationResult, DiagnosticAnswers, ScoreBand, SubZoneScore, SubZoneScores, ZonePercentages, ZoneScores } from "@/app/types/diagonistic";
-import { DIAGNOSTIC_ZONES } from '../data/diagonisticQuestions';
 
 
 /**
@@ -92,9 +91,9 @@ export function getScoreBand(normalisedScore: number): ScoreBand {
  */
 function getWeakestZone(percentages: ZonePercentages): string {
   const zones = [
-    { name: 'Customer Experience', percentage: percentages.zone1 },
+    { name: 'Tool Stack and Integration', percentage: percentages.zone1 },
     { name: 'Internal Operations', percentage: percentages.zone2 },
-    { name: 'Outreach and Growth', percentage: percentages.zone3 },
+    { name: 'Delivery and Project Execution', percentage: percentages.zone3 },
     { name: 'People and Talent', percentage: percentages.zone4 },
   ];
 
@@ -107,18 +106,18 @@ function getWeakestZone(percentages: ZonePercentages): string {
  */
 function getWeakestSubZone(subZoneScores: SubZoneScores): string {
   const subZoneNames: Record<string, string> = {
-    '1A': 'Initial Response and Lead Acknowledgement',
-    '1B': 'Follow-up and Nurture After First Contact',
-    '1C': 'Customer Support and Issue Resolution',
+    '1A': 'Tools You Are Currently Using',
+    '1B': 'How Your Tools Connect',
+    '1C': 'Repetitive Manual Work',
     '2A': 'Team Coordination and Alignment',
-    '2B': 'Knowledge Management and Documentation',
-    '2C': 'Reporting and Performance Tracking',
-    '3A': 'Pipeline and Opportunity Management',
-    '3B': 'Partner and Stakeholder Communication',
-    '3C': 'Proposal and Pitch Production',
-    '4A': 'Hiring and Screening',
-    '4B': 'Onboarding and Role Clarity',
-    '4C': 'Performance Cycles and Feedback',
+    '2B': 'Knowledge and Documentation',
+    '2C': 'Reporting and Visibility',
+    '3A': 'How Work Gets Tracked',
+    '3B': 'Client and Stakeholder Updates',
+    '3C': 'Proposals and Scopes of Work',
+    '4A': 'Bringing People In',
+    '4B': 'Getting New People Up to Speed',
+    '4C': 'Performance and Feedback',
   };
 
   const subZones = Object.entries(subZoneScores).map(([id, score]) => ({
