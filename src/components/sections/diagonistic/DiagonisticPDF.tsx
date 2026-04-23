@@ -8,9 +8,11 @@ import {
   Font,
   Image,
 } from '@react-pdf/renderer';
-import { CalculationResult, ContextData, SCORE_BAND_DESCRIPTIONS } from '@/app/types/diagonistic';
+import { CalculationResult, ContextData, SCORE_BAND_DESCRIPTIONS } from '../../../app/types/diagonistic';
 
-
+// Register Montserrat fonts
+// Note: Font files should be in /public/fonts/
+// Download from: https://fonts.google.com/specimen/Montserrat
 try {
   Font.register({
     family: 'Montserrat',
@@ -197,7 +199,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   zoneItem: {
-    marginBottom: 20,
+    marginBottom: 12,
   },
   zoneHeader: {
     flexDirection: 'row',
@@ -248,8 +250,8 @@ const styles = StyleSheet.create({
   
   // AI Recommendation
   recommendationContainer: {
-    marginTop: 20,
-    padding: 20,
+    marginTop: 15,
+    padding: 15,
     backgroundColor: '#F8FAFC',
     borderRadius: 8,
   },
@@ -278,7 +280,7 @@ const styles = StyleSheet.create({
   
   // Page break helper
   pageBreak: {
-    marginTop: 20,
+    marginTop: 10,
   },
 });
 
@@ -326,11 +328,12 @@ const DiagnosticPDF: React.FC<DiagnosticPDFProps> = ({
           {/* Logo - will show image if /public/logo.png exists, otherwise shows text */}
           <View style={styles.logoContainer}>
             {/* Uncomment when you add logo.png to /public/ folder */}
-            <Image src="/images/refactrd-logo.png" style={styles.logoImage} />
+            {/* <Image src="/logo.png" style={styles.logoImage} /> */}
             
-            
+            {/* Text logo (fallback) - remove this when you add the image */}
+            <Text style={styles.logo}>Refactrd</Text>
           </View>
-          <Text style={styles.tagline}>Your Favourite AI Engineering Studio</Text>
+          <Text style={styles.tagline}>AI Engineering Studio</Text>
           <View style={styles.divider} />
         </View>
 
@@ -513,7 +516,7 @@ const DiagnosticPDF: React.FC<DiagnosticPDFProps> = ({
 
         {/* Sub-zone Details */}
         <View style={styles.pageBreak}>
-          <Text style={[styles.sectionTitle, { fontSize: 14, marginTop: 30 }]}>
+          <Text style={[styles.sectionTitle, { fontSize: 14, marginTop: 15 }]}>
             Understanding Your Score
           </Text>
           <Text style={{ fontSize: 10, color: '#64748B', lineHeight: 1.5 }}>
@@ -548,7 +551,7 @@ const DiagnosticPDF: React.FC<DiagnosticPDFProps> = ({
         </View>
 
         {/* Next Steps */}
-        <View style={{ marginTop: 30, padding: 20, backgroundColor: '#1F2A44', borderRadius: 8 }}>
+        <View style={{ marginTop: 20, padding: 20, backgroundColor: '#1F2A44', borderRadius: 8 }}>
           <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#ffffff', marginBottom: 10 }}>
             Ready to close these gaps?
           </Text>
@@ -561,12 +564,12 @@ const DiagnosticPDF: React.FC<DiagnosticPDFProps> = ({
         </View>
 
         {/* Contact Info */}
-        <View style={{ marginTop: 30 }}>
+        <View style={{ marginTop: 20, marginBottom: 60 }}>
           <Text style={{ fontSize: 12, fontWeight: 'bold', color: '#1F2A44', marginBottom: 10 }}>
             Get in Touch
           </Text>
           <Text style={{ fontSize: 10, color: '#64748B', marginBottom: 5 }}>
-            Email: hello@refactrd.com
+            Email: info@refactrd.com
           </Text>
           <Text style={{ fontSize: 10, color: '#64748B', marginBottom: 5 }}>
             Website: refactrd.com
