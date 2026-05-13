@@ -184,28 +184,14 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <div className="flex items-center gap-2">
               <p className="text-white/60 text-sm font-montserrat">
                 © {currentYear} Refactrd. All rights reserved.
               </p>
             </div>
 
-            <div className="flex items-center gap-6">
-              <Link
-                href="/"
-                className="font-clash text-white/60 hover:text-accent text-sm transition-colors duration-200"
-              >
-                Terms & Conditions
-              </Link>
-              <span className="font-clash text-white/20">•</span>
-              <Link
-                href="/"
-                className="font-clash text-white/60 hover:text-accent text-sm transition-colors duration-200"
-              >
-                Privacy Policy
-              </Link>
-            </div>
+           
           </div>
         </div>
       </div>
