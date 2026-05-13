@@ -110,14 +110,6 @@ export default function ImplementationHero() {
               Join the waitlist
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
-            <Link
-              href="/projects"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-clash border border-[#1F2A44] px-8 py-4 rounded-full "
-            >
-              See How it Works
-            </Link>
           </div>
 
            
