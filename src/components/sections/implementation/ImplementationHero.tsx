@@ -8,6 +8,7 @@ export default function ImplementationHero() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
+  // YOUR IMAGE PATHS - NOT CHANGED
   const carouselImages = [
     {
       src: '/images/ai-dashboard.jpg',
@@ -38,7 +39,7 @@ export default function ImplementationHero() {
   }, []);
 
   return (
-    <section className="relative min-h-[85vh] flex items-center bg-gradient-to-br from-[#E6EAF0] via-white to-white overflow-hidden pt-32 pb-20">
+    <section className="relative min-h-[100vh] flex items-center bg-gradient-to-br from-[#E6EAF0] via-white to-white overflow-hidden pt-32 pb-20 lg:mt-10">
       {/* Subtle animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-gradient-to-br from-[#A2D2FF]/20 to-transparent rounded-full blur-3xl animate-pulse-slow" />
@@ -50,15 +51,29 @@ export default function ImplementationHero() {
         <div className="grid lg:grid-cols-[58%_42%] gap-12 items-center">
           {/* LEFT SIDE - Content with better readability */}
           <div className="space-y-7">
+            {/* Welcome Badge */}
+            <div
+              className={`transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <div className="inline-flex items-center gap-2 bg-white border-2 border-[#A2D2FF]/50 rounded-full px-5 py-2.5 shadow-lg">
+                <span className="w-2 h-2 rounded-full bg-[#639922] animate-pulse" />
+                <span className="text-sm font-bold tracking-wide text-[#1F2A44] font-clash">
+                  Welcome to the AI Startups Launchpad
+                </span>
+              </div>
+            </div>
+
             {/* Main Heading - Clear and Bold */}
             <div
               className={`transition-all duration-700 delay-100 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <h1 className="text-[40px] md:text-5xl lg:text-[49px] font-clash font-extrabold text-[#1F2A44] leading-[45px] lg:leading-[58px] mb-7">
-                <span className="block">Get Your first AI employee.</span>
-                <span className="block text-[#5a6580] mt-1">Free. 3 Weeks. No Risk.</span>
+              <h1 className="text-[40px] md:text-5xl lg:text-[46px] font-clash font-extrabold text-[#1F2A44] leading-[45px] lg:leading-[48px] mb-4">
+                <span className="block">Get Your First AI Employee.</span>
+                <span className="block text-[#5a6580] mt-2 text-[0.85em] ">Free. 3 Weeks. No Risk.</span>
               </h1>
 
               <div className="w-20 h-1.5 bg-gradient-to-r from-[#A2D2FF] to-[#1F2A44] rounded-full" />
@@ -82,7 +97,7 @@ export default function ImplementationHero() {
               {[
                 'Free business audit (no commitment)',
                 '3-week free trial (run it live)',
-                'Subscribe for $100/month (only if it works)',
+                'You subscribe only if it delivers results',
               ].map((point, i) => (
                 <div key={i} className="flex items-center gap-4 group">
                   <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-[#A2D2FF] to-[#1F2A44] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
@@ -97,22 +112,22 @@ export default function ImplementationHero() {
 
             {/* CTAs - Bold and Clear */}
             <div
-              className={`flex flex-wrap justify-center lg:justify-start items-center gap-4 pt-6 transition-all duration-700 delay-400 ${
+              className={`flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-6 transition-all duration-700 delay-400 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
               <a
-                href="https://forms.gle/sE5AhgZQrUN3mbC2A"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
-              >
-                <span className="relative z-10">Join the Waitlist</span>
-                <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-              </a>
+                 href="https://forms.gle/sE5AhgZQrUN3mbC2A"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
+               >
+                 <span className="relative z-10">Join the Waitlist</span>
+                 <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+               </a>
 
-              <p className="font-clash text-sm text-[#5a6580]">
-                Limited slots available • Cohort 1 launching soon
+               <p className="font-clash text-sm text-[#5a6580]">
+                 Limited slots available • Cohort 1 launching soon
               </p>
             </div>
 
