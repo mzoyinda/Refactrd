@@ -402,9 +402,9 @@ export default function Header() {
                 {programsDropdownOpen && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white border-2 border-[#DDE3EE] rounded-xl shadow-xl overflow-hidden animate-fade-in">
                     <Link
-                      href="/implementation-program"
+                      href="/ai-startups-launchpad"
                       onClick={() => {
-                        trackNavigation("implementation_program", "/implementation-program");
+                        trackNavigation("ai_startups_launchpad", "/ai-startups-launchpad");
                         setProgramsDropdownOpen(false);
                       }}
                       className="block px-5 py-4 hover:bg-[#F9FAFC] transition-colors duration-200 border-b border-[#DDE3EE] last:border-b-0"
@@ -543,10 +543,10 @@ export default function Header() {
                   {programsDropdownOpen && (
                     <div className="ml-4 mt-2 space-y-1">
                       <Link
-                        href="/implementation-program"
+                        href="/ai-startups-launchpad"
                         className="block px-4 py-3 text-[#5a6580] font-jakarta hover:bg-tertiary rounded-lg transition-colors duration-200"
                         onClick={() => {
-                          trackNavigation("implementation_program_mobile", "/implementation-program");
+                          trackNavigation("ai_startups_launchpad_mobile", "/ai-startups-launchpad");
                           setMobileMenuOpen(false);
                         }}
                       >
