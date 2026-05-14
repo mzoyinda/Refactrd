@@ -56,7 +56,7 @@ export default function ImplementationHero() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <h1 className="text-4xl md:text-5xl lg:text-[49px] font-clash font-extrabold text-[#1F2A44] leading-[68px] mb-7">
+              <h1 className="text-[40px] md:text-5xl lg:text-[49px] font-clash font-extrabold text-[#1F2A44] leading-[45px] lg:leading-[58px] mb-7">
                 <span className="block">Get Your first AI employee.</span>
                 <span className="block text-[#5a6580] mt-1">Free. 3 Weeks. No Risk.</span>
               </h1>
@@ -97,7 +97,7 @@ export default function ImplementationHero() {
 
             {/* CTAs - Bold and Clear */}
             <div
-              className={`flex flex-wrap items-center gap-4 pt-6 transition-all duration-700 delay-400 ${
+              className={`flex flex-wrap justify-center lg:justify-start items-center gap-4 pt-6 transition-all duration-700 delay-400 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
@@ -118,7 +118,7 @@ export default function ImplementationHero() {
 
             {/* Trust Indicator */}
             <p
-              className={`font-clash text-sm text-[#5a6580] flex items-center gap-2.5 pt-1 transition-all duration-700 delay-500 ${
+              className={`font-clash text-sm text-[#5a6580] flex items-center justify-center lg:justify-start gap-2.5 pt-1 transition-all duration-700 delay-500 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >

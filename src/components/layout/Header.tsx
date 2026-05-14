@@ -410,7 +410,7 @@ export default function Header() {
                       className="block px-5 py-4 hover:bg-[#F9FAFC] transition-colors duration-200 border-b border-[#DDE3EE] last:border-b-0"
                     >
                       <div className="font-clash font-semibold text-[#1F2A44] mb-1">
-                        Startup AI Launchpad
+                        AI Startups Launchpad
                       </div>
                       <div className="text-sm text-[#5a6580] font-jakarta">
                         Deploy your first AI Employee in 3 weeks
@@ -550,7 +550,7 @@ export default function Header() {
                           setMobileMenuOpen(false);
                         }}
                       >
-                        2-Week Build
+                        AI Startups Launchpad
                       </Link>
                     </div>
                   )}
