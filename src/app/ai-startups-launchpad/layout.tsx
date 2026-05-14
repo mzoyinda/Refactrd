@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Implementation Program - 2 Week Build | Refactrd - Deploy Your First AI Role in 14 Days",
+  title: "AI Startups Launchpad | Refactrd - Deploy Your First AI Role in 14 Days",
   description:
     "Your team is too good to spend half their week on work a machine could handle. We identify the function that's burying them, build an AI role to own it, and hand it over in 14 days. No retainer. No lock-in. Yours to keep.",
   keywords: [
