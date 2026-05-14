@@ -410,10 +410,10 @@ export default function Header() {
                       className="block px-5 py-4 hover:bg-[#F9FAFC] transition-colors duration-200 border-b border-[#DDE3EE] last:border-b-0"
                     >
                       <div className="font-clash font-semibold text-[#1F2A44] mb-1">
-                        2-Week Build
+                        Startup AI Launchpad
                       </div>
                       <div className="text-sm text-[#5a6580] font-jakarta">
-                        Deploy your first AI role in 14 days
+                        Deploy your first AI Employee in 3 weeks
                       </div>
                     </Link>
                   </div>
