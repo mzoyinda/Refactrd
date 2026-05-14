@@ -56,7 +56,7 @@ export default function ImplementationHero() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <h1 className="text-[40px] md:text-5xl lg:text-[49px] font-clash font-extrabold text-[#1F2A44] leading-[45px] lg:leading-[68px] mb-7">
+              <h1 className="text-[40px] md:text-5xl lg:text-[49px] font-clash font-extrabold text-[#1F2A44] leading-[45px] lg:leading-[58px] mb-7">
                 <span className="block">Get Your first AI employee.</span>
                 <span className="block text-[#5a6580] mt-1">Free. 3 Weeks. No Risk.</span>
               </h1>
