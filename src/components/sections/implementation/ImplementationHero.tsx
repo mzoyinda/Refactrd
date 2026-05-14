@@ -57,10 +57,10 @@ export default function ImplementationHero() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <div className="inline-flex items-center gap-2 bg-white border-2 border-[#A2D2FF]/50 rounded-full px-5 py-2.5 shadow-lg">
-                <span className="w-2 h-2 rounded-full bg-[#639922] animate-pulse" />
-                <span className="text-sm font-bold tracking-wide text-[#1F2A44] font-clash">
-                  Welcome to the AI Startups Launchpad
+              <div className="inline-flex items-center gap-2 bg-white border-2 border-[#3c5285]/50 rounded-full px-5 py-2.5 shadow-lg">
+                <span className="w-2 h-2 rounded-full bg-[#7ec12d] animate-pulse" />
+                <span className="text-sm font-medium tracking-wide text-[#1F2A44] font-clash">
+                  Welcome to AI Startups Launchpad
                 </span>
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function ImplementationHero() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-[#639922]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#7ec12d]" />
               New Program • Cohort 1 • Launching June 2026
             </p>
           </div>
