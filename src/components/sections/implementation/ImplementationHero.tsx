@@ -3,13 +3,11 @@
 import { useState, useEffect } from 'react';
 import { ChevronRight, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function ImplementationHero() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
-  // YOUR IMAGE PATHS - NOT CHANGED
   const carouselImages = [
     {
       src: '/images/ai-dashboard.jpg',
@@ -47,9 +45,9 @@ export default function ImplementationHero() {
         <div className="absolute top-1/2 -right-40 w-[600px] h-[600px] bg-gradient-to-bl from-[#daeeff]/30 to-transparent rounded-full blur-3xl animate-pulse-slower" />
       </div>
 
-      {/* RIGHT SIDE BIGGER: 40% left, 60% right */}
-      <div className="container max-w-[1400px] mx-auto px-[5vw] relative z-10">
-        <div className="grid lg:grid-cols-[55%_45%] gap-12 lg:gap-16 items-center">
+      {/* LEFT SIDE BIGGER: 60% text, 40% carousel */}
+      <div className="container max-w-[1300px] mx-auto px-[5vw] relative z-10">
+        <div className="grid lg:grid-cols-[58%_42%] gap-12 items-center">
           {/* LEFT SIDE - Content with better readability */}
           <div className="space-y-7">
             {/* Main Heading - Clear and Bold */}
@@ -58,10 +56,9 @@ export default function ImplementationHero() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <h1 className="text-[43px] md:text-5xl lg:text-7xl font-clash font-bold text-[#1F2A44] leading-[42px] lg:leading-[68px] mb-4">
-                <span className="block">Deploy your first</span>
-                <span className="block mt-1">AI Team Member</span>
-                <span className="block text-[#5a6580] mt-2 text-[0.85em]">in 14 days.</span>
+              <h1 className="text-4xl md:text-5xl lg:text-[49px] font-clash font-extrabold text-[#1F2A44] leading-[68px] mb-7">
+                <span className="block">Get Your first AI employee.</span>
+                <span className="block text-[#5a6580] mt-1">Free. 3 Weeks. No Risk.</span>
               </h1>
 
               <div className="w-20 h-1.5 bg-gradient-to-r from-[#A2D2FF] to-[#1F2A44] rounded-full" />
@@ -69,12 +66,11 @@ export default function ImplementationHero() {
 
             {/* Description - Larger, more readable */}
             <p
-              className={`font-clash text-lg text-[#000] leading-[28px] transition-all duration-700 delay-200 w-full lg:w-[85%] ${
+              className={`font-clash text-lg text-[#5a6580] leading-[1.75] transition-all duration-700 delay-200 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              Stop losing hours to repetitive work. We build production-ready AI roles that
-              handle the volume while your team focuses on what actually moves the needle.
+              We'll identify the manual work slowing your startup down, build a custom AI solution to automate it, and let you test it free for 3 weeks. Subscribe only if you see results.
             </p>
 
             {/* Key Points - More spacing */}
@@ -84,9 +80,9 @@ export default function ImplementationHero() {
               }`}
             >
               {[
-                'Full audit & security scoping (free)',
-                'One deployed AI role (production-ready)',
-                'Complete handover & documentation',
+                'Free business audit (no commitment)',
+                '3-week free trial (run it live)',
+                'Subscribe for $100/month (only if it works)',
               ].map((point, i) => (
                 <div key={i} className="flex items-center gap-4 group">
                   <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-[#A2D2FF] to-[#1F2A44] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
@@ -100,19 +96,35 @@ export default function ImplementationHero() {
             </div>
 
             {/* CTAs - Bold and Clear */}
-           <div className="flex flex-col sm:flex-row items-center gap-4 animate-fade-up delay-500">
-            <a
-              href="https://refactrd.substack.com/subscribe?params=%5Bobject%20Object%5D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
+            <div
+              className={`flex flex-wrap items-center gap-4 pt-6 transition-all duration-700 delay-400 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
             >
-              Join the waitlist
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
-          </div>
+              <a
+                href="https://forms.gle/sE5AhgZQrUN3mbC2A"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
+              >
+                <span className="relative z-10">Join the Waitlist</span>
+                <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+              </a>
 
-           
+              <p className="font-clash text-sm text-[#5a6580]">
+                Limited slots available • Cohort 1 launching soon
+              </p>
+            </div>
+
+            {/* Trust Indicator */}
+            <p
+              className={`font-clash text-sm text-[#5a6580] flex items-center gap-2.5 pt-1 transition-all duration-700 delay-500 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <span className="w-2.5 h-2.5 rounded-full bg-[#639922]" />
+              New Program • Cohort 1 • Launching June 2026
+            </p>
           </div>
 
           {/* RIGHT SIDE - Image Carousel (BIGGER NOW - 62%) */}

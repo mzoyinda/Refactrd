@@ -42,14 +42,14 @@ export default function ImplementationProgramPage() {
       {/* All Sections */}
       <ImplementationHero />
       {/* <VideoDemo /> */}
-      <TheOffer />
+      {/* <TheOffer />
       <AIRoles />
       <BuildPaths />
       <Security />
       <Process />
       <POC />
       <FAQ />
-      <FinalCTA />
+      <FinalCTA /> */}
 
       <Footer />
 
