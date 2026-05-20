@@ -21,7 +21,6 @@ const montserrat = Montserrat({
 });
 
 // Local font - Clash Display
-// Note: You'll need to add Clash Display font files to your public/fonts directory
 const clash = localFont({
   src: [
     {
@@ -64,18 +63,22 @@ const codec = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Refactrd | Outsource Your Software Development",
+  title: "Refactrd | Your Favourite AI Engineering Studio",
   description:
-    "Product development, automation, and technical documentation delivered with clarity, structure, and ownership. Build reliable software with Refactrd.",
+    "We build AI-powered systems that help companies do less manual work. Workflow automation, AI assistants, product AI features, and agentic workflows for businesses globally.",
   keywords: [
-    "software development",
-    "web development",
-    "mobile app development",
-    "DevOps",
-    "technical documentation",
+    "AI engineering studio",
     "AI automation",
-    "outsourced development",
-    "software engineering",
+    "workflow automation",
+    "AI assistants",
+    "internal AI copilots",
+    "AI features development",
+    "agentic workflows",
+    "AI operations",
+    "enterprise AI implementation",
+    "West Africa AI solutions",
+    "Lagos AI studio",
+    "startup AI automation",
   ],
   authors: [{ name: "Refactrd" }],
   creator: "Refactrd",
@@ -84,16 +87,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://refactrd.com",
-    title: "Refactrd | Outsource Your Software Development",
+    title: "Refactrd | AI Engineering Studio",
     description:
-      "Product development, automation, and technical documentation delivered with clarity, structure, and ownership.",
+      "We build AI-powered systems that help companies do less manual work. Workflow automation, AI assistants, and agentic workflows for businesses globally.",
     siteName: "Refactrd",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Refactrd | Outsource Your Software Development",
+    title: "Refactrd | AI Engineering Studio",
     description:
-      "Product development, automation, and technical documentation delivered with clarity, structure, and ownership.",
+      "We build AI-powered systems that help companies do less manual work. Workflow automation, AI assistants, and agentic workflows.",
     creator: "@refactrd",
   },
   robots: {
