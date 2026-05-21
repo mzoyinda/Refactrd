@@ -172,7 +172,7 @@ export default function WhatWeDoSectionv2() {
                   onClick={() =>
                     trackCTAClick("what_we_do_mapping_call", "cal.com")
                   }
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-[#E6EAF0] rounded-full font-clash font-bold hover:bg-[#E6EAF0] transition-all duration-300 hover:scale-105 group whitespace-nowrap"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-[#E6EAF0] rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group whitespace-nowrap"
                 >
                   Book a Free AI Mapping Call
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
