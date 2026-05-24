@@ -1,61 +1,47 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { CheckCircle2, Clock } from 'lucide-react';
+import { ClipboardList, Target, Settings, CheckCircle2 } from 'lucide-react';
 
 const processSteps = [
   {
     number: '01',
-    tag: 'Free',
-    tagColor: 'bg-[#639922] text-white',
-    title: 'Application review',
+    icon: ClipboardList,
+    title: "Tell us what's broken",
     description:
-      'Submit your use case. We review and respond within 48 hours with next steps or an honest assessment of fit.',
-    duration: '48 hours',
+      'Apply with a specific operational problem. Not "we need AI" but "our team spends 10 hours weekly on manual reporting" or "support ticket triage eats our mornings." The more specific, the better we can help.',
+    duration: '1 day',
   },
   {
     number: '02',
-    tag: 'Free',
-    tagColor: 'bg-[#639922] text-white',
-    title: 'AI audit',
+    icon: Target,
+    title: 'Map the exact workflow',
     description:
-      'We map your operations at the task level: what work happens, how often, how complex, and what data it touches. You get a prioritised view of what AI should own.',
-    duration: '1 week',
+      "A 45-minute call where we walk through your current process step by step. Every tool, every handoff, every friction point. We're not guessing what's broken - we're mapping it in detail. By the end, we agree on exactly what success looks like.",
+    duration: 'Week 1',
   },
   {
     number: '03',
-    tag: 'Free',
-    tagColor: 'bg-[#639922] text-white',
-    title: 'Role and security design',
+    icon: Settings,
+    title: 'We build your solution',
     description:
-      'We define the first AI role: its ownership, decision boundaries, inputs, and outputs. We also scope data access and the right build path. Only then do we price the build.',
-    duration: '3-5 days',
-  },
-  {
-    number: '04',
-    tag: 'Paid',
-    tagColor: 'bg-[#1F2A44] text-white',
-    title: 'Build and deploy',
-    description:
-      '14 days for standard builds. Up to 3 weeks for engineered paths. Weekly check-ins. Live environment to test in. We ship the role into your actual operations, not a sandbox.',
-    duration: '2-3 weeks',
+      "1-2 weeks to build a custom AI solution for your exact problem. No templates. No generic tools. We connect to your systems, automate the workflow, and deploy it where your team actually works. You stay informed but you don't need to manage the build.",
+    duration: 'Weeks 2-3',
     featured: true,
   },
   {
-    number: '05',
-    tag: 'Free',
-    tagColor: 'bg-[#639922] text-white',
-    title: 'Handover',
+    number: '04',
+    icon: CheckCircle2,
+    title: 'Test it in real operations',
     description:
-      'Working system, technical documentation, data handling brief, defined escalation paths, performance review, and access revocation instructions. You own everything. The build stands alone.',
-    duration: '1 day',
+      "3 weeks to run the solution live. Not in a sandbox, in your actual operations with real data and real workflows. We monitor it daily, fix issues within 24 hours, and make sure it's delivering the results we agreed on.",
+    duration: 'Weeks 4-6',
   },
 ];
 
-export default function Process() {
+export default function HowItWorks() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeStep, setActiveStep] = useState<number | null>(null);
   const [visibleSteps, setVisibleSteps] = useState<Set<number>>(new Set());
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -76,7 +62,7 @@ export default function Process() {
     return () => observer.disconnect();
   }, []);
 
-  // Observe each step individually for scroll animations
+  // Observe each step for scroll animations
   useEffect(() => {
     const stepObserver = new IntersectionObserver(
       (entries) => {
@@ -103,7 +89,7 @@ export default function Process() {
     <section
       ref={sectionRef}
       className="py-20 md:py-28 bg-gradient-to-b from-white to-[#F9FAFC] relative overflow-hidden"
-      id="process"
+      id="how-it-works"
     >
       {/* Background decorative elements */}
       <div className="absolute top-20 right-10 w-64 h-64 bg-[#A2D2FF]/5 rounded-full blur-3xl pointer-events-none" />
@@ -117,27 +103,27 @@ export default function Process() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Process
+            The Process
           </span>
           <h2
             className={`text-4xl md:text-5xl lg:text-6xl font-clash font-bold text-[#1F2A44] mb-5 leading-tight transition-all duration-700 delay-100 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            From Application to Deployment
+            From problem to solution in 5 weeks
           </h2>
           <p
-            className={`text-lg text-[#5a6580] max-w-[600px] mx-auto leading-relaxed font-jakarta transition-all duration-700 delay-200 ${
+            className={`text-lg text-[#5a6580] max-w-[700px] mx-auto leading-relaxed font-jakarta transition-all duration-700 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Clear stages. No hidden steps. The timeline is set before we start.
+            No long discovery phases. No theoretical frameworks. We find your biggest operational bottleneck, build AI to handle it, and deploy it in your actual workflows.
           </p>
         </div>
 
         {/* Timeline */}
         <div className="relative max-w-[800px] mx-auto">
-          {/* Vertical Line - Animated */}
+          {/* Vertical Line */}
           <div className="absolute left-[31px] top-8 bottom-8 w-0.5 bg-[#DDE3EE] hidden md:block overflow-hidden">
             <div 
               className="w-full bg-gradient-to-b from-[#A2D2FF] to-[#1F2A44] transition-all duration-1000 ease-out"
@@ -150,9 +136,9 @@ export default function Process() {
           {/* Steps */}
           <div className="space-y-8">
             {processSteps.map((step, index) => {
-              const isActive = activeStep === index;
-              const isFeatured = step.featured;
+              const Icon = step.icon;
               const isStepVisible = visibleSteps.has(index);
+              const isFeatured = step.featured;
 
               return (
                 <div
@@ -162,30 +148,26 @@ export default function Process() {
                     isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
                   }`}
                   style={{ transitionDelay: `${300 + index * 100}ms` }}
-                  onMouseEnter={() => setActiveStep(index)}
-                  onMouseLeave={() => setActiveStep(null)}
                 >
                   <div
                     className={`relative bg-white border-2 rounded-2xl p-6 md:p-8 md:ml-20 transition-all duration-500 ${
-                      isFeatured
+                      isFeatured || isStepVisible
                         ? 'border-[#A2D2FF] shadow-xl'
-                        : isActive || isStepVisible
-                        ? 'border-[#A2D2FF] shadow-xl'
-                        : 'border-[#DDE3EE] shadow-lg hover:shadow-xl'
+                        : 'border-[#DDE3EE] shadow-lg hover:shadow-xl hover:border-[#A2D2FF]'
                     }`}
                   >
-                    {/* Number Badge - Desktop with scroll animation */}
+                    {/* Number Badge - Desktop */}
                     <div className="hidden md:block absolute -left-20 top-8">
                       <div
                         className={`relative w-16 h-16 rounded-full border-4 border-white flex items-center justify-center font-clash font-bold text-xl transition-all duration-500 ${
-                          isFeatured || isActive || isStepVisible
+                          isFeatured || isStepVisible
                             ? 'bg-[#1F2A44] text-white shadow-lg scale-110'
                             : 'bg-[#E6EAF0] text-[#1F2A44]'
                         }`}
                       >
                         {step.number}
                         
-                        {/* Animated ring on scroll */}
+                        {/* Animated ring */}
                         {isStepVisible && (
                           <div className="absolute inset-0 rounded-full border-2 border-[#A2D2FF] animate-ping-once" />
                         )}
@@ -197,74 +179,39 @@ export default function Process() {
                       {step.number}
                     </div>
 
-                    {/* Content */}
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                      <div className="flex-1">
-                        {/* Tags Row */}
-                        <div className="flex flex-wrap items-center gap-2 mb-3">
-                          <span
-                            className={`${step.tagColor} text-xs font-bold tracking-wider uppercase px-3 py-1.5 rounded-lg font-clash transition-all duration-300 ${
-                              isStepVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
-                            }`}
-                            style={{ transitionDelay: '200ms' }}
-                          >
-                            {step.tag}
-                          </span>
-                          
-                          {isFeatured && (
-                            <span 
-                              className={`bg-[#A2D2FF] text-[#1F2A44] text-xs font-bold tracking-wider uppercase px-3 py-1.5 rounded-lg font-jakarta transition-all duration-300 ${
-                                isStepVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
-                              }`}
-                              style={{ transitionDelay: '300ms' }}
-                            >
-                              Main Build
-                            </span>
-                          )}
+                    {/* Icon & Title Row */}
+                    <div className="flex items-start justify-between gap-4 mb-4">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-[#E6EAF0] flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-6 h-6 text-[#1F2A44]" strokeWidth={2} />
                         </div>
-
-                        {/* Title */}
-                        <h3 className={`text-2xl font-clash font-bold text-[#1F2A44] mb-2 transition-all duration-500 ${
+                        <h3 className={`text-2xl font-clash font-bold text-[#1F2A44] transition-all duration-500 ${
                           isStepVisible ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
-                        }`}
-                        style={{ transitionDelay: '100ms' }}
-                        >
+                        }`}>
                           {step.title}
                         </h3>
                       </div>
 
                       {/* Duration */}
-                      <div className={`flex items-center gap-2 text-[#5a6580] flex-shrink-0 transition-all duration-500 ${
+                      <span className={`text-sm font-semibold text-[#5a6580] font-clash flex-shrink-0 transition-all duration-500 ${
                         isStepVisible ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
-                      }`}
-                      style={{ transitionDelay: '200ms' }}
-                      >
-                        <Clock className="w-4 h-4" />
-                        <span className="text-sm font-semibold font-clash">
-                          {step.duration}
-                        </span>
-                      </div>
+                      }`}>
+                        {step.duration}
+                      </span>
                     </div>
 
                     {/* Description */}
                     <p className={`text-[15px] text-[#5a6580] leading-relaxed font-jakarta transition-all duration-500 ${
                       isStepVisible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
-                    }`}
-                    style={{ transitionDelay: '300ms' }}
-                    >
+                    }`}>
                       {step.description}
                     </p>
 
-                    {/* Completion Indicator - for completed/active steps */}
-                    {index < 3 && (
-                      <div className={`mt-4 flex items-center gap-2 text-[#639922] transition-all duration-500 ${
-                        isStepVisible ? 'translate-x-0 opacity-100' : 'translate-x-2 opacity-0'
-                      }`}
-                      style={{ transitionDelay: '400ms' }}
-                      >
-                        <CheckCircle2 className="w-4 h-4" strokeWidth={2.5} />
-                        <span className="text-xs font-semibold font-jakarta">
-                          No commitment required
+                    {/* Featured badge */}
+                    {isFeatured && (
+                      <div className="mt-4">
+                        <span className="inline-block bg-[#A2D2FF] text-[#1F2A44] text-xs font-bold tracking-wider uppercase px-3 py-1.5 rounded-lg font-clash">
+                          Main Build Phase
                         </span>
                       </div>
                     )}
@@ -273,7 +220,9 @@ export default function Process() {
               );
             })}
           </div>
-        </div>       
+        </div>
+
+       
       </div>
 
       <style jsx>{`

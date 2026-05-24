@@ -5,48 +5,48 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    question: "What exactly are we getting at the end of two weeks?",
+    question: "What kind of problems can the Launchpad solve?",
     answer:
-      "A deployed AI role handling a real function inside your business. Not a prototype, not a demo environment, not a report. A working system with documentation, defined decision boundaries, a data handling brief, and a handover review. You own everything we build.",
+      "The Launchpad works best for repetitive operational workflows that eat your team's time. Examples: manual reporting, support ticket triage, onboarding documentation, data entry across tools, recurring admin tasks. If it's repetitive and currently manual, we can likely automate it.",
   },
   {
-    question: "What does the paid build cost?",
+    question: "How is this different from hiring a developer?",
     answer:
-      "The audit, feasibility check, and security scoping are free. The build is fixed-scope and fixed-price, determined after the audit. We price based on complexity and build path. No surprises after you commit.",
+      "We're not building custom software from scratch. We're using existing AI tools and automation platforms to solve a specific workflow problem fast. A developer would take months and cost significantly more. We deliver in weeks.",
   },
   {
-    question: "What tools do you actually build on?",
+    question: "Do we need technical expertise on our team?",
     answer:
-      "We build against enterprise-grade LLM APIs with signed data processing agreements in place, not consumer chat interfaces. Depending on the build path — determined by task complexity, integration depth, and data sensitivity — we use self-hosted workflow orchestration, a hybrid API service layer, or a full custom backend. The specific stack is never chosen before the audit. We score your problem first, then pick the infrastructure that fits it.",
+      "No. We handle all the technical work. You just need someone who understands the workflow problem well enough to walk us through it during the mapping call and test the solution during the trial.",
   },
   {
-    question: "Do we need a technical team internally?",
+    question: "What happens during the 3-week trial?",
     answer:
-      "No. We handle the engineering end to end. You need to brief us on the operational problem, give us access to the relevant tools and systems, and be available for weekly check-ins. The handover documentation is written to be understood without an engineering background.",
+      "The solution runs live in your operations. Your team uses it daily with real data and real workflows. We monitor it constantly and fix any issues within 24 hours. At the end, we measure whether it delivered the results we agreed on.",
   },
   {
-    question: "Is this replacing our team?",
+    question: "What if the solution doesn't work during the trial?",
     answer:
-      "No. Every AI role we deploy is designed with human escalation points built in. AI handles execution and repetitive decisions within defined boundaries. Your team keeps strategy, direction, and anything outside the agent's defined scope. The goal is more output from the same headcount.",
+      "You don't pay anything. We'll explain what didn't work and why. Sometimes the problem needs a different approach. Sometimes it's not automatable yet. Either way, you're not stuck with a subscription for something that didn't deliver.",
   },
   {
-    question: "What about our data? Where does it go?",
+    question: "Can we expand to other workflows later?",
     answer:
-      "This is scoped before the build starts, not after. We map what data the agent needs to access, establish the minimum permissions required, and choose an infrastructure path that matches your data sensitivity. At handover you receive a plain-language data handling brief covering where data goes, what logs exist, and how to revoke access.",
+      "Yes. If you subscribe after the trial, we can add additional workflows one at a time. Most companies start with one bottleneck, see results, then expand to the next one.",
   },
   {
-    question: "Why are spots limited?",
+    question: "How many companies are accepted per cohort?",
     answer:
-      "We cap each cohort at a number we can genuinely deliver on. Doing the security scoping, data mapping, and infrastructure setup properly takes focused attention per client. We would rather do fewer builds well than spread thin.",
+      "We limit each cohort to ensure quality delivery. If your application is strong and the problem is a good fit, we'll let you know within 3-5 business days.",
   },
   {
-    question: "What if we want more after the two weeks?",
+    question: "What if we're not sure this is the right fit?",
     answer:
-      "We can scope a follow-on engagement to expand your AI workforce. That conversation only happens if you want it. The 2-Week Build is self-contained by design.",
+      "Book a free scoping call. We'll ask about your problem, tell you honestly whether the Launchpad can solve it, and recommend the audit if a broader operational review makes more sense.",
   },
 ];
 
-export default function ImplementationFAQ() {
+export default function LaunchpadFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
@@ -64,21 +64,20 @@ export default function ImplementationFAQ() {
                 Questions
               </span>
               <h2 className="text-4xl lg:text-5xl xl:text-5xl font-clash font-bold text-[#1F2A44] mb-6 leading-tight">
-                Straightforward answers
+                Common questions about the Launchpad
               </h2>
               <p className="text-lg text-[#5a6580] mb-8 leading-relaxed font-jakarta">
-                Clear information about the 2-Week Build. No marketing speak,
-                just what you need to know before applying.
+                Everything you need to know before applying. Still have questions? Book a free scoping call.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://refactrd.substack.com/subscribe?params=%5Bobject%20Object%5D"
+                  href="https://forms.gle/sE5AhgZQrUN3mbC2A"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
                 >
-                  Join the Waitlist
+                  Apply Here
                 </a>
               </div>
             </div>
@@ -109,7 +108,7 @@ export default function ImplementationFAQ() {
                     </div>
                   </button>
 
-                  {/* Answer with smooth animation */}
+                  {/* Answer */}
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
                       openIndex === index ? "max-h-96" : "max-h-0"
