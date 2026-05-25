@@ -110,7 +110,8 @@ export default function HowItWorks() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            From problem to solution in 5 weeks
+            From problem to solution in <br/>
+            5 weeks
           </h2>
           <p
             className={`text-lg text-[#5a6580] max-w-[700px] mx-auto leading-relaxed font-jakarta transition-all duration-700 delay-200 ${
