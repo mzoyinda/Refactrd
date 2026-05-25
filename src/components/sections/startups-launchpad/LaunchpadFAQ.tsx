@@ -22,12 +22,7 @@ const faqs = [
   {
     question: "What happens during the 3-week trial?",
     answer:
-      "The solution runs live in your operations. Your team uses it daily with real data and real workflows. We monitor it constantly and fix any issues within 24 hours. At the end, we measure whether it delivered the results we agreed on.",
-  },
-  {
-    question: "What if the solution doesn't work during the trial?",
-    answer:
-      "You don't pay anything. We'll explain what didn't work and why. Sometimes the problem needs a different approach. Sometimes it's not automatable yet. Either way, you're not stuck with a subscription for something that didn't deliver.",
+      "The solution runs live in your operations. Your team uses it daily with real data and real workflows. We monitor it constantly and fix any issues within 24 hours.",
   },
   {
     question: "Can we expand to other workflows later?",
@@ -38,11 +33,6 @@ const faqs = [
     question: "How many companies are accepted per cohort?",
     answer:
       "We limit each cohort to ensure quality delivery. If your application is strong and the problem is a good fit, we'll let you know within 3-5 business days.",
-  },
-  {
-    question: "What if we're not sure this is the right fit?",
-    answer:
-      "Book a free scoping call. We'll ask about your problem, tell you honestly whether the Launchpad can solve it, and recommend the audit if a broader operational review makes more sense.",
   },
 ];
 

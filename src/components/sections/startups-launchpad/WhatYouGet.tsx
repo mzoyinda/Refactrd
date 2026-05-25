@@ -17,12 +17,6 @@ const deliverables = [
       'Runs in your actual operations from day one. Real data, real workflows, real results. No sandbox testing or hypothetical scenarios.',
   },
   {
-    icon: BookOpen,
-    title: 'Structured Handoff',
-    description:
-      'A walkthrough session with your team showing exactly what the solution does, how to use it, and what to do if something unexpected happens. Plus documentation you can reference later.',
-  },
-  {
     icon: Eye,
     title: 'Active Monitoring',
     description:

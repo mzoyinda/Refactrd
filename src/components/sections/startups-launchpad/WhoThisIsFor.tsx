@@ -161,41 +161,6 @@ export default function WhoThisIsFor() {
             </div>
           </div>
         </div>
-
-        {/* Bottom CTA Card */}
-        <div
-          className={`transition-all duration-700 delay-500 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <div className="bg-gradient-to-br from-[#E6EAF0] to-white border-2 border-[#A2D2FF] rounded-2xl p-8 md:p-10 text-center relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-48 h-48 bg-[#A2D2FF]/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#daeeff]/10 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative z-10 max-w-[600px] mx-auto">
-              <h3 className="text-2xl md:text-3xl font-clash font-bold text-[#1F2A44] mb-4">
-                Not sure if you're ready?
-              </h3>
-
-              <p className="text-base text-[#5a6580] leading-relaxed mb-8 font-jakarta">
-                Book a free 30-minute scoping call and we'll tell you honestly
-                whether the Launchpad is the right fit or if you'd be better
-                served by our audit.
-              </p>
-
-              <a
-                href="https://cal.com/refactrd/technical-discovery-call"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
-              >
-                Book a Free AI Mapping Call
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -22,7 +22,7 @@ export default function StartupsLaunchpadPage() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     document.querySelectorAll(".scroll-reveal").forEach((el) => {
@@ -39,7 +39,7 @@ export default function StartupsLaunchpadPage() {
       <StartupsLaunchpadHero />
       <WhoThisIsFor />
       <WhatYouGet />
-       <HowItWorks />
+      <HowItWorks />
       <Pricing />
       <LaunchpadFAQ />
       <LaunchpadCTA />

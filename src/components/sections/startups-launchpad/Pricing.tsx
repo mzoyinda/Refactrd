@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Gift, TrendingUp, XCircle, DollarSign } from 'lucide-react';
+import { Gift, TrendingUp, DollarSign } from 'lucide-react';
 
 const pricingBlocks = [
   {
@@ -22,7 +22,7 @@ const pricingBlocks = [
   {
     icon: TrendingUp,
     title: 'After Trial',
-    price: '$100',
+    price: '$50',
     subtitle: 'per month',
     description: 'Subscribe only if the solution delivers measurable results.',
     features: [
@@ -34,21 +34,6 @@ const pricingBlocks = [
     ],
     timeline: 'If it works',
     featured: true,
-  },
-  {
-    icon: XCircle,
-    title: 'If It Doesn\'t Work',
-    price: '$0',
-    subtitle: 'Still free',
-    description: 'Walk away with no payment, no contract, no hard feelings.',
-    features: [
-      'No payment required',
-      'No long-term commitment',
-      'Keep insights from the mapping call',
-      "We'll explain what didn't work and why",
-      'No questions asked',
-    ],
-    timeline: 'Your choice',
   },
 ];
 
@@ -114,8 +99,8 @@ export default function Pricing() {
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12 md:items-stretch">
+        {/* Pricing Cards Grid - 2 Columns Centered */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12 md:items-stretch max-w-[1000px] mx-auto">
           {pricingBlocks.map((block, index) => {
             const Icon = block.icon;
 
@@ -209,6 +194,8 @@ export default function Pricing() {
             );
           })}
         </div>
+
+       
       </div>
     </section>
   );
