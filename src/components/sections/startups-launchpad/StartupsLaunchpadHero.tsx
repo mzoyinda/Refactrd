@@ -4,11 +4,10 @@ import { useState, useEffect } from 'react';
 import { ChevronRight, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
-export default function ImplementationHero() {
+export default function StartupsLaunchpadHero() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
-  // YOUR IMAGE PATHS - NOT CHANGED
   const carouselImages = [
     {
       src: '/images/ai-dashboard.jpg',
@@ -46,10 +45,10 @@ export default function ImplementationHero() {
         <div className="absolute top-1/2 -right-40 w-[600px] h-[600px] bg-gradient-to-bl from-[#daeeff]/30 to-transparent rounded-full blur-3xl animate-pulse-slower" />
       </div>
 
-      {/* LEFT SIDE BIGGER: 60% text, 40% carousel */}
+      {/* LEFT SIDE BIGGER: 58% text, 42% carousel */}
       <div className="container max-w-[1300px] mx-auto px-[5vw] relative z-10">
         <div className="grid lg:grid-cols-[58%_42%] gap-12 items-center">
-          {/* LEFT SIDE - Content with better readability */}
+          {/* LEFT SIDE - Content */}
           <div className="space-y-7">
             {/* Welcome Badge */}
             <div
@@ -57,47 +56,47 @@ export default function ImplementationHero() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <div className="inline-flex items-center gap-2 bg-white border-2 border-[#3c5285]/50 rounded-full px-5 py-2.5 shadow-lg">
-                <span className="w-2 h-2 rounded-full bg-[#7ec12d] animate-pulse" />
-                <span className="text-sm font-medium tracking-wide text-[#1F2A44] font-clash">
-                  Welcome to AI Startups Launchpad
+              <div className="inline-flex items-center gap-2 bg-white border-2 border-[#A2D2FF]/50 rounded-full px-5 py-2.5 shadow-lg">
+                <span className="w-2 h-2 rounded-full bg-[#639922] animate-pulse" />
+                <span className="text-sm font-bold tracking-wide text-[#1F2A44] font-clash">
+                  Welcome to the AI Startups Launchpad
                 </span>
               </div>
             </div>
 
-            {/* Main Heading - Clear and Bold */}
+            {/* Main Heading */}
             <div
               className={`transition-all duration-700 delay-100 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <h1 className="text-[40px] md:text-5xl lg:text-[46px] font-clash font-extrabold text-[#1F2A44] leading-[45px] lg:leading-[48px] mb-4">
-                <span className="block">Get Your First AI Employee.</span>
-                <span className="block text-[#5a6580] mt-2 text-[0.85em] ">Free. 3 Weeks. No Risk.</span>
+              <h1 className="text-[40px] md:text-5xl lg:text-[49px] font-clash font-extrabold text-[#1F2A44] leading-[45px] lg:leading-[58px] mb-7">
+                <span className="block">Get your first AI teammate.</span>
+                <span className="block text-[#5a6580] mt-1">Free. 3 weeks. No risk.</span>
               </h1>
 
               <div className="w-20 h-1.5 bg-gradient-to-r from-[#A2D2FF] to-[#1F2A44] rounded-full" />
             </div>
 
-            {/* Description - Larger, more readable */}
+            {/* Description */}
             <p
               className={`font-clash text-lg text-[#5a6580] leading-[1.75] transition-all duration-700 delay-200 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              We'll identify the manual work slowing your startup down, build a custom AI solution to automate it, and let you test it free for 3 weeks. Subscribe only if you see results.
+              We'll find the work wasting your team's hours, build AI to automate it, and let you test it live for 3 weeks. No payment unless it actually saves you time.
             </p>
 
-            {/* Key Points - More spacing */}
+            {/* Key Points */}
             <div
               className={`space-y-4 pt-2 transition-all duration-700 delay-300 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
               {[
-                'Free business audit (no commitment)',
-                '3-week free trial (run it live)',
-                'You subscribe only if it delivers results',
+                'Free operational audit (no commitment)',
+                'Custom AI solution built for your bottleneck',
+                'Subscribe only if it delivers results',
               ].map((point, i) => (
                 <div key={i} className="flex items-center gap-4 group">
                   <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-[#A2D2FF] to-[#1F2A44] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
@@ -110,24 +109,24 @@ export default function ImplementationHero() {
               ))}
             </div>
 
-            {/* CTAs - Bold and Clear */}
+            {/* CTA */}
             <div
-              className={`flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-6 transition-all duration-700 delay-400 ${
+              className={`flex flex-wrap justify-center lg:justify-start items-center gap-4 pt-6 transition-all duration-700 delay-400 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
               <a
-                 href="https://forms.gle/sE5AhgZQrUN3mbC2A"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
-               >
-                 <span className="relative z-10">Join the Waitlist</span>
-                 <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-               </a>
+                href="https://forms.gle/sE5AhgZQrUN3mbC2A"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
+              >
+                <span className="relative z-10">Apply Here</span>
+                <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+              </a>
 
-               <p className="font-clash text-sm text-[#5a6580]">
-                 Limited slots available • Cohort 1 launching soon
+              <p className="font-clash text-sm text-[#5a6580]">
+                Limited slots • Cohort 1 • Launching June 2026
               </p>
             </div>
 
@@ -137,12 +136,12 @@ export default function ImplementationHero() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-[#7ec12d]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#639922]" />
               New Program • Cohort 1 • Launching June 2026
             </p>
           </div>
 
-          {/* RIGHT SIDE - Image Carousel (BIGGER NOW - 62%) */}
+          {/* RIGHT SIDE - Image Carousel */}
           <div
             className={`relative transition-all duration-1000 delay-300 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
@@ -150,7 +149,7 @@ export default function ImplementationHero() {
           >
             {/* Main carousel container */}
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-[#DDE3EE]/50 bg-[#1F2A44]">
-              {/* Gradient overlay for premium feel */}
+              {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A44]/60 via-transparent to-transparent z-10 pointer-events-none" />
 
               {/* Images */}

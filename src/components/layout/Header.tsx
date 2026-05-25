@@ -448,7 +448,7 @@ export default function Header() {
                 onClick={() => trackCTAClick("header_book_call", "cal.com")}
                 className="inline-flex items-center justify-center px-7 py-3 bg-secondary text-white rounded-full font-clash font-semibold text-[15px] hover:bg-[#A2D2FF] transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
-                Book a Call
+                Book a Free AI Mapping Call
               </Link>
             </div>
 
@@ -591,7 +591,7 @@ export default function Header() {
                     setMobileMenuOpen(false);
                   }}
                 >
-                  Book a Call
+                  Book a Free AI Mapping Call
                 </Link>
               </div>
             </div>

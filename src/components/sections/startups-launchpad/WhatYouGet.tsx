@@ -1,36 +1,42 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Clock, Shield, Eye, Lock, FileText } from 'lucide-react';
+import { Bot, Rocket, BookOpen, Eye, BarChart3, Sparkles } from 'lucide-react';
 
-const securityFeatures = [
+const deliverables = [
   {
-    icon: FileText,
-    title: 'Data handling brief on delivery',
+    icon: Bot,
+    title: 'Custom AI Solution',
     description:
-      "At handover you receive a plain-language document: what data the agent touches, where it goes, what logs exist, how long they're retained, and how to revoke access.",
+      'Built specifically for your workflow. Not a generic chatbot or off-the-shelf tool. We connect to your systems, automate the process, and deploy it where your team works.',
   },
   {
-    icon: Shield,
-    title: 'Zero training on your data',
+    icon: Rocket,
+    title: 'Live Deployment',
     description:
-      'We do not use your operational data to train models. All inference calls run against pre-trained APIs under signed data processing agreements.',
+      'Runs in your actual operations from day one. Real data, real workflows, real results. No sandbox testing or hypothetical scenarios.',
+  },
+  {
+    icon: BookOpen,
+    title: 'Structured Handoff',
+    description:
+      'A walkthrough session with your team showing exactly what the solution does, how to use it, and what to do if something unexpected happens. Plus documentation you can reference later.',
   },
   {
     icon: Eye,
-    title: 'Audit trail by default',
+    title: 'Active Monitoring',
     description:
-      'Every agent decision is logged. You can trace inputs, outputs, and escalation points for compliance or quality review.',
+      "We watch the solution daily during your trial. If something breaks or behaves unexpectedly, we fix it within 24 hours. You're not left to figure it out alone.",
   },
   {
-    icon: Lock,
-    title: 'Minimum access principles',
+    icon: BarChart3,
+    title: 'Clear Success Metrics',
     description:
-      'The agent only sees the data it needs to complete its function. Nothing more. Permissions are scoped before deployment.',
+      'Before we build anything, we agree on exactly what success looks like. Specific, measurable outcomes. At the end of the trial, you know whether it worked or not.',
   },
 ];
 
-export default function Security() {
+export default function WhatYouGet() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -55,7 +61,7 @@ export default function Security() {
     <section
       ref={sectionRef}
       className="py-20 md:py-28 bg-gradient-to-br from-[#1F2A44] via-[#2a3a5c] to-[#1F2A44] text-white relative overflow-hidden"
-      id="security"
+      id="what-you-get"
     >
       {/* Background glow effects */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#A2D2FF]/10 rounded-full blur-3xl pointer-events-none" />
@@ -69,9 +75,9 @@ export default function Security() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            <Shield className="w-4 h-4 text-[#A2D2FF]" />
+            <Sparkles className="w-4 h-4 text-[#A2D2FF]" />
             <span className="text-sm font-bold tracking-wider uppercase font-clash">
-              How we handle data
+              What's Included
             </span>
           </div>
 
@@ -80,7 +86,7 @@ export default function Security() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            Every build ships with a clear data story
+            Everything you need to run AI in production
           </h2>
 
           <p
@@ -88,26 +94,25 @@ export default function Security() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            Most no-code agent deployments skip this entirely. We treat it as a first-class
-            deliverable. Before we write a line of code, we know exactly what data the agent
-            touches, where it goes, and who can see it.
+            This isn't a proof of concept or a demo. You get a working solution deployed in your operations, plus everything you need to run it confidently.
           </p>
         </div>
 
-        {/* Security Cards - 2 Column Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {securityFeatures.map((feature, index) => {
-            const Icon = feature.icon;
+        {/* Deliverables Grid - 2 Column Grid with 5th centered */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12 md:items-stretch">
+          {deliverables.map((item, index) => {
+            const Icon = item.icon;
+            const isLastOdd = deliverables.length % 2 !== 0 && index === deliverables.length - 1;
 
             return (
               <div
                 key={index}
-                className={`group relative overflow-hidden rounded-2xl transition-all duration-700 ease-out hover:scale-[1.02] ${
+                className={`group relative overflow-hidden rounded-2xl transition-all duration-700 ease-out hover:scale-[1.02] h-full ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
+                } ${isLastOdd ? 'md:col-span-2 md:max-w-[calc(50%-12px)] md:mx-auto' : ''}`}
                 style={{ transitionDelay: `${400 + index * 100}ms` }}
               >
-                <div className="p-8 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-300 min-h-[240px] flex flex-col">
+                <div className="p-8 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-300 flex flex-col h-full">
                   {/* Icon */}
                   <div className="mb-5">
                     <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/15 transition-all duration-300">
@@ -117,12 +122,12 @@ export default function Security() {
 
                   {/* Title */}
                   <h3 className="text-xl font-clash font-bold mb-4 transition-colors duration-300">
-                    {feature.title}
+                    {item.title}
                   </h3>
 
                   {/* Description */}
                   <p className="text-white/80 leading-relaxed flex-1 text-[15px] font-jakarta">
-                    {feature.description}
+                    {item.description}
                   </p>
 
                   {/* Corner accent */}
@@ -134,18 +139,6 @@ export default function Security() {
               </div>
             );
           })}
-        </div>
-
-        {/* Bottom Note */}
-        <div
-          className={`mt-12 text-center transition-all duration-1000 ease-out delay-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <p className="text-base text-white/80 leading-relaxed max-w-[700px] mx-auto font-clash">
-            <span className="font-semibold text-white">Questions about data handling?</span>{' '}
-            We address security and compliance requirements during the free feasibility scoping call, before any work begins.
-          </p>
         </div>
       </div>
     </section>

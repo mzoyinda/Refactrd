@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-export default function FinalCTA() {
+export default function LaunchpadCTA() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -37,8 +37,6 @@ export default function FinalCTA() {
       <div className="container max-w-[900px] mx-auto px-[5vw] relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-         
-
           <h2
             className={`text-4xl md:text-5xl lg:text-6xl font-clash font-bold leading-tight mb-6 transition-all duration-700 delay-100 ${
               isVisible
@@ -46,7 +44,7 @@ export default function FinalCTA() {
                 : "opacity-0 translate-y-8"
             }`}
           >
-            Deploy your First AI role in 14 days
+            Ready to automate your biggest bottleneck?
           </h2>
 
           <p
@@ -56,8 +54,7 @@ export default function FinalCTA() {
                 : "opacity-0 translate-y-8"
             }`}
           >
-            Limited spots per cohort. Free audit and scoping included. Apply
-            below to reserve your slot.
+            Join Cohort 1 of the AI Startups Launchpad. Limited spots available for startups ready to test AI in their operations.
           </p>
         </div>
 
@@ -82,11 +79,10 @@ export default function FinalCTA() {
                 </div>
                 <div>
                   <p className="text-[#1F2A44] font-semibold font-clash mb-1">
-                    We review your use case within 48 hours
+                    We review your application
                   </p>
                   <p className="text-sm text-[#5a6580] font-jakarta">
-                    If it's a fit, we send calendar links. If not, we explain
-                    why and suggest alternatives.
+                    Within 3-5 business days, we'll let you know if your problem is a good fit for the Launchpad or if we recommend our full audit instead.
                   </p>
                 </div>
               </div>
@@ -100,11 +96,10 @@ export default function FinalCTA() {
                 </div>
                 <div>
                   <p className="text-[#1F2A44] font-semibold font-clash mb-1">
-                    Free audit and security scoping (no commitment)
+                    Mapping call (free, no commitment)
                   </p>
                   <p className="text-sm text-[#5a6580] font-jakarta">
-                    We map your operations, define the AI role, and establish
-                    data handling requirements.
+                    45 minutes to walk through your workflow in detail and agree on what success looks like. You'll know exactly what we're building before work starts.
                   </p>
                 </div>
               </div>
@@ -118,11 +113,10 @@ export default function FinalCTA() {
                 </div>
                 <div>
                   <p className="text-[#1F2A44] font-semibold font-clash mb-1">
-                    You decide whether to proceed
+                    Build starts (1-2 weeks)
                   </p>
                   <p className="text-sm text-[#5a6580] font-jakarta">
-                    After scoping, you know exactly what we'll build, how long
-                    it takes, and what it costs.
+                    We build your AI solution and deploy it live in your operations. Then you test it free for 3 weeks and decide whether to subscribe.
                   </p>
                 </div>
               </div>
@@ -132,24 +126,23 @@ export default function FinalCTA() {
           {/* Divider */}
           <div className="border-t border-[#DDE3EE] mb-10" />
 
-          {/* Application Form / CTA */}
+          {/* CTA */}
           <div className="text-center">
             <h3 className="text-xl font-clash font-bold text-[#1F2A44] mb-4">
               Ready to get started?
             </h3>
             <p className="text-[#5a6580] mb-8 font-jakarta">
-              Submit your application or book a discovery call to discuss your
-              use case.
+              Apply now to reserve your spot in Cohort 1 (launching June 2026).
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://refactrd.substack.com/subscribe?params=%5Bobject%20Object%5D"
+                href="https://forms.gle/sE5AhgZQrUN3mbC2A"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
               >
-                Join the Waitlist
+                Apply Here
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
             </div>
@@ -162,11 +155,11 @@ export default function FinalCTA() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#639922]" />
-                <span>Free audit included</span>
+                <span>Free trial included</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#639922]" />
-                <span>48-hour response time</span>
+                <span>3-5 day response time</span>
               </div>
             </div>
           </div>
