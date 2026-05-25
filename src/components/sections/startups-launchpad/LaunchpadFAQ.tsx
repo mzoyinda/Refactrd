@@ -57,7 +57,7 @@ export default function LaunchpadFAQ() {
                 Common questions about the Launchpad
               </h2>
               <p className="text-lg text-[#5a6580] mb-8 leading-relaxed font-jakarta">
-                Everything you need to know before applying. Still have questions? Book a free scoping call.
+                Everything you need to know before applying.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
