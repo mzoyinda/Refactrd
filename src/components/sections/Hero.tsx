@@ -27,26 +27,19 @@ export default function Hero() {
 
           {/* Supporting text */}
           <p className="font-jakarta text-lg  leading-relaxed text-secondary max-w-3xl mx-auto animate-fade-up delay-300 tracking-[-0.03em]">
-         Refactrd is an AI Engineering Studio. We help companies introduce AI into their operations, starting with one focused improvement that delivers fast, visible results.
+         Refactrd is an AI Engineering Studio. We work with founders, growing businesses, and enterprises to introduce AI into their operations in a structured, secure, and measurable way. Whether you are exploring where to start or ready to build, there is a clear path forward.
           </p>
-          <p className="font-jakarta text-lg leading-relaxed text-secondary max-w-3xl mx-auto mt-2 mb-12 animate-fade-up delay-300 tracking-[-0.03em]">
-         From Workflow Automation to Internal AI Assistants and Product AI, we help your team move faster and work smarter without adding complexity.
-
-          </p>
-
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up delay-500">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up delay-500 mt-[30px]">
             <Link
-              href="https://cal.com/refactrd/technical-discovery-call"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/get-started"
               className="font-clash inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
             >
-              Book a Free AI Mapping Call
+              Find Your Starting Point
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
             <Link
-              href="/projects"
+              href="/case-studies"
               target="_blank"
               rel="noopener noreferrer"
               className="font-clash border border-[#1F2A44] px-8 py-4 rounded-full "
