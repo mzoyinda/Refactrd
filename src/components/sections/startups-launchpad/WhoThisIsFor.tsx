@@ -1,7 +1,23 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import { CheckCircle2, Pause, ArrowRight } from "lucide-react";
+import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import { CheckCircle2, XCircle } from 'lucide-react';
+
+const goodFit = [
+  'You have one specific, repetitive workflow eating your team\'s time',
+  'Someone on your team will actually use the solution every day',
+  'You can describe the problem concretely — time lost, tasks done manually, friction points',
+  'You\'re ready to test AI in real operations, not just a demo environment',
+  'Your team is 5 to 20 people',
+];
+
+const notRightTime = [
+  'You\'re looking for a full operational transformation across every department',
+  'You haven\'t identified your biggest bottleneck yet',
+  'You need strategic advice more than a working solution',
+  'Your team can\'t commit three weeks to properly test something new',
+];
 
 export default function WhoThisIsFor() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -9,155 +25,107 @@ export default function WhoThisIsFor() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 },
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      { threshold: 0.08 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
-  const goodFitPoints = [
-    "You have a specific, repetitive workflow slowing your team down",
-    "Someone on your team will actually use the solution daily",
-    'You can describe the problem in concrete terms (not "we need to be more efficient")',
-    "You're ready to test AI in live operations, not just explore",
-    "You have 5-20 people on your team",
-  ];
-
-  const notYetPoints = [
-    "You're looking for a full operational transformation across departments",
-    "You're not sure what your biggest bottleneck is yet",
-    "You need theoretical consulting more than a working solution",
-    "Your team can't commit to testing something new for 3 weeks",
-  ];
-
   return (
-    <section
-      ref={sectionRef}
-      className="py-20 md:py-28 bg-white relative overflow-hidden"
-      id="who-this-is-for"
-    >
-      <div className="container max-w-[1200px] mx-auto px-[5vw] relative z-10">
+    <section ref={sectionRef} id="who-this-is-for" className="pt-10 pb-14 md:pt-12 md:pb-16 bg-white overflow-hidden">
+      <div className="container max-w-[1200px] mx-auto px-[5vw]">
+
         {/* Header */}
-        <div className="text-center mb-16">
-          <span
-            className={`inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#5a6580] mb-4 font-clash transition-all duration-700 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
-            }`}
-          >
+        <div className={`mb-8 max-w-[700px] transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+          <span className="text-xs font-clash font-bold tracking-[0.22em] uppercase text-[#5a6580]">
             Is this right for you?
           </span>
-          <h2
-            className={`text-4xl md:text-5xl lg:text-6xl font-clash font-bold text-[#1F2A44] mb-5 leading-tight transition-all duration-700 delay-100 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
-            }`}
-          >
-            Built for growing startups with a specific problem
+          <h2 className="mt-3 text-4xl md:text-5xl font-clash font-bold text-[#1F2A44] leading-tight">
+            Built for early-stage startups with a specific problem to solve.
           </h2>
-          <p
-            className={`text-lg text-[#5a6580] max-w-[700px] mx-auto leading-relaxed font-jakarta transition-all duration-700 delay-200 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
-            }`}
-          >
-            The Launchpad works best when you have one clear operational
-            bottleneck eating your team's time. If you're not sure where to
-            start with AI or you need a complete operational overhaul, our full
-            audit is a better fit.
+          <p className="mt-4 text-[17px] text-[#5a6580] leading-relaxed font-jakarta">
+            The Launchpad works best when you have one clear operational bottleneck eating your team&apos;s time.
+            If you&apos;re not sure where to start,{' '}
+            <a href="/consultation" className="text-[#1F2A44] font-semibold underline underline-offset-4 decoration-[#A2D2FF] hover:decoration-[#1F2A44] transition-all">
+              our Mini Consultation ($99)
+            </a>{' '}
+            is the better first step — it will give you that clarity before you commit to anything.
           </p>
         </div>
 
-        {/* Two Column Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {/* Good Fit Column */}
-          <div
-            className={`transition-all duration-700 delay-300 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            }`}
-          >
-            <div className="bg-gradient-to-br from-[#F9FAFC] to-white border-2 border-[#639922]/20 rounded-2xl p-8 h-full">
-              {/* Header */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-[#639922]/10 flex items-center justify-center">
-                  <CheckCircle2
-                    className="w-6 h-6 text-[#639922]"
-                    strokeWidth={2.5}
-                  />
-                </div>
-                <h3 className="text-2xl font-clash font-bold text-[#1F2A44]">
-                  You're a Good Fit If:
-                </h3>
-              </div>
+        {/* Main grid: image + cards */}
+        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-8 items-start">
 
-              {/* List */}
-              <div className="space-y-4">
-                {goodFitPoints.map((point, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[#639922]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle2
-                        className="w-3.5 h-3.5 text-[#639922]"
-                        strokeWidth={3}
-                      />
-                    </div>
-                    <p className="text-[15px] text-[#1F2A44] leading-relaxed font-jakarta">
-                      {point}
-                    </p>
-                  </div>
-                ))}
+          {/* Left: image */}
+          <div className={`relative transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="relative aspect-[3/4] rounded-3xl overflow-hidden">
+              <Image
+                src="/images/solving-problems.webp"
+                alt="Team solving operational problems"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A44]/60 via-transparent to-transparent" />
+              {/* Floating label */}
+              <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md rounded-2xl p-4">
+                <p className="font-clash font-bold text-[#1F2A44] text-sm leading-snug">
+                  One bottleneck. Five weeks. A working AI solution in your live operations.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Not Yet Column */}
-          <div
-            className={`transition-all duration-700 delay-400 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            }`}
-          >
-            <div className="bg-gradient-to-br from-[#F9FAFC] to-white border-2 border-[#DDE3EE] rounded-2xl p-8 h-full">
-              {/* Header */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-[#5a6580]/10 flex items-center justify-center">
-                  <Pause className="w-6 h-6 text-[#5a6580]" strokeWidth={2.5} />
+          {/* Right: fit cards */}
+          <div className="space-y-5">
+            {/* Good Fit */}
+            <div
+              className={`bg-[#F4FBF0] border border-[#639922]/20 rounded-2xl p-7 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-9 h-9 rounded-full bg-[#639922]/15 flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="w-5 h-5 text-[#639922]" strokeWidth={2.5} />
                 </div>
-                <h3 className="text-2xl font-clash font-bold text-[#1F2A44]">
-                  Not the Right Time If:
-                </h3>
+                <h3 className="font-clash font-bold text-lg text-[#1F2A44]">You&apos;re a strong fit if</h3>
               </div>
-
-              {/* List */}
-              <div className="space-y-4">
-                {notYetPoints.map((point, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[#5a6580]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Pause
-                        className="w-3.5 h-3.5 text-[#5a6580]"
-                        strokeWidth={3}
-                      />
-                    </div>
-                    <p className="text-[15px] text-[#5a6580] leading-relaxed font-jakarta">
-                      {point}
-                    </p>
-                  </div>
+              <ul className="space-y-3">
+                {goodFit.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#639922] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <span className="font-jakarta text-[14px] text-[#1F2A44] leading-relaxed">{point}</span>
+                  </li>
                 ))}
+              </ul>
+            </div>
+
+            {/* Not Right Time */}
+            <div
+              className={`bg-[#F9FAFC] border border-[#DDE3EE] rounded-2xl p-7 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-9 h-9 rounded-full bg-[#5a6580]/10 flex items-center justify-center flex-shrink-0">
+                  <XCircle className="w-5 h-5 text-[#5a6580]" strokeWidth={2.5} />
+                </div>
+                <h3 className="font-clash font-bold text-lg text-[#1F2A44]">Not the right time if</h3>
               </div>
+              <ul className="space-y-3">
+                {notRightTime.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <XCircle className="w-4 h-4 text-[#5a6580] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <span className="font-jakarta text-[14px] text-[#5a6580] leading-relaxed">
+                      {point === 'You haven\'t identified your biggest bottleneck yet' ? (
+                        <>
+                          You haven&apos;t identified your biggest bottleneck yet.{' '}
+                          <a href="/consultation" className="text-[#1F2A44] font-semibold underline underline-offset-2 hover:text-[#5a6580] transition-colors">
+                            Start with a Mini Consultation ($99)
+                          </a>{' '}
+                          instead.
+                        </>
+                      ) : point}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
