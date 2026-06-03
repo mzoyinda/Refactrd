@@ -70,7 +70,7 @@ export default function AfterTrial() {
               </div>
 
               <a
-                href="https://forms.gle/sE5AhgZQrUN3mbC2A"
+                href="https://forms.gle/ECCpy6aoH5icfY4d9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-2 bg-[#A2D2FF] text-[#1F2A44] font-clash font-bold px-6 py-3.5 rounded-full hover:bg-white transition-colors duration-300 self-start"

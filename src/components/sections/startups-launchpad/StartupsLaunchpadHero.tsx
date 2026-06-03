@@ -126,7 +126,7 @@ export default function StartupsLaunchpadHero() {
             {/* CTA */}
             <div className={`flex flex-wrap items-center gap-4 pt-4 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <a
-                href="https://forms.gle/sE5AhgZQrUN3mbC2A"
+                href="https://forms.gle/ECCpy6aoH5icfY4d9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 bg-[#1F2A44] text-white font-clash font-bold px-8 py-4 rounded-full hover:bg-[#2d3e62] transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
