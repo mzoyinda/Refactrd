@@ -5,18 +5,19 @@ import Image from 'next/image';
 import { CheckCircle2, XCircle } from 'lucide-react';
 
 const goodFit = [
-  'You have one specific, repetitive workflow eating your team\'s time',
-  'Someone on your team will actually use the solution every day',
-  'You can describe the problem concretely — time lost, tasks done manually, friction points',
-  'You\'re ready to test AI in real operations, not just a demo environment',
-  'Your team is 5 to 20 people',
+  'Your team has a repetitive or inefficient workflow',
+  'You can clearly describe the operational challenge',
+  'The challenge affects execution, delivery, or decision-making',
+  'Your team is willing to adopt a new way of working',
+  'You want measurable outcomes, not experimentation',
 ];
 
 const notRightTime = [
-  'You\'re looking for a full operational transformation across every department',
-  'You haven\'t identified your biggest bottleneck yet',
-  'You need strategic advice more than a working solution',
-  'Your team can\'t commit three weeks to properly test something new',
+  'You\'re looking for a broad AI strategy engagement',
+  'You haven\'t identified an operational challenge yet',
+  'You\'re primarily seeking technical training',
+  'You want to explore ideas without implementation',
+  'You aren\'t prepared to test changes inside real operations',
 ];
 
 export default function WhoThisIsFor() {
@@ -39,18 +40,13 @@ export default function WhoThisIsFor() {
         {/* Header */}
         <div className={`mb-8 max-w-[700px] transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <span className="text-xs font-clash font-bold tracking-[0.22em] uppercase text-[#5a6580]">
-            Is this right for you?
+            Is This Right For You?
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-clash font-bold text-[#1F2A44] leading-tight">
-            Built for early-stage startups with a specific problem to solve.
+            Built for founders ready to improve how work gets done.
           </h2>
           <p className="mt-4 text-[17px] text-[#5a6580] leading-relaxed font-jakarta">
-            The Launchpad works best when you have one clear operational bottleneck eating your team&apos;s time.
-            If you&apos;re not sure where to start,{' '}
-            <a  href="https://cal.com/refactrd/technical-discovery-call" target="_blank" rel="noopener noreferrer" className="text-[#1F2A44] font-semibold underline underline-offset-4 decoration-[#A2D2FF] hover:decoration-[#1F2A44] transition-all">
-            Start with the free AI Mapping Call 
-            </a>{' '}
-            instead it is the better first step — it will give you that clarity before you commit to anything.
+            The Launchpad works best when there is a clear operational challenge worth solving. This is not an accelerator or AI training program. It&apos;s a structured transformation program designed to help founders improve operations, implement practical AI solutions, and validate measurable outcomes.
           </p>
         </div>
 
@@ -70,7 +66,7 @@ export default function WhoThisIsFor() {
               {/* Floating label */}
               <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md rounded-2xl p-4">
                 <p className="font-clash font-bold text-[#1F2A44] text-sm leading-snug">
-                  One bottleneck. Five weeks. A working AI solution in your live operations.
+                  One challenge. One workflow. One measurable outcome.
                 </p>
               </div>
             </div>
@@ -106,23 +102,13 @@ export default function WhoThisIsFor() {
                 <div className="w-9 h-9 rounded-full bg-[#5a6580]/10 flex items-center justify-center flex-shrink-0">
                   <XCircle className="w-5 h-5 text-[#5a6580]" strokeWidth={2.5} />
                 </div>
-                <h3 className="font-clash font-bold text-lg text-[#1F2A44]">Not the right time if</h3>
+                <h3 className="font-clash font-bold text-lg text-[#1F2A44]">This may not be the right fit if</h3>
               </div>
               <ul className="space-y-3">
                 {notRightTime.map((point, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <XCircle className="w-4 h-4 text-[#5a6580] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                    <span className="font-jakarta text-[14px] text-[#5a6580] leading-relaxed">
-                      {point === 'You haven\'t identified your biggest bottleneck yet' ? (
-                        <>
-                          You haven&apos;t identified your biggest bottleneck yet.{' '}
-                          <a href="/consultation" className="text-[#1F2A44] font-semibold underline underline-offset-2 hover:text-[#5a6580] transition-colors">
-                          Start with the free AI Mapping Call 
-                          </a>{' '}
-                          instead.
-                        </>
-                      ) : point}
-                    </span>
+                    <span className="font-jakarta text-[14px] text-[#5a6580] leading-relaxed">{point}</span>
                   </li>
                 ))}
               </ul>

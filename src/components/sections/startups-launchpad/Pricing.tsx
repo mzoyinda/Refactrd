@@ -24,10 +24,10 @@ export default function AfterTrial() {
         {/* Header */}
         <div className={`mb-8 max-w-[600px] transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <span className="text-xs font-clash font-bold tracking-[0.22em] uppercase text-[#5a6580]">
-            After the Trial
+            After The Program
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-clash font-bold text-[#1F2A44] leading-tight">
-            What happens when the three weeks are up?
+            What happens next?
           </h2>
         </div>
 
@@ -47,19 +47,19 @@ export default function AfterTrial() {
                   <TrendingUp className="w-5 h-5 text-[#A2D2FF]" strokeWidth={2} />
                 </div>
                 <span className="font-clash font-bold text-[#A2D2FF] text-sm uppercase tracking-wider">
-                  If it delivers results
+                  If The Initiative Creates Value
                 </span>
               </div>
 
               <h3 className="text-2xl font-clash font-bold text-white mb-4 leading-tight">
-                You move to a monthly support plan
+                Expand The Impact
               </h3>
               <p className="font-jakarta text-[15px] text-white/70 leading-relaxed mb-6 flex-1">
-                Your solution stays live, monitored, and maintained as your operations evolve. You get priority access to expand into additional workflows whenever you&apos;re ready. Most clients start with one bottleneck and build from there.
+                Successful initiatives often reveal additional opportunities across workflows, knowledge systems, operations, and customer experiences. For teams ready to continue building, we&apos;ll help identify the next highest-impact opportunities and determine the most appropriate path forward.
               </p>
 
               <div className="space-y-2 border-t border-white/10 pt-6">
-                {['Flexible pricing — no fixed packages', 'No long-term contract', 'Cancel any time it stops delivering value', 'Priority access to expand to new workflows'].map((line, i) => (
+                {['Additional transformation opportunities', 'Workflow improvement initiatives', 'Operational capability building', 'Flexible follow-on engagements'].map((line, i) => (
                   <div key={i} className="flex items-center gap-2.5">
                     <svg className="w-4 h-4 text-[#A2D2FF] flex-shrink-0" fill="none" viewBox="0 0 16 16">
                       <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -90,25 +90,25 @@ export default function AfterTrial() {
                   <X className="w-5 h-5 text-[#5a6580]" strokeWidth={2} />
                 </div>
                 <span className="font-clash font-bold text-[#5a6580] text-sm uppercase tracking-wider">
-                  If it doesn&apos;t deliver
+                  If The Initiative Isn&apos;t The Right Fit
                 </span>
               </div>
 
               <h3 className="text-2xl font-clash font-bold text-[#1F2A44] mb-4 leading-tight">
-                You walk away. No invoice.
+                Leave With Clarity
               </h3>
               <p className="font-jakarta text-[15px] text-[#5a6580] leading-relaxed">
-                If the solution doesn&apos;t hit the measurable outcomes we agreed on at the start, there is nothing to pay. No partial invoices, no &quot;almost there&quot; fees. We share the risk entirely.
+                Not every initiative should move forward. The purpose of the Launchpad is to validate opportunities before larger commitments are made. You&apos;ll leave with operational insights, recommendations, and a clearer understanding of what should happen next.
               </p>
             </div>
 
             {/* Stats row */}
             <div className="grid grid-cols-2 gap-5">
               {[
-                { value: '5 weeks', label: 'From audit to live AI solution' },
-                { value: '$0', label: 'Upfront cost to participate' },
-                { value: '24 hrs', label: 'Issue resolution during trial' },
-                { value: '3 weeks', label: 'Live trial in real operations' },
+                { value: '5 Weeks', label: 'Typical Program Duration' },
+                { value: '1 Opportunity', label: 'Focused Transformation Scope' },
+                { value: 'Founder-Led', label: 'Hands-On Support' },
+                { value: 'Real Operations', label: 'Built Inside Existing Workflows' },
               ].map((stat, i) => (
                 <div key={i} className="bg-[#F9FAFC] border border-[#DDE3EE] rounded-2xl p-5">
                   <p className="font-clash font-extrabold text-2xl text-[#1F2A44] leading-none mb-1">{stat.value}</p>

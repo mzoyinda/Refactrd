@@ -7,38 +7,38 @@ const steps = [
   {
     number: '01',
     icon: ClipboardList,
-    title: 'Tell us what is broken',
-    duration: '1 day',
-    durationLabel: 'to apply',
+    title: 'Identify The Opportunity',
+    duration: 'Step 01',
+    durationLabel: 'discovery',
     description:
-      'Apply and describe your specific operational problem — not "we need AI" but "our team spends 10 hours weekly on manual reporting" or "support ticket triage eats our mornings." The more specific you are, the better we can help.',
+      'Define the challenge, bottleneck, or workflow limiting execution, growth, or decision-making.',
   },
   {
     number: '02',
     icon: Map,
-    title: 'Map the exact workflow',
-    duration: 'Week 1',
-    durationLabel: 'audit & planning',
+    title: 'Map The Current Workflow',
+    duration: 'Step 02',
+    durationLabel: 'assessment',
     description:
-      'A focused 45-minute call where we walk through your current process step by step — every tool, every handoff, every point of friction. We are not guessing what is broken. We are mapping it precisely. By the end, we agree in writing on what success looks like.',
+      'Assess how work gets done today, identify friction points, and determine what should change.',
   },
   {
     number: '03',
     icon: Wrench,
-    title: 'We build your solution',
-    duration: 'Weeks 2–3',
-    durationLabel: 'build & deploy',
+    title: 'Implement The Solution',
+    duration: 'Step 03',
+    durationLabel: 'implementation',
     description:
-      'One to two weeks to build a custom AI solution for your exact problem. No templates. No generic tools. We connect to your systems, automate the workflow, and deploy it where your team actually works. You stay informed but do not need to manage the build.',
+      'Deploy an AI-enabled solution within the workflow and support adoption inside real operations.',
   },
   {
     number: '04',
     icon: FlaskConical,
-    title: 'Test it in real operations',
-    duration: 'Weeks 4–6',
-    durationLabel: 'live trial',
+    title: 'Measure Results',
+    duration: 'Step 04',
+    durationLabel: 'measurement',
     description:
-      'Three weeks running live — not in a sandbox, in your actual operations with real data and real workflows. We monitor it daily, fix any issues within 24 hours, and track the metrics we agreed on. At the end, you decide.',
+      'Evaluate performance, adoption, and business outcomes to determine the impact of the initiative.',
   },
 ];
 
@@ -75,10 +75,10 @@ export default function HowItWorks() {
             The Process
           </span>
           <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-clash font-bold text-[#1F2A44] leading-tight">
-            From problem to working solution in five weeks.
+            From operational challenge to measurable outcome.
           </h2>
           <p className="mt-4 text-[16px] text-[#5a6580] leading-relaxed font-jakarta">
-            No long discovery phases. No theoretical frameworks. We find your biggest bottleneck, build AI to handle it, and deploy it in your actual workflows.
+            A structured process designed to help founders move from exploration to implementation and validation without unnecessary complexity.
           </p>
         </div>
 

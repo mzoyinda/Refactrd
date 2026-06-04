@@ -29,9 +29,10 @@ const slides = [
 ];
 
 const proofPoints = [
-  'Custom AI built for your exact bottleneck — not a generic tool',
-  'Deployed live in your real operations from day one',
-  'You decide whether to continue after the three-week trial',
+  'Identify the right opportunity',
+  'Implement an AI-enabled solution',
+  'Test it inside real operations',
+  'Measure the business impact',
 ];
 
 export default function StartupsLaunchpadHero() {
@@ -88,25 +89,24 @@ export default function StartupsLaunchpadHero() {
             {/* Label */}
             <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <span className="text-xs font-clash font-bold tracking-[0.25em] uppercase text-[#5a6580]">
-                AI Operations · Early-Stage Startups
+                AI Transformation Program For Early-Stage Startups
               </span>
             </div>
 
             {/* Headline */}
             <div className={`transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <h1 className="text-[42px] md:text-5xl lg:text-[54px] font-clash font-extrabold text-[#1F2A44] leading-[1.07] tracking-tight">
-                Your first AI system.<br />
+                Turn One Operational Challenge<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1F2A44] to-[#5a7fc4]">
-                  Built, Deployed, and Tested.
+                  Into One Measurable Outcome.
                 </span>
-                <br />At no cost.
               </h1>
               <div className="mt-5 w-14 h-[3px] bg-[#A2D2FF] rounded-full" />
             </div>
 
             {/* Subheadline */}
             <p className={`text-[17px] text-[#5a6580] leading-[1.75] max-w-[560px] font-jakarta transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              We find the exact workflow eating your team&apos;s hours, build custom AI to automate it, and deploy it live in your operations. You test it for three weeks. No payment unless it actually delivers.
+              The Launchpad helps founders identify a high-impact operational challenge, implement a practical AI-enabled solution, and validate its impact inside real operations. Instead of experimenting across dozens of tools, focus on one opportunity that can create measurable business value.
             </p>
 
             {/* Proof Points */}
@@ -131,7 +131,7 @@ export default function StartupsLaunchpadHero() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 bg-[#1F2A44] text-white font-clash font-bold px-8 py-4 rounded-full hover:bg-[#2d3e62] transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
               >
-                Apply Now
+                Apply To The Launchpad
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <span className="font-clash text-sm text-[#5a6580]">Applications reviewed on a rolling basis</span>
@@ -139,7 +139,7 @@ export default function StartupsLaunchpadHero() {
 
             {/* Trust row */}
             <div className={`flex flex-wrap gap-6 pt-2 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              {['No upfront payment', 'Response in 3–5 days', 'Walk away if it fails'].map((t, i) => (
+              {['Selective Cohort', 'Founder-Led Support', 'Real Operational Workflows', 'Built For Adoption'].map((t, i) => (
                 <span key={i} className="font-jakarta text-xs text-[#5a6580] flex items-center gap-1.5">
                   <svg className="w-3.5 h-3.5 text-[#639922]" fill="none" viewBox="0 0 14 14">
                     <path d="M2 7l3.5 3.5L12 3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />

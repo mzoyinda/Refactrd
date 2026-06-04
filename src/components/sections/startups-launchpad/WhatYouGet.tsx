@@ -8,33 +8,33 @@ const items = [
   {
     icon: Bot,
     tag: '01',
-    title: 'Custom AI Solution',
+    title: 'Opportunity Assessment',
     description:
-      'Built specifically for your workflow — not a generic chatbot or off-the-shelf tool. We connect to your existing systems, automate the process end-to-end, and deploy it exactly where your team already works.',
+      'Identify operational bottlenecks, execution challenges, and opportunities where AI can create meaningful business value.',
     image: '/images/ai-workflow.jpg',
   },
   {
     icon: Rocket,
     tag: '02',
-    title: 'Live Deployment',
+    title: 'Workflow Design',
     description:
-      'Runs in your actual operations from day one. Real data, real workflows, real results. No sandbox testing, no staged environments, no hypothetical scenarios — just the solution working where it counts.',
+      'Map the current workflow, redesign the process, and define the most practical path toward improvement.',
     image: '/images/ai-operations.jpg',
   },
   {
     icon: ShieldCheck,
     tag: '03',
-    title: 'Active Monitoring',
+    title: 'Solution Implementation',
     description:
-      "We watch the solution every single day during your trial. If something breaks or behaves unexpectedly, we fix it within 24 hours. You're not handed a tool and left to figure it out — we're in it with you.",
+      'Implement an AI-enabled solution within the workflow and integrate it into day-to-day operations.',
     image: '/images/ai-analytics.jpg',
   },
   {
     icon: Target,
     tag: '04',
-    title: 'Clear Success Metrics',
+    title: 'Adoption & Measurement',
     description:
-      'Before we write a single line of code, we agree on exactly what success looks like. Specific, measurable outcomes. At the end of the trial, there is no ambiguity — you either hit the target or you walk away.',
+      'Evaluate usage, measure outcomes, and assess the operational impact created by the initiative.',
     image: '/images/ai-dashboard.jpg',
   },
 ];
@@ -67,13 +67,13 @@ export default function WhatYouGet() {
         {/* Header */}
         <div className={`text-center max-w-[680px] mx-auto mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <span className="text-xs font-clash font-bold tracking-[0.22em] uppercase text-[#A2D2FF]">
-            What Is Included
+            What&apos;s Included
           </span>
           <h2 className="mt-4 text-4xl md:text-5xl font-clash font-bold text-white leading-tight">
-            Everything you need to run AI in production.
+            Everything needed to move from opportunity to adoption.
           </h2>
           <p className="mt-5 text-[17px] text-white/60 leading-relaxed font-jakarta">
-            This is not a proof of concept. You get a working solution deployed in your real operations, plus the support to run it confidently from day one.
+            The Launchpad helps founders identify opportunities, implement practical AI solutions, and validate impact inside real operations.
           </p>
         </div>
 
