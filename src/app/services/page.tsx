@@ -4,35 +4,34 @@ import Header from "@/components/layout/Header";
 import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
 import FAQ from "@/components/sections/FAQ";
 
-// Lazy load sections for performance
 const ServicesHero = dynamic(() => import("@/components/sections/services/ServicesHero"), {
   loading: () => <div className="section-padding bg-secondary" />,
 });
 
-const WhoThisIsFor = dynamic(() => import("@/components/sections/WhoThisIsFor"), {
+const ServicesWhoThisIsFor = dynamic(() => import("@/components/sections/services/ServicesWhoThisIsFor"), {
   loading: () => <div className="section-padding bg-white" />,
 });
 
-const HowToGetStarted = dynamic(() => import("@/components/sections/HowToGetStarted"), {
+const ServicesHowItWorks = dynamic(() => import("@/components/sections/services/ServicesHowItWorks"), {
   loading: () => <div className="section-padding bg-tertiary/30" />,
 });
 
 export const metadata = {
-  title: "Our Services | Refactrd - AI Engineering",
+  title: "Transformation Areas | Refactrd",
   description:
-    "Refactrd delivers AI systems across four levels of engagement — from workflow automation to full AI architecture. Every engagement starts small and grows through results.",
+    "Refactrd helps organizations move from AI experimentation to operational adoption through workflow transformation, knowledge systems, AI-enabled products, and intelligent workflows.",
   keywords: [
-    "workflow automation",
-    "AI assistants",
-    "AI internal copilots",
-    "AI features for products",
-    "agentic workflow solutions",
+    "workflow transformation",
+    "AI knowledge systems",
+    "AI-enabled products",
     "AI operations",
+    "operational adoption",
+    "AI transformation",
   ],
   openGraph: {
-    title: "Our Services | Refactrd",
+    title: "Transformation Areas | Refactrd",
     description:
-      "End-to-end AI engineering services. We support teams across the full AI Engineering lifecycle.",
+      "Helping organizations identify opportunities, redesign workflows, implement practical AI solutions, and create measurable operational impact.",
     type: "website",
   },
 };
@@ -42,11 +41,10 @@ export default function ServicesPage() {
     <main className="min-h-screen">
       <Header />
       <ServicesHero />
-      <WhatWeDoSection />
-      {/* <ServicesList /> */}
-       <WhoThisIsFor />
-       <HowToGetStarted />
-      <FAQ/>
+      <WhatWeDoSection showChallenges={true} />
+      <ServicesWhoThisIsFor />
+      <ServicesHowItWorks />
+      <FAQ />
       <Footer />
     </main>
   );

@@ -37,6 +37,15 @@ export default function ServicesHero() {
             {/* Small tag */}
 
             {/* Main Heading */}
+            {/* Subheadline */}
+            <p
+              className={`font-jakarta text-base text-[#5a6580] uppercase tracking-[0.14em] font-semibold mb-4 transition-all duration-700 delay-75 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              Helping organizations move from AI experimentation to operational adoption.
+            </p>
+
             <h1
               className={`text-5xl lg:text-6xl xl:text-7xl font-clash font-bold text-secondary leading-tight mb-8 transition-all duration-700 delay-100 ${
                 isVisible
@@ -49,21 +58,20 @@ export default function ServicesHero() {
 
             {/* Description Paragraphs */}
             <div
-              className={`space-y-6 mb-8 transition-all duration-700 delay-200 ${
+              className={`space-y-5 mb-8 transition-all duration-700 delay-200 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4"
               }`}
             >
-              <p className="font-clash text-lg text-[#0F172A] leading-relaxed font-medium">
-                We introduce AI to your operations, one focused improvement at a time.
+              <p className="font-jakarta text-base text-[#475569] leading-relaxed">
+                Refactrd helps organizations improve workflows, implement practical AI solutions, and build the capabilities required for successful adoption.
               </p>
-              <p className=" font-clash text-base text-[#64748B] leading-relaxed">
-                Some clients come to us with a specific problem. Others know they want to use AI but are not sure where to start. Either way, we help you identify the right place to begin, build something that works, and expand from there.
+              <p className="font-jakarta text-base text-[#475569] leading-relaxed">
+                We create impact across operations, knowledge systems, products, and AI-enabled workflows.
               </p>
-              <p className="font-clash text-base text-[#0F172A] leading-relaxed font-semibold">
-                Wherever you are, we step in, take ownership, and help you move
-                forward with clarity.
+              <p className="font-clash text-base text-[#1F2A44] leading-relaxed font-semibold">
+                Focused on operational outcomes, not technology for its own sake.
               </p>
             </div>
 
@@ -76,12 +84,10 @@ export default function ServicesHero() {
               }`}
             >
               <Link
-                href="https://cal.com/refactrd/technical-discovery-call"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white rounded-full font-clash font-semibold hover:bg-accent transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                href="/get-started"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white rounded-full font-clash font-semibold hover:bg-[#263352] transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
-                Build With Refactrd
+                Find Your Starting Point
               </Link>
             </div>
           </div>

@@ -7,40 +7,64 @@ import { trackCTAClick } from "@/lib/analytics";
 
 const aiServices = [
   {
-    level: "Level 01",
-    title: "Workflow Automation",
+    level: "01",
+    title: "Workflow Transformation",
     description:
-      "We identify the manual processes slowing your team down and automate them using AI. Onboarding, reporting, support handoffs, recurring internal tasks. We scope one workflow and eliminate it.",
+      "Redesign workflows, reduce friction, and improve execution across teams and operations.",
+    challenges: [
+      "Repetitive manual processes",
+      "Operational bottlenecks",
+      "Inconsistent execution",
+      "Difficulty scaling workflows",
+    ],
     bestFor:
-      "Best for: Teams doing repetitive operational work that could be handled faster and more consistently.",
+      "Best For: Organizations looking to reduce operational friction and improve performance.",
   },
   {
-    level: "Level 02",
-    title: "AI Assistants and Internal Copilots",
+    level: "02",
+    title: "Knowledge Systems & AI Assistants",
     description:
-      "We build AI assistants that give your team instant access to knowledge. Instead of searching Notion, asking on Slack, or waiting on someone, they just ask and get what they need.",
+      "Design and implement AI-enabled systems that help teams access information faster and make better decisions.",
+    challenges: [
+      "Information scattered across tools",
+      "Knowledge silos",
+      "Slow onboarding",
+      "Dependence on key individuals",
+    ],
     bestFor:
-      "Best for: Teams where information is scattered across tools, or where the same questions get answered over and over.",
+      "Best For: Organizations struggling with fragmented information and knowledge silos.",
   },
   {
-    level: "Level 03",
-    title: "AI Features for Your Product",
+    level: "03",
+    title: "AI-Enabled Products",
     description:
-      "We help product teams add practical AI capabilities to their existing platforms — search, recommendations, intelligent filtering, automated summaries. Features that improve the user experience without rebuilding from scratch.",
+      "Introduce practical AI capabilities that improve customer experiences and create additional value.",
+    challenges: [
+      "Limited product differentiation",
+      "Manual customer workflows",
+      "Missed personalization opportunities",
+      "Customer experience inefficiencies",
+    ],
     bestFor:
-      "Best for: SaaS companies and product teams adding AI features that deliver real value to their users.",
+      "Best For: Product teams exploring meaningful AI enhancements.",
   },
   {
-    level: "Level 04",
-    title: "Agentic Workflows and AI Operations",
+    level: "04",
+    title: "AI Operations & Intelligent Workflows",
     description:
-      "For teams ready to go further, we design AI systems that handle multi-step processes autonomously, making decisions and integrating across your entire stack without constant manual input.",
+      "Design and implement AI-enabled operational systems that improve execution and scalability.",
+    challenges: [
+      "Operational complexity",
+      "Slow decision-making",
+      "Resource constraints",
+      "Scaling execution across functions",
+    ],
     bestFor:
-      "Best for: Companies that have proven early AI wins and want to scale automation into how they operate at a deeper level.",
+      "Best For: Organizations ready to embed AI into core business operations.",
   },
 ];
 
-export default function WhatWeDoSectionv2() {
+export default function WhatWeDoSectionv2({ showChallenges = false }: { showChallenges?: boolean }) {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -70,7 +94,7 @@ export default function WhatWeDoSectionv2() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            What We <span className="text-white/90">Do</span>
+            Where We <span className="text-white/90">Create Impact</span>
           </h2>
 
           <p
@@ -78,10 +102,8 @@ export default function WhatWeDoSectionv2() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            We help companies introduce AI in a way that fits how they actually
-            work. No overbuilt platforms. No months-long projects before
-            anything ships. We start with one high-impact improvement and build
-            from there.
+            We help organizations improve how work gets done. These are the areas where we most frequently create measurable operational impact.
+
           </p>
         </div>
 
@@ -99,10 +121,23 @@ export default function WhatWeDoSectionv2() {
                 <h3 className="text-2xl font-clash font-bold mb-4">
                   {service.title}
                 </h3>
-                <p className="text-white/80 leading-relaxed mb-6 flex-1 font-jakarta tracking-[-0.03em]">
+                <p className="text-white/80 leading-relaxed mb-5 font-jakarta tracking-[-0.03em]">
                   {service.description}
                 </p>
-                <div className="pt-4 border-t border-white/10">
+                {showChallenges && service.challenges && (
+                  <div className="mb-5">
+                    <p className="text-xs font-clash font-bold uppercase tracking-[0.14em] text-white/40 mb-2">Common Challenges</p>
+                    <ul className="space-y-1.5">
+                      {service.challenges.map((c, ci) => (
+                        <li key={ci} className="flex items-start gap-2 font-jakarta text-sm text-white/65">
+                          <span className="mt-1.5 w-1 h-1 rounded-full bg-[#A2D2FF] flex-shrink-0" />
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                <div className="pt-4 border-t border-white/10 mt-auto">
                   <p className="text-sm text-white font-jakarta tracking-[-0.03em]">
                     {service.bestFor}
                   </p>
@@ -114,7 +149,7 @@ export default function WhatWeDoSectionv2() {
           ))}
         </div>
 
-        {/* CTA Block - Updated to Mini Consultation */}
+        {/* Mid CTA Block */}
         <div
           className={`relative overflow-hidden rounded-2xl transition-all duration-1000 ease-out delay-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -124,23 +159,21 @@ export default function WhatWeDoSectionv2() {
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
               <div className="flex-1">
                 <h3 className="text-2xl lg:text-3xl font-clash font-bold mb-3 text-black">
-                  Not sure which service fits your situation?
+                  Not Sure Where To Begin?
                 </h3>
                 <p className="text-black leading-[25px] font-jakarta text-md tracking-[-0.03em]">
-                  Start with a mini consultation. In 60 minutes we map your workflows, identify your highest-impact opportunity, and hand you a written recommendation you can act on.
+                  Find the right engagement based on your goals, challenges, and stage of adoption.
                 </p>
               </div>
               <div className="flex-shrink-0">
-                <a
-                  href="https://cal.com/refactrd/mini-consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackCTAClick("what_we_do_mini_consultation", "cal.com")}
+                <Link
+                  href="/get-started"
+                  onClick={() => trackCTAClick("what_we_do_find_starting_point", "/get-started")}
                   className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-[#E6EAF0] rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group whitespace-nowrap"
                 >
-                  Book a Mini Consultation ($99)
+                  Find Your Starting Point
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

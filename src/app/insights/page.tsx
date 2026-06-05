@@ -1,7 +1,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import CaseStudiesContent from "@/components/sections/CaseStudiesContent";
 import type { Metadata } from "next";
+import InsightsContent from "@/components/sections/InsightsContent";
 
 export const metadata: Metadata = {
   title: "Case Studies | Refactrd",
@@ -13,7 +13,7 @@ export default function CaseStudiesPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      <CaseStudiesContent />
+      <InsightsContent />
       <Footer />
     </main>
   );

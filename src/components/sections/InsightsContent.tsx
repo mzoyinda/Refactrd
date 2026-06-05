@@ -2,21 +2,18 @@
 
 import { useEffect, useRef, useState, useMemo } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { supabase } from "@/lib/supabase";
-import { ArrowRight, Search, X, ChevronRight, Loader2, ChevronLeft } from "lucide-react";
+import { ArrowRight, Search, X, ChevronRight, Loader2, ChevronLeft, BookOpen } from "lucide-react";
 
-interface CaseStudy {
+interface Insight {
   id: string;
   title: string;
   slug: string;
-  client_name: string;
-  industry: string;
+  category: string;
   excerpt: string;
-  results: string;
   tags: string[];
-  featured_image_url: string | null;
-  view_count: number;
+  is_featured: boolean;
+  published_at: string;
 }
 
 const ITEMS_PER_PAGE = 6;
@@ -28,13 +25,14 @@ const FALLBACK_FILTERS = [
   "AI Operations",
   "AI-Enabled Products",
   "Adoption",
+  "Frameworks",
   "Startups",
 ];
 
-export default function CaseStudiesContent() {
+export default function InsightsContent() {
   const heroRef = useRef<HTMLElement>(null);
   const [heroVisible, setHeroVisible] = useState(false);
-  const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([]);
+  const [insights, setInsights] = useState<Insight[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState("All");
@@ -50,21 +48,21 @@ export default function CaseStudiesContent() {
   }, []);
 
   useEffect(() => {
-    fetchCaseStudies();
+    fetchInsights();
   }, []);
 
-  const fetchCaseStudies = async () => {
+  const fetchInsights = async () => {
     try {
       const { data, error } = await supabase
-        .from("case_studies")
-        .select("id, title, slug, client_name, industry, excerpt, results, tags, featured_image_url, view_count")
+        .from("insights")
+        .select("id, title, slug, category, excerpt, tags, is_featured, published_at")
         .eq("status", "published")
-        .order("created_at", { ascending: false });
+        .order("published_at", { ascending: false });
 
       if (error) throw error;
-      setCaseStudies(data || []);
+      setInsights(data || []);
     } catch (error) {
-      console.error("Error fetching case studies:", error);
+      console.error("Error fetching insights:", error);
     } finally {
       setLoading(false);
     }
@@ -72,30 +70,48 @@ export default function CaseStudiesContent() {
 
   const allTags = useMemo(() => {
     const tagSet = new Set<string>();
-    caseStudies.forEach((cs) => {
-      cs.tags?.forEach((tag) => tagSet.add(tag));
+    insights.forEach((insight) => {
+      insight.tags?.forEach((tag) => tagSet.add(tag));
     });
     const dynamicTags = Array.from(tagSet).sort();
     return dynamicTags.length > 0 ? ["All", ...dynamicTags] : FALLBACK_FILTERS;
-  }, [caseStudies]);
+  }, [insights]);
+
+  // Pull featured insight out before filtering — it always shows at the top
+  // regardless of active filter, unless a search query hides it
+  const featuredInsight = useMemo(
+    () => insights.find((i) => i.is_featured) ?? null,
+    [insights]
+  );
 
   const filtered = useMemo(() => {
     setCurrentPage(1);
-    return caseStudies.filter((cs) => {
-      const matchesFilter =
-        activeFilter === "All" ||
-        cs.tags?.some((tag) => tag.toLowerCase() === activeFilter.toLowerCase());
+    return insights
+      .filter((i) => !i.is_featured) // featured slot is rendered separately
+      .filter((i) => {
+        const matchesFilter =
+          activeFilter === "All" ||
+          i.tags?.some((tag) => tag.toLowerCase() === activeFilter.toLowerCase()) ||
+          i.category?.toLowerCase() === activeFilter.toLowerCase();
 
-      const q = searchQuery.toLowerCase();
-      const matchesSearch =
-        !q ||
-        cs.title.toLowerCase().includes(q) ||
-        cs.client_name.toLowerCase().includes(q) ||
-        cs.excerpt?.toLowerCase().includes(q);
+        const q = searchQuery.toLowerCase();
+        const matchesSearch =
+          !q ||
+          i.title.toLowerCase().includes(q) ||
+          i.category?.toLowerCase().includes(q) ||
+          i.excerpt?.toLowerCase().includes(q);
 
-      return matchesFilter && matchesSearch;
-    });
-  }, [caseStudies, activeFilter, searchQuery]);
+        return matchesFilter && matchesSearch;
+      });
+  }, [insights, activeFilter, searchQuery]);
+
+  // When a search/filter is active, also check if featured should show
+  const showFeatured =
+    featuredInsight &&
+    (activeFilter === "All" || featuredInsight.tags?.some((t) => t.toLowerCase() === activeFilter.toLowerCase()) || featuredInsight.category?.toLowerCase() === activeFilter.toLowerCase()) &&
+    (!searchQuery ||
+      featuredInsight.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      featuredInsight.excerpt?.toLowerCase().includes(searchQuery.toLowerCase()));
 
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
   const paginated = filtered.slice(
@@ -123,7 +139,7 @@ export default function CaseStudiesContent() {
               }`}
             >
               <span className="inline-block px-4 py-2 bg-[#A2D2FF]/20 text-[#1F2A44] rounded-full text-sm font-clash font-semibold uppercase tracking-wider">
-                Case Studies
+                Insights
               </span>
             </div>
 
@@ -132,8 +148,8 @@ export default function CaseStudiesContent() {
                 heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              From Operational Challenges
-              <br className="hidden lg:block" />{" "}To Measurable Outcomes.
+              Lessons From Transformation
+              <br className="hidden lg:block" /> In Practice.
             </h1>
 
             <p
@@ -141,7 +157,7 @@ export default function CaseStudiesContent() {
                 heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              See how organizations redesigned workflows, strengthened operations, and created measurable business value through practical AI adoption.
+              Perspectives, frameworks, and lessons from helping organizations move AI from experimentation to operational adoption.
             </p>
           </div>
         </div>
@@ -154,7 +170,6 @@ export default function CaseStudiesContent() {
       <div className="bg-white border-b border-[#E2E8F0] sticky top-[64px] lg:top-[80px] z-30">
         <div className="container-custom py-4">
           <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-
             <div className="flex items-center gap-2 flex-wrap flex-1">
               {allTags.map((tag) => (
                 <button
@@ -177,7 +192,7 @@ export default function CaseStudiesContent() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search case studies..."
+                placeholder="Search insights..."
                 className="w-full pl-9 pr-8 py-2.5 rounded-full border-2 border-[#E2E8F0] font-jakarta text-sm text-[#1F2A44] placeholder:text-[#CBD5E1] focus:outline-none focus:border-[#1F2A44] transition-colors duration-200 bg-[#F4F6F9]"
               />
               {searchQuery && (
@@ -193,29 +208,31 @@ export default function CaseStudiesContent() {
         </div>
       </div>
 
-      {/* ── CARDS GRID ────────────────────────────────────── */}
+      {/* ── CONTENT ───────────────────────────────────────── */}
       <section className="bg-white py-14">
         <div className="container-custom">
 
+          {/* Loading */}
           {loading && (
             <div className="flex items-center justify-center py-32">
               <Loader2 className="w-8 h-8 text-[#1F2A44] animate-spin" />
             </div>
           )}
 
-          {!loading && filtered.length === 0 && (
+          {/* Empty state */}
+          {!loading && !showFeatured && filtered.length === 0 && (
             <div className="text-center py-24 border-2 border-dashed border-[#E2E8F0] rounded-2xl px-8">
               <p className="font-clash font-bold text-[#1F2A44] text-2xl mb-3">
-                {caseStudies.length === 0 && !searchQuery && activeFilter === "All"
-                  ? "Transformation Stories Coming Soon"
-                  : "No case studies found"}
+                {insights.length === 0 && !searchQuery && activeFilter === "All"
+                  ? "New Insights Coming Soon"
+                  : "No insights found"}
               </p>
               <p className="font-jakarta text-[#94A3B8] text-sm leading-relaxed max-w-lg mx-auto mb-6">
                 {searchQuery
                   ? `No results for "${searchQuery}"`
-                  : caseStudies.length === 0 && activeFilter === "All"
-                  ? "We're preparing detailed case studies highlighting implementation approaches, lessons learned, and the outcomes achieved across workflow transformation, AI operations, and operational improvement initiatives."
-                  : `No case studies tagged with "${activeFilter}" yet`}
+                  : insights.length === 0 && activeFilter === "All"
+                  ? "We're documenting practical lessons from AI implementations, workflow transformations, and operational improvement initiatives. Check back for new insights, frameworks, and field-tested approaches."
+                  : `No insights tagged with "${activeFilter}" yet`}
               </p>
               {(activeFilter !== "All" || searchQuery) && (
                 <button
@@ -228,11 +245,19 @@ export default function CaseStudiesContent() {
             </div>
           )}
 
+          {/* Featured insight */}
+          {!loading && showFeatured && (
+            <div className="mb-12">
+              <FeaturedInsightCard insight={featuredInsight!} />
+            </div>
+          )}
+
+          {/* Grid */}
           {!loading && filtered.length > 0 && (
             <>
               <div className="flex items-center justify-between mb-8">
                 <p className="font-jakarta text-sm text-[#94A3B8]">
-                  {filtered.length} {filtered.length === 1 ? "case study" : "case studies"}
+                  {filtered.length} {filtered.length === 1 ? "insight" : "insights"}
                   {activeFilter !== "All" && (
                     <span> tagged <span className="font-semibold text-[#1F2A44]">"{activeFilter}"</span></span>
                   )}
@@ -248,8 +273,8 @@ export default function CaseStudiesContent() {
               </div>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                {paginated.map((cs, index) => (
-                  <CaseStudyCard key={cs.id} cs={cs} index={index} />
+                {paginated.map((insight, index) => (
+                  <InsightCard key={insight.id} insight={insight} index={index} />
                 ))}
               </div>
 
@@ -296,10 +321,10 @@ export default function CaseStudiesContent() {
         <div className="container-custom">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-clash font-bold text-[#1F2A44] mb-4">
-              Ready To Create Similar Results?
+              Ready To Move Beyond Experimentation?
             </h2>
             <p className="font-jakarta text-[#64748B] mb-8 leading-relaxed">
-              Explore how practical AI can help improve operations, increase efficiency, and unlock new opportunities across your organization.
+              Explore the engagement path that best fits your goals, challenges, and stage of AI adoption.
             </p>
             <Link
               href="/get-started"
@@ -315,8 +340,70 @@ export default function CaseStudiesContent() {
   );
 }
 
-// ── CARD ────────────────────────────────────────────────
-function CaseStudyCard({ cs, index }: { cs: CaseStudy; index: number }) {
+// ── FEATURED CARD ────────────────────────────────────────
+function FeaturedInsightCard({ insight }: { insight: Insight }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`group relative bg-gradient-to-br from-[#1F2A44] to-[#0e5d7d] rounded-2xl overflow-hidden transition-all duration-700 ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+      }`}
+    >
+      {/* Decorative blobs */}
+      <div className="absolute top-0 right-0 w-72 h-72 bg-[#A2D2FF]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#5B6CFF]/10 rounded-full blur-2xl pointer-events-none" />
+
+      <div className="relative z-10 p-8 sm:p-10 lg:p-12 flex flex-col lg:flex-row lg:items-center gap-8">
+        <div className="flex-1">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#A2D2FF]/20 text-[#A2D2FF] rounded-full text-xs font-clash font-bold uppercase tracking-wider border border-[#A2D2FF]/30">
+              <BookOpen className="w-3 h-3" />
+              Featured
+            </span>
+            {insight.category && (
+              <span className="px-3 py-1.5 bg-white/10 text-white/70 rounded-full text-xs font-clash font-semibold">
+                {insight.category}
+              </span>
+            )}
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-clash font-bold text-white leading-tight mb-4 group-hover:text-[#A2D2FF] transition-colors duration-300">
+            {insight.title}
+          </h2>
+
+          <p className="font-jakarta text-white/70 leading-relaxed text-base lg:text-lg max-w-2xl">
+            {insight.excerpt}
+          </p>
+        </div>
+
+        <div className="flex-shrink-0">
+          <Link
+            href={`/insights/${insight.slug}`}
+            className="inline-flex items-center gap-2 px-7 py-4 bg-white text-[#1F2A44] rounded-full font-clash font-bold text-sm hover:bg-[#A2D2FF] transition-all duration-300 group/btn"
+          >
+            Read Insight
+            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── INSIGHT CARD ────────────────────────────────────────
+function InsightCard({ insight, index }: { insight: Insight; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -337,61 +424,27 @@ function CaseStudyCard({ cs, index }: { cs: CaseStudy; index: number }) {
       }`}
       style={{ transitionDelay: `${index * 80}ms`, transitionDuration: "500ms" }}
     >
-      {cs.featured_image_url ? (
-        <div className="relative w-full h-44 overflow-hidden flex-shrink-0">
-          <Image
-            src={cs.featured_image_url}
-            alt={cs.title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-700"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          {cs.industry && (
-            <div className="absolute bottom-3 left-4">
-              <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1F2A44] text-xs font-clash font-bold rounded-full">
-                {cs.industry}
-              </span>
-            </div>
-          )}
-        </div>
-      ) : (
-        <div className="relative w-full h-44 bg-gradient-to-br from-[#1F2A44] to-[#0e5d7d] flex items-center justify-center flex-shrink-0">
-          <span className="font-clash font-bold text-white/10 text-8xl select-none">
-            {cs.title.charAt(0)}
-          </span>
-          {cs.industry && (
-            <div className="absolute bottom-3 left-4">
-              <span className="px-3 py-1 bg-white/10 backdrop-blur-sm text-white text-xs font-clash font-bold rounded-full border border-white/20">
-                {cs.industry}
-              </span>
-            </div>
-          )}
-        </div>
-      )}
+      {/* Top accent bar — color keyed to category */}
+      <div className="h-1 w-full bg-gradient-to-r from-[#1F2A44] to-[#0e5d7d] group-hover:from-[#A2D2FF] group-hover:to-[#5B6CFF] transition-all duration-500" />
 
       <div className="p-6 flex flex-col flex-1">
-        <h3 className="text-lg font-clash font-bold text-[#1F2A44] mb-2 group-hover:text-[#0e5d7d] transition-colors duration-300 line-clamp-2">
-          {cs.title}
-        </h3>
-
-        <p className="font-jakarta text-sm text-[#64748B] leading-relaxed mb-4 flex-1 line-clamp-3">
-          {cs.excerpt}
-        </p>
-
-        {cs.results && (
-          <div className="mb-4 px-3 py-2.5 bg-[#F0F7FF] rounded-lg border-l-4 border-[#A2D2FF]">
-            <p className="font-clash font-bold text-[10px] text-[#94A3B8] uppercase tracking-wider mb-1">
-              Result
-            </p>
-            <p className="font-jakarta text-xs text-[#1F2A44] leading-relaxed line-clamp-2">
-              {cs.results}
-            </p>
-          </div>
+        {insight.category && (
+          <span className="inline-block mb-3 px-3 py-1 bg-[#F0F7FF] text-[#1F2A44] text-[11px] font-clash font-bold rounded-full uppercase tracking-wider self-start border border-[#A2D2FF]/30">
+            {insight.category}
+          </span>
         )}
 
-        {cs.tags && cs.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mb-5">
-            {cs.tags.slice(0, 3).map((tag, i) => (
+        <h3 className="text-lg font-clash font-bold text-[#1F2A44] mb-3 group-hover:text-[#0e5d7d] transition-colors duration-300 leading-snug">
+          {insight.title}
+        </h3>
+
+        <p className="font-jakarta text-sm text-[#64748B] leading-relaxed flex-1 line-clamp-3">
+          {insight.excerpt}
+        </p>
+
+        {insight.tags && insight.tags.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mt-4 mb-5">
+            {insight.tags.slice(0, 3).map((tag, i) => (
               <span
                 key={i}
                 className="px-2.5 py-1 text-[11px] font-clash font-semibold rounded-full bg-[#F4F6F9] border border-[#E2E8F0] text-[#64748B]"
@@ -399,19 +452,19 @@ function CaseStudyCard({ cs, index }: { cs: CaseStudy; index: number }) {
                 {tag}
               </span>
             ))}
-            {cs.tags.length > 3 && (
+            {insight.tags.length > 3 && (
               <span className="px-2.5 py-1 text-[11px] font-clash font-semibold rounded-full bg-[#F4F6F9] border border-[#E2E8F0] text-[#94A3B8]">
-                +{cs.tags.length - 3}
+                +{insight.tags.length - 3}
               </span>
             )}
           </div>
         )}
 
         <Link
-          href={`/case-studies/${cs.slug}`}
+          href={`/insights/${insight.slug}`}
           className="inline-flex items-center gap-1.5 text-[#1F2A44] font-clash font-bold text-sm group-hover:gap-2.5 transition-all duration-300 mt-auto"
         >
-          Read Case Study
+          Read More
           <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
         </Link>
       </div>

@@ -35,7 +35,7 @@ export default function Home() {
       <Hero />
       <ProblemSection />
       <WhatWeDoSection />
-      <WhereToStart/>
+      {/* <WhereToStart/> */}
       <ProofOfWork />
       <WhyChooseUs />
       <WhoThisIsFor />

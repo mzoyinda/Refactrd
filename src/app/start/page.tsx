@@ -5,30 +5,25 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ArrowRight, CheckCircle, Loader2 } from "lucide-react";
 
+const stageOptions = [
+  "Exploring Options",
+  "Defining Requirements",
+  "Ready To Build",
+  "Existing Solution Needs Improvement",
+];
+
+const budgetOptions = [
+  "Under $2,500",
+  "$2,500–$5,000",
+  "$5,000–$10,000",
+  "$10,000+",
+];
+
 const timelineOptions = [
-  "As soon as possible",
-  "Within 1 month",
-  "1 to 3 months",
-  "3 to 6 months",
-  "Just exploring for now",
-];
-
-const teamSizeOptions = [
-  "Just me",
-  "2 to 5 people",
-  "6 to 20 people",
-  "21 to 50 people",
-  "50+ people",
-];
-
-const howHeardOptions = [
-  "LinkedIn",
-  "Instagram",
-  "Google Search",
-  "Word of mouth",
-  "A referral",
-  "Newsletter",
-  "Other",
+  "As Soon As Possible",
+  "Within 30 Days",
+  "Within 90 Days",
+  "Flexible",
 ];
 
 export default function StartPage() {
@@ -43,9 +38,10 @@ export default function StartPage() {
     company: "",
     email: "",
     what_to_build: "",
+    business_challenge: "",
+    stage: "",
+    budget: "",
     timeline: "",
-    team_size: "",
-    how_heard: "",
   });
 
   useEffect(() => {
@@ -65,9 +61,9 @@ export default function StartPage() {
   };
 
   const handleSubmit = async () => {
-    const { name, company, email, what_to_build, timeline, team_size } = form;
+    const { name, company, email, what_to_build, business_challenge, stage, budget, timeline } = form;
 
-    if (!name || !company || !email || !what_to_build || !timeline || !team_size) {
+    if (!name || !company || !email || !what_to_build || !business_challenge || !stage || !budget || !timeline) {
       setError("Please fill in all required fields.");
       return;
     }
@@ -91,260 +87,278 @@ export default function StartPage() {
 
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch (err) {
+    } catch {
       setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
+  /* ── shared input classes ── */
+  const inputCls =
+    "w-full px-4 py-3.5 rounded-xl border-2 border-[#E2E8F0] font-jakarta text-sm text-[#1F2A44] placeholder:text-[#CBD5E1] focus:outline-none focus:border-[#1F2A44] transition-colors duration-200 bg-white";
+  const selectCls =
+    "w-full px-4 py-3.5 rounded-xl border-2 border-[#E2E8F0] font-jakarta text-sm text-[#1F2A44] focus:outline-none focus:border-[#1F2A44] transition-colors duration-200 bg-white appearance-none cursor-pointer";
+  const labelCls = "block font-clash font-semibold text-sm text-[#1F2A44] mb-1.5";
+
   return (
     <main className="min-h-screen">
       <Header />
 
-      {/* ── HERO ──────────────────────────────────────────── */}
+      {/* ══════════════════════════════════════
+          HERO
+      ══════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-[#E6EAF0] via-white to-white overflow-hidden pt-32 pb-16"
+        className="relative flex items-center justify-center bg-gradient-to-br from-[#E6EAF0] via-white to-white overflow-hidden pt-36 pb-16 md:pt-40 md:pb-20"
       >
+        {/* Background blobs */}
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#A2D2FF]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#5B6CFF]/10 rounded-full blur-3xl pointer-events-none" />
+
         <div className="container-custom w-full relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div
-              className={`mb-6 transition-all duration-700 ${
-                heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              <span className="inline-block px-4 py-2 bg-[#A2D2FF]/20 text-[#1F2A44] rounded-full text-sm font-clash font-semibold uppercase tracking-wider">
-                ✱ Ready to Get Started
+          <div className="max-w-3xl mx-auto text-center">
+
+            {/* Badge */}
+            <div className={`mb-5 transition-all duration-700 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F2A44]/8 text-[#1F2A44] rounded-full text-xs font-clash font-bold uppercase tracking-[0.16em]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1F2A44]" />
+                Ready To Build
               </span>
             </div>
 
+            {/* Headline */}
             <h1
-              className={`text-5xl lg:text-6xl xl:text-7xl font-clash font-bold text-[#1F2A44] leading-tight mb-6 transition-all duration-700 delay-100 ${
+              className={`text-4xl sm:text-5xl lg:text-6xl font-clash font-bold text-[#1F2A44] leading-tight mb-6 transition-all duration-700 delay-100 ${
                 heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Tell us what you{" "}
-              <span className="relative inline-block">
-                want to build.
-                <div className="absolute -bottom-2 left-0 w-full h-3 bg-[#A2D2FF]" />
-              </span>
+              Tell Us About Your Initiative
             </h1>
 
+            {/* Body */}
             <p
-              className={`font-clash text-lg lg:text-xl text-[#64748B] leading-relaxed max-w-2xl mx-auto transition-all duration-700 delay-200 ${
+              className={`font-jakarta text-base lg:text-lg text-[#5a6580] leading-relaxed max-w-2xl mx-auto mb-3 transition-all duration-700 delay-200 ${
                 heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              You have a specific problem and you are ready to move. Fill in the brief below and we will respond within 24 hours. A real reply from a real person.
+              Already know what you&apos;re trying to achieve? Whether you&apos;re planning an AI assistant, knowledge system, workflow automation initiative, AI-enabled product feature, or operational improvement project, we&apos;ll review the opportunity and determine the most practical implementation path.
+            </p>
+
+            {/* Supporting text */}
+            <p
+              className={`font-clash text-sm font-semibold text-[#1F2A44]/60 transition-all duration-700 delay-300 ${
+                heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              We&apos;ll review your submission and respond within 24 hours.
             </p>
           </div>
         </div>
-
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#A2D2FF]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#5B6CFF]/10 rounded-full blur-3xl pointer-events-none" />
       </section>
 
-      {/* ── FORM / CONFIRMATION ────────────────────────────── */}
-      <section className="bg-[#F4F6F9] py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container-custom">
-          <div className="max-w-2xl mx-auto">
-            {submitted ? (
-              /* ── CONFIRMATION STATE ── */
-              <div className="bg-white rounded-3xl border-2 border-[#DDE3EE] p-10 text-center">
-                <div className="w-16 h-16 bg-[#E6EAF0] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-8 h-8 text-[#1F2A44]" />
-                </div>
-                <h2 className="text-3xl font-clash font-bold text-[rgb(31,42,68)] mb-4">
-                  We have received your brief.
+      {/* ══════════════════════════════════════
+          FORM / CONFIRMATION
+      ══════════════════════════════════════ */}
+      <section className="bg-[#F4F6F9] py-12 md:py-16 px-4 sm:px-6">
+        <div className="max-w-[680px] mx-auto">
+
+          {submitted ? (
+            /* ── CONFIRMATION ── */
+            <div className="bg-white rounded-3xl border border-[#DDE3EE] shadow-sm p-8 md:p-12 text-center">
+              <div className="w-16 h-16 bg-[#E6EAF0] rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-8 h-8 text-[#1F2A44]" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-clash font-bold text-[#1F2A44] mb-3">
+                Initiative Received
+              </h2>
+              <p className="font-jakarta text-[#5a6580] leading-relaxed mb-8">
+                Someone from the Refactrd team will review your brief personally and respond within 24 hours.
+              </p>
+              <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-5 text-left">
+                <p className="font-clash font-bold text-[#1F2A44] text-sm mb-3">What to expect</p>
+                <ul className="space-y-2.5">
+                  {[
+                    "Response within 24 hours",
+                    "Personal review — no automated responses",
+                    "Scope assessment and next steps",
+                    "Honest feedback if it&apos;s not the right fit",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2.5">
+                      <CheckCircle className="w-4 h-4 text-[#1F2A44] flex-shrink-0" />
+                      <span className="font-jakarta text-sm text-[#5a6580]" dangerouslySetInnerHTML={{ __html: item }} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ) : (
+            /* ── FORM ── */
+            <div className="bg-white rounded-3xl border border-[#DDE3EE] shadow-sm overflow-hidden">
+
+              {/* Card header */}
+              <div className="bg-[#1F2A44] px-8 py-7 md:px-10">
+                <h2 className="font-clash font-bold text-white text-xl mb-1">
+                  Implementation Brief
                 </h2>
-                <p className="font-jakarta text-[#64748B] leading-relaxed mb-4">
-                  Someone from the Refactrd team will review it personally and respond within 24 hours. We will either reach out to schedule a scoping call or, if a consultation is a better fit for where you are, we will explain why and point you in the right direction.
-                </p>
-                <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-5 text-left mb-8">
-                  <p className="font-clash font-semibold text-[#1F2A44] text-sm mb-1">
-                    What to expect next
-                  </p>
-                  <ul className="space-y-2 mt-3">
-                    {[
-                      "Response within 24 hours",
-                      "No auto-generated proposals",
-                      "No generic responses",
-                      "A real reply from a real person",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-[#0e5d7d] flex-shrink-0" />
-                        <span className="font-jakarta text-sm text-[#64748B]">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <p className="font-jakarta text-sm text-[#94A3B8]">
-                  Check your inbox. We also sent you a copy of your brief.
+                <p className="font-jakarta text-white/55 text-sm">
+                  All fields marked * are required.
                 </p>
               </div>
-            ) : (
-              /* ── FORM STATE ── */
-              <div className="bg-white rounded-3xl border-2 border-[#DDE3EE] overflow-hidden">
-                {/* Form header */}
-                <div className="bg-[#1F2A44] px-10 py-8">
-                  <h2 className="font-clash font-bold text-white text-xl mb-1">
-                    Your Brief
-                  </h2>
-                  <p className="font-jakarta text-white text-sm">
-                    All fields marked * are required
-                  </p>
+
+              <div className="px-6 py-8 md:px-10 md:py-10 space-y-6">
+
+                {/* Row: Name + Company */}
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelCls}>Your Name *</label>
+                    <input
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
+                      placeholder="Jane Doe"
+                      className={inputCls}
+                    />
+                  </div>
+                  <div>
+                    <label className={labelCls}>Company Name *</label>
+                    <input
+                      name="company"
+                      value={form.company}
+                      onChange={handleChange}
+                      placeholder="Your company"
+                      className={inputCls}
+                    />
+                  </div>
                 </div>
 
-                <div className="px-10 py-10 space-y-6">
-                  {/* Name + Company */}
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="font-clash font-semibold text-sm text-[#1F2A44]">
-                        Your name *
-                      </label>
-                      <input
-                        name="name"
-                        value={form.name}
-                        onChange={handleChange}
-                        placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-xl border-2 border-[#E2E8F0] font-jakarta text-sm text-[#1F2A44] placeholder:text-[#CBD5E1] focus:outline-none focus:border-[#1F2A44] transition-colors duration-200"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="font-clash font-semibold text-sm text-[#1F2A44]">
-                        Company name *
-                      </label>
-                      <input
-                        name="company"
-                        value={form.company}
-                        onChange={handleChange}
-                        placeholder="Your company name"
-                        className="w-full px-4 py-3 rounded-xl border-2 border-[#E2E8F0] font-jakarta text-sm text-[#1F2A44] placeholder:text-[#CBD5E1] focus:outline-none focus:border-[#1F2A44] transition-colors duration-200"
-                      />
-                    </div>
-                  </div>
+                {/* Email */}
+                <div>
+                  <label className={labelCls}>Your Email *</label>
+                  <input
+                    name="email"
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="jane@company.com"
+                    className={inputCls}
+                  />
+                </div>
 
-                  {/* Email */}
-                  <div className="space-y-2">
-                    <label className="font-clash font-semibold text-sm text-[#1F2A44]">
-                      Your email *
-                    </label>
-                    <input
-                      name="email"
-                      type="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="john@yourcompany.com"
-                      className="w-full px-4 py-3 rounded-xl border-2 border-[#E2E8F0] font-jakarta text-sm text-[#1F2A44] placeholder:text-[#CBD5E1] focus:outline-none focus:border-[#1F2A44] transition-colors duration-200"
-                    />
-                  </div>
+                {/* What to build */}
+                <div>
+                  <label className={labelCls}>What are you looking to build or improve? *</label>
+                  <p className="font-jakarta text-xs text-[#94A3B8] mb-2">
+                    Describe the initiative, workflow, system, or opportunity.
+                  </p>
+                  <textarea
+                    name="what_to_build"
+                    value={form.what_to_build}
+                    onChange={handleChange}
+                    rows={5}
+                    placeholder="We're looking to implement an internal AI assistant that helps employees find policies, procedures, and operational information across multiple departments."
+                    className={`${inputCls} resize-none`}
+                  />
+                </div>
 
-                  {/* What to build */}
-                  <div className="space-y-2">
-                    <label className="font-clash font-semibold text-sm text-[#1F2A44]">
-                      What do you want to build or automate? *
-                    </label>
-                    <p className="font-jakarta text-xs text-[#94A3B8]">
-                      2 to 4 sentences. Be as specific as possible.
-                    </p>
-                    <textarea
-                      name="what_to_build"
-                      value={form.what_to_build}
-                      onChange={handleChange}
-                      rows={5}
-                      placeholder="We want to automate our customer onboarding process. Currently our team spends 3 hours per new client setting up accounts manually across 4 different tools..."
-                      className="w-full px-4 py-3 rounded-xl border-2 border-[#E2E8F0] font-jakarta text-sm text-[#1F2A44] placeholder:text-[#CBD5E1] focus:outline-none focus:border-[#1F2A44] transition-colors duration-200 resize-none"
-                    />
-                  </div>
+                {/* Business challenge */}
+                <div>
+                  <label className={labelCls}>What business challenge are you trying to solve? *</label>
+                  <textarea
+                    name="business_challenge"
+                    value={form.business_challenge}
+                    onChange={handleChange}
+                    rows={4}
+                    placeholder="Our team spends significant time searching for information, onboarding new employees, and answering repetitive questions."
+                    className={`${inputCls} resize-none`}
+                  />
+                </div>
 
-                  {/* Timeline + Team size */}
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="font-clash font-semibold text-sm text-[#1F2A44]">
-                        What is your rough timeline? *
-                      </label>
-                      <select
-                        name="timeline"
-                        value={form.timeline}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl border-2 border-[#E2E8F0] font-jakarta text-sm text-[#1F2A44] focus:outline-none focus:border-[#1F2A44] transition-colors duration-200 bg-white appearance-none cursor-pointer"
-                      >
-                        <option value="" disabled>Select timeline</option>
-                        {timelineOptions.map((opt) => (
-                          <option key={opt} value={opt}>{opt}</option>
-                        ))}
-                      </select>
-                    </div>
-                    <div className="space-y-2">
-                      <label className="font-clash font-semibold text-sm text-[#1F2A44]">
-                        How many people on your team? *
-                      </label>
-                      <select
-                        name="team_size"
-                        value={form.team_size}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl border-2 border-[#E2E8F0] font-jakarta text-sm text-[#1F2A44] focus:outline-none focus:border-[#1F2A44] transition-colors duration-200 bg-white appearance-none cursor-pointer"
-                      >
-                        <option value="" disabled>Select team size</option>
-                        {teamSizeOptions.map((opt) => (
-                          <option key={opt} value={opt}>{opt}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* How heard */}
-                  <div className="space-y-2">
-                    <label className="font-clash font-semibold text-sm text-[#1F2A44]">
-                      How did you hear about Refactrd?
-                    </label>
+                {/* Row: Stage + Budget */}
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelCls}>What stage are you in? *</label>
                     <select
-                      name="how_heard"
-                      value={form.how_heard}
+                      name="stage"
+                      value={form.stage}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-[#E2E8F0] font-jakarta text-sm text-[#1F2A44] focus:outline-none focus:border-[#1F2A44] transition-colors duration-200 bg-white appearance-none cursor-pointer"
+                      className={selectCls}
                     >
-                      <option value="">Select an option (optional)</option>
-                      {howHeardOptions.map((opt) => (
+                      <option value="" disabled>Select stage</option>
+                      {stageOptions.map((opt) => (
                         <option key={opt} value={opt}>{opt}</option>
                       ))}
                     </select>
                   </div>
+                  <div>
+                    <label className={labelCls}>Estimated Budget *</label>
+                    <select
+                      name="budget"
+                      value={form.budget}
+                      onChange={handleChange}
+                      className={selectCls}
+                    >
+                      <option value="" disabled>Select budget</option>
+                      {budgetOptions.map((opt) => (
+                        <option key={opt} value={opt}>{opt}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
 
-                  {/* Error */}
-                  {error && (
-                    <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3">
-                      <p className="font-jakarta text-sm text-red-600">{error}</p>
-                    </div>
-                  )}
+                {/* Desired Timeline */}
+                <div>
+                  <label className={labelCls}>Desired Timeline *</label>
+                  <select
+                    name="timeline"
+                    value={form.timeline}
+                    onChange={handleChange}
+                    className={selectCls}
+                  >
+                    <option value="" disabled>Select timeline</option>
+                    {timelineOptions.map((opt) => (
+                      <option key={opt} value={opt}>{opt}</option>
+                    ))}
+                  </select>
+                </div>
 
-                  {/* Submit */}
+                {/* Error */}
+                {error && (
+                  <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+                    <p className="font-jakarta text-sm text-red-600">{error}</p>
+                  </div>
+                )}
+
+                {/* Divider */}
+                <div className="h-px bg-[#E8ECF2]" />
+
+                {/* Submit */}
+                <div className="space-y-3">
                   <button
                     onClick={handleSubmit}
                     disabled={loading}
-                    className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-semibold text-sm transition-all duration-300 hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 group"
+                    className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-xl font-clash font-bold text-[15px] transition-all duration-300 hover:bg-[#263352] hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed group"
                   >
                     {loading ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin" />
-                        Sending your brief...
+                        Submitting...
                       </>
                     ) : (
                       <>
-                        Send My Brief
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        Submit Initiative
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                       </>
                     )}
                   </button>
-
                   <p className="font-jakarta text-xs text-[#94A3B8] text-center">
-                    We will respond within 24 hours. No spam, no auto-replies.
+                    We&apos;ll review your submission and respond within 24 hours.
                   </p>
                 </div>
+
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </section>
 

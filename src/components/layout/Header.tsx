@@ -412,11 +412,11 @@ export default function Header() {
               </Link>
 
               <Link
-                href="/about"
-                onClick={() => trackNavigation("about", "/about")}
+                href="/approach"
+                onClick={() => trackNavigation("approach", "/approach")}
                 className="text-secondary font-clash font-semibold text-[16px] transition-colors duration-200 relative group"
               >
-                About
+                Approach
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
               </Link>
 
@@ -439,11 +439,11 @@ export default function Header() {
               </Link>
 
               <Link
-                href="/ai-startups-launchpad"
-                onClick={() => trackNavigation("launchpad", "/ai-startups-launchpad")}
+                href="/insights"
+                onClick={() => trackNavigation("insights", "/insights")}
                 className="text-secondary font-clash font-semibold text-[16px] transition-colors duration-200 relative group"
               >
-                Launchpad
+               Insights
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
               </Link>
 
@@ -462,7 +462,7 @@ export default function Header() {
               <Link
                 href="/get-started"
                 onClick={() => trackCTAClick("header_find_starting_point", "/get-started")}
-                className="inline-flex items-center justify-center px-7 py-3 bg-secondary text-white rounded-full font-clash font-semibold text-[15px] hover:bg-[#A2D2FF] transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="inline-flex items-center justify-center px-7 py-3 bg-secondary text-white rounded-full font-clash font-semibold text-[15px] hover:bg-[#A2D2FF] hover:text-secondary  transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 
               >
                 Find Your Starting Point
@@ -522,14 +522,14 @@ export default function Header() {
                 </Link>
 
                 <Link
-                  href="/about"
+                  href="/approach"
                   className="block px-4 py-3 text-secondary font-clash font-semibold hover:bg-tertiary rounded-lg transition-colors duration-200"
                   onClick={() => {
-                    trackNavigation("about_mobile", "/about");
+                    trackNavigation("approach_mobile", "/approach");
                     setMobileMenuOpen(false);
                   }}
                 >
-                  About
+                  Approach
                 </Link>
 
                 <Link
@@ -555,14 +555,14 @@ export default function Header() {
                 </Link>
 
                 <Link
-                  href="/ai-startups-launchpad"
+                  href="/insights"
                   className="block px-4 py-3 text-secondary font-clash font-semibold hover:bg-tertiary rounded-lg transition-colors duration-200"
                   onClick={() => {
-                    trackNavigation("launchpad_mobile", "/ai-startups-launchpad");
+                    trackNavigation("insights", "/insights");
                     setMobileMenuOpen(false);
                   }}
                 >
-                  Launchpad
+                 Insights
                 </Link>
 
                 <Link

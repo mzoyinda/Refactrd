@@ -16,44 +16,44 @@ const benefits = [
   {
     icon: Target,
     number: "1",
-    title: "We start small and prove it fast.",
+    title: "We Focus On Business Outcomes",
     description:
-      "Every engagement begins with one focused improvement. We deliver it quickly so you see results before committing to anything larger.",
+      "Every engagement begins with a business challenge, not a technology recommendation.",
   },
   {
     icon: Boxes,
     number: "2",
-    title: "We diagnose before we build.",
+    title: "We Understand Before We Build",
     description:
-      "We do not recommend a solution before understanding your workflows. The first session is about listening, not selling.",
+      "We assess workflows, operations, and priorities before recommending or implementing solutions.",
   },
   {
     icon: FileText,
     number: "3",
-    title: "We build working systems, not demos.",
+    title: "We Prioritize Adoption",
     description:
-      "Everything we deliver is production-ready, documented, and designed to keep running after we hand it over.",
+      "Success is measured by operational change and business outcomes, not implementation activity alone.",
   },
   {
     icon: Zap,
     number: "4",
-    title: "We know how to scope AI correctly.",
+    title: "We Identify High-Impact Opportunities",
     description:
-      "Most teams do not need a massive AI transformation. We find the highest-impact starting point and implement it cleanly.",
+      "We focus on initiatives capable of creating meaningful value and sustainable improvement.",
   },
   {
     icon: Award,
     number: "5",
-    title: "Senior, hands-on execution.",
+    title: "Senior, Hands-On Delivery",
     description:
-      "There is no junior team handling the actual work while someone else manages the relationship. Experienced engineers own delivery from start to finish.",
+      "Every engagement is led directly by experienced practitioners from discovery through implementation.",
   },
   {
     icon: Globe,
     number: "6",
-    title: "The relationship grows with results.",
+    title: "Built For Long-Term Impact",
     description:
-      "Our clients do not do one project and leave. As we prove value, we expand into more complex AI at a pace that makes sense for the business.",
+      "Our goal is to help organizations build lasting capability, operational maturity, and sustainable adoption.",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function WhyChooseUs() {
               }`}
             >
               <span className="font-clash text-[#E6EAF0] font-semibold text-sm uppercase tracking-wider">
-                BENEFITS
+                WHY REFACTRD
               </span>
             </div>
 
@@ -103,7 +103,7 @@ export default function WhyChooseUs() {
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
               >
-                Why Businesses Choose Refactrd
+                Why Organizations Choose Refactrd
               </h2>
 
               <div
@@ -112,7 +112,7 @@ export default function WhyChooseUs() {
                 }`}
               >
                 <p className="font-clash text-lg text-white/80 mb-6 leading-relaxed">
-                  We partner with you to build AI that is focused, fast to deliver, and designed to grow with your business.
+                  Most organizations don&apos;t struggle to access AI. They struggle to apply it in ways that improve how work gets done. Refactrd helps organizations identify the right opportunities, implement practical solutions, and create lasting operational impact.
                 </p>
                 <Link
                   href="/get-started"

@@ -68,15 +68,15 @@ export default function ProblemSection() {
             }`}
           >
             <h2 className="heading-lg text-secondary mb-6">
-              The Problem We Solve
+              The Challenge Most Organizations Face
             </h2>
 
             <div className="w-[200px] h-1 bg-[#1F2A44] mb-8 rounded-full" />
 
             <div className="space-y-6">
-              {/* Feature 1 */}
+              {/* Problem 1 */}
               <div className="flex items-start gap-4 group cursor-pointer">
-                <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center  duration-300 group-hover:scale-110 transform">
+                <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center duration-300 group-hover:scale-110 transform">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -93,15 +93,15 @@ export default function ProblemSection() {
                 </div>
                 <div className="flex-1">
                   <h3 className="heading-sm text-secondary mb-2">
-                    Your team is wasting time on manual work
+                    AI initiatives aren&apos;t becoming operational results
                   </h3>
                   <p className="font-jakarta tracking-[-0.02em] text-secondary/75">
-                    Work that should take minutes ends up taking hours because tasks keep repeating, information is hard to find, and people rely on each other for things that should be instant. Over time, even simple processes become slower and less consistent, making it harder for your team to move as fast as it should.
+                    Organizations are investing in AI, but adoption often remains fragmented. Without changes to workflows, processes, and ways of working, AI initiatives struggle to create meaningful operational impact.
                   </p>
                 </div>
               </div>
 
-              {/* Feature 2 */}
+              {/* Problem 2 */}
               <div className="flex items-start gap-4 group cursor-pointer">
                 <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center duration-300 group-hover:scale-110 transform">
                   <svg
@@ -120,14 +120,10 @@ export default function ProblemSection() {
                 </div>
                 <div className="flex-1">
                   <h3 className="heading-sm text-secondary mb-2 duration-300">
-                    You know AI can help, but you do not know where to start
+                    You know AI can help, but you&apos;re not sure where to begin
                   </h3>
                   <p className="font-jakarta tracking-[-0.02em] text-secondary/75">
-                    There is a lot of noise around AI. Most teams do not need a
-                    full AI strategy or a platform rebuild. They need one
-                    focused improvement that actually works, something that
-                    saves real time and shows real results. That is exactly what
-                    we deliver.
+                    Most organizations don&apos;t need another tool. They need clarity on where AI creates value, what should change, and how to move from experimentation to measurable outcomes.
                   </p>
                 </div>
               </div>

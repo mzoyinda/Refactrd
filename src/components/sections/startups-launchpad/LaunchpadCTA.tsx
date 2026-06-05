@@ -61,12 +61,12 @@ export default function LaunchpadCTA() {
           {/* CTA */}
           <div className="flex flex-wrap items-center gap-5">
             <a
-              href="https://forms.gle/sE5AhgZQrUN3mbC2A"
+              href="https://forms.gle/ECCpy6aoH5icfY4d9"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 bg-[#A2D2FF] text-[#1F2A44] font-clash font-bold px-8 py-4 rounded-full hover:bg-white transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
             >
-              Apply Now
+              Apply To The Launchpad
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <span className="font-clash text-sm text-white/40">

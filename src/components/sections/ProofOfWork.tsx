@@ -89,7 +89,7 @@ export default function ProofOfWork() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Real problems. Real systems. Real results.
+            Transformation Stories
           </h2>
 
           <p
@@ -97,7 +97,7 @@ export default function ProofOfWork() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Every project on this page is a working AI system we built, deployed, and handed over to a team that uses it daily.
+            Examples of how organizations have improved workflows, operations, decision-making, and business performance through practical AI adoption.
           </p>
         </div>
 
@@ -115,7 +115,7 @@ export default function ProofOfWork() {
                 {/* Category Badge */}
                 <div className="mb-4">
                   <div className="inline-flex items-center px-3 py-1.5 bg-[#E6EAF0] text-[#1F2A44] text-xs font-clash font-bold rounded-full">
-                    {project.category}
+                    Operational Challenge
                   </div>
                 </div>
 
@@ -183,7 +183,7 @@ export default function ProofOfWork() {
             href="/case-studies"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group"
           >
-            See All Case Studies
+            Explore More Case Studies
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>

@@ -5,32 +5,32 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqs = [
   {
-    q: 'What kind of problems can the Launchpad solve?',
-    a: 'The Launchpad works best for repetitive operational workflows that eat your team\'s time — manual reporting, support ticket triage, onboarding documentation, data entry across tools, recurring admin tasks. If it\'s repetitive and currently manual, we can almost certainly automate it.',
+    q: 'What kind of startups benefit most from the Launchpad?',
+    a: 'The program is designed for early-stage startups with clear operational challenges and a willingness to improve how work gets done.',
   },
   {
-    q: 'How is this different from just hiring a developer?',
-    a: 'We\'re not building custom software from scratch. We use AI tools and automation platforms to solve a specific workflow problem fast. A developer would take months and cost significantly more. We deliver in weeks, and the solution keeps running after we hand it over — without an engineering team to maintain it.',
+    q: 'Is this a consulting engagement?',
+    a: 'No. The Launchpad is a structured transformation program focused on identifying opportunities, implementing practical AI solutions, and validating measurable outcomes.',
   },
   {
-    q: 'Do we need technical expertise on our team?',
-    a: 'No. We handle all the technical work. You need one person who understands the workflow problem well enough to walk us through it during the mapping call, and who can test the solution during the trial. That\'s it.',
+    q: 'Do we need technical expertise?',
+    a: 'No. The program is designed for founders and teams regardless of technical background.',
   },
   {
-    q: 'What happens during the three-week trial?',
-    a: 'The solution runs live in your operations. Your team uses it daily with real data and real workflows. We monitor it constantly, fix any issues within 24 hours, and track the metrics we agreed on before the build. You\'re never on your own.',
+    q: 'What kinds of challenges can be addressed?',
+    a: 'Operations, onboarding, reporting, knowledge management, customer support, research, delivery workflows, and other operational processes.',
   },
   {
-    q: 'Can we expand to other workflows after the trial?',
-    a: 'Yes. If the trial delivers results and you want to continue, we can discuss adding workflows one at a time. Most startups start with one bottleneck, see real results, and expand from there. We\'d rather prove value first than build everything upfront.',
+    q: 'Will an AI solution actually be implemented?',
+    a: 'Yes. Each Launchpad engagement includes the implementation of a practical AI-enabled solution aligned with the selected workflow and operational challenge.',
   },
   {
-    q: 'How many startups do you accept at a time?',
-    a: 'We deliberately limit how many startups we take on at once to ensure we can deliver quality to every one we accept. If your application is a strong fit, you\'ll hear from us within three to five business days. If it\'s not, we\'ll tell you honestly and point you somewhere more useful.',
+    q: 'How selective is the program?',
+    a: 'We accept a limited number of startups to ensure each team receives hands-on support throughout the program.',
   },
   {
-    q: 'I\'m not sure what my biggest bottleneck is. Can I still apply?',
-    a: 'The Launchpad is not the right fit if you don\'t have a specific problem identified yet. Start with a Mini Consultation ($99) instead — it\'s designed for exactly this moment and will give you clarity on where to focus before you commit to anything bigger.',
+    q: 'What happens after the program ends?',
+    a: 'Teams can continue independently or move into a broader transformation engagement focused on additional opportunities, operational improvement, and AI adoption.',
   },
 ];
 
@@ -57,11 +57,11 @@ export default function LaunchpadFAQ() {
           <div>
             <span className="text-xs font-clash font-bold tracking-[0.22em] uppercase text-[#5a6580]">FAQ</span>
             <h2 className="mt-3 text-4xl md:text-5xl font-clash font-bold text-[#1F2A44] leading-tight">
-              Common questions about the Launchpad.
+              Common Questions About The Launchpad
             </h2>
           </div>
           <p className="font-jakarta text-[16px] text-[#5a6580] leading-relaxed lg:pb-2">
-            Still have something we haven&apos;t covered? Apply and ask us directly in your application. We respond to every submission personally — not with an autoresponder.
+            Still have something we haven&apos;t covered? Apply and ask us directly in your application. We respond to every submission personally, not with an autoresponder.
           </p>
         </div>
 
@@ -99,15 +99,7 @@ export default function LaunchpadFAQ() {
                   <div className="px-6 pb-6">
                     <div className="h-px bg-[#DDE3EE] mb-4" />
                     <p className="font-jakarta text-[15px] text-[#5a6580] leading-relaxed max-w-[680px]">
-                      {faq.a.includes('Mini Consultation') ? (
-                        <>
-                          {faq.a.split('Mini Consultation ($99)')[0]}
-                          <a href="/consultation" className="text-[#1F2A44] font-semibold underline underline-offset-2 hover:text-[#5a6580] transition-colors">
-                            Mini Consultation ($99)
-                          </a>
-                          {faq.a.split('Mini Consultation ($99)')[1]}
-                        </>
-                      ) : faq.a}
+                      {faq.a}
                     </p>
                   </div>
                 </div>
