@@ -449,13 +449,13 @@ export default function GetStartedContent() {
                     </ul>
 
                     {/* CTA — full width */}
-                    <Link
+                    {/* <Link
                       href={path.href}
                       className={`group/btn flex items-center justify-center gap-2 w-full px-5 py-4 rounded-xl font-clash font-bold text-sm transition-all duration-300 ${s.ctaBtn}`}
                     >
                       {path.cta}
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                    </Link>
+                    </Link> */}
                   </div>
 
                   {/* ── DESKTOP LAYOUT (two columns + footer CTA) ── */}
@@ -523,13 +523,13 @@ export default function GetStartedContent() {
                       <p className={`font-jakarta text-[13px] leading-snug opacity-60 ${s.title}`}>
                         Option {path.step} · {path.subtitle}
                       </p>
-                      <Link
+                      {/* <Link
                         href={path.href}
                         className={`group/btn inline-flex items-center gap-2 px-6 py-3 rounded-xl font-clash font-bold text-sm transition-all duration-300 flex-shrink-0 ${s.ctaBtn}`}
                       >
                         {path.cta}
                         <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                      </Link>
+                      </Link> */}
                     </div>
                   </div>
 
