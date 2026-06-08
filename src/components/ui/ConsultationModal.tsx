@@ -13,7 +13,7 @@ interface Props {
 const MINI_STEPS = [
   {
     key: "situation",
-    label: "Which best describes your situation?",
+    label: "Which best describes your situation? ",
     options: [
       "We are doing everything manually and it is slowing us down",
       "We have tried tools but nothing has really stuck",
