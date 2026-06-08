@@ -1,203 +1,196 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram, Linkedin, ArrowUpRight } from "lucide-react";
+import { Instagram, Linkedin, ArrowUpRight, Mail } from "lucide-react";
 
-const services = [
-  { name: "Workflow Automation", href: "/services" },
-  {
-    name: "AI Assistants",
-    href: "/services",
-  },
-  { name: "Product AI Features", href: "/services" },
-  {
-    name: "Agentic Workflows",
-    href: "/services",
-  },
-  {
-    name: "AI Operations",
-    href: "/services",
-  },
+/* ─── nav data ─────────────────────────────────────── */
+
+const explore = [
+  { name: "Home", href: "/" },
+  { name: "Approach", href: "/approach" },
+  { name: "Services", href: "/services" },
+  { name: "Case Studies", href: "/case-studies" },
+  { name: "Insights", href: "/insights" },
+  { name: "Careers", href: "/careers" },
 ];
 
-const socialLinks = [
-  {
-    name: "Instagram",
-    icon: Instagram,
-    href: "https://www.instagram.com/refactrd",
-  },
-  {
-    name: "LinkedIn",
-    icon: Linkedin,
-    href: "https://www.linkedin.com/company/refactrdhq/",
-  },
+const transformationAreas = [
+  { name: "Workflow Transformation", href: "/services" },
+  { name: "Knowledge Systems & AI Assistants", href: "/services" },
+  { name: "AI-Enabled Products", href: "/services" },
+  { name: "AI Operations & Intelligent Workflows", href: "/services" },
 ];
+
+const startHere = [
+  { name: "Build & Implement", href: "/get-started" },
+  { name: "Transformation Diagnostic", href: "/get-started" },
+  { name: "Executive Discovery", href: "/get-started" },
+  { name: "AI Startups Launchpad", href: "/ai-startups-launchpad" },
+];
+
+/* ─── link component ────────────────────────────────── */
+
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <li>
+      <Link
+        href={href}
+        className="group inline-flex items-start gap-2 font-jakarta text-[14px] text-white/55 hover:text-white transition-colors duration-200 leading-snug"
+      >
+        <span className="mt-[7px] w-1 h-1 rounded-full bg-white/20 group-hover:bg-[#A2D2FF] flex-shrink-0 transition-colors duration-200" />
+        {children}
+      </Link>
+    </li>
+  );
+}
+
+/* ─── footer ────────────────────────────────────────── */
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary text-white relative overflow-hidden">
-      {/* Decorative top border */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+    <footer className="bg-[#1F2A44] text-white relative">
 
-      <div className="container-custom py-16 lg:py-20">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* Left: Navigation Links (2 columns) */}
-          <div className="lg:col-span-6 grid md:grid-cols-2 gap-12">
-            {/* Column 1: Quick Links */}
+      {/* ── Thin gradient top border ── */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#A2D2FF]/30 to-transparent" />
+
+      {/* ══════════════════════════════════════
+          TOP GRID — brand + 3 nav columns
+      ══════════════════════════════════════ */}
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-8 pt-16 lg:pt-20 pb-14 lg:pb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1.4fr_1fr] gap-12 lg:gap-10">
+
+          {/* ── Brand column ── */}
+          <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-6">
+            {/* Wordmark */}
+            <Link href="/" className="inline-block">
+              <span className="font-clash font-extrabold text-2xl text-white tracking-tight">
+                Refactrd
+              </span>
+            </Link>
+
+            {/* Tagline */}
+            <p className="font-jakarta text-[14px] text-white/55 leading-relaxed max-w-[260px]">
+              Helping organizations move from AI experimentation to operational adoption.
+            </p>
+
+            {/* Email contact */}
             <div>
-              <h3 className="font-clash font-bold text-xl mb-6 text-white">
-                Quick Links
-              </h3>
-              <ul className="space-y-4">
-                <li>
-                  <Link
-                    href="/"
-                    className="font-clash text-white/70 hover:text-[#E6EAF0]transition-colors duration-200 inline-flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 bg-accent/0 group-hover:bg-accent rounded-full transition-colors duration-200" />
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about"
-                    className="font-clash text-white/70 hover:text-[#E6EAF0]transition-colors duration-200 inline-flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 bg-accent/0 group-hover:bg-accent rounded-full transition-colors duration-200" />
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services"
-                    className="font-clash text-white/70 hover:text-[#E6EAF0]transition-colors duration-200 inline-flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 bg-accent/0 group-hover:bg-accent rounded-full transition-colors duration-200" />
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/careers"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className=" font-clash text-[#E6EAF0]font-semibold hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 bg-accent/0 group-hover:bg-accent rounded-full transition-colors duration-200" />
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://cal.com/refactrd/technical-discovery-call"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className=" font-clash text-[#E6EAF0]font-semibold hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 bg-accent/0 group-hover:bg-accent rounded-full transition-colors duration-200" />
-                    Book a Free AI Mapping Call
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 2: Services */}
-            <div>
-              <h3 className="font-clash font-bold text-xl mb-6 text-white">
-                Services
-              </h3>
-              <ul className="space-y-4">
-                {services.map((service) => (
-                  <li key={service.name}>
-                    <Link
-                      href={service.href}
-                      className="font-clash text-white/70 hover:text-accent transition-colors duration-200  inline-flex items-center gap-2 group"
-                    >
-                      <span className="w-1 h-1 bg-accent/0 group-hover:bg-accent rounded-full transition-colors duration-200" />
-                      {service.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Right: Newsletter + Social */}
-          <div className="lg:col-span-6 space-y-8">
-            {/* Newsletter Card */}
-            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-accent/30 transition-all duration-300">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="flex-1">
-                  <h3 className="text-3xl font-clash font-bold mb-2">
-                    Newsletter
-                  </h3>
-                  <p className="text-white/70 text-sm leading-relaxed font-jakarta">
-                    Let's come together and actively participate in the
-                    transformative changes taking place.
-                  </p>
-                </div>
-                <div className="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
-                  <span className="text-2xl">✱</span>
-                </div>
-              </div>
+              <p className="font-clash font-semibold text-[10px] uppercase tracking-[0.14em] text-white/35 mb-2">
+                For Enquiries
+              </p>
               <a
-                href="https://refactrd.substack.com/subscribe?params=%5Bobject%20Object%5D"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-clash group inline-flex items-center gap-3 w-full px-6 py-4 bg-white text-secondary rounded-xl  font-bold hover:bg-accent hover:text-white transition-all duration-300 hover:scale-[1.02] justify-between shadow-lg hover:shadow-xl"
+                href="mailto:info@refactrd.com"
+                className="group inline-flex items-center gap-2 font-jakarta text-[14px] text-[#A2D2FF] hover:text-white transition-colors duration-200"
               >
-                <span>Subscribe on Substack</span>
-                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                info@refactrd.com
               </a>
             </div>
-
-            {/* Social Links */}
-            <div>
-              <h4 className="font-clash font-semibold text-sm text-white/60 mb-4 uppercase tracking-wider">
-                Connect With Us
-              </h4>
-              <div className="flex items-center gap-4">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center gap-3 px-5 py-3 bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 rounded-xl transition-all duration-300 hover:scale-105"
-                      aria-label={social.name}
-                    >
-                      <Icon className="w-5 h-5 text-white/70 group-hover:text-accent transition-colors duration-300" />
-                      <span className="font-clash text-sm font-medium text-white/70 group-hover:text-white transition-colors duration-300">
-                        {social.name}
-                      </span>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
           </div>
-        </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <div className="flex items-center gap-2">
-              <p className="text-white/60 text-sm font-montserrat">
-                © {currentYear} Refactrd. All rights reserved.
-              </p>
-            </div>
+          {/* ── Explore ── */}
+          <div>
+            <h3 className="font-clash font-bold text-[13px] uppercase tracking-[0.14em] text-white/40 mb-5">
+              Explore
+            </h3>
+            <ul className="space-y-3">
+              {explore.map((l) => <NavLink key={l.name} href={l.href}>{l.name}</NavLink>)}
+            </ul>
+          </div>
 
-           
+          {/* ── Transformation Areas ── */}
+          <div>
+            <h3 className="font-clash font-bold text-[13px] uppercase tracking-[0.14em] text-white/40 mb-5">
+              Transformation Areas
+            </h3>
+            <ul className="space-y-3">
+              {transformationAreas.map((l) => <NavLink key={l.name} href={l.href}>{l.name}</NavLink>)}
+            </ul>
+          </div>
+
+          {/* ── Start Here ── */}
+          <div>
+            <h3 className="font-clash font-bold text-[13px] uppercase tracking-[0.14em] text-white/40 mb-5">
+              Start Here
+            </h3>
+            <ul className="space-y-3">
+              {startHere.map((l) => <NavLink key={l.name} href={l.href}>{l.name}</NavLink>)}
+            </ul>
           </div>
         </div>
       </div>
 
-      {/* Background decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      {/* ══════════════════════════════════════
+          NEWSLETTER STRIP
+      ══════════════════════════════════════ */}
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-8 pb-10">
+        <div className="rounded-2xl bg-white/[0.06] border border-white/10 px-7 py-6 sm:px-8 sm:py-7 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
+          {/* Text */}
+          <div className="flex items-start gap-4 flex-1 min-w-0">
+            <div className="w-10 h-10 rounded-full bg-[#A2D2FF]/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span className="text-[#A2D2FF] text-lg leading-none">✱</span>
+            </div>
+            <div className="min-w-0">
+              <h3 className="font-clash font-bold text-[18px] text-white mb-1">Newsletter</h3>
+              <p className="font-jakarta text-[13px] text-white/50 leading-relaxed">
+                Lessons, frameworks, and observations from helping organizations move from AI experimentation to operational adoption.
+              </p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <a
+            href="https://refactrd.substack.com/subscribe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-between gap-3 flex-shrink-0 bg-white text-[#1F2A44] hover:bg-[#A2D2FF] px-6 py-3.5 rounded-xl font-clash font-bold text-sm transition-all duration-300 hover:shadow-xl sm:min-w-[220px]"
+          >
+            Subscribe on Substack
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+          </a>
+        </div>
+      </div>
+
+      {/* ══════════════════════════════════════
+          BOTTOM BAR — copyright + social
+      ══════════════════════════════════════ */}
+      <div className="border-t border-white/[0.08]">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+
+          {/* Copyright */}
+          <p className="font-jakarta text-[13px] text-white/35 order-2 sm:order-1">
+            © {year} Refactrd. All rights reserved.
+          </p>
+
+          {/* Social */}
+          <div className="flex items-center gap-3 order-1 sm:order-2">
+            <span className="font-clash text-[11px] uppercase tracking-[0.14em] text-white/30 mr-1 hidden sm:inline">
+              Connect
+            </span>
+            {[
+              { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/refactrd" },
+              { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/refactrdhq/" },
+            ].map(({ name, icon: Icon, href }) => (
+              <a
+                key={name}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={name}
+                className="group inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-[#A2D2FF]/15 border border-white/10 hover:border-[#A2D2FF]/30 transition-all duration-200"
+              >
+                <Icon className="w-4 h-4 text-white/45 group-hover:text-[#A2D2FF] transition-colors duration-200" />
+                <span className="font-clash text-[13px] text-white/45 group-hover:text-white transition-colors duration-200">
+                  {name}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
     </footer>
   );
 }

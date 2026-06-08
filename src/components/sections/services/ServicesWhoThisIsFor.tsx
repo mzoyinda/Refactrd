@@ -8,7 +8,7 @@ const idealClients = [
   {
     icon: Rocket,
     title: "Startups",
-    description: "Building scalable operations from the beginning",
+    description: "Building scalable operations from day one",
     features: [
       "Design workflows that support growth",
       "Build stronger operational foundations early",
@@ -28,49 +28,34 @@ const idealClients = [
     title: "Enterprises",
     description: "Moving from experimentation to adoption",
     features: [
-      "Prioritize high-impact opportunities",
-      "Create alignment, governance, and implementation pathways",
+      "Prioritize high-impact initiatives",
+      "Align transformation efforts across departments",
     ],
   },
 ];
 
-export default function WhoThisIsFor() {
+export default function ServicesWhoThisIsFor() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
-      },
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
       { threshold: 0.1 }
     );
-
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="section-padding bg-white"
-      id="who-this-is-for"
-    >
+    <section ref={sectionRef} className="section-padding bg-white" id="who-this-is-for">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2
-            className={`heading-lg text-secondary mb-6 transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
+          <h2 className={`heading-lg text-secondary mb-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             Who This Is For
           </h2>
-          <p
-            className={`body-lg text-secondary/80 max-w-3xl mx-auto transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            Organizations looking to move from AI potential to operational impact.
+          <p className={`body-lg text-secondary/80 max-w-2xl mx-auto transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            Organizations looking to create measurable operational impact through AI adoption.
           </p>
         </div>
 
@@ -80,18 +65,14 @@ export default function WhoThisIsFor() {
             return (
               <div
                 key={index}
-                className={`bg-gradient-to-br from-white to-tertiary/30 rounded-2xl p-8 border-2 border-tertiary card-hover transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
+                className={`bg-gradient-to-br from-white to-tertiary/30 rounded-2xl p-8 border-2 border-tertiary card-hover transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: `${300 + index * 150}ms` }}
               >
                 <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
                   <Icon className="w-7 h-7 text-[#1F2A44]" />
                 </div>
                 <h3 className="heading-sm text-secondary mb-2">{client.title}</h3>
-                <p className="font-clash text-[#0F172A] mb-6 font-semibold">
-                  {client.description}
-                </p>
+                <p className="font-clash text-[#0F172A] mb-6 font-semibold">{client.description}</p>
                 <div className="space-y-3">
                   {client.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-2">
@@ -105,18 +86,12 @@ export default function WhoThisIsFor() {
           })}
         </div>
 
-        {/* CTA Card */}
-        <div
-          className={`bg-secondary rounded-2xl p-8 lg:p-12 text-center text-white transition-all duration-700 delay-900 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
+        {/* Blue CTA */}
+        <div className={`bg-secondary rounded-2xl p-8 lg:p-12 text-center text-white transition-all duration-700 delay-900 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="max-w-3xl mx-auto">
-            <h3 className="heading-md mb-6">
-              Does This Sound Like Your Organization?
-            </h3>
+            <h3 className="heading-md mb-4">Ready To Explore What&apos;s Possible?</h3>
             <p className="body-lg text-white/80 mb-8">
-              Find the engagement path that best fits your goals, challenges, and stage of AI adoption.
+              Find the engagement path that best fits your goals, challenges, and stage of adoption.
             </p>
             <Link
               href="/get-started"

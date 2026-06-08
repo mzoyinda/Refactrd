@@ -2,48 +2,47 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import Link from "next/link";
 
 const faqs = [
   {
-    question: "What exactly does Refactrd build?",
+    question: "What does Refactrd actually do?",
     answer:
-      "We build AI-powered systems that help companies do less manual work. This includes workflow automations, internal AI assistants that give teams instant access to knowledge, AI features for existing products, and more advanced agentic systems for companies ready to go further. Every engagement starts with understanding your specific workflows, we do not offer generic solutions.",
+      "Refactrd helps organizations move from AI experimentation to operational adoption through workflow transformation, solution implementation, adoption support, and capability building.",
   },
   {
-    question: "How do you decide what to build first?",
+    question: "Are these services or transformation areas?",
     answer:
-      "We start with a free AI Opportunity Mapping call, a short diagnostic conversation where we learn how your team works and identify two to three places where AI could make a meaningful difference. After the call, we map the highest-impact opportunity and recommend a focused starting point. You do not need to know what you want built before talking to us.",
+      "These represent the areas where we most frequently help organizations create impact. The appropriate path depends on your goals, challenges, and stage of adoption.",
   },
   {
-    question: "What does delivery actually look like?",
+    question: "How do I know which area is right for me?",
     answer:
-      "We scope the first engagement as a focused, single integration or automation. We build it, test it, and hand it over with documentation so your team knows how it works and can use it immediately. We also provide a roadmap for next steps, which often includes expanding the initial system or building the other opportunities we identified. But the first delivery is always a discrete, usable system that solves a specific problem.",
+      "You don't need to decide that upfront. We'll help identify the opportunities, priorities, and challenges most relevant to your organization.",
   },
   {
-    question: "Do you work with teams that are new to AI?",
+    question: "Do you only work with organizations already using AI?",
     answer:
-      "Yes, most of our clients are at the beginning of their AI journey. You do not need any prior AI experience or infrastructure in place. Our job is to identify the right starting point and make the implementation straightforward. We handle the technical complexity so you do not have to.",
+      "No. Many organizations are still exploring opportunities and evaluating where AI can create value. We help determine where adoption makes sense and how to approach it effectively.",
   },
   {
-    question: "Do you work with startups, SMEs, or enterprises?",
+    question: "Do you implement solutions as well?",
     answer:
-      "All three — what matters is whether your team has real operational friction that AI can fix. Startups often need automation early so their small teams can punch above their weight. Growing companies need smarter internal systems. Enterprise teams need a reliable technical partner for specific AI initiatives. We adapt our approach to where you are.",
+      "Yes. When implementation is the right path, our team supports solution design, engineering, deployment, adoption, and optimization. We help organizations move beyond planning and into practical execution while ensuring every implementation supports a broader operational objective.",
   },
   {
-    question: "What happens after the first project is delivered?",
+    question: "Do you work with startups, SMEs, and enterprises?",
     answer:
-      "During the initial discovery, we typically identify two to three opportunities. We lead with the highest-impact one. After delivery, the others become natural next steps. The expansion feels like a continuation of the work, not a new sales conversation. Clients who see fast results almost always come back for the next one.",
+      "Yes. Our engagements are designed to support organizations at different stages of growth and adoption maturity.",
   },
   {
-    question: "How is Refactrd different from hiring an in-house AI engineer?",
+    question: "How is Refactrd different from other AI firms?",
     answer:
-      "Hiring a senior AI engineer takes months and comes with overhead: salary, benefits, onboarding, and management. Refactrd gives you senior-level execution on a focused engagement, without the commitment of permanent hiring. And because we have built similar systems before, we move faster and avoid the trial-and-error that comes with figuring it out from scratch internally.",
+      "Most AI firms focus on technology. We focus on helping organizations improve workflows, implement practical solutions, drive adoption, and create measurable business outcomes.",
   },
   {
     question: "What do you need from us to get started?",
     answer:
-      "Very little. Book a free AI Opportunity Mapping call and show up ready to talk through how your team operates day to day. We take it from there. No brief or technical specification required upfront.",
+      "Choose the engagement path that best reflects your current situation and we'll guide you through the next steps.",
   },
 ];
 
@@ -62,22 +61,21 @@ export default function FAQ() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-32">
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-clash font-bold text-secondary mb-6 leading-tight">
-                Frequently Asked Questions
+                Common Questions
               </h1>
               <p className="font-clash text-lg text-[#64748B] mb-8 leading-relaxed">
-                As Refactrd's AI engineering studio, we want you to walk into any conversation informed. Here are the questions we hear most often.
+                Everything you need to know before getting started.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="https://cal.com/refactrd/technical-discovery-call"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-7 py-3 bg-secondary text-white rounded-full font-clash font-semibold transition-all duration-300 hover:scale-105"
-                >
-                  Contact Us
-                </Link>
-              </div>
+              <a
+                href="mailto:info@refactrd.com"
+                className="inline-flex items-center gap-2 font-clash font-semibold text-[#1F2A44] hover:text-[#5a6580] transition-colors duration-200"
+              >
+                <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                info@refactrd.com
+              </a>
             </div>
           </div>
 
@@ -126,17 +124,17 @@ export default function FAQ() {
                 Still have questions?
               </h3>
               <p className="font-clash text-white/80 mb-6 max-w-md mx-auto">
-                Can't find the answer you're looking for? Our team is here to
-                help you understand how Refactrd can support your project.
+                Reach out directly and we&apos;ll help you understand the right path forward.
               </p>
-              <Link
-                href="https://cal.com/refactrd/technical-discovery-call"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-7 py-3 bg-white text-black rounded-full font-clash font-semibold hover:bg-[#A2D2FF] transition-all duration-300 hover:scale-105"
+              <a
+                href="mailto:info@refactrd.com"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3 bg-white text-[#1F2A44] rounded-full font-clash font-semibold hover:bg-[#A2D2FF] hover:text-white transition-all duration-300 hover:scale-105"
               >
-                Get in Touch
-              </Link>
+                <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                info@refactrd.com
+              </a>
             </div>
           </div>
         </div>
