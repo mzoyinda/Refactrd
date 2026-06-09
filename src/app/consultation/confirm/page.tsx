@@ -9,21 +9,35 @@ import { CheckCircle, Loader2, XCircle, ArrowRight } from "lucide-react";
 
 function ConfirmContent() {
   const searchParams = useSearchParams();
+
+  // Paystack sends: reference
+  // Flutterwave sends: transaction_id, tx_ref, status
   const reference = searchParams.get("reference");
+  const transactionId = searchParams.get("transaction_id");
+  const txRef = searchParams.get("tx_ref");
+  const flwStatus = searchParams.get("status");
+
   const [status, setStatus] = useState<"loading" | "success" | "failed">("loading");
   const [booking, setBooking] = useState<any>(null);
 
   useEffect(() => {
-    if (!reference) {
+    if (!reference && !transactionId && !txRef) {
       setStatus("failed");
       return;
     }
     verifyPayment();
-  }, [reference]);
+  }, [reference, transactionId, txRef]);
 
   const verifyPayment = async () => {
     try {
-      const res = await fetch(`/api/verify-payment?reference=${reference}`);
+      // Build query string with whatever params we have
+      const params = new URLSearchParams();
+      if (reference) params.set("reference", reference);
+      if (transactionId) params.set("transaction_id", transactionId);
+      if (txRef) params.set("tx_ref", txRef);
+      if (flwStatus) params.set("status", flwStatus);
+
+      const res = await fetch(`/api/verify-payment?${params.toString()}`);
       const data = await res.json();
 
       if (!res.ok) {
@@ -33,7 +47,7 @@ function ConfirmContent() {
 
       setBooking(data.booking);
       setStatus("success");
-    } catch (err) {
+    } catch {
       setStatus("failed");
     }
   };
@@ -59,7 +73,6 @@ function ConfirmContent() {
           {/* Success */}
           {status === "success" && booking && (
             <div className="bg-white rounded-3xl border-2 border-[#E2E8F0] overflow-hidden">
-              {/* Top banner */}
               <div className="bg-[#1F2A44] px-10 py-8 text-center">
                 <div className="w-16 h-16 bg-[#A2D2FF]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <CheckCircle className="w-8 h-8 text-[#A2D2FF]" />
@@ -67,27 +80,21 @@ function ConfirmContent() {
                 <h1 className="font-clash font-bold text-white text-2xl mb-1">
                   You are booked in.
                 </h1>
-                <p className="font-jakarta text-white/60 text-sm">
-                  Payment confirmed successfully
-                </p>
+                <p className="font-jakarta text-white/60 text-sm">Payment confirmed successfully</p>
               </div>
 
-              {/* Body */}
               <div className="px-10 py-8 space-y-6">
                 <div>
                   <p className="font-clash font-bold text-[#1F2A44] text-lg mb-1">
                     Hi {booking.full_name},
                   </p>
                   <p className="font-jakarta text-[#475569] leading-relaxed text-sm">
-                    Your {booking.type === "mini" ? "Mini Consultation" : "Enterprise Consultation"} has been confirmed. Someone from the Refactrd team will reach out within 24 hours to schedule your session at a time that works for you.
+                    Your {booking.type === "mini" ? "Mini Consultation" : "Enterprise Consultation"} has been confirmed. Someone from the Refactrd team will reach out within 24 hours to schedule your session.
                   </p>
                 </div>
 
-                {/* What to expect */}
                 <div className="bg-[#F4F6F9] rounded-xl p-5">
-                  <p className="font-clash font-bold text-sm text-[#1F2A44] mb-3">
-                    What to expect
-                  </p>
+                  <p className="font-clash font-bold text-sm text-[#1F2A44] mb-3">What to expect</p>
                   <ul className="space-y-2.5">
                     {[
                       "We will reach out within 24 hours to schedule",
@@ -103,7 +110,6 @@ function ConfirmContent() {
                   </ul>
                 </div>
 
-                {/* Payment summary */}
                 <div className="border border-[#E2E8F0] rounded-xl p-5">
                   <p className="font-clash font-bold text-[10px] text-[#94A3B8] uppercase tracking-widest mb-3">
                     Payment Summary
@@ -112,7 +118,7 @@ function ConfirmContent() {
                     <div className="flex justify-between">
                       <span className="font-jakarta text-sm text-[#64748B]">Consultation</span>
                       <span className="font-clash font-semibold text-sm text-[#1F2A44]">
-                        {booking.type === "mini" ? "Mini consultation" : "Enterprise consultation"}
+                        {booking.type === "mini" ? "Mini Consultation" : "Enterprise Consultation"}
                       </span>
                     </div>
                     <div className="flex justify-between">
@@ -123,9 +129,7 @@ function ConfirmContent() {
                     </div>
                     <div className="flex justify-between">
                       <span className="font-jakarta text-sm text-[#64748B]">Reference</span>
-                      <span className="font-jakarta text-xs text-[#94A3B8]">
-                        {booking.reference}
-                      </span>
+                      <span className="font-jakarta text-xs text-[#94A3B8]">{booking.reference}</span>
                     </div>
                   </div>
                 </div>
@@ -163,7 +167,7 @@ function ConfirmContent() {
               </p>
               <Link
                 href="/get-started"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#1F2A44] text-white rounded-full font-clash font-semibold text-sm transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#1F2A44] text-white rounded-full font-clash font-semibold text-sm"
               >
                 Try again
               </Link>
