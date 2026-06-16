@@ -1,15 +1,15 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import type { Metadata } from "next";
 import InsightsContent from "@/components/sections/InsightsContent";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Case Studies | Refactrd",
+  title: "Insights | Refactrd",
   description:
-    "From operational challenges to measurable outcomes. Case studies showing how organizations improved workflows, strengthened operations, and created business impact through practical AI adoption.",
+    "Perspectives, frameworks, and lessons from helping organizations move AI from experimentation to operational adoption.",
 };
 
-export default function CaseStudiesPage() {
+export default function InsightsPage() {
   return (
     <main className="min-h-screen">
       <Header />
