@@ -5,9 +5,10 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
 const reassurances = [
-  { icon: '✦', text: 'No upfront payment to participate' },
-  { icon: '✦', text: 'Response within 3 to 5 business days' },
-  { icon: '✦', text: "If it's not the right fit, we'll tell you" },
+  { icon: '✦', text: 'No upfront implementation commitment' },
+  { icon: '✦', text: 'Real implementation' },
+  { icon: '✦', text: 'Five-week validation period' },
+  { icon: '✦', text: 'Continue only if it creates value' },
 ];
 
 export default function LaunchpadCTA() {
@@ -43,21 +44,15 @@ export default function LaunchpadCTA() {
           <div className="inline-flex items-center gap-2 bg-[#A2D2FF]/10 border border-[#A2D2FF]/20 rounded-full px-4 py-2 mb-8">
             <span className="w-2 h-2 rounded-full bg-[#639922] animate-pulse" />
             <span className="font-clash font-bold text-xs text-[#A2D2FF] tracking-[0.2em] uppercase">
-              Cohort 2 Applications Open Now
+              Ready To Validate An Opportunity?
             </span>
           </div>
 
           {/* Headline */}
           <h2 className="text-4xl md:text-5xl lg:text-[58px] font-clash font-extrabold text-white leading-tight mb-6">
-            Cohort 1 is live.{' '}
-            <span className="text-[#A2D2FF]">Cohort 2 applications are open now.</span>
+            Build first.{' '}
+            <span className="text-[#A2D2FF]">Measure impact. Then decide.</span>
           </h2>
-
-          {/* Body */}
-          <p className="font-jakarta text-[17px] text-white/65 leading-relaxed mb-10 max-w-[620px]">
-            We review every application personally and only accept startups where we are genuinely confident we can deliver a meaningful result. If your problem is a strong fit, you will hear from us within three to five business days. If it is not, we will tell you honestly and point you toward a better option.
-          </p>
-
           {/* CTA */}
           <div className="flex flex-wrap items-center gap-5">
             <a

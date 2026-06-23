@@ -10,7 +10,7 @@ const aiServices = [
     level: "01",
     title: "Workflow Transformation",
     description:
-      "Redesign workflows, reduce friction, and improve execution across teams and operations.",
+      "Redesign workflows, eliminate operational friction, and improve execution across teams and functions.",
     challenges: [
       "Repetitive manual processes",
       "Operational bottlenecks",
@@ -18,7 +18,7 @@ const aiServices = [
       "Difficulty scaling workflows",
     ],
     bestFor:
-      "Best For: Organizations looking to reduce operational friction and improve performance.",
+      "Best For: Organizations looking to improve performance, remove bottlenecks, and redesign how work gets done.",
   },
   {
     level: "02",
@@ -32,7 +32,7 @@ const aiServices = [
       "Dependence on key individuals",
     ],
     bestFor:
-      "Best For: Organizations struggling with fragmented information and knowledge silos.",
+      "Best For: Organizations struggling with fragmented information, scattered knowledge, and inconsistent decision-making.",
   },
   {
     level: "03",
@@ -46,13 +46,13 @@ const aiServices = [
       "Customer experience inefficiencies",
     ],
     bestFor:
-      "Best For: Product teams exploring meaningful AI enhancements.",
+      "Best For: Organizations exploring meaningful AI-enabled enhancements and opportunities.",
   },
   {
     level: "04",
     title: "AI Operations & Intelligent Workflows",
     description:
-      "Design and implement AI-enabled operational systems that improve execution and scalability.",
+      "Design and implement AI-enabled operational systems that improve execution, scalability, and performance.",
     challenges: [
       "Operational complexity",
       "Slow decision-making",
@@ -83,7 +83,7 @@ export default function WhatWeDoSectionv2({ showChallenges = false }: { showChal
   return (
     <section
       ref={sectionRef}
-      className="section-padding bg-black/90 text-white relative overflow-hidden"
+      className="section-padding bg-[#1F2A44] text-white relative overflow-hidden"
       id="services"
     >
       <div className="container-custom relative z-10">
@@ -103,33 +103,35 @@ export default function WhatWeDoSectionv2({ showChallenges = false }: { showChal
             }`}
           >
             We help organizations improve how work gets done. These are the areas where we most frequently create measurable operational impact.
-
-          </p>
+</p>
         </div>
 
         {/* Service Cards */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {aiServices.map((service, index) => (
             <div
               key={index}
-              className={`group relative overflow-hidden rounded-2xl transition-all duration-700 ease-out hover:scale-[1.02] ${
+              className={`group relative overflow-hidden rounded-2xl bg-[#2c3f66] border border-[#3d5585] hover:border-[#A2D2FF]/50 transition-all duration-300 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
-              style={{ transitionDelay: `${400 + index * 100}ms` }}
+              style={{ transitionDelay: `${300 + index * 80}ms` }}
             >
-              <div className="p-8 bg-gradient-to-br from-secondary to-secondary-light text-white transition-all duration-300 min-h-[340px] flex flex-col">
-                <h3 className="text-2xl font-clash font-bold mb-4">
+              <div className="p-6 flex flex-col h-full">
+                <span className="font-clash font-bold text-[10px] tracking-[0.2em] text-[#A2D2FF]/50 uppercase mb-4">
+                  {service.level}
+                </span>
+                <h3 className="text-[15px] font-clash font-bold text-white leading-snug mb-3">
                   {service.title}
                 </h3>
-                <p className="text-white/80 leading-relaxed mb-5 font-jakarta tracking-[-0.03em]">
+                <p className="text-white/70 text-[13px] leading-relaxed font-jakarta flex-1">
                   {service.description}
                 </p>
                 {showChallenges && service.challenges && (
-                  <div className="mb-5">
-                    <p className="text-xs font-clash font-bold uppercase tracking-[0.14em] text-white/40 mb-2">Common Challenges</p>
+                  <div className="mt-4">
+                    <p className="text-[9px] font-clash font-bold uppercase tracking-[0.2em] text-white/30 mb-2">Challenges</p>
                     <ul className="space-y-1.5">
                       {service.challenges.map((c, ci) => (
-                        <li key={ci} className="flex items-start gap-2 font-jakarta text-sm text-white/65">
+                        <li key={ci} className="flex items-start gap-2 font-jakarta text-[12px] text-white/55">
                           <span className="mt-1.5 w-1 h-1 rounded-full bg-[#A2D2FF] flex-shrink-0" />
                           {c}
                         </li>
@@ -137,14 +139,13 @@ export default function WhatWeDoSectionv2({ showChallenges = false }: { showChal
                     </ul>
                   </div>
                 )}
-                <div className="pt-4 border-t border-white/10 mt-auto">
-                  <p className="text-sm text-white font-jakarta tracking-[-0.03em]">
-                    {service.bestFor}
+                <div className="mt-4 pt-4 border-t border-white/8">
+                  <p className="text-[11px] text-white/50 font-jakarta leading-relaxed">
+                    {service.bestFor.replace('Best For: ', '')}
                   </p>
                 </div>
-                <div className="absolute top-0 right-0 w-20 h-20 bg-[#0e5d7d]/20 rounded-bl-full transform translate-x-10 -translate-y-10 group-hover:translate-x-6 group-hover:-translate-y-6 transition-transform duration-500" />
               </div>
-              <div className="h-1 bg-gradient-to-r from-[#A2D2FF] to-[#5B6CFF] w-0 group-hover:w-full transition-all duration-500" />
+              <div className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-[#A2D2FF] to-[#5B6CFF] w-0 group-hover:w-full transition-all duration-400" />
             </div>
           ))}
         </div>

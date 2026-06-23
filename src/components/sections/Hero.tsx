@@ -6,9 +6,9 @@ import { ArrowRight } from "lucide-react";
 
 const trustItems = [
   "Workflow Transformation",
-  "AI Knowledge Systems",
+  "Knowledge Systems & AI Assistants",
   "AI-Enabled Products",
-  "Intelligent Workflows",
+  "AI Operations & Intelligent Workflows",
 ];
 
 export default function Hero() {
@@ -35,24 +35,22 @@ export default function Hero() {
           <div className={`mb-5 transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}>
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#1F2A44]/15 text-[#5a6580] text-[11px] font-clash font-semibold uppercase tracking-[0.14em] bg-white/70">
               <span className="w-1.5 h-1.5 rounded-full bg-[#1F2A44] flex-shrink-0" />
-              {/* Shorter label on mobile */}
               <span className="sm:hidden">AI Transformation Studio</span>
               <span className="hidden sm:inline">AI Transformation Studio &amp; Adoption Partner</span>
             </span>
           </div>
 
-          {/* Headline — mobile-first sizing */}
+          {/* Headline */}
           <h1
-            className={`font-clash font-bold text-[#1F2A44] leading-[1.08] tracking-tight mb-5 transition-all duration-700 delay-75
+            className={`font-clash font-bold text-[#1F2A44] leading-[1.2] md:leading-[1.3] tracking-tight mb-5 transition-all duration-700 delay-75
               text-[32px] sm:text-[42px] md:text-5xl lg:text-6xl xl:text-7xl
               ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
-            Move From AI Experimentation
+            AI Is Everywhere.
             <br className="hidden sm:block" />
-            {" "}To{" "}
-            <span className="relative">
-              <span className="relative z-10 text-[#1F2A44]">Operational Adoption</span>
-              {/* Underline accent — only visible md+ where wrapping is predictable */}
+            {" "}
+            <span className="relative block md:mt-2">
+              <span className="relative z-10 text-[#1F2A44]">Operational Impact Isn&apos;t.</span>
               <span className="hidden md:block absolute bottom-1 left-0 w-full h-3 lg:h-4 bg-[#A2D2FF]/40 -z-0 rounded-sm" />
             </span>
           </h1>
@@ -67,7 +65,7 @@ export default function Hero() {
             Refactrd helps organizations identify opportunities, redesign workflows, implement practical AI solutions, and create measurable operational impact.
           </p>
 
-          {/* CTAs — stacked on mobile, row on sm+ */}
+          {/* CTAs */}
           <div
             className={`flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 transition-all duration-700 delay-200
               ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
@@ -89,14 +87,13 @@ export default function Hero() {
             </Link>
           </div>
 
-          {/* Trust strip — 2-col grid on mobile, single row on md+ */}
+          {/* Trust strip */}
           <div
             className={`mt-10 md:mt-12 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             <p className="font-clash text-[10px] sm:text-xs uppercase tracking-[0.16em] text-[#94A3B8] mb-3">
               Transformation Areas
             </p>
-            {/* Mobile: 2-column grid | Desktop: single centered row */}
             <div className="grid grid-cols-2 gap-2 sm:hidden max-w-[320px] mx-auto">
               {trustItems.map((item) => (
                 <span

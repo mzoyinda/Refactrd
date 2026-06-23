@@ -6,18 +6,18 @@ import { CheckCircle2, XCircle } from 'lucide-react';
 
 const goodFit = [
   'Your team has a repetitive or inefficient workflow',
-  'You can clearly describe the operational challenge',
-  'The challenge affects execution, delivery, or decision-making',
-  'Your team is willing to adopt a new way of working',
-  'You want measurable outcomes, not experimentation',
+  'You can clearly describe the challenge',
+  'The challenge affects execution or decision-making',
+  'You\'re willing to test a new approach',
+  'You care about measurable outcomes',
 ];
 
 const notRightTime = [
   'You\'re looking for a broad AI strategy engagement',
-  'You haven\'t identified an operational challenge yet',
-  'You\'re primarily seeking technical training',
-  'You want to explore ideas without implementation',
-  'You aren\'t prepared to test changes inside real operations',
+  'You haven\'t identified a challenge yet',
+  'You\'re seeking technical training',
+  'You want ideas without implementation',
+  'You\'re not prepared to test changes in real operations',
 ];
 
 export default function WhoThisIsFor() {
@@ -43,10 +43,10 @@ export default function WhoThisIsFor() {
             Is This Right For You?
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-clash font-bold text-[#1F2A44] leading-tight">
-            Built for founders ready to improve how work gets done.
+            Built For Founders Ready To Improve How Work Gets Done
           </h2>
           <p className="mt-4 text-[17px] text-[#5a6580] leading-relaxed font-jakarta">
-            The Launchpad works best when there is a clear operational challenge worth solving. This is not an accelerator or AI training program. It&apos;s a structured transformation program designed to help founders improve operations, implement practical AI solutions, and validate measurable outcomes.
+            The Launchpad is designed for founders with a clear operational challenge and a willingness to test a better way of working.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export default function WhoThisIsFor() {
                 <div className="w-9 h-9 rounded-full bg-[#639922]/15 flex items-center justify-center flex-shrink-0">
                   <CheckCircle2 className="w-5 h-5 text-[#639922]" strokeWidth={2.5} />
                 </div>
-                <h3 className="font-clash font-bold text-lg text-[#1F2A44]">You&apos;re a strong fit if</h3>
+                <h3 className="font-clash font-bold text-lg text-[#1F2A44]">You&apos;re A Strong Fit If</h3>
               </div>
               <ul className="space-y-3">
                 {goodFit.map((point, i) => (
@@ -102,7 +102,7 @@ export default function WhoThisIsFor() {
                 <div className="w-9 h-9 rounded-full bg-[#5a6580]/10 flex items-center justify-center flex-shrink-0">
                   <XCircle className="w-5 h-5 text-[#5a6580]" strokeWidth={2.5} />
                 </div>
-                <h3 className="font-clash font-bold text-lg text-[#1F2A44]">This may not be the right fit if</h3>
+                <h3 className="font-clash font-bold text-lg text-[#1F2A44]">This May Not Be The Right Fit If</h3>
               </div>
               <ul className="space-y-3">
                 {notRightTime.map((point, i) => (

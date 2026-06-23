@@ -5,32 +5,20 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqs = [
   {
-    q: 'What kind of startups benefit most from the Launchpad?',
-    a: 'The program is designed for early-stage startups with clear operational challenges and a willingness to improve how work gets done.',
-  },
-  {
-    q: 'Is this a consulting engagement?',
-    a: 'No. The Launchpad is a structured transformation program focused on identifying opportunities, implementing practical AI solutions, and validating measurable outcomes.',
+    q: 'What happens after the validation period?',
+    a: 'If the initiative creates measurable value, you\'ll have the option to continue under a paid implementation, support, or transformation engagement. If it doesn\'t, you can exit without moving forward.',
   },
   {
     q: 'Do we need technical expertise?',
-    a: 'No. The program is designed for founders and teams regardless of technical background.',
+    a: 'No. The Launchpad is focused on operational improvement and validation, not technical capability.',
   },
   {
-    q: 'What kinds of challenges can be addressed?',
-    a: 'Operations, onboarding, reporting, knowledge management, customer support, research, delivery workflows, and other operational processes.',
+    q: 'Will a solution actually be implemented?',
+    a: 'Yes. Accepted founders receive a practical implementation designed to be tested inside real operations.',
   },
   {
-    q: 'Will an AI solution actually be implemented?',
-    a: 'Yes. Each Launchpad engagement includes the implementation of a practical AI-enabled solution aligned with the selected workflow and operational challenge.',
-  },
-  {
-    q: 'How selective is the program?',
-    a: 'We accept a limited number of startups to ensure each team receives hands-on support throughout the program.',
-  },
-  {
-    q: 'What happens after the program ends?',
-    a: 'Teams can continue independently or move into a broader transformation engagement focused on additional opportunities, operational improvement, and AI adoption.',
+    q: 'Are we required to continue after the program?',
+    a: 'No. Continuation is optional and based on the value demonstrated during the validation period.',
   },
 ];
 

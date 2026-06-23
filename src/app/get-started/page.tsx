@@ -6,7 +6,7 @@ import GetStartedContent from "@/components/sections/get-started/GetStartedConte
 export const metadata: Metadata = {
   title: "Find Your Starting Point | Refactrd",
   description:
-    "Choose the engagement path that best matches your goals, challenges, and stage of AI adoption — Build & Implement, Transformation Diagnostic, Executive Discovery, or the AI Startups Launchpad.",
+    "Choose the engagement path that best matches your goals, challenges, and stage of AI adoption — Build & Implement, Opportunity Assessment, Executive Discovery, or the AI Startups Launchpad.",
 };
 
 export default function GetStartedPage() {
