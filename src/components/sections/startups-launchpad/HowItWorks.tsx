@@ -20,7 +20,7 @@ const steps = [
     duration: 'Step 02',
     durationLabel: 'assessment',
     description:
-      'Assess how work gets done today, identify friction points, and determine what should change.',
+      'Understand how work is currently performed and identify where improvements can create meaningful value.',
   },
   {
     number: '03',
@@ -29,16 +29,16 @@ const steps = [
     duration: 'Step 03',
     durationLabel: 'implementation',
     description:
-      'Deploy an AI-enabled solution within the workflow and support adoption inside real operations.',
+      'Deploy a practical solution inside an existing workflow and support initial adoption.',
   },
   {
     number: '04',
     icon: FlaskConical,
-    title: 'Measure Results',
+    title: 'Measure The Results',
     duration: 'Step 04',
     durationLabel: 'measurement',
     description:
-      'Evaluate performance, adoption, and business outcomes to determine the impact of the initiative.',
+      'Evaluate usage, gather feedback, and assess whether the initiative is creating meaningful operational impact.',
   },
 ];
 

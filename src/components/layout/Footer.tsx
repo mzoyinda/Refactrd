@@ -23,7 +23,7 @@ const transformationAreas = [
 
 const startHere = [
   { name: "Build & Implement", href: "/get-started" },
-  { name: "Transformation Diagnostic", href: "/get-started" },
+  { name: "Opportunity Assessment", href: "/get-started" },
   { name: "Executive Discovery", href: "/get-started" },
   { name: "AI Startups Launchpad", href: "/ai-startups-launchpad" },
 ];

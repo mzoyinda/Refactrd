@@ -10,7 +10,7 @@ const items = [
     tag: '01',
     title: 'Opportunity Assessment',
     description:
-      'Identify operational bottlenecks, execution challenges, and opportunities where AI can create meaningful business value.',
+      'Identify operational bottlenecks, execution challenges, and opportunities where meaningful value may exist.',
     image: '/images/ai-workflow.jpg',
   },
   {
@@ -18,7 +18,7 @@ const items = [
     tag: '02',
     title: 'Workflow Design',
     description:
-      'Map the current workflow, redesign the process, and define the most practical path toward improvement.',
+      'Map the current workflow, redesign the process, and define the most practical path forward.',
     image: '/images/ai-operations.jpg',
   },
   {

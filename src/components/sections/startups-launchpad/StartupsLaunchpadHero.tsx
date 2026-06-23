@@ -29,10 +29,11 @@ const slides = [
 ];
 
 const proofPoints = [
-  'Identify the right opportunity',
-  'Implement an AI-enabled solution',
-  'Test it inside real operations',
-  'Measure the business impact',
+  'One opportunity',
+  'One implementation',
+  'Five-week validation period',
+  'Measurable outcome',
+  'A clear next step',
 ];
 
 export default function StartupsLaunchpadHero() {
@@ -105,9 +106,13 @@ export default function StartupsLaunchpadHero() {
             </div>
 
             {/* Subheadline */}
-            <p className={`text-[17px] text-[#5a6580] leading-[1.75] max-w-[560px] font-jakarta transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              The Launchpad helps founders identify a high-impact operational challenge, implement a practical AI-enabled solution, and validate its impact inside real operations. Instead of experimenting across dozens of tools, focus on one opportunity that can create measurable business value.
-            </p>
+            <div className={`max-w-[560px] font-jakarta transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <p className="text-[17px] text-[#1F2A44] font-semibold leading-snug mb-1">Most founders don&apos;t need more AI experiments.</p>
+              <p className="text-[15px] text-[#5a6580] mb-4">They need evidence that an opportunity is worth pursuing.</p>
+              <p className="text-[16px] text-[#5a6580] leading-[1.75]">
+                The Launchpad helps founders identify a high-impact opportunity, implement a practical solution, and validate its impact before committing to a larger implementation.
+              </p>
+            </div>
 
             {/* Proof Points */}
             <div className={`space-y-3 pt-1 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
@@ -134,7 +139,7 @@ export default function StartupsLaunchpadHero() {
                 Apply To The Launchpad
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
-              <span className="font-clash text-sm text-[#5a6580]">Applications reviewed on a rolling basis</span>
+              <span className="font-jakarta text-sm text-[#5a6580]">Accepted founders receive a working implementation, a validation period, and the option to continue under a paid engagement if measurable value is demonstrated.</span>
             </div>
 
             {/* Trust row */}

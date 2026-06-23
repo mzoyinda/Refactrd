@@ -18,14 +18,14 @@ const benefits = [
     number: "1",
     title: "We Focus On Business Outcomes",
     description:
-      "Every engagement begins with a business challenge, not a technology recommendation.",
+      "Every engagement begins with an operational challenge, not a technology recommendation.",
   },
   {
     icon: Boxes,
     number: "2",
     title: "We Understand Before We Build",
     description:
-      "We assess workflows, operations, and priorities before recommending or implementing solutions.",
+      "We assess workflows, operations, priorities, and constraints before recommending solutions.",
   },
   {
     icon: FileText,
@@ -53,13 +53,14 @@ const benefits = [
     number: "6",
     title: "Built For Long-Term Impact",
     description:
-      "Our goal is to help organizations build lasting capability, operational maturity, and sustainable adoption.",
+      "Our goal is to help organizations build capability, operational maturity, and sustainable adoption.",
   },
 ];
 
 export default function WhyChooseUs() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -73,15 +74,37 @@ export default function WhyChooseUs() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const sectionTop = rect.top + window.scrollY;
+      const relativeScroll = window.scrollY - sectionTop;
+      setScrollY(relativeScroll);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section
       ref={sectionRef}
-      className="section-padding bg-black/90 text-white overflow-hidden relative"
+      className="section-padding text-white overflow-hidden relative"
       id="why-choose-us"
     >
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#CCFF00]/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      {/* Parallax Background */}
+      <div
+        className="absolute inset-0 w-full h-[130%] -top-[15%] will-change-transform"
+        style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+      >
+        <img
+          src="/images/ai-operations.jpg"
+          alt="AI operations"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/80" />
+        <div className="absolute inset-0 bg-[#1F2A44]/40 mix-blend-multiply" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -112,7 +135,7 @@ export default function WhyChooseUs() {
                 }`}
               >
                 <p className="font-clash text-lg text-white/80 mb-6 leading-relaxed">
-                  Most organizations don&apos;t struggle to access AI. They struggle to apply it in ways that improve how work gets done. Refactrd helps organizations identify the right opportunities, implement practical solutions, and create lasting operational impact.
+                 Most organizations are experimenting with AI. Few are improving how work gets done. Refactrd helps identify opportunities, redesign workflows, and turn AI into operational impact.
                 </p>
                 <Link
                   href="/get-started"

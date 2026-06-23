@@ -8,28 +8,31 @@ const idealClients = [
   {
     icon: Rocket,
     title: "Startups",
-    description: "Building scalable operations from the beginning",
+    description: "Building scalable operations from the beginning.",
     features: [
       "Design workflows that support growth",
       "Build stronger operational foundations early",
+      "Validate high-impact opportunities",
     ],
   },
   {
     icon: TrendingUp,
     title: "Growing Businesses",
-    description: "Improving efficiency and execution",
+    description: "Improving execution, efficiency, and organizational capability.",
     features: [
       "Reduce operational bottlenecks",
-      "Build capability across teams",
+      "Improve team performance",
+      "Scale adoption across functions",
     ],
   },
   {
     icon: Building2,
     title: "Enterprises",
-    description: "Moving from experimentation to adoption",
+    description: "Moving from experimentation to coordinated adoption.",
     features: [
       "Prioritize high-impact opportunities",
-      "Create alignment, governance, and implementation pathways",
+      "Create alignment and governance",
+      "Build long-term capability",
     ],
   },
 ];
@@ -70,7 +73,7 @@ export default function WhoThisIsFor() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Organizations looking to move from AI potential to operational impact.
+            Organizations looking to move from AI experimentation to operational impact.
           </p>
         </div>
 

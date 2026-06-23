@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
 // import { HowItWorks } from "@/components/sections/HowItWorks";
 import ProblemSection from "@/components/sections/ProblemSection";
+import PainPoints from "@/components/sections/PainPoints";
 import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import dynamic from "next/dynamic";
@@ -34,6 +35,7 @@ export default function Home() {
       <Header />
       <Hero />
       <ProblemSection />
+      <PainPoints />
       <WhatWeDoSection />
       {/* <WhereToStart/> */}
       <ProofOfWork />

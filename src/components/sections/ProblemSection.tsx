@@ -31,7 +31,7 @@ export default function ProblemSection() {
       id="problem"
     >
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-between">
           {/* Left: Image */}
           <div
             className={`relative transition-all duration-1000 ease-out ${
@@ -41,7 +41,7 @@ export default function ProblemSection() {
             }`}
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative">
+              <div className="aspect-[4/4] bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative">
                 <Image
                   src="/images/solving-problems.webp"
                   alt="Team collaborating on software development"
@@ -67,69 +67,41 @@ export default function ProblemSection() {
                 : "opacity-0 translate-x-12"
             }`}
           >
-            <h2 className="heading-lg text-secondary mb-6">
-              The Challenge Most Organizations Face
+            <h2 className="heading-lg text-[47px] md:leading-20 text-secondary mb-3">
+              Most Organizations Don&apos;t Have An AI Problem.
             </h2>
+            <p className="font-clash font-semibold text-xl text-secondary/60 mb-6">
+              They Have An Adoption Problem.
+            </p>
 
-            <div className="w-[200px] h-1 bg-[#1F2A44] mb-8 rounded-full" />
+            <div className="w-[200px] h-1 bg-[#1F2A44] mb-10 rounded-full" />
 
-            <div className="space-y-6">
-              {/* Problem 1 */}
-              <div className="flex items-start gap-4 group cursor-pointer">
-                <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center duration-300 group-hover:scale-110 transform">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                    />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <h3 className="heading-sm text-secondary mb-2">
-                    AI initiatives aren&apos;t becoming operational results
-                  </h3>
-                  <p className="font-jakarta tracking-[-0.02em] text-secondary/75">
-                    Organizations are investing in AI, but adoption often remains fragmented. Without changes to workflows, processes, and ways of working, AI initiatives struggle to create meaningful operational impact.
-                  </p>
-                </div>
+            <div className="space-y-8">
+              <div>
+                <p className="font-clash font-bold text-[#1F2A44] text-lg mb-1">AI is becoming part of everyday work.</p>
+                <p className="font-jakarta tracking-[-0.02em] text-secondary/70">Operational impact is still difficult to find.</p>
               </div>
 
-              {/* Problem 2 */}
-              <div className="flex items-start gap-4 group cursor-pointer">
-                <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center duration-300 group-hover:scale-110 transform">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
-                    />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <h3 className="heading-sm text-secondary mb-2 duration-300">
-                    You know AI can help, but you&apos;re not sure where to begin
-                  </h3>
-                  <p className="font-jakarta tracking-[-0.02em] text-secondary/75">
-                    Most organizations don&apos;t need another tool. They need clarity on where AI creates value, what should change, and how to move from experimentation to measurable outcomes.
-                  </p>
-                </div>
+              <p className="font-jakarta tracking-[-0.02em] text-secondary/75 leading-relaxed">
+                Many organizations are investing in AI without seeing meaningful changes in execution, decision-making, or performance.
+              </p>
+
+              <div>
+                <p className="font-clash font-bold text-[#1F2A44] text-lg mb-1">AI initiatives aren&apos;t becoming operational results.</p>
+                <p className="font-jakarta tracking-[-0.02em] text-secondary/70">Without changes to workflows and operating practices, AI rarely delivers lasting value.</p>
+              </div>
+
+              <div className="border-l-4 border-[#A2D2FF] pl-5 space-y-3">
+                <p className="font-clash font-semibold text-[#1F2A44]">The question isn&apos;t whether AI can help.</p>
+                <p className="font-clash font-bold text-[#1F2A44]">
+                  The Question Is:{" "}
+                  <span className="relative inline-block">
+                    <span className="relative z-10 pl-2">Where It Can Create The Greatest Impact.</span>
+                    <span className="absolute hidden md:block bottom-0.5 left-0 w-full h-2.5 bg-[#A2D2FF]/50 -z-0 rounded-sm" />
+                  </span>
+                </p>
               </div>
             </div>
-
-            {/* CTA Button */}
           </div>
         </div>
       </div>
