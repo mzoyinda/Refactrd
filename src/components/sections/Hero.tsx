@@ -46,11 +46,11 @@ export default function Hero() {
               text-[32px] sm:text-[42px] md:text-5xl lg:text-6xl xl:text-7xl
               ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
-            AI Is Everywhere.
+            AI &nbsp; is &nbsp; Everywhere.
             <br className="hidden sm:block" />
             {" "}
             <span className="relative block md:mt-2">
-              <span className="relative z-10 text-[#1F2A44]">Operational Impact Isn&apos;t.</span>
+              <span className="relative z-10 text-[#1F2A44]">Operational &nbsp; Impact &nbsp; Isn&apos;t.</span>
               <span className="hidden md:block absolute bottom-1 left-0 w-full h-3 lg:h-4 bg-[#A2D2FF]/40 -z-0 rounded-sm" />
             </span>
           </h1>
