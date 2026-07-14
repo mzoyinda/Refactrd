@@ -32,33 +32,33 @@ const RESOURCES: Resource[] = [
       "A practical playbook for legal firms navigating AI adoption — covering governance frameworks, risk assessment, client communication protocols, and internal compliance structures. Designed for partners and operations leads.",
     category: "Playbook",
     pages: 24,
-    previewUrl: "https://drive.google.com/file/d/YOUR_FILE_ID/preview",
-    downloadUrl: "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID",
+    previewUrl: "https://drive.google.com/file/d/1eixAa60ogI_e4evHBW5ASp8lxw0NGLJI/preview",
+    downloadUrl: "https://drive.google.com/uc?export=download&id=1eixAa60ogI_e4evHBW5ASp8lxw0NGLJI",
     badge: "Featured",
   },
-  {
-    id: "ai-ops-template",
-    title: "AI Operations Assessment Template",
-    subtitle: "Process Audit · Workflow Mapping",
-    description:
-      "A structured template for auditing your current operations and identifying where AI can reduce friction, automate repetitive tasks, and create measurable business impact.",
-    category: "Template",
-    pages: 12,
-    previewUrl: "https://drive.google.com/file/d/YOUR_FILE_ID_2/preview",
-    downloadUrl: "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_2",
-  },
-  {
-    id: "ai-readiness-framework",
-    title: "AI Readiness Framework",
-    subtitle: "Org Assessment · Maturity Model",
-    description:
-      "Evaluate your organization's readiness to adopt AI across five key dimensions: data infrastructure, team capability, process maturity, leadership alignment, and cultural readiness.",
-    category: "Framework",
-    pages: 18,
-    previewUrl: "https://drive.google.com/file/d/YOUR_FILE_ID_3/preview",
-    downloadUrl: "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_3",
-    badge: "New",
-  },
+  // {
+  //   id: "ai-ops-template",
+  //   title: "AI Operations Assessment Template",
+  //   subtitle: "Process Audit · Workflow Mapping",
+  //   description:
+  //     "A structured template for auditing your current operations and identifying where AI can reduce friction, automate repetitive tasks, and create measurable business impact.",
+  //   category: "Template",
+  //   pages: 12,
+  //   previewUrl: "https://drive.google.com/file/d/YOUR_FILE_ID_2/preview",
+  //   downloadUrl: "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_2",
+  // },
+  // {
+  //   id: "ai-readiness-framework",
+  //   title: "AI Readiness Framework",
+  //   subtitle: "Org Assessment · Maturity Model",
+  //   description:
+  //     "Evaluate your organization's readiness to adopt AI across five key dimensions: data infrastructure, team capability, process maturity, leadership alignment, and cultural readiness.",
+  //   category: "Framework",
+  //   pages: 18,
+  //   previewUrl: "https://drive.google.com/file/d/YOUR_FILE_ID_3/preview",
+  //   downloadUrl: "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_3",
+  //   badge: "New",
+  // },
 ];
 
 // ── CATEGORY CONFIG ────────────────────────────────────────
