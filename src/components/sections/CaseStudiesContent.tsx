@@ -245,13 +245,13 @@ export default function CaseStudiesContent() {
         <div className="container-custom">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-clash font-bold text-[#1F2A44] mb-5">
-              Seen enough to know we can help?
+            Ready To Solve A Similar Challenge?
             </h2>
             <p className="font-jakarta text-[#64748B] mb-10 leading-relaxed text-lg">
-              Find the starting point that fits where you are right now.
+            Let's explore what this could look like for your organization.
             </p>
             <Link href="/get-started" className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group">
-              Find Your Starting Point
+            Talk With Refactrd
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>

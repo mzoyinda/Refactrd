@@ -50,7 +50,7 @@ export default function ApproachHero() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              A practical system for moving from AI experimentation to operational adoption.
+              A practical methodology for helping organizations identify opportunities, implement AI effectively, and create measurable operational impact.
             </p>
 
             {/* Badge */}
@@ -61,7 +61,7 @@ export default function ApproachHero() {
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#1F2A44] mt-[6px] flex-shrink-0" />
               <span className="font-clash font-semibold text-sm text-[#1F2A44] leading-snug">
-                Built around assessment, transformation, implementation, adoption, and measurable outcomes.
+              A practical methodology for turning AI opportunities into operational impact.
               </span>
             </div>
 
@@ -127,10 +127,10 @@ export default function ApproachHero() {
                   Most organizations don&apos;t struggle because they lack AI tools.
                 </p>
                 <p className="font-jakarta text-[15px] text-white/75 leading-relaxed">
-                  They struggle because successful adoption requires clarity, workflow change, thoughtful implementation, capability building, and sustained execution.
+                  They struggle because successful adoption requires clarity, prioritization, thoughtful implementation, and sustained organizational change.
                 </p>
                 <p className="font-jakarta text-[15px] text-white font-semibold leading-relaxed">
-                  The Refactrd Approach provides a structured path for turning opportunities into measurable operational impact.
+                  The Refactrd Approach provides a practical methodology for turning AI opportunities into measurable operational outcomes.
                 </p>
               </div>
 
@@ -138,7 +138,7 @@ export default function ApproachHero() {
                 href="#approach"
                 className="inline-flex items-center gap-2 bg-[#A2D2FF] text-[#1F2A44] font-clash font-bold px-6 py-3.5 rounded-full hover:bg-white transition-colors duration-300 group text-sm sm:text-base"
               >
-                Explore The Approach
+                Explore The Methodology
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>

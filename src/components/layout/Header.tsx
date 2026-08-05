@@ -3,10 +3,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { trackCTAClick } from "@/lib/analytics";
 import { trackNavigation } from "@/lib/analytics";
+import { services } from "@/data/services";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -84,14 +85,35 @@ export default function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
               </Link>
 
-              <Link
-                href="/services"
-                onClick={() => trackNavigation("services", "/services")}
-                className="text-secondary font-clash font-semibold text-[16px] transition-colors duration-200 relative group"
-              >
-                Services
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
-              </Link>
+              <div className="relative group">
+                <Link
+                  href="/services"
+                  onClick={() => trackNavigation("services", "/services")}
+                  className="flex items-center gap-1 text-secondary font-clash font-semibold text-[16px] transition-colors duration-200 relative"
+                >
+                  Services
+                  <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A2D2FF] transition-all duration-300 group-hover:w-full" />
+                </Link>
+
+                {/* Dropdown */}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+                  <div className="bg-white rounded-2xl shadow-xl border border-[#E2E8F0] py-2 min-w-[260px]">
+                    {services.map((service) => (
+                      <Link
+                        key={service.slug}
+                        href={`/services/${service.slug}`}
+                        onClick={() => trackNavigation(`services_${service.slug}`, `/services/${service.slug}`)}
+                        className="block px-4 py-3 hover:bg-tertiary/40 transition-colors duration-150"
+                      >
+                        <span className="font-clash font-semibold text-sm text-secondary">
+                          {service.title}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
               <Link
                 href="/case-studies"
@@ -124,12 +146,12 @@ export default function Header() {
             {/* CTA Button - Desktop */}
             <div className="hidden lg:flex items-center gap-4">
               <Link
-                href="/get-started"
-                onClick={() => trackCTAClick("header_find_starting_point", "/get-started")}
+                href="/contact"
+                onClick={() => trackCTAClick("header_talk_with_refactrd", "/contact")}
                 className="inline-flex items-center justify-center px-7 py-3 bg-secondary text-white rounded-full font-clash font-semibold text-[15px] hover:bg-[#A2D2FF] hover:text-secondary  transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                
+
               >
-                Find Your Starting Point
+               Contact
               </Link>
             </div>
 
@@ -207,6 +229,22 @@ export default function Header() {
                   Services
                 </Link>
 
+                <div className="ml-4 border-l-2 border-tertiary pl-2 space-y-1">
+                  {services.map((service) => (
+                    <Link
+                      key={service.slug}
+                      href={`/services/${service.slug}`}
+                      className="block px-4 py-2.5 text-secondary/70 font-clash font-medium text-[14px] hover:bg-tertiary hover:text-secondary rounded-lg transition-colors duration-200"
+                      onClick={() => {
+                        trackNavigation(`services_${service.slug}_mobile`, `/services/${service.slug}`);
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      {service.title}
+                    </Link>
+                  ))}
+                </div>
+
                 <Link
                   href="/case-studies"
                   className="block px-4 py-3 text-secondary font-clash font-semibold hover:bg-tertiary rounded-lg transition-colors duration-200"
@@ -244,14 +282,14 @@ export default function Header() {
               {/* CTA Button */}
               <div className="mt-6 pt-6 border-t border-tertiary">
                 <Link
-                  href="/get-started"
+                  href="/contact"
                   className="block w-full text-center px-7 py-4 bg-secondary text-white rounded-full font-clash font-semibold transition-all duration-300"
                   onClick={() => {
-                    trackCTAClick("header_find_starting_point_mobile", "/get-started");
+                    trackCTAClick("header_talk_with_refactrd_mobile", "/contact");
                     setMobileMenuOpen(false);
                   }}
                 >
-                  Find Your Starting Point
+                 Contact
                 </Link>
               </div>
             </div>

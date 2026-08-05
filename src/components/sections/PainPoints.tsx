@@ -65,7 +65,7 @@ export default function PainPoints() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            The signs are usually obvious.
+            The Signs Are Usually Obvious.
           </h2>
         </div>
 
@@ -99,7 +99,7 @@ export default function PainPoints() {
             href="/get-started"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group"
           >
-            Find Your Starting Point
+            Let&apos;s Talk About Your Challenges
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>

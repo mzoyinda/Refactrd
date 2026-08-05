@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 export default function ServicesHero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -28,26 +29,24 @@ export default function ServicesHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center bg-gradient-to-br from-tertiary-light via-white to-white overflow-hidden"
+      className="relative bg-gradient-to-br from-tertiary-light via-white to-white overflow-hidden pt-24 pb-14 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20"
     >
-      <div className="container-custom w-full pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="container-custom w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="max-w-2xl">
-            {/* Small tag */}
-
-            {/* Main Heading */}
-            {/* Subheadline */}
-            <p
-              className={`font-jakarta text-base text-[#5a6580] uppercase tracking-[0.14em] font-semibold mb-4 transition-all duration-700 delay-75 ${
+            {/* Eyebrow */}
+            <span
+              className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#1F2A44]/15 text-[#5a6580] text-[11px] font-clash font-semibold uppercase tracking-[0.14em] bg-white/70 mb-5 transition-all duration-700 delay-75 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Helping organizations move from AI experimentation to operational adoption.
-            </p>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1F2A44] flex-shrink-0" />
+              AI Transformation Studio
+            </span>
 
             <h1
-              className={`text-5xl lg:text-6xl xl:text-7xl font-clash font-bold text-secondary leading-tight mb-8 transition-all duration-700 delay-100 ${
+              className={`text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-clash font-bold text-secondary leading-tight mb-5 transition-all duration-700 delay-100 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4"
@@ -55,6 +54,17 @@ export default function ServicesHero() {
             >
               Our Services
             </h1>
+
+            {/* Tagline */}
+            <p
+              className={`font-clash text-xl sm:text-2xl font-bold text-[#1F2A44] leading-snug mb-6 transition-all duration-700 delay-150 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+            >
+              Practical AI. Better Operations. Measurable Impact.
+            </p>
 
             {/* Description Paragraphs */}
             <div
@@ -65,19 +75,16 @@ export default function ServicesHero() {
               }`}
             >
               <p className="font-jakarta text-base text-[#475569] leading-relaxed">
-                Refactrd helps organizations improve workflows, implement practical AI solutions, and build the capabilities required for successful adoption.
+                Refactrd helps organizations improve how work gets done through workflow transformation, knowledge systems, intelligent operations, and AI-enabled products.
               </p>
               <p className="font-jakarta text-base text-[#475569] leading-relaxed">
-                We create impact across operations, knowledge systems, products, and AI-enabled workflows.
-              </p>
-              <p className="font-clash text-base text-[#1F2A44] leading-relaxed font-semibold">
-                Focused on operational outcomes, not technology for its own sake.
+                Whether you&apos;re exploring your first AI initiative or scaling adoption across the business, our services are designed to create lasting operational impact.
               </p>
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Buttons */}
             <div
-              className={`transition-all duration-700 delay-300 ${
+              className={`flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 transition-all duration-700 delay-300 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4"
@@ -85,14 +92,21 @@ export default function ServicesHero() {
             >
               <Link
                 href="/get-started"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white rounded-full font-clash font-semibold hover:bg-[#263352] transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-white rounded-full font-clash font-semibold hover:bg-[#263352] transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
-                Find Your Starting Point
+                Talk With Refactrd
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+              <Link
+                href="/approach"
+                className="inline-flex items-center justify-center font-clash font-semibold border border-[#1F2A44]/25 text-[#1F2A44] rounded-full transition-all duration-300 hover:bg-[#1F2A44] hover:text-white hover:border-[#1F2A44] px-8 py-4"
+              >
+                Explore Our Approach
               </Link>
             </div>
           </div>
 
-          {/* Right Image Grid */}
+          {/* Right Image */}
           <div
             className={`relative transition-all duration-1000 delay-400 ${
               isVisible
@@ -100,68 +114,16 @@ export default function ServicesHero() {
                 : "opacity-0 translate-x-12"
             }`}
           >
-            {/* Bento Grid Layout */}
-            <div className="grid grid-cols-2 gap-4">
-              {/* Top Left - Large */}
-              <div className="col-span-1 row-span-2">
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-tertiary to-tertiary-dark shadow-lg">
-                  {/* Replace with actual image */}
-                  <Image
-                    src="/images/services-one.webp"
-                    alt="Team member collaborating"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Top Right - Small */}
-              <div className="col-span-1">
-                <div className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 shadow-lg">
-                  <Image
-                    src="/images/services-two.webp"
-                    alt="Team member working"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Middle Right - Small */}
-              <div className="col-span-1">
-                <div className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-primary/20 shadow-lg">
-                  <Image
-                    src="/images/services-three.webp"
-                    alt="Team collaboration"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Bottom Left - Medium */}
-              <div className="col-span-1">
-                <div className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-tertiary/50 to-white shadow-lg">
-                  <Image
-                    src="/images/services-four.webp"
-                    alt="Team discussion"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Bottom Right - Medium */}
-              <div className="col-span-1">
-                <div className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-tertiary shadow-lg">
-                  <Image
-                    src="/images/services-five.webp"
-                    alt="Team planning"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
+            <div className="relative aspect-[4/3] lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/services-one.webp"
+                alt="Team collaborating on AI-enabled operations"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A44]/30 via-transparent to-transparent" />
             </div>
 
             {/* Decorative elements */}

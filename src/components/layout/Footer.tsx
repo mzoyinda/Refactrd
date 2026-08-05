@@ -14,18 +14,11 @@ const explore = [
   { name: "Careers", href: "/careers" },
 ];
 
-const transformationAreas = [
+const services = [
   { name: "Workflow Transformation", href: "/services" },
   { name: "Knowledge Systems & AI Assistants", href: "/services" },
+  { name: "Intelligent Operations", href: "/services" },
   { name: "AI-Enabled Products", href: "/services" },
-  { name: "AI Operations & Intelligent Workflows", href: "/services" },
-];
-
-const startHere = [
-  { name: "Build & Implement", href: "/get-started" },
-  { name: "Opportunity Assessment", href: "/get-started" },
-  { name: "Executive Discovery", href: "/get-started" },
-  { name: "AI Startups Launchpad", href: "/ai-startups-launchpad" },
 ];
 
 /* ─── link component ────────────────────────────────── */
@@ -59,7 +52,7 @@ export default function Footer() {
           TOP GRID — brand + 3 nav columns
       ══════════════════════════════════════ */}
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8 pt-16 lg:pt-20 pb-14 lg:pb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1.4fr_1fr] gap-12 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1.4fr] gap-12 lg:gap-10">
 
           {/* ── Brand column ── */}
           <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-6">
@@ -100,23 +93,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Transformation Areas ── */}
+          {/* ── Services ── */}
           <div>
             <h3 className="font-clash font-bold text-[13px] uppercase tracking-[0.14em] text-white/40 mb-5">
-              Transformation Areas
+              Services
             </h3>
             <ul className="space-y-3">
-              {transformationAreas.map((l) => <NavLink key={l.name} href={l.href}>{l.name}</NavLink>)}
-            </ul>
-          </div>
-
-          {/* ── Start Here ── */}
-          <div>
-            <h3 className="font-clash font-bold text-[13px] uppercase tracking-[0.14em] text-white/40 mb-5">
-              Start Here
-            </h3>
-            <ul className="space-y-3">
-              {startHere.map((l) => <NavLink key={l.name} href={l.href}>{l.name}</NavLink>)}
+              {services.map((l) => <NavLink key={l.name} href={l.href}>{l.name}</NavLink>)}
             </ul>
           </div>
         </div>

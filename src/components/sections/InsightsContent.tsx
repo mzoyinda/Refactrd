@@ -290,13 +290,13 @@ export default function InsightsContent() {
         <div className="container-custom">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-clash font-bold text-[#1F2A44] mb-4">
-              Ready To Move Beyond Experimentation?
+            Ready To Turn Insight Into Action?
             </h2>
             <p className="font-jakarta text-[#64748B] mb-8 leading-relaxed">
-              Explore the engagement path that best fits your goals, challenges, and stage of AI adoption.
+            Let's discuss how these ideas apply to your business.
             </p>
             <Link href="/get-started" className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group">
-              Find Your Starting Point
+            Talk With Refactrd
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>

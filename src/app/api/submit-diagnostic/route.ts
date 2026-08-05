@@ -75,17 +75,26 @@ export async function POST(req: NextRequest) {
         label: "Build & Implement",
         desc: "Moving from a defined initiative to actual implementation.",
       },
+      contact: {
+        label: "Introductory Conversation",
+        desc: "An introductory conversation about an organization's goals and where Refactrd might help.",
+      },
     };
     const meta = typeLabels[type] || { label: "Inquiry", desc: "" };
+
+    const situationLabel = type === "contact" ? "Service Interest" : "Primary goal";
+    const goalsLabel = type === "contact" ? "Timeline" : "Goals";
+    const challengesLabel = type === "contact" ? "Challenge" : "Challenges";
+    const desiredOutcomeLabel = type === "contact" ? "What Success Looks Like" : "Desired outcome";
 
     const detailRows: string[] = [];
     if (role) detailRows.push(row("Role", role));
     if (prompt) detailRows.push(row("What prompted this", prompt));
     if (opportunities) detailRows.push(row("Opportunity areas", opportunities));
-    if (challenges) detailRows.push(row("Challenges", challenges));
-    if (desired_outcome) detailRows.push(row("Desired outcome", desired_outcome));
-    if (situation) detailRows.push(row("Primary goal", situation));
-    if (goals) detailRows.push(row("Goals", goals));
+    if (challenges) detailRows.push(row(challengesLabel, challenges));
+    if (desired_outcome) detailRows.push(row(desiredOutcomeLabel, desired_outcome));
+    if (situation) detailRows.push(row(situationLabel, situation));
+    if (goals) detailRows.push(row(goalsLabel, goals));
     if (initiative) detailRows.push(row("Initiative", initiative));
     if (outcome) detailRows.push(row("Problem it solves", outcome));
 

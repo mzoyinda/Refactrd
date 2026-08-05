@@ -5,10 +5,21 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { trackCTAClick } from "@/lib/analytics";
 
-const aiServices = [
+interface ServiceItem {
+  level: string;
+  title: string;
+  tagline: string;
+  description: string;
+  challenges?: string[];
+  bestFor?: string;
+  exploreHref?: string;
+}
+
+const aiServices: ServiceItem[] = [
   {
     level: "01",
     title: "Workflow Transformation",
+    tagline: "Redesign how work gets done.",
     description:
       "Redesign workflows, eliminate operational friction, and improve execution across teams and functions.",
     challenges: [
@@ -18,13 +29,14 @@ const aiServices = [
       "Difficulty scaling workflows",
     ],
     bestFor:
-      "Best For: Organizations looking to improve performance, remove bottlenecks, and redesign how work gets done.",
+      "Ideal for organizations looking to improve performance by redesigning how work flows across the business.",
   },
   {
     level: "02",
     title: "Knowledge Systems & AI Assistants",
+    tagline: "Help teams find information and make better decisions.",
     description:
-      "Design and implement AI-enabled systems that help teams access information faster and make better decisions.",
+      "Design AI-powered knowledge systems that make expertise, documentation, and institutional knowledge instantly accessible.",
     challenges: [
       "Information scattered across tools",
       "Knowledge silos",
@@ -32,27 +44,14 @@ const aiServices = [
       "Dependence on key individuals",
     ],
     bestFor:
-      "Best For: Organizations struggling with fragmented information, scattered knowledge, and inconsistent decision-making.",
+      "Ideal for organizations struggling with fragmented information, slow onboarding, or inconsistent decision-making.",
   },
   {
     level: "03",
-    title: "AI-Enabled Products",
+    title: "Intelligent Operations",
+    tagline: "Embed AI into day-to-day operations.",
     description:
-      "Introduce practical AI capabilities that improve customer experiences and create additional value.",
-    challenges: [
-      "Limited product differentiation",
-      "Manual customer workflows",
-      "Missed personalization opportunities",
-      "Customer experience inefficiencies",
-    ],
-    bestFor:
-      "Best For: Organizations exploring meaningful AI-enabled enhancements and opportunities.",
-  },
-  {
-    level: "04",
-    title: "AI Operations & Intelligent Workflows",
-    description:
-      "Design and implement AI-enabled operational systems that improve execution, scalability, and performance.",
+      "Use AI to improve execution, operational visibility, coordination, and decision support across the organization.",
     challenges: [
       "Operational complexity",
       "Slow decision-making",
@@ -60,11 +59,38 @@ const aiServices = [
       "Scaling execution across functions",
     ],
     bestFor:
-      "Best For: Organizations ready to embed AI into core business operations.",
+      "Ideal for organizations looking to make operations more intelligent, scalable, and responsive.",
+  },
+  {
+    level: "04",
+    title: "AI-Enabled Products",
+    tagline: "Create smarter customer and employee experiences.",
+    description:
+      "Design and implement AI capabilities that create differentiated products, services, and internal experiences.",
+    challenges: [
+      "Limited product differentiation",
+      "Manual customer workflows",
+      "Missed personalization opportunities",
+      "Customer experience inefficiencies",
+    ],
+    bestFor:
+      "Ideal for organizations exploring practical AI-enabled product opportunities.",
   },
 ];
 
-export default function WhatWeDoSectionv2({ showChallenges = false }: { showChallenges?: boolean }) {
+interface WhatWeDoSectionProps {
+  showChallenges?: boolean;
+  subheading?: string;
+  services?: ServiceItem[];
+  showBottomCTA?: boolean;
+}
+
+export default function WhatWeDoSectionv2({
+  showChallenges = false,
+  subheading = "Every organization has different priorities. These are the areas where we most frequently help teams improve execution, decision-making, and operational performance.",
+  services = aiServices,
+  showBottomCTA = true,
+}: WhatWeDoSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -94,7 +120,7 @@ export default function WhatWeDoSectionv2({ showChallenges = false }: { showChal
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Where We <span className="text-white/90">Create Impact</span>
+            Where We <span className="text-white/90">Create Operational Impact</span>
           </h2>
 
           <p
@@ -102,13 +128,13 @@ export default function WhatWeDoSectionv2({ showChallenges = false }: { showChal
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            We help organizations improve how work gets done. These are the areas where we most frequently create measurable operational impact.
-</p>
+            {subheading}
+          </p>
         </div>
 
         {/* Service Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-          {aiServices.map((service, index) => (
+          {services.map((service, index) => (
             <div
               key={index}
               className={`group relative overflow-hidden rounded-2xl bg-[#2c3f66] border border-[#3d5585] hover:border-[#A2D2FF]/50 transition-all duration-300 ${
@@ -120,9 +146,12 @@ export default function WhatWeDoSectionv2({ showChallenges = false }: { showChal
                 <span className="font-clash font-bold text-[10px] tracking-[0.2em] text-[#A2D2FF]/50 uppercase mb-4">
                   {service.level}
                 </span>
-                <h3 className="text-[15px] font-clash font-bold text-white leading-snug mb-3">
+                <h3 className="text-[15px] font-clash font-bold text-white leading-snug mb-2">
                   {service.title}
                 </h3>
+                <p className="text-[#A2D2FF] text-[12px] font-clash font-semibold leading-snug mb-3">
+                  {service.tagline}
+                </p>
                 <p className="text-white/70 text-[13px] leading-relaxed font-jakarta flex-1">
                   {service.description}
                 </p>
@@ -140,9 +169,19 @@ export default function WhatWeDoSectionv2({ showChallenges = false }: { showChal
                   </div>
                 )}
                 <div className="mt-4 pt-4 border-t border-white/8">
-                  <p className="text-[11px] text-white/50 font-jakarta leading-relaxed">
-                    {service.bestFor.replace('Best For: ', '')}
-                  </p>
+                  {service.exploreHref ? (
+                    <Link
+                      href={service.exploreHref}
+                      className="inline-flex items-center gap-1.5 text-[12px] text-[#A2D2FF] font-clash font-semibold group-hover:gap-2.5 transition-all duration-300"
+                    >
+                      Explore {service.title}
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  ) : (
+                    <p className="text-[11px] text-white/50 font-jakarta leading-relaxed">
+                      {service.bestFor}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-[#A2D2FF] to-[#5B6CFF] w-0 group-hover:w-full transition-all duration-400" />
@@ -151,34 +190,36 @@ export default function WhatWeDoSectionv2({ showChallenges = false }: { showChal
         </div>
 
         {/* Mid CTA Block */}
-        <div
-          className={`relative overflow-hidden rounded-2xl transition-all duration-1000 ease-out delay-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <div className="p-8 lg:p-10 bg-white border-2 border-white/10">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
-              <div className="flex-1">
-                <h3 className="text-2xl lg:text-3xl font-clash font-bold mb-3 text-black">
-                  Not Sure Where To Begin?
-                </h3>
-                <p className="text-black leading-[25px] font-jakarta text-md tracking-[-0.03em]">
-                  Find the right engagement based on your goals, challenges, and stage of adoption.
-                </p>
-              </div>
-              <div className="flex-shrink-0">
-                <Link
-                  href="/get-started"
-                  onClick={() => trackCTAClick("what_we_do_find_starting_point", "/get-started")}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-[#E6EAF0] rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group whitespace-nowrap"
-                >
-                  Find Your Starting Point
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
+        {showBottomCTA && (
+          <div
+            className={`relative overflow-hidden rounded-2xl transition-all duration-1000 ease-out delay-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <div className="p-8 lg:p-10 bg-white border-2 border-white/10">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+                <div className="flex-1">
+                  <h3 className="text-2xl lg:text-3xl font-clash font-bold mb-3 text-black">
+                    Ready To Explore What&apos;s Possible?
+                  </h3>
+                  <p className="text-black leading-[25px] font-jakarta text-md tracking-[-0.03em]">
+                    Tell us what you&apos;re trying to achieve and we&apos;ll recommend the best path forward.
+                  </p>
+                </div>
+                <div className="flex-shrink-0">
+                  <Link
+                    href="/get-started"
+                    onClick={() => trackCTAClick("what_we_do_talk_with_refactrd", "/get-started")}
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-[#E6EAF0] rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group whitespace-nowrap"
+                  >
+                    Talk With Refactrd
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Background glow effects */}

@@ -135,13 +135,13 @@ export default function WhyChooseUs() {
                 }`}
               >
                 <p className="font-clash text-lg text-white/80 mb-6 leading-relaxed">
-                 Most organizations are experimenting with AI. Few are improving how work gets done. Refactrd helps identify opportunities, redesign workflows, and turn AI into operational impact.
+                 Most organizations are experimenting with AI. Few are turning those experiments into lasting operational change. Refactrd helps organizations identify opportunities, redesign operations, implement practical AI solutions, and build the capability required for sustainable adoption.
                 </p>
                 <Link
                   href="/get-started"
                   className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
                 >
-                  Find Your Starting Point
+                  Talk With Refactrd
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>

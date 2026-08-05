@@ -3,7 +3,12 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
-const faqs = [
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const defaultFaqs: FAQItem[] = [
   {
     question: "What does Refactrd actually do?",
     answer:
@@ -46,7 +51,7 @@ const faqs = [
   },
 ];
 
-export default function FAQ() {
+export default function FAQ({ faqs = defaultFaqs }: { faqs?: FAQItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
