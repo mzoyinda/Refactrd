@@ -285,7 +285,7 @@ export default function ProofOfWork() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Examples of how organizations have improved execution, reduced operational friction, and created measurable business outcomes through practical AI adoption.
+            Examples of how organizations have transformed operations, improved execution, and created measurable business outcomes through practical AI implementation.
           </p>
         </div>
 

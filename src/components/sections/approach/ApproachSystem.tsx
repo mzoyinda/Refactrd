@@ -8,17 +8,17 @@ const steps = [
   {
     number: "01",
     title: "Assess The Current State",
-    copy: "Understand workflows, operational challenges, information flow, priorities, and opportunities for improvement.",
+    copy: "Understand operations, workflows, knowledge, priorities, and opportunities for improvement.",
   },
   {
     number: "02",
     title: "Identify The Highest-Impact Opportunities",
-    copy: "Evaluate where transformation, implementation, or adoption can improve execution, decision-making, customer experience, and operational performance.",
+    copy: "Evaluate where AI, operational redesign, or implementation can create meaningful business outcomes.",
   },
   {
     number: "03",
-    title: "Determine The Right Path Forward",
-    copy: "Select the engagement, roadmap, implementation approach, or transformation initiative best suited to the organization's goals.",
+    title: "Determine The Best Path Forward",
+    copy: "Recommend the most appropriate engagement, implementation approach, or transformation initiative based on organizational goals.",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function ApproachSystem() {
             Every Engagement Starts The Same Way
           </h2>
           <p className="mt-4 font-jakarta text-[15px] sm:text-[17px] text-[#5a6580] leading-relaxed max-w-[720px]">
-            Whether the outcome is a roadmap, workflow transformation initiative, AI implementation project, knowledge system, AI assistant, or broader adoption effort, every engagement follows the same structured path toward clarity, prioritization, and action.
+            Whether you&apos;re redesigning workflows, building a knowledge system, improving operations, or creating an AI-enabled product, every engagement begins by understanding the organization before recommending a solution.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export default function ApproachSystem() {
             href="/get-started"
             className="group inline-flex items-center gap-2 bg-[#1F2A44] text-white font-clash font-bold px-7 py-4 rounded-full hover:bg-[#2d3e62] transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 text-sm sm:text-base"
           >
-            Find Your Starting Point
+            Talk With Refactrd
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

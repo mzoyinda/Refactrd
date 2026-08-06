@@ -7,8 +7,8 @@ import { ArrowRight } from "lucide-react";
 const trustItems = [
   "Workflow Transformation",
   "Knowledge Systems & AI Assistants",
+  "Intelligent Operations",
   "AI-Enabled Products",
-  "AI Operations & Intelligent Workflows",
 ];
 
 export default function Hero() {
@@ -46,7 +46,7 @@ export default function Hero() {
               text-[32px] sm:text-[42px] md:text-5xl lg:text-6xl xl:text-7xl
               ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
-            AI &nbsp; is &nbsp; Everywhere.
+            AI &nbsp; Is &nbsp; Everywhere.
             <br className="hidden sm:block" />
             {" "}
             <span className="relative block md:mt-2">
@@ -62,7 +62,7 @@ export default function Hero() {
               max-w-[90%] sm:max-w-xl lg:max-w-3xl
               ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
-            Refactrd helps organizations identify opportunities, redesign workflows, implement practical AI solutions, and create measurable operational impact.
+            Refactrd helps organizations identify high-impact AI opportunities, redesign operations, implement practical AI solutions, and build the capabilities required for long-term adoption.
           </p>
 
           {/* CTAs */}
@@ -75,15 +75,15 @@ export default function Hero() {
               className="group inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-white font-clash font-bold rounded-full transition-all duration-300 hover:bg-[#263352] hover:shadow-xl hover:-translate-y-0.5 w-full sm:w-auto
                 px-7 py-4 text-[15px] sm:text-base"
             >
-              Find Your Starting Point
+              Talk With Refactrd
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
             <Link
-              href="/approach"
+              href="/services"
               className="inline-flex items-center justify-center font-clash font-semibold border border-[#1F2A44]/25 text-[#1F2A44] rounded-full transition-all duration-300 hover:bg-[#1F2A44] hover:text-white hover:border-[#1F2A44] w-full sm:w-auto
                 px-7 py-4 text-[15px] sm:text-base"
             >
-              Explore How We Help
+              Explore Our Services
             </Link>
           </div>
 
@@ -92,7 +92,7 @@ export default function Hero() {
             className={`mt-10 md:mt-12 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             <p className="font-clash text-[10px] sm:text-xs uppercase tracking-[0.16em] text-[#94A3B8] mb-3">
-              Transformation Areas
+              Our Capabilities
             </p>
             <div className="grid grid-cols-2 gap-2 sm:hidden max-w-[320px] mx-auto">
               {trustItems.map((item) => (

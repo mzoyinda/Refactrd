@@ -6,15 +6,15 @@ import { Plus, Minus } from "lucide-react";
 const faqs = [
   {
     q: "What is the Refactrd Approach?",
-    a: "The Refactrd Approach is a structured methodology for helping organizations move from AI experimentation to operational adoption through assessment, transformation, implementation, adoption, and capability building.",
+    a: "The Refactrd Approach is a structured methodology for helping organizations move from AI experimentation to operational impact. Every engagement follows the same process of assessment, transformation, implementation, and adoption to ensure solutions create measurable business outcomes.",
   },
   {
     q: "Why do you focus on assessment first?",
-    a: "Most organizations rush toward technology decisions. We focus on understanding challenges, opportunities, and priorities before recommending solutions or committing resources to implementation.",
+    a: "Because successful AI initiatives begin with understanding the business, not selecting technology. Assessment helps identify where AI can create the greatest operational value before implementation begins.",
   },
   {
     q: "What kinds of opportunities do you look for?",
-    a: "We evaluate workflows, information flow, operations, customer experiences, products, and organizational readiness to identify areas where AI and workflow transformation can create meaningful business impact.",
+    a: "We identify opportunities across workflow transformation, knowledge systems, intelligent operations, and AI-enabled products prioritizing initiatives that improve execution, decision-making, and measurable business performance.",
   },
   {
     q: "Do all engagements follow this approach?",
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: "Can Refactrd help us implement solutions?",
-    a: "Yes. When implementation is the right path, our team supports solution design, engineering, deployment, adoption, and optimization. We help organizations move beyond planning and into practical execution while ensuring every implementation supports a broader operational objective.",
+    a: "Yes. Refactrd supports organizations from opportunity identification through implementation, adoption, and capability building to ensure solutions deliver lasting operational value.",
   },
   {
     q: "How is this different from traditional AI consulting?",

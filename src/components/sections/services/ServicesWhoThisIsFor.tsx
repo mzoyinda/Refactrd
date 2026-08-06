@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Rocket, TrendingUp, Building2, CheckCircle } from "lucide-react";
+import { Rocket, TrendingUp, Building2, CheckCircle, ArrowRight } from "lucide-react";
 
 const idealClients = [
   {
@@ -86,18 +86,19 @@ export default function ServicesWhoThisIsFor() {
           })}
         </div>
 
-        {/* Blue CTA */}
+        {/* Bridge Section */}
         <div className={`bg-secondary rounded-2xl p-8 lg:p-12 text-center text-white transition-all duration-700 delay-900 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="max-w-3xl mx-auto">
-            <h3 className="heading-md mb-4">Ready To Explore What&apos;s Possible?</h3>
-            <p className="body-lg text-white/80 mb-8">
-              Find the engagement path that best fits your goals, challenges, and stage of adoption.
-            </p>
+            <h3 className="heading-md mb-4">Not Sure Where To Start?</h3>
+            <div className="font-jakarta text-white/70 text-base sm:text-lg leading-relaxed mb-8 space-y-3">
+              <p>We'll help you identify the right service for your goals.</p>
+            </div>
             <Link
               href="/get-started"
-              className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
+              className="group font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
             >
-              Find Your Starting Point
+              Talk With Refactrd
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
         </div>

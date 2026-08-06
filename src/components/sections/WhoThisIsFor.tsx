@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { Rocket, TrendingUp, Building2, CheckCircle } from "lucide-react";
 
 const idealClients = [
@@ -77,7 +76,7 @@ export default function WhoThisIsFor() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-3 gap-8">
           {idealClients.map((client, index) => {
             const Icon = client.icon;
             return (
@@ -106,28 +105,6 @@ export default function WhoThisIsFor() {
               </div>
             );
           })}
-        </div>
-
-        {/* CTA Card */}
-        <div
-          className={`bg-secondary rounded-2xl p-8 lg:p-12 text-center text-white transition-all duration-700 delay-900 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <div className="max-w-3xl mx-auto">
-            <h3 className="heading-md mb-6">
-              Does This Sound Like Your Organization?
-            </h3>
-            <p className="body-lg text-white/80 mb-8">
-              Find the engagement path that best fits your goals, challenges, and stage of AI adoption.
-            </p>
-            <Link
-              href="/get-started"
-              className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
-            >
-              Find Your Starting Point
-            </Link>
-          </div>
         </div>
       </div>
     </section>

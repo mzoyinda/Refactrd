@@ -43,7 +43,7 @@ export default function ProblemSection() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
               <div className="aspect-[4/4] bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative">
                 <Image
-                  src="/images/solving-problems.webp"
+                  src="/images/team.png"
                   alt="Team collaborating on software development"
                   fill
                   className="object-cover"
@@ -61,7 +61,7 @@ export default function ProblemSection() {
 
           {/* Right: Content */}
           <div
-            className={`transition-all duration-1000 ease-out delay-200 ${
+            className={`flex flex-col justify-center transition-all duration-1000 ease-out delay-200  ${
               isVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-12"
@@ -70,8 +70,8 @@ export default function ProblemSection() {
             <h2 className="heading-lg text-[47px] md:leading-20 text-secondary mb-3">
               Most Organizations Don&apos;t Have An AI Problem.
             </h2>
-            <p className="font-clash font-semibold text-xl text-secondary/60 mb-6">
-              They Have An Adoption Problem.
+            <p className="font-clash font-semibold text-xl text-secondary/60 mb-2">
+              They Have An Operational Adoption Problem.
             </p>
 
             <div className="w-[200px] h-1 bg-[#1F2A44] mb-10 rounded-full" />
@@ -82,23 +82,19 @@ export default function ProblemSection() {
                 <p className="font-jakarta tracking-[-0.02em] text-secondary/70">Operational impact is still difficult to find.</p>
               </div>
 
-              <p className="font-jakarta tracking-[-0.02em] text-secondary/75 leading-relaxed">
-                Many organizations are investing in AI without seeing meaningful changes in execution, decision-making, or performance.
+              <p className="font-jakarta tracking-[-0.02em] text-secondary/75 leading-relaxed pb-4">
+                Many organizations are investing in AI without seeing meaningful improvements in execution, decision-making, or business performance.
               </p>
 
-              <div>
-                <p className="font-clash font-bold text-[#1F2A44] text-lg mb-1">AI initiatives aren&apos;t becoming operational results.</p>
-                <p className="font-jakarta tracking-[-0.02em] text-secondary/70">Without changes to workflows and operating practices, AI rarely delivers lasting value.</p>
-              </div>
-
-              <div className="border-l-4 border-[#A2D2FF] pl-5 space-y-3">
-                <p className="font-clash font-semibold text-[#1F2A44]">The question isn&apos;t whether AI can help.</p>
+              <div className="border-l-4 border-[#A2D2FF] pl-5 space-y-3 ">
+                <p className="font-clash font-semibold text-[#1F2A44]">The challenge isn&apos;t whether AI can help.</p>
                 <p className="font-clash font-bold text-[#1F2A44]">
-                  The Question Is:{" "}
+                  It&apos;s knowing where it can create{" "}
                   <span className="relative inline-block">
-                    <span className="relative z-10 pl-2">Where It Can Create The Greatest Impact.</span>
-                    <span className="absolute hidden md:block bottom-0.5 left-0 w-full h-2.5 bg-[#A2D2FF]/50 -z-0 rounded-sm" />
+                    <span className="relative z-10">Meaningful Operational Impact </span>
+                    <span className="absolute hidden md:block bottom-0.5 left-0 w-full h-2 bg-[#A2D2FF]/50 -z-0 rounded-sm" />
                   </span>
+                   &nbsp; and implementing it successfully.
                 </p>
               </div>
             </div>

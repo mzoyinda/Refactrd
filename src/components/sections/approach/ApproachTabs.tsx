@@ -26,9 +26,9 @@ const phases: {
     accent: "#A2D2FF",
     body: [
       "Every successful engagement begins with understanding how work happens today.",
-      "We assess workflows, information flow, operational challenges, readiness, and organizational priorities before recommending any solution, implementation, or transformation initiative.",
-      "Most organizations don't need more tools.",
-      "They need clarity.",
+      "We assess workflows, operational challenges, knowledge flows, decision-making, priorities, and organizational readiness before recommending any initiative.",
+      "Most organizations don't need another AI tool.",
+      "They need clarity about where AI can create meaningful operational value.",
     ],
     highlight: "Understand the problem before pursuing the solution.",
     quote: "Clarity creates better transformation decisions.",
@@ -42,13 +42,12 @@ const phases: {
     icon: "→",
     accent: "#7CA9D8",
     body: [
-      "Once opportunities are identified, we redesign workflows, information flows, and operational processes to improve execution and performance.",
-      "Where implementation is required, we design and build practical AI-enabled solutions that support the desired future state and integrate into how work gets done.",
-      "Transformation is not about adding technology.",
-      "It's about improving outcomes.",
+      "Once opportunities have been identified, we redesign workflows, improve operations, strengthen knowledge systems, or implement practical AI solutions aligned with business priorities.",
+      "Transformation isn't about introducing technology.",
+      "It's about improving how the organization performs.",
     ],
-    highlight: "Improve how work gets done before scaling implementation.",
-    quote: "Transformation happens when work changes.",
+    highlight: "Improve how work gets done before scaling technology.",
+    quote: "Transformation happens when operations improve.",
   },
   {
     id: "adopt",
@@ -60,11 +59,11 @@ const phases: {
     accent: "#5B8FC4",
     body: [
       "Building a solution is only part of the journey.",
-      "Organizations need adoption strategies, capability building, leadership alignment, governance, and practical support to ensure new ways of working become sustainable.",
-      "This is where long-term value is created.",
+      "Long-term impact requires capability building, leadership alignment, governance, change management, and practical support that helps new ways of working become sustainable.",
+      "This is where lasting operational value is created.",
     ],
     highlight: "Build capability alongside implementation.",
-    quote: "Adoption is where value becomes real.",
+    quote: "Adoption is where operational impact becomes sustainable.",
   },
 ];
 
@@ -102,7 +101,7 @@ export default function ApproachTabs() {
             Our Approach
           </span>
           <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-clash font-bold text-[#1F2A44] leading-tight">
-            How Transformation Happens
+            The Refactrd Method
           </h2>
         </div>
 
@@ -160,7 +159,7 @@ export default function ApproachTabs() {
 
               {/* Highlight + quote */}
               <div className="px-5 pb-5 space-y-3">
-                <div className="bg-gradient-to-br from-[#E6EAF0] to-[#A2D2FF]/10 rounded-2xl px-4 py-3">
+                <div className="bg-gradient-to-br from-[#E6EAF0] to-[#A2D2FF]/10 rounded-2xl px-4">
                   <p className="font-clash font-bold text-[#1F2A44] text-[13px] leading-snug">
                     {phase.highlight}
                   </p>
@@ -202,7 +201,7 @@ export default function ApproachTabs() {
           </div>
 
           {/* Two-column panel */}
-          <div className={`grid grid-cols-12 gap-16 items-start transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <div className={`grid grid-cols-12 gap-16 items-center transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
 
             {/* Left visual */}
             <div className="col-span-5">

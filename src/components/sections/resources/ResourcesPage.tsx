@@ -432,10 +432,10 @@ export default function ResourcesPage() {
         <div className="container-custom">
           <div className="max-w-2xl mx-auto text-center">
             <p className="font-clash font-bold text-[10px] text-[#94A3B8] uppercase tracking-widest mb-4">
-              Need Something More Specific
+            Need More Than A Framework?
             </p>
             <h2 className="font-clash font-bold text-[#1F2A44] text-2xl lg:text-3xl mb-4 leading-snug">
-              Want to put these frameworks to work for your organization?
+            We'll help you apply these ideas inside your organization.
             </h2>
             <p className="font-jakarta text-[#64748B] text-sm leading-relaxed mb-8 max-w-lg mx-auto">
               These resources cover the foundations. We go deeper in our consulting engagements - building tailored systems, not just frameworks.
@@ -444,7 +444,7 @@ export default function ResourcesPage() {
               href="/get-started"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl group"
             >
-              Find Your Starting Point
+              Talk With Refactrd
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </div>

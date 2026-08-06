@@ -17,17 +17,13 @@ const WhoThisIsFor = dynamic(() => import("@/components/sections/WhoThisIsFor"),
   loading: () => <div className="section-padding bg-white" />,
 });
 
-const HowToGetStarted = dynamic(() => import("@/components/sections/HowToGetStarted"), {
-  loading: () => <div className="section-padding bg-tertiary/30" />,
-});
-
 const WhereToStart = dynamic(() => import("@/components/sections/WhereToStart"), {
   loading: () => <div className="section-padding bg-[#F9FAFC]" />,
 });
 
-// const FinalCTA = dynamic(() => import("@/components/sections/FinalCTA"), {
-//   loading: () => <div className="section-padding bg-secondary" />,
-// });
+const FinalCTA = dynamic(() => import("@/components/sections/FinalCTA"), {
+  loading: () => <div className="section-padding bg-secondary" />,
+});
 
 export default function Home() {
   return (
@@ -41,7 +37,10 @@ export default function Home() {
       <ProofOfWork />
       <WhyChooseUs />
       <WhoThisIsFor />
-      <HowToGetStarted />
+      <FinalCTA
+        secondaryLabel="Explore Our Services"
+        secondaryHref="/services"
+      />
       <Footer />
     </main>
   );
