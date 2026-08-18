@@ -101,7 +101,7 @@ export default function ServicesHowItWorks() {
               href="/get-started"
               className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
             >
-              Find Your Starting Point
+              Find Your Starting Point 
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
