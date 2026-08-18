@@ -55,9 +55,22 @@ export async function POST(req: NextRequest) {
       .single();
 
     if (dbError) {
-      console.error("Supabase error:", dbError);
+      // Log the full Postgres error — code/details/hint are what actually
+      // identify the failure (e.g. 23514 = check constraint violation).
+      console.error("Supabase insert failed on diagnostic_submissions:", {
+        code: dbError.code,
+        message: dbError.message,
+        details: dbError.details,
+        hint: dbError.hint,
+        type,
+      });
       return NextResponse.json(
-        { error: "Failed to save submission. Please try again." },
+        {
+          error: "Failed to save submission. Please try again.",
+          ...(process.env.NODE_ENV !== "production" && {
+            debug: { code: dbError.code, message: dbError.message },
+          }),
+        },
         { status: 500 }
       );
     }

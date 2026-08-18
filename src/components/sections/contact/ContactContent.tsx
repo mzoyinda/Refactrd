@@ -73,6 +73,7 @@ const faqs = [
 export default function ContactContent() {
   const heroRef = useRef<HTMLElement>(null);
   const [heroVisible, setHeroVisible] = useState(false);
+  const [services, setServices] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -82,10 +83,10 @@ export default function ContactContent() {
     company: "",
     email: "",
     role: "",
-    service: "",
     challenge: "",
     successOutcome: "",
     timeline: "",
+    website: "", // honeypot — left empty by real visitors
   });
 
   useEffect(() => {
@@ -104,30 +105,49 @@ export default function ContactContent() {
     setError("");
   };
 
+  const toggleService = (option: string) => {
+    setServices((prev) =>
+      prev.includes(option) ? prev.filter((s) => s !== option) : [...prev, option]
+    );
+    setError("");
+  };
+
   const handleSubmit = async () => {
     const { name, company, email, role, challenge, successOutcome } = form;
     if (!name || !company || !email || !role || !challenge || !successOutcome) {
       setError("Please fill in all required fields.");
       return;
     }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      setError("Please enter a valid work email address.");
+      return;
+    }
     setLoading(true);
     setError("");
     try {
-      await fetch("/api/submit-diagnostic", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          type: "contact",
           name,
           company,
           email,
           role,
-          situation: form.service || "Not Sure Yet",
-          challenges: challenge,
-          desired_outcome: successOutcome,
-          goals: form.timeline,
+          services,
+          challenge,
+          successOutcome: successOutcome,
+          timeline: form.timeline,
+          website: form.website,
         }),
       });
+
+      const result = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setError(result.error || "Something went wrong. Please try again.");
+        return;
+      }
+
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
@@ -273,6 +293,9 @@ export default function ContactContent() {
                   <p className="font-jakarta text-[#64748B] text-base leading-relaxed max-w-md">
                     We&apos;ve received your inquiry for {form.company}. A member of the Refactrd team will review it and reach out within 1 business day to arrange an introductory conversation.
                   </p>
+                  <p className="font-jakarta text-[#94A3B8] text-sm leading-relaxed max-w-md mt-3">
+                    A confirmation has been sent to <span className="text-[#1F2A44] font-medium">{form.email}</span>. If it doesn&apos;t arrive shortly, check your spam folder.
+                  </p>
                 </div>
               </div>
             </div>
@@ -306,29 +329,32 @@ export default function ContactContent() {
                   </div>
                 </div>
 
-                <div>
-                  <label className={labelCls}>Which service are you interested in?</label>
+                <fieldset>
+                  <legend className={labelCls}>
+                    Which service are you interested in?{" "}
+                    <span className="font-jakarta font-normal text-[#94A3B8]">Select all that apply</span>
+                  </legend>
                   <div className="space-y-2 mt-1">
                     {serviceOptions.map((opt) => (
                       <label
                         key={opt}
                         className={`flex items-center gap-3 px-4 py-3 rounded-xl border cursor-pointer transition-colors duration-200 ${
-                          form.service === opt ? "border-[#1F2A44] bg-[#1F2A44]/5" : "border-[#E2E8F0] hover:border-[#CBD5E1]"
+                          services.includes(opt) ? "border-[#1F2A44] bg-[#1F2A44]/5" : "border-[#E2E8F0] hover:border-[#CBD5E1]"
                         }`}
                       >
                         <input
-                          type="radio"
-                          name="service"
+                          type="checkbox"
+                          name="services"
                           value={opt}
-                          checked={form.service === opt}
-                          onChange={handleChange}
-                          className="w-4 h-4 accent-[#1F2A44] flex-shrink-0"
+                          checked={services.includes(opt)}
+                          onChange={() => toggleService(opt)}
+                          className="w-4 h-4 rounded accent-[#1F2A44] flex-shrink-0"
                         />
                         <span className="font-jakarta text-sm text-[#1F2A44]">{opt}</span>
                       </label>
                     ))}
                   </div>
-                </div>
+                </fieldset>
 
                 <div>
                   <label className={labelCls}>Tell us about your challenge. *</label>
@@ -362,6 +388,20 @@ export default function ContactContent() {
                       <option key={opt} value={opt}>{opt}</option>
                     ))}
                   </select>
+                </div>
+
+                {/* Honeypot — hidden from users, catches naive bots */}
+                <div className="absolute left-[-9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+                  <label htmlFor="website">Leave this field empty</label>
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={form.website}
+                    onChange={handleChange}
+                  />
                 </div>
 
                 {error && (

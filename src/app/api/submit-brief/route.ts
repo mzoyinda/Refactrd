@@ -53,9 +53,19 @@ export async function POST(req: NextRequest) {
       .single();
 
     if (dbError) {
-      console.error("Supabase error:", dbError);
+      console.error("Supabase insert failed on brief_submissions:", {
+        code: dbError.code,
+        message: dbError.message,
+        details: dbError.details,
+        hint: dbError.hint,
+      });
       return NextResponse.json(
-        { error: "Failed to save submission. Please try again." },
+        {
+          error: "Failed to save submission. Please try again.",
+          ...(process.env.NODE_ENV !== "production" && {
+            debug: { code: dbError.code, message: dbError.message },
+          }),
+        },
         { status: 500 }
       );
     }
