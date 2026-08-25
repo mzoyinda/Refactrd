@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
+// Keep-alive only works if the function actually runs on every request —
+// a cached response would never reach Supabase.
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 // Website Supabase
 const websiteDb = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
