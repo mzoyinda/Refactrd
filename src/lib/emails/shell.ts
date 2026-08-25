@@ -187,6 +187,9 @@ export function renderEmail({
       .sm-gutter { padding-left:12px !important; padding-right:12px !important; }
       .sm-h1 { font-size:22px !important; line-height:1.3 !important; }
       .sm-center { text-align:center !important; }
+      /* Two-column cells stack into one column; the spacer cell disappears. */
+      .sm-stack { display:block !important; width:100% !important; margin-bottom:10px !important; }
+      .sm-hide { display:none !important; width:0 !important; }
     }
 
     @media (prefers-color-scheme: dark) {

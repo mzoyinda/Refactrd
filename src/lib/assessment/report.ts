@@ -1,0 +1,113 @@
+import { frequencyCaveat, resolveMulti, resolveSingle, type Outcome } from "./grading";
+import { HUMAN_ROLE_RATIONALE, OUTCOMES } from "./reportTemplates";
+
+/** The finished report, shared by the API response, the PDF, and the email. */
+export interface AssessmentReport {
+  id: string;
+  name: string;
+  outcome: Outcome;
+  outcomeLabel: string;
+  outcomeSummary: string;
+  /** Step 02 answer, or the custom description. */
+  workflow: string;
+  /** Step 01 answers, resolved. */
+  goals: string[];
+  /** Claude-generated or fallback. */
+  whatWeHeard: string;
+  opportunity: string;
+  today: string;
+  future: string;
+  /** Step 05 answers, resolved. */
+  humanRole: string[];
+  humanRoleRationale: string;
+  firstStep: string;
+  /** Soft caveat when the workflow runs only occasionally. */
+  caveat: string | null;
+  generatedAt: string;
+}
+
+export interface BuildReportInput {
+  id: string;
+  name: string;
+  outcome: Outcome;
+  workflow: string;
+  goals: string[];
+  humanRole: string[];
+  frequency: string;
+  whatWeHeard: string;
+  opportunity: string;
+}
+
+export function buildReport(input: BuildReportInput): AssessmentReport {
+  const template = OUTCOMES[input.outcome];
+
+  return {
+    id: input.id,
+    name: input.name,
+    outcome: input.outcome,
+    outcomeLabel: template.label,
+    outcomeSummary: template.summary,
+    workflow: input.workflow,
+    goals: input.goals,
+    whatWeHeard: input.whatWeHeard,
+    opportunity: input.opportunity,
+    today: template.today,
+    future: template.future,
+    humanRole: input.humanRole,
+    humanRoleRationale: HUMAN_ROLE_RATIONALE,
+    firstStep: template.firstStep,
+    caveat: frequencyCaveat(input.frequency),
+    generatedAt: new Date().toISOString(),
+  };
+}
+
+/** Shape of the columns the PDF and email routes read back. */
+export interface AssessmentRow {
+  id: string;
+  name: string;
+  email: string;
+  created_at: string | null;
+  step1_goal: string[] | null;
+  step1_other: string | null;
+  step2_workflow: string;
+  step2_other: string | null;
+  step3_friction: string[] | null;
+  step4_frequency: string;
+  step4_other: string | null;
+  step5_human_role: string[] | null;
+  step5_other: string | null;
+  outcome: string;
+  report_what_we_heard: string | null;
+  report_opportunity: string | null;
+}
+
+export const ASSESSMENT_ROW_COLUMNS =
+  "id, name, email, created_at, step1_goal, step1_other, step2_workflow, step2_other, step3_friction, step4_frequency, step4_other, step5_human_role, step5_other, outcome, report_what_we_heard, report_opportunity";
+
+/**
+ * Rebuilds a report from a stored row so the PDF and the email render exactly
+ * what the user saw on screen, without re-running grading or generation.
+ */
+export function reportFromRow(row: AssessmentRow): AssessmentReport {
+  const outcome = (row.outcome in OUTCOMES ? row.outcome : "EXPLORE") as Outcome;
+  const template = OUTCOMES[outcome];
+
+  return {
+    id: String(row.id),
+    name: row.name,
+    outcome,
+    outcomeLabel: template.label,
+    outcomeSummary: template.summary,
+    workflow: resolveSingle(row.step2_workflow, row.step2_other || ""),
+    goals: resolveMulti(row.step1_goal || [], row.step1_other || ""),
+    whatWeHeard: row.report_what_we_heard || template.fallbackWhatWeHeard,
+    opportunity: row.report_opportunity || template.fallbackOpportunity,
+    today: template.today,
+    future: template.future,
+    humanRole: resolveMulti(row.step5_human_role || [], row.step5_other || ""),
+    humanRoleRationale: HUMAN_ROLE_RATIONALE,
+    firstStep: template.firstStep,
+    caveat: frequencyCaveat(resolveSingle(row.step4_frequency, row.step4_other || "")),
+    generatedAt: row.created_at || new Date().toISOString(),
+  };
+}

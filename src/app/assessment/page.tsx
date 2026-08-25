@@ -1,22 +1,17 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import type { Metadata } from "next";
-import AssessmentComingSoon from "@/components/sections/assessment/AssessmentComingSoon";
+import AssessmentFlow from "@/components/sections/assessment/AssessmentFlow";
 
 export const metadata: Metadata = {
-  title: "The Refactrd Assessment | Coming Soon",
+  title: "AI Opportunity Assessment | Refactrd",
   description:
-    "A guided assessment to help you understand where AI can realistically create value in your organization. Coming soon.",
-  // Placeholder page — keep it out of search results until the real thing ships.
-  robots: { index: false, follow: true },
+    "Take a few minutes to look at one real workflow in your business. We'll help you identify where the friction is, what could change, and where AI can create meaningful leverage.",
 };
 
 export default function AssessmentPage() {
+  // No Header/Footer — this is a focused, single-task flow, like /ai-usecase.
   return (
     <main className="min-h-screen">
-      <Header />
-      <AssessmentComingSoon />
-      <Footer />
+      <AssessmentFlow />
     </main>
   );
 }
