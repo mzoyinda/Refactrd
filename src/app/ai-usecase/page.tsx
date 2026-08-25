@@ -21,7 +21,7 @@ export default function AIUseCasePage() {
   // Diagnostic answers (Q1-Q16)
   const [answers, setAnswers] = useState<DiagnosticAnswers>({});
 
-  // Context enrichment data
+  // Context enrichment data 
   const [contextData, setContextData] = useState<ContextData | null>(null);
 
   // Handle registration completion
@@ -30,6 +30,7 @@ export default function AIUseCasePage() {
     setRecordId(id);
     setCurrentStep('questions');
   };
+  
 
   // Handle diagnostic questions completion
   const handleQuestionsComplete = (diagnosticAnswers: DiagnosticAnswers) => {
