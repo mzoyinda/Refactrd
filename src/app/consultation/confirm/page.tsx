@@ -166,7 +166,7 @@ function ConfirmContent() {
                 with your payment reference and we will sort it out immediately.
               </p>
               <Link
-                href="/get-started"
+                href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#1F2A44] text-white rounded-full font-clash font-semibold text-sm"
               >
                 Try again

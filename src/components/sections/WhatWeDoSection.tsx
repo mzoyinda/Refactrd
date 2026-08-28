@@ -208,8 +208,8 @@ export default function WhatWeDoSectionv2({
                 </div>
                 <div className="flex-shrink-0">
                   <Link
-                    href="/get-started"
-                    onClick={() => trackCTAClick("what_we_do_talk_with_refactrd", "/get-started")}
+                    href="/contact"
+                    onClick={() => trackCTAClick("what_we_do_talk_with_refactrd", "/contact")}
                     className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-[#E6EAF0] rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group whitespace-nowrap"
                   >
                     Talk With Refactrd

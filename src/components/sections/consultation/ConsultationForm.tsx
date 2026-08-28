@@ -214,7 +214,7 @@ export default function ConsultationForm({ type }: Props) {
         </div>
 
         {/* Back link */}
-        <Link href="/get-started" className="inline-flex items-center gap-2 text-white/35 hover:text-white/60 text-xs font-clash font-semibold uppercase tracking-wide transition-colors duration-200 mt-12 lg:mt-0">
+        <Link href="/contact" className="inline-flex items-center gap-2 text-white/35 hover:text-white/60 text-xs font-clash font-semibold uppercase tracking-wide transition-colors duration-200 mt-12 lg:mt-0">
           <ArrowLeft className="w-3.5 h-3.5" />
           Back to options
         </Link>

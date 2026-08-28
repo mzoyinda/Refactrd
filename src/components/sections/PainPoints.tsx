@@ -96,7 +96,7 @@ export default function PainPoints() {
           }`}
         >
           <Link
-            href="/get-started"
+            href="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group"
           >
             Let&apos;s Talk About Your Challenges

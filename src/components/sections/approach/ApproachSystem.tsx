@@ -88,7 +88,7 @@ export default function ApproachSystem() {
         {/* CTA */}
         <div className={`mt-10 transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>
           <Link
-            href="/get-started"
+            href="/contact"
             className="group inline-flex items-center gap-2 bg-[#1F2A44] text-white font-clash font-bold px-7 py-4 rounded-full hover:bg-[#2d3e62] transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 text-sm sm:text-base"
           >
             Talk With Refactrd

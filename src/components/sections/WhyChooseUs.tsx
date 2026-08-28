@@ -138,7 +138,7 @@ export default function WhyChooseUs() {
                  Most organizations are experimenting with AI. Few are turning those experiments into lasting operational change. Refactrd helps organizations identify opportunities, redesign operations, implement practical AI solutions, and build the capability required for sustainable adoption.
                 </p>
                 <Link
-                  href="/get-started"
+                  href="/contact"
                   className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
                 >
                   Talk With Refactrd

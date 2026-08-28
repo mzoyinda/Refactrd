@@ -94,7 +94,7 @@ export default function ServicesWhoThisIsFor() {
               <p>We'll help you identify the right service for your goals.</p>
             </div>
             <Link
-              href="/get-started"
+              href="/contact"
               className="group font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
             >
               Talk With Refactrd

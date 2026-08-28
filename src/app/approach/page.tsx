@@ -38,7 +38,7 @@ export default function ApproachPage() {
         headingAccent="Operational Impact?"
         body="Whether you're exploring AI for the first time or scaling adoption across your organization, we'll help you identify the right opportunities and implement solutions that improve how your business operates."
         primaryLabel="Talk With Refactrd"
-        primaryHref="/get-started"
+        primaryHref="/contact"
       />
       <Footer />
     </main>

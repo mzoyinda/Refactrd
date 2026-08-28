@@ -130,7 +130,7 @@ export default function HowItWorks() {
               Not sure which path fits? Start with a conversation — we'll help you figure out the right next step.
             </p>
             <Link
-              href="/get-started"
+              href="/contact"
               className="group font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-white rounded-full transition-all duration-300 hover:bg-[#E6EAF0] hover:scale-105 px-8 py-4 font-bold whitespace-nowrap flex-shrink-0"
             >
               Find Your Starting Point

@@ -295,7 +295,7 @@ export default function InsightsContent() {
             <p className="font-jakarta text-[#64748B] mb-8 leading-relaxed">
             Let's discuss how these ideas apply to your business.
             </p>
-            <Link href="/get-started" className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group">
             Talk With Refactrd
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>

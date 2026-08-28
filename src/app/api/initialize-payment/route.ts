@@ -128,7 +128,7 @@ export async function POST(req: NextRequest) {
           metadata: {
             full_name,
             consultation_type: type,
-            cancel_action: `${process.env.NEXT_PUBLIC_APP_URL}/get-started`,
+            cancel_action: `${process.env.NEXT_PUBLIC_APP_URL}/contact`,
             ...metadata,
           },
         }),

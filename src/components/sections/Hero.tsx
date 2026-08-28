@@ -71,7 +71,7 @@ export default function Hero() {
               ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <Link
-              href="/get-started"
+              href="/contact"
               className="group inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-white font-clash font-bold rounded-full transition-all duration-300 hover:bg-[#263352] hover:shadow-xl hover:-translate-y-0.5 w-full sm:w-auto
                 px-7 py-4 text-[15px] sm:text-base"
             >

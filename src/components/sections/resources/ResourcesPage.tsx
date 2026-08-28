@@ -441,7 +441,7 @@ export default function ResourcesPage() {
               These resources cover the foundations. We go deeper in our consulting engagements - building tailored systems, not just frameworks.
             </p>
             <a
-              href="/get-started"
+              href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl group"
             >
               Talk With Refactrd

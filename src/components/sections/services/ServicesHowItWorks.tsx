@@ -98,7 +98,7 @@ export default function ServicesHowItWorks() {
           {/* Bottom CTA */}
           <div className={`mt-16 text-center transition-all duration-700 delay-1200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <Link
-              href="/get-started"
+              href="/contact"
               className="font-clash inline-flex items-center justify-center gap-2 text-[#1F2A44] bg-[#E6EAF0] rounded-full transition-transform hover:scale-105 px-8 py-4"
             >
               Find Your Starting Point 

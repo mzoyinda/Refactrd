@@ -42,7 +42,7 @@ export default function ServiceDetailFinalCTA({ service }: { service: ServiceDef
           {finalCta.body}
         </p>
         <Link
-          href="/get-started"
+          href="/contact"
           className="group inline-flex items-center gap-2 bg-[#E6EAF0] text-[#1F2A44] font-clash font-bold px-8 py-4 rounded-full hover:scale-105 transition-all duration-300"
         >
           Talk With Refactrd

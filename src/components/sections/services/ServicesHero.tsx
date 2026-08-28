@@ -91,7 +91,7 @@ export default function ServicesHero() {
               }`}
             >
               <Link
-                href="/get-started"
+                href="/contact"
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-white rounded-full font-clash font-semibold hover:bg-[#263352] transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
                 Talk With Refactrd

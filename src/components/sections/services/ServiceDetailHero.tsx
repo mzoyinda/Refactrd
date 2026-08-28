@@ -54,7 +54,7 @@ export default function ServiceDetailHero({ service }: { service: ServiceDefinit
 
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
-                href="/get-started"
+                href="/contact"
                 className="group inline-flex items-center justify-center gap-2 bg-[#1F2A44] text-white font-clash font-bold px-7 py-4 rounded-full hover:bg-[#2d3e62] transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
               >
                 Talk With Refactrd

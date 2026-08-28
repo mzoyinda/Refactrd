@@ -304,7 +304,7 @@ export default function CaseStudyDetail({ slug }: { slug: string }) {
             <Link href="/start" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#1F2A44] rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group">
               Submit Your Brief <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
-            <Link href="/get-started" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white rounded-full font-clash font-semibold transition-all duration-300 hover:border-white/50">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white rounded-full font-clash font-semibold transition-all duration-300 hover:border-white/50">
               Explore Options
             </Link>
           </div>

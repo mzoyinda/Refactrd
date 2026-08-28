@@ -18,7 +18,7 @@ export default function FinalCTA({
   headingAccent = "Operational Impact?",
   body = "Whether you're redesigning workflows, building an AI assistant, improving operations, or exploring AI-enabled products, we'll help you identify the right opportunity and determine the best way forward.",
   primaryLabel = "Talk With Refactrd",
-  primaryHref = "/get-started",
+  primaryHref = "/contact",
   secondaryLabel,
   secondaryHref,
 }: FinalCTAProps) {

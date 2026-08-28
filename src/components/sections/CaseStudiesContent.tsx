@@ -250,7 +250,7 @@ export default function CaseStudiesContent() {
             <p className="font-jakarta text-[#64748B] mb-10 leading-relaxed text-lg">
             Let's explore what this could look like for your organization.
             </p>
-            <Link href="/get-started" className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F2A44] text-white rounded-full font-clash font-bold transition-all duration-300 hover:scale-105 group">
             Talk With Refactrd
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
