@@ -40,18 +40,34 @@ function changeBlock(today: string, future: string): string {
     </table>`;
 }
 
-function humanList(items: string[]): string {
-  const rows = items
+/** "Things you might need" — the recommended services, in their context. */
+function servicesBlock(
+  services: { name: string; why: (workflow: string) => string }[],
+  workflow: string
+): string {
+  const cards = services
     .map(
-      (item) => `
+      (service) => `
       <tr>
-        <td width="14" valign="top" style="padding:0 8px 6px 0; font-family:${FONT_STACK}; font-size:14px; color:${brand.accentInk};">&bull;</td>
-        <td class="dm-text" valign="top" style="padding:0 0 6px; font-family:${FONT_STACK}; font-size:15px; line-height:1.6; color:${brand.heading};">${escapeHtml(item)}</td>
-      </tr>`
+        <td class="dm-surface-alt dm-border" style="padding:16px 18px; background-color:${brand.surfaceAlt}; border:1px solid ${brand.border}; border-radius:10px;">
+          <p class="dm-text" style="margin:0 0 6px; font-family:${FONT_STACK}; font-size:15px; font-weight:700; color:${brand.heading};">${escapeHtml(service.name)}</p>
+          <p class="dm-muted" style="margin:0; font-family:${FONT_STACK}; font-size:14px; line-height:1.7; color:${brand.body};">${escapeHtml(service.why(workflow))}</p>
+        </td>
+      </tr>
+      <tr><td style="height:10px; line-height:10px; font-size:0;">&nbsp;</td></tr>`
     )
     .join("");
-  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:0 0 12px;">${rows}</table>`;
+
+  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:0 0 12px;">${cards}</table>`;
 }
+
+/**
+ * The results page is client-side only, so there's no URL that reopens someone's
+ * report. Sending them straight to the booking link is the one CTA that still
+ * works days later, and the Cal.com webhook still attributes the booking.
+ */
+const BOOKING_URL =
+  process.env.NEXT_PUBLIC_CAL_BOOKING_URL || "https://cal.com/refactrd";
 
 export function renderAssessmentEmail(report: AssessmentReport): RenderedEmail {
   const firstName = report.name.trim().split(/\s+/)[0] || report.name;
@@ -80,18 +96,23 @@ export function renderAssessmentEmail(report: AssessmentReport): RenderedEmail {
     prose(report.whatWeHeard),
     sectionLabel("Where the opportunity is"),
     prose(report.opportunity),
+    sectionLabel("What this could look like"),
+    prose(report.futureState),
     sectionLabel("What could change"),
     changeBlock(report.today, report.future),
-    sectionLabel("What stays human"),
-    humanList(report.humanRole),
-    prose(report.humanRoleRationale, 26),
+    sectionLabel("Things you might need"),
+    prose(
+      "Based on what you told us, these are the pieces that would move this workflow. Not a quote, just the shape of the work.",
+      14
+    ),
+    servicesBlock(report.services, report.workflow),
   ].join("\n");
 
   const panel = [
     sectionLabel("Your first step"),
     `<p class="dm-text" style="margin:0 0 20px; font-family:${FONT_STACK}; font-size:16px; font-weight:600; line-height:1.6; color:${brand.heading};">${escapeHtml(report.firstStep)}</p>`,
     `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-      <tr><td align="left" class="sm-center">${button("https://refactrd.com/contact", "Talk it through with us")}</td></tr>
+      <tr><td align="left" class="sm-center">${button(BOOKING_URL, "Book a conversation")}</td></tr>
     </table>`,
   ].join("\n");
 
@@ -123,17 +144,18 @@ export function renderAssessmentEmail(report: AssessmentReport): RenderedEmail {
     "",
     `WHERE THE OPPORTUNITY IS\n${report.opportunity}`,
     "",
+    `WHAT THIS COULD LOOK LIKE\n${report.futureState}`,
+    "",
     `WHAT COULD CHANGE`,
     `Today: ${report.today}`,
     `Potential future: ${report.future}`,
     "",
-    `WHAT STAYS HUMAN`,
-    ...report.humanRole.map((item) => `- ${item}`),
-    report.humanRoleRationale,
+    `THINGS YOU MIGHT NEED`,
+    ...report.services.map((s) => `- ${s.name}: ${s.why(report.workflow)}`),
     "",
     `YOUR FIRST STEP\n${report.firstStep}`,
     "",
-    "Talk it through with us: https://refactrd.com/contact",
+    `Book a conversation: ${BOOKING_URL}`,
     "",
     `Reference: ${report.id}`,
     "Refactrd · refactrd.com · info@refactrd.com",

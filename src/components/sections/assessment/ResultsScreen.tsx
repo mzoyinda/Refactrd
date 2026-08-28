@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useRef, useState } from "react";
 import {
   AlertCircle,
   ArrowRight,
+  CalendarCheck,
   Check,
   Download,
   Loader2,
@@ -16,20 +16,16 @@ import type { AssessmentReport } from "@/lib/assessment/report";
 interface Props {
   report: AssessmentReport | null;
   error: string;
+  /** False when the confirmation email didn't go out. */
+  emailSent: boolean;
   onRestart: () => void;
 }
 
-function Section({
-  label,
-  children,
-  className = "",
-}: {
-  label: string;
-  children: React.ReactNode;
-  className?: string;
-}) {
+type MeetingStage = "idle" | "asking" | "sending" | "done";
+
+function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className={className}>
+    <div>
       <p className="font-clash font-bold text-[10px] uppercase tracking-[0.2em] text-[#94A3B8] mb-3">
         {label}
       </p>
@@ -38,10 +34,12 @@ function Section({
   );
 }
 
-export default function ResultsScreen({ report, error, onRestart }: Props) {
+export default function ResultsScreen({ report, error, emailSent, onRestart }: Props) {
   const [pdfState, setPdfState] = useState<"idle" | "loading" | "done">("idle");
-  const [emailState, setEmailState] = useState<"idle" | "loading" | "done">("idle");
+  const [meeting, setMeeting] = useState<MeetingStage>("idle");
+  const [note, setNote] = useState("");
   const [actionError, setActionError] = useState("");
+  const noteRef = useRef<HTMLTextAreaElement>(null);
 
   const handleDownload = async () => {
     if (!report) return;
@@ -71,21 +69,28 @@ export default function ResultsScreen({ report, error, onRestart }: Props) {
     }
   };
 
-  const handleEmail = async () => {
+  const openMeeting = () => {
+    setMeeting("asking");
+    setActionError("");
+    // Let the panel mount before reaching for the field.
+    requestAnimationFrame(() => noteRef.current?.focus());
+  };
+
+  const submitMeeting = async () => {
     if (!report) return;
-    setEmailState("loading");
+    setMeeting("sending");
     setActionError("");
     try {
-      const res = await fetch("/api/assess/email", {
+      const res = await fetch("/api/assess/meeting", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id: report.id }),
+        body: JSON.stringify({ id: report.id, note }),
       });
-      if (!res.ok) throw new Error("Email request failed");
-      setEmailState("done");
+      if (!res.ok) throw new Error("Meeting request failed");
+      setMeeting("done");
     } catch {
-      setEmailState("idle");
-      setActionError("We couldn't send your report. Please try again.");
+      setMeeting("asking");
+      setActionError("We couldn't send your request. Please try again.");
     }
   };
 
@@ -139,7 +144,6 @@ export default function ResultsScreen({ report, error, onRestart }: Props) {
         </div>
       </section>
 
-      {/* Report body */}
       <section className="bg-[#F4F6F9] py-12 sm:py-16">
         <div className="max-w-[760px] mx-auto px-4 sm:px-6">
           {report.caveat && (
@@ -183,52 +187,62 @@ export default function ResultsScreen({ report, error, onRestart }: Props) {
                 {report.opportunity}
               </p>
             </Section>
+          </div>
 
-            <div className="border-t border-[#F1F5F9]" />
-
-            <Section label="What could change">
-              <div className="grid sm:grid-cols-2 gap-3 mt-1">
-                <div className="bg-[#F8FAFC] rounded-xl border border-[#E8ECF2] px-5 py-4">
-                  <p className="font-clash font-bold text-[10px] uppercase tracking-[0.16em] text-[#94A3B8] mb-2">
-                    Today
-                  </p>
-                  <p className="font-jakarta text-[#475569] text-[14.5px] leading-relaxed">
-                    {report.today}
-                  </p>
-                </div>
-                <div className="bg-[#1F2A44]/[0.03] rounded-xl border border-[#1F2A44]/10 px-5 py-4">
-                  <p className="font-clash font-bold text-[10px] uppercase tracking-[0.16em] text-[#5B8FC7] mb-2">
-                    Potential future
-                  </p>
-                  <p className="font-jakarta text-[#1F2A44] text-[14.5px] leading-relaxed">
-                    {report.future}
-                  </p>
-                </div>
-              </div>
+          {/* What this could look like — the "what could be" view */}
+          <div className="bg-white rounded-2xl border border-[#E2E8F0] border-t-[3px] border-t-[#A2D2FF] p-6 sm:p-9 mt-6">
+            <Section label="What this could look like">
+              <p className="font-jakarta text-[#1F2A44] text-[16px] sm:text-[17px] leading-[1.75] whitespace-pre-line">
+                {report.futureState}
+              </p>
             </Section>
 
-            <div className="border-t border-[#F1F5F9]" />
+            <div className="grid sm:grid-cols-2 gap-3 mt-7">
+              <div className="bg-[#F8FAFC] rounded-xl border border-[#E8ECF2] px-5 py-4">
+                <p className="font-clash font-bold text-[10px] uppercase tracking-[0.16em] text-[#94A3B8] mb-2">
+                  Today
+                </p>
+                <p className="font-jakarta text-[#475569] text-[14.5px] leading-relaxed">
+                  {report.today}
+                </p>
+              </div>
+              <div className="bg-[#1F2A44]/[0.03] rounded-xl border border-[#1F2A44]/10 px-5 py-4">
+                <p className="font-clash font-bold text-[10px] uppercase tracking-[0.16em] text-[#5B8FC7] mb-2">
+                  Potential future
+                </p>
+                <p className="font-jakarta text-[#1F2A44] text-[14.5px] leading-relaxed">
+                  {report.future}
+                </p>
+              </div>
+            </div>
+          </div>
 
-            <Section label="What stays human">
-              <ul className="space-y-2 mb-4">
-                {report.humanRole.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="w-[18px] h-[18px] rounded-full bg-[#1F2A44] flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-2.5 h-2.5 text-white" strokeWidth={3.5} />
-                    </span>
-                    <span className="font-jakarta text-[#1F2A44] text-[15px] font-medium leading-snug">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <p className="font-jakarta text-[#64748B] text-[14.5px] leading-relaxed">
-                {report.humanRoleRationale}
+          {/* Things you might need */}
+          <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-9 mt-6">
+            <Section label="Things you might need">
+              <p className="font-jakarta text-[#64748B] text-[15px] leading-relaxed mb-6">
+                Based on what you told us, these are the pieces that would move this
+                workflow. Not a quote, just the shape of the work.
               </p>
+              <div className="space-y-3">
+                {report.services.map((service) => (
+                  <div
+                    key={service.key}
+                    className="rounded-xl border border-[#E8ECF2] bg-[#F8FAFC] px-5 py-5"
+                  >
+                    <p className="font-clash font-bold text-[#1F2A44] text-[16px] mb-2">
+                      {service.name}
+                    </p>
+                    <p className="font-jakarta text-[#475569] text-[14.5px] leading-[1.7]">
+                      {service.why(report.workflow)}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </Section>
           </div>
 
-          {/* First step */}
+          {/* First step + meeting request */}
           <div className="bg-[#1F2A44] rounded-2xl p-6 sm:p-9 mt-6">
             <p className="font-clash font-bold text-[10px] uppercase tracking-[0.2em] text-[#A2D2FF] mb-4">
               Your first step
@@ -236,53 +250,106 @@ export default function ResultsScreen({ report, error, onRestart }: Props) {
             <p className="font-clash font-bold text-white text-lg sm:text-2xl leading-[1.35] mb-7">
               {report.firstStep}
             </p>
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2 px-6 py-3.5 bg-[#A2D2FF] text-[#1F2A44] rounded-full font-clash font-bold text-[14px] transition-all duration-300 hover:bg-white"
-            >
-              Talk it through with us
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
+
+            {meeting === "done" ? (
+              <div className="bg-white/[0.06] border border-white/10 rounded-xl px-5 py-5">
+                <div className="flex items-start gap-3">
+                  <span className="w-7 h-7 rounded-full bg-[#A2D2FF] flex items-center justify-center flex-shrink-0">
+                    <CalendarCheck className="w-4 h-4 text-[#1F2A44]" strokeWidth={2.5} />
+                  </span>
+                  <div>
+                    <p className="font-clash font-bold text-white text-base mb-1.5">
+                      We&apos;ll be in touch.
+                    </p>
+                    <p className="font-jakarta text-white/70 text-[14.5px] leading-relaxed">
+                      We&apos;ve sent a booking link to{" "}
+                      <span className="text-white font-medium">{report.email}</span>. Please
+                      check your email and book at your earliest convenience.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ) : meeting === "asking" || meeting === "sending" ? (
+              <div className="bg-white/[0.06] border border-white/10 rounded-xl px-5 py-5 assessment-fade-up-fast">
+                <p className="font-clash font-bold text-white text-base mb-1.5">
+                  We&apos;ll send a booking link to you shortly.
+                </p>
+                <label
+                  htmlFor="meeting-note"
+                  className="block font-jakarta text-white/60 text-[14px] leading-relaxed mb-3"
+                >
+                  Anything else you&apos;d like for us to know?
+                </label>
+                <textarea
+                  id="meeting-note"
+                  ref={noteRef}
+                  value={note}
+                  onChange={(e) => setNote(e.target.value)}
+                  rows={4}
+                  placeholder="Optional. Anything that would help us prepare."
+                  disabled={meeting === "sending"}
+                  className="w-full px-4 py-3.5 rounded-xl border border-white/15 bg-white/[0.04] font-jakarta text-[15px] text-white placeholder:text-white/30 focus:outline-none focus:border-[#A2D2FF]/60 focus:bg-white/[0.07] transition-all duration-200 resize-none disabled:opacity-50"
+                />
+                <button
+                  onClick={submitMeeting}
+                  disabled={meeting === "sending"}
+                  className="group mt-4 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#A2D2FF] text-[#1F2A44] rounded-full font-clash font-bold text-[14px] transition-all duration-300 hover:bg-white disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {meeting === "sending" ? (
+                    <><Loader2 className="w-4 h-4 animate-spin" /> Sending...</>
+                  ) : (
+                    <>Send request <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" /></>
+                  )}
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={openMeeting}
+                className="group inline-flex items-center gap-2 px-7 py-3.5 bg-[#A2D2FF] text-[#1F2A44] rounded-full font-clash font-bold text-[14px] transition-all duration-300 hover:bg-white"
+              >
+                Request a meeting with Refactrd
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+              </button>
+            )}
           </div>
 
-          {/* Actions */}
+          {/* Copy of the report */}
           <div className="mt-6 bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-7">
-            <p className="font-clash font-bold text-[#1F2A44] text-base mb-1">
-              Keep a copy
-            </p>
-            <p className="font-jakarta text-[#64748B] text-sm leading-relaxed mb-5">
-              Download it as a PDF, or have it sent to your inbox.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={handleDownload}
-                disabled={pdfState === "loading"}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#1F2A44] text-white rounded-xl font-clash font-bold text-[14px] transition-all duration-200 hover:bg-[#263352] disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {pdfState === "loading" ? (
-                  <><Loader2 className="w-4 h-4 animate-spin" /> Building PDF...</>
-                ) : pdfState === "done" ? (
-                  <><Check className="w-4 h-4" /> Downloaded</>
-                ) : (
-                  <><Download className="w-4 h-4" /> Download PDF</>
-                )}
-              </button>
-
-              <button
-                onClick={handleEmail}
-                disabled={emailState === "loading" || emailState === "done"}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-[#1F2A44] border border-[#E2E8F0] rounded-xl font-clash font-bold text-[14px] transition-all duration-200 hover:border-[#CBD5E1] hover:bg-[#F8FAFC] disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                {emailState === "loading" ? (
-                  <><Loader2 className="w-4 h-4 animate-spin" /> Sending...</>
-                ) : emailState === "done" ? (
-                  <><Check className="w-4 h-4" /> Sent to your inbox</>
-                ) : (
-                  <><Mail className="w-4 h-4" /> Email me my results</>
-                )}
-              </button>
+            <div className="flex items-start gap-3 mb-5">
+              <span className="w-8 h-8 rounded-full bg-[#A2D2FF]/15 flex items-center justify-center flex-shrink-0">
+                <Mail className="w-4 h-4 text-[#1F2A44]" strokeWidth={2} />
+              </span>
+              <div>
+                <p className="font-clash font-bold text-[#1F2A44] text-base mb-1">
+                  {emailSent ? "A copy is on its way." : "Keep a copy"}
+                </p>
+                <p className="font-jakarta text-[#64748B] text-sm leading-relaxed">
+                  {emailSent ? (
+                    <>
+                      We&apos;ve sent this report to{" "}
+                      <span className="text-[#1F2A44] font-medium">{report.email}</span>. If it
+                      doesn&apos;t arrive shortly, check your spam folder.
+                    </>
+                  ) : (
+                    <>We couldn&apos;t email your copy, but you can download it here.</>
+                  )}
+                </p>
+              </div>
             </div>
+
+            <button
+              onClick={handleDownload}
+              disabled={pdfState === "loading"}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-[#1F2A44] border border-[#E2E8F0] rounded-xl font-clash font-bold text-[14px] transition-all duration-200 hover:border-[#CBD5E1] hover:bg-[#F8FAFC] disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {pdfState === "loading" ? (
+                <><Loader2 className="w-4 h-4 animate-spin" /> Building PDF...</>
+              ) : pdfState === "done" ? (
+                <><Check className="w-4 h-4" /> Downloaded</>
+              ) : (
+                <><Download className="w-4 h-4" /> Download as PDF</>
+              )}
+            </button>
 
             {actionError && (
               <p className="font-jakarta text-[13px] text-red-600 mt-3">{actionError}</p>

@@ -1,10 +1,13 @@
 import { frequencyCaveat, resolveMulti, resolveSingle, type Outcome } from "./grading";
-import { HUMAN_ROLE_RATIONALE, OUTCOMES } from "./reportTemplates";
+import { OUTCOMES } from "./reportTemplates";
+import { recommendServices, type ServiceRecommendation } from "./services";
 
 /** The finished report, shared by the API response, the PDF, and the email. */
 export interface AssessmentReport {
   id: string;
   name: string;
+  /** Shown on screen so we can say where the copy was sent. */
+  email: string;
   outcome: Outcome;
   outcomeLabel: string;
   outcomeSummary: string;
@@ -15,11 +18,12 @@ export interface AssessmentReport {
   /** Claude-generated or fallback. */
   whatWeHeard: string;
   opportunity: string;
+  /** The concrete "what could be" picture. */
+  futureState: string;
   today: string;
   future: string;
-  /** Step 05 answers, resolved. */
-  humanRole: string[];
-  humanRoleRationale: string;
+  /** Services that fit this outcome, explained against their workflow. */
+  services: ServiceRecommendation[];
   firstStep: string;
   /** Soft caveat when the workflow runs only occasionally. */
   caveat: string | null;
@@ -29,13 +33,14 @@ export interface AssessmentReport {
 export interface BuildReportInput {
   id: string;
   name: string;
+  email: string;
   outcome: Outcome;
   workflow: string;
   goals: string[];
-  humanRole: string[];
   frequency: string;
   whatWeHeard: string;
   opportunity: string;
+  futureState: string;
 }
 
 export function buildReport(input: BuildReportInput): AssessmentReport {
@@ -44,6 +49,7 @@ export function buildReport(input: BuildReportInput): AssessmentReport {
   return {
     id: input.id,
     name: input.name,
+    email: input.email,
     outcome: input.outcome,
     outcomeLabel: template.label,
     outcomeSummary: template.summary,
@@ -51,17 +57,17 @@ export function buildReport(input: BuildReportInput): AssessmentReport {
     goals: input.goals,
     whatWeHeard: input.whatWeHeard,
     opportunity: input.opportunity,
+    futureState: input.futureState,
     today: template.today,
     future: template.future,
-    humanRole: input.humanRole,
-    humanRoleRationale: HUMAN_ROLE_RATIONALE,
+    services: recommendServices(input.outcome),
     firstStep: template.firstStep,
     caveat: frequencyCaveat(input.frequency),
     generatedAt: new Date().toISOString(),
   };
 }
 
-/** Shape of the columns the PDF and email routes read back. */
+/** Shape of the columns the PDF, email, and meeting routes read back. */
 export interface AssessmentRow {
   id: string;
   name: string;
@@ -74,15 +80,14 @@ export interface AssessmentRow {
   step3_friction: string[] | null;
   step4_frequency: string;
   step4_other: string | null;
-  step5_human_role: string[] | null;
-  step5_other: string | null;
   outcome: string;
   report_what_we_heard: string | null;
   report_opportunity: string | null;
+  report_future_state: string | null;
 }
 
 export const ASSESSMENT_ROW_COLUMNS =
-  "id, name, email, created_at, step1_goal, step1_other, step2_workflow, step2_other, step3_friction, step4_frequency, step4_other, step5_human_role, step5_other, outcome, report_what_we_heard, report_opportunity";
+  "id, name, email, created_at, step1_goal, step1_other, step2_workflow, step2_other, step3_friction, step4_frequency, step4_other, outcome, report_what_we_heard, report_opportunity, report_future_state";
 
 /**
  * Rebuilds a report from a stored row so the PDF and the email render exactly
@@ -95,6 +100,7 @@ export function reportFromRow(row: AssessmentRow): AssessmentReport {
   return {
     id: String(row.id),
     name: row.name,
+    email: row.email,
     outcome,
     outcomeLabel: template.label,
     outcomeSummary: template.summary,
@@ -102,10 +108,10 @@ export function reportFromRow(row: AssessmentRow): AssessmentReport {
     goals: resolveMulti(row.step1_goal || [], row.step1_other || ""),
     whatWeHeard: row.report_what_we_heard || template.fallbackWhatWeHeard,
     opportunity: row.report_opportunity || template.fallbackOpportunity,
+    futureState: row.report_future_state || template.fallbackFutureState,
     today: template.today,
     future: template.future,
-    humanRole: resolveMulti(row.step5_human_role || [], row.step5_other || ""),
-    humanRoleRationale: HUMAN_ROLE_RATIONALE,
+    services: recommendServices(outcome),
     firstStep: template.firstStep,
     caveat: frequencyCaveat(resolveSingle(row.step4_frequency, row.step4_other || "")),
     generatedAt: row.created_at || new Date().toISOString(),

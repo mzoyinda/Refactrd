@@ -3,6 +3,11 @@ import { createClient } from "@supabase/supabase-js";
 import { gradeAssessment, resolveMulti, resolveSingle } from "@/lib/assessment/grading";
 import { generateReportSections } from "@/lib/assessment/generate";
 import { buildReport } from "@/lib/assessment/report";
+import { serviceKeys } from "@/lib/assessment/services";
+import { renderAssessmentEmail } from "@/lib/emails/assessmentEmail";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -182,7 +187,9 @@ export async function POST(req: NextRequest) {
         outcome,
         report_what_we_heard: sections.whatWeHeard,
         report_opportunity: sections.opportunity,
+        report_future_state: sections.futureState,
         report_method: sections.method,
+        recommended_services: serviceKeys(outcome),
       })
       .eq("id", inserted.id);
 
@@ -194,16 +201,42 @@ export async function POST(req: NextRequest) {
     const report = buildReport({
       id: String(inserted.id),
       name: payload.name,
+      email: payload.email,
       outcome,
       workflow,
       goals,
-      humanRole,
       frequency,
       whatWeHeard: sections.whatWeHeard,
       opportunity: sections.opportunity,
+      futureState: sections.futureState,
     });
 
-    return NextResponse.json({ success: true, report }, { status: 200 });
+    // The copy goes out automatically — the results screen just says so,
+    // rather than asking the user to press a button for it.
+    const email = renderAssessmentEmail(report);
+    const { error: sendError } = await resend.emails.send({
+      from: "Refactrd <hello@refactrd.com>",
+      to: payload.email,
+      replyTo: "info@refactrd.com",
+      subject: email.subject,
+      html: email.html,
+      text: email.text,
+    });
+
+    if (sendError) {
+      console.error("Assessment: report email failed to send", sendError);
+    } else {
+      const { error: flagError } = await supabase
+        .from("assessment_submissions")
+        .update({ email_sent: true })
+        .eq("id", inserted.id);
+      if (flagError) console.error("Assessment: email_sent flag failed", flagError);
+    }
+
+    return NextResponse.json(
+      { success: true, report, emailSent: !sendError },
+      { status: 200 }
+    );
   } catch (error) {
     console.error("Assessment error:", error);
     return NextResponse.json(

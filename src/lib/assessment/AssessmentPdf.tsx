@@ -95,9 +95,20 @@ const styles = StyleSheet.create({
   },
   changeText: { fontSize: 10, color: BODY, lineHeight: 1.55 },
 
-  bullet: { flexDirection: "row", marginBottom: 5 },
-  bulletDot: { fontSize: 10.5, color: ACCENT, marginRight: 7 },
-  bulletText: { fontSize: 10.5, color: NAVY, lineHeight: 1.5, flex: 1 },
+  serviceCard: {
+    backgroundColor: SURFACE,
+    borderWidth: 1,
+    borderColor: BORDER,
+    padding: 13,
+    marginBottom: 8,
+  },
+  serviceName: {
+    fontSize: 11,
+    fontFamily: "Helvetica-Bold",
+    color: NAVY,
+    marginBottom: 4,
+  },
+  serviceWhy: { fontSize: 10, color: BODY, lineHeight: 1.55 },
 
   firstStep: {
     backgroundColor: NAVY,
@@ -195,6 +206,10 @@ export default function AssessmentPdf({ report }: { report: AssessmentReport }) 
           <Text style={styles.sectionBody}>{report.opportunity}</Text>
         </Section>
 
+        <Section label="What this could look like">
+          <Text style={styles.sectionBody}>{report.futureState}</Text>
+        </Section>
+
         <Section label="What could change">
           <View style={styles.changeRow}>
             <View style={styles.changeCol}>
@@ -209,16 +224,17 @@ export default function AssessmentPdf({ report }: { report: AssessmentReport }) 
           </View>
         </Section>
 
-        <Section label="What stays human">
-          {report.humanRole.map((item) => (
-            <View key={item} style={styles.bullet}>
-              <Text style={styles.bulletDot}>•</Text>
-              <Text style={styles.bulletText}>{item}</Text>
+        <Section label="Things you might need">
+          <Text style={[styles.sectionBody, { marginBottom: 9 }]}>
+            Based on what you told us, these are the pieces that would move this
+            workflow. Not a quote, just the shape of the work.
+          </Text>
+          {report.services.map((service) => (
+            <View key={service.key} style={styles.serviceCard} wrap={false}>
+              <Text style={styles.serviceName}>{service.name}</Text>
+              <Text style={styles.serviceWhy}>{service.why(report.workflow)}</Text>
             </View>
           ))}
-          <Text style={[styles.sectionBody, { marginTop: 7 }]}>
-            {report.humanRoleRationale}
-          </Text>
         </Section>
 
         <Section label="Your first step">

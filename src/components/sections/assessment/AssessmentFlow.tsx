@@ -102,6 +102,7 @@ function scrollToTop() {
 export default function AssessmentFlow() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [report, setReport] = useState<AssessmentReport | null>(null);
+  const [emailSent, setEmailSent] = useState(true);
   const [error, setError] = useState("");
 
   const question = QUESTIONS[state.step];
@@ -129,6 +130,7 @@ export default function AssessmentFlow() {
       }
 
       setReport(result.report as AssessmentReport);
+      setEmailSent(result.emailSent !== false);
       dispatch({ type: "results" });
       scrollToTop();
     } catch {
@@ -174,6 +176,7 @@ export default function AssessmentFlow() {
       <ResultsScreen
         report={report}
         error={error}
+        emailSent={emailSent}
         onRestart={() => {
           setReport(null);
           setError("");

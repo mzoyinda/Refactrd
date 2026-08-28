@@ -1,20 +1,18 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { Outcome } from "./grading";
 import { OUTCOMES } from "./reportTemplates";
+import { recommendServices } from "./services";
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-/** The brief allows 8s; retries would multiply that, so they're disabled. */
-const TIMEOUT_MS = 8000;
+/** Three sections now, so a little more room than the original 8s. */
+const TIMEOUT_MS = 14000;
 
-/**
- * ~250 tokens covers two 3-sentence sections, but truncating a customer-facing
- * report mid-sentence is worse than the cost of a little headroom.
- */
-const MAX_TOKENS = 500;
+/** Three sections of 2-4 sentences, with headroom against mid-sentence truncation. */
+const MAX_TOKENS = 900;
 
 const SYSTEM_PROMPT =
-  "You are a direct, practical AI operations advisor. You've just reviewed a founder's answers about one workflow in their business. Write two short sections: a synthesis of what they told you, and a plain-language explanation of where the opportunity is. No fluff, no generic statements, no bullet points, no em dashes. Reference their specific answers directly.";
+  "You are a direct, practical AI operations advisor. You've just reviewed a founder's answers about one workflow in their business. Write three short sections: a synthesis of what they told you, a plain-language explanation of where the opportunity is, and a concrete picture of what their workflow would actually look like once it's fixed. No fluff, no generic statements, no bullet points, no em dashes. Reference their specific answers directly. The third section is the most important: make it vivid and specific to their workflow, describing the changed day-to-day rather than listing benefits. Never restate their answers back to them as a list.";
 
 export interface GenerateInput {
   goals: string[];
@@ -30,42 +28,63 @@ export interface GenerateInput {
 export interface GeneratedSections {
   whatWeHeard: string;
   opportunity: string;
+  /** The concrete "what could be" picture. */
+  futureState: string;
   /** Which path produced the text — stored as `report_method`. */
   method: "claude" | "fallback";
 }
 
 function buildUserMessage(input: GenerateInput): string {
+  const services = recommendServices(input.outcome)
+    .map((service) => `${service.formalName} (${service.what})`)
+    .join("; ");
+
   return [
     `Business goals: ${input.goals.join(", ")}.`,
     `Workflow: ${input.workflow}.`,
     `Friction: ${input.friction.join(", ")}.`,
     `Frequency: ${input.frequency}.`,
-    `What should stay human: ${input.humanRole.join(", ")}.`,
     `Current AI use: ${input.existingAiUse}.`,
     `Timeline: ${input.timeline}.`,
     `Graded outcome: ${input.outcome}.`,
+    `Services we would recommend: ${services}.`,
     "",
-    "Write 'What we heard' (2-3 sentences, using their own specifics) and 'Where the opportunity is' (2-3 sentences, connected to their stated goal). Label each section clearly.",
+    "Write three labelled sections.",
+    "'What we heard' (2-3 sentences, using their own specifics).",
+    "'Where the opportunity is' (2-3 sentences, connected to their stated goal).",
+    "'What this could look like' (3-4 sentences describing their workflow after the change, concretely, in terms of what a person on their team would actually experience day to day. Ground it in the recommended services without naming them like products.)",
+    "Label each section clearly.",
   ].join(" ");
 }
 
+/** Grabs one labelled section's body, stopping at the next known heading. */
+function extractSection(text: string, heading: RegExp, nextHeadings: RegExp[]): string {
+  const stop = nextHeadings.length
+    ? `(?=${nextHeadings.map((r) => r.source).join("|")}|$)`
+    : "$";
+  const match = text.match(new RegExp(`${heading.source}\\s*:?\\s*([\\s\\S]*?)${stop}`, "i"));
+  return match?.[1]?.trim() ?? "";
+}
+
+const HEARD = /what we heard/i;
+const OPPORTUNITY = /where the opportunity is/i;
+const FUTURE = /what this could look like/i;
+
 /**
- * Splits the labelled response into its two sections. Returns null if either
- * section is missing so the caller can fall back rather than ship a half report.
+ * Splits the labelled response into its three sections. Returns null if any is
+ * missing so the caller can fall back rather than ship a half report.
  */
-function parseSections(text: string): { whatWeHeard: string; opportunity: string } | null {
+function parseSections(
+  text: string
+): { whatWeHeard: string; opportunity: string; futureState: string } | null {
   const normalised = text.replace(/\*\*/g, "").replace(/^#+\s*/gm, "");
 
-  const heardMatch = normalised.match(
-    /what we heard\s*:?\s*([\s\S]*?)(?=where the opportunity is\s*:?|$)/i
-  );
-  const opportunityMatch = normalised.match(/where the opportunity is\s*:?\s*([\s\S]*)/i);
+  const whatWeHeard = extractSection(normalised, HEARD, [OPPORTUNITY, FUTURE]);
+  const opportunity = extractSection(normalised, OPPORTUNITY, [FUTURE]);
+  const futureState = extractSection(normalised, FUTURE, []);
 
-  const whatWeHeard = heardMatch?.[1]?.trim() ?? "";
-  const opportunity = opportunityMatch?.[1]?.trim() ?? "";
-
-  if (!whatWeHeard || !opportunity) return null;
-  return { whatWeHeard, opportunity };
+  if (!whatWeHeard || !opportunity || !futureState) return null;
+  return { whatWeHeard, opportunity, futureState };
 }
 
 function fallbackFor(outcome: Outcome): GeneratedSections {
@@ -73,6 +92,7 @@ function fallbackFor(outcome: Outcome): GeneratedSections {
   return {
     whatWeHeard: template.fallbackWhatWeHeard,
     opportunity: template.fallbackOpportunity,
+    futureState: template.fallbackFutureState,
     method: "fallback",
   };
 }
