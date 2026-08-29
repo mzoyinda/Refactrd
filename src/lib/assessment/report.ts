@@ -60,7 +60,7 @@ export function buildReport(input: BuildReportInput): AssessmentReport {
     futureState: input.futureState,
     today: template.today,
     future: template.future,
-    services: recommendServices(input.outcome),
+    services: recommendServices(input.outcome, input.workflow),
     firstStep: template.firstStep,
     caveat: frequencyCaveat(input.frequency),
     generatedAt: new Date().toISOString(),
@@ -96,6 +96,7 @@ export const ASSESSMENT_ROW_COLUMNS =
 export function reportFromRow(row: AssessmentRow): AssessmentReport {
   const outcome = (row.outcome in OUTCOMES ? row.outcome : "EXPLORE") as Outcome;
   const template = OUTCOMES[outcome];
+  const workflow = resolveSingle(row.step2_workflow, row.step2_other || "");
 
   return {
     id: String(row.id),
@@ -104,14 +105,14 @@ export function reportFromRow(row: AssessmentRow): AssessmentReport {
     outcome,
     outcomeLabel: template.label,
     outcomeSummary: template.summary,
-    workflow: resolveSingle(row.step2_workflow, row.step2_other || ""),
+    workflow,
     goals: resolveMulti(row.step1_goal || [], row.step1_other || ""),
     whatWeHeard: row.report_what_we_heard || template.fallbackWhatWeHeard,
     opportunity: row.report_opportunity || template.fallbackOpportunity,
     futureState: row.report_future_state || template.fallbackFutureState,
     today: template.today,
     future: template.future,
-    services: recommendServices(outcome),
+    services: recommendServices(outcome, workflow),
     firstStep: template.firstStep,
     caveat: frequencyCaveat(resolveSingle(row.step4_frequency, row.step4_other || "")),
     generatedAt: row.created_at || new Date().toISOString(),

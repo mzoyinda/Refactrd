@@ -41,17 +41,14 @@ function changeBlock(today: string, future: string): string {
 }
 
 /** "Things you might need" — the recommended services, in their context. */
-function servicesBlock(
-  services: { name: string; why: (workflow: string) => string }[],
-  workflow: string
-): string {
+function servicesBlock(services: { name: string; why: string }[]): string {
   const cards = services
     .map(
       (service) => `
       <tr>
         <td class="dm-surface-alt dm-border" style="padding:16px 18px; background-color:${brand.surfaceAlt}; border:1px solid ${brand.border}; border-radius:10px;">
           <p class="dm-text" style="margin:0 0 6px; font-family:${FONT_STACK}; font-size:15px; font-weight:700; color:${brand.heading};">${escapeHtml(service.name)}</p>
-          <p class="dm-muted" style="margin:0; font-family:${FONT_STACK}; font-size:14px; line-height:1.7; color:${brand.body};">${escapeHtml(service.why(workflow))}</p>
+          <p class="dm-muted" style="margin:0; font-family:${FONT_STACK}; font-size:14px; line-height:1.7; color:${brand.body};">${escapeHtml(service.why)}</p>
         </td>
       </tr>
       <tr><td style="height:10px; line-height:10px; font-size:0;">&nbsp;</td></tr>`
@@ -105,7 +102,7 @@ export function renderAssessmentEmail(report: AssessmentReport): RenderedEmail {
       "Based on what you told us, these are the pieces that would move this workflow. Not a quote, just the shape of the work.",
       14
     ),
-    servicesBlock(report.services, report.workflow),
+    servicesBlock(report.services),
   ].join("\n");
 
   const panel = [
@@ -151,7 +148,7 @@ export function renderAssessmentEmail(report: AssessmentReport): RenderedEmail {
     `Potential future: ${report.future}`,
     "",
     `THINGS YOU MIGHT NEED`,
-    ...report.services.map((s) => `- ${s.name}: ${s.why(report.workflow)}`),
+    ...report.services.map((s) => `- ${s.name}: ${s.why}`),
     "",
     `YOUR FIRST STEP\n${report.firstStep}`,
     "",

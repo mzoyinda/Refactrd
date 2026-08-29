@@ -35,7 +35,7 @@ export interface GeneratedSections {
 }
 
 function buildUserMessage(input: GenerateInput): string {
-  const services = recommendServices(input.outcome)
+  const services = recommendServices(input.outcome, input.workflow)
     .map((service) => `${service.formalName} (${service.what})`)
     .join("; ");
 

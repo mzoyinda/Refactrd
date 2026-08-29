@@ -232,7 +232,7 @@ export default function AssessmentPdf({ report }: { report: AssessmentReport }) 
           {report.services.map((service) => (
             <View key={service.key} style={styles.serviceCard} wrap={false}>
               <Text style={styles.serviceName}>{service.name}</Text>
-              <Text style={styles.serviceWhy}>{service.why(report.workflow)}</Text>
+              <Text style={styles.serviceWhy}>{service.why}</Text>
             </View>
           ))}
         </Section>

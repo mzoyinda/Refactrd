@@ -234,7 +234,7 @@ export default function ResultsScreen({ report, error, emailSent, onRestart }: P
                       {service.name}
                     </p>
                     <p className="font-jakarta text-[#475569] text-[14.5px] leading-[1.7]">
-                      {service.why(report.workflow)}
+                      {service.why}
                     </p>
                   </div>
                 ))}

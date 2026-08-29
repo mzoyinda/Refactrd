@@ -2,7 +2,8 @@ import type { Outcome } from "./grading";
 
 export type ServiceKey = "workflow" | "knowledge" | "operations";
 
-export interface ServiceRecommendation {
+/** Catalog entry. `why` is a template, so this shape stays server-side only. */
+export interface ServiceDefinition {
   key: ServiceKey;
   /** How it's introduced in the report: "A workflow transformation". */
   name: string;
@@ -15,7 +16,24 @@ export interface ServiceRecommendation {
   why: (workflow: string) => string;
 }
 
-export const SERVICES: Record<ServiceKey, ServiceRecommendation> = {
+/**
+ * What actually goes on the report.
+ *
+ * Every field is a plain value: the report is serialized to JSON on its way to
+ * the browser, and `JSON.stringify` drops functions silently, so a method here
+ * would arrive as `undefined` and crash on first call.
+ */
+export interface ServiceRecommendation {
+  key: ServiceKey;
+  name: string;
+  formalName: string;
+  href: string;
+  what: string;
+  /** Already resolved against the reader's workflow. */
+  why: string;
+}
+
+export const SERVICES: Record<ServiceKey, ServiceDefinition> = {
   workflow: {
     key: "workflow",
     name: "A workflow transformation",
@@ -60,8 +78,18 @@ const BY_OUTCOME: Record<Outcome, ServiceKey[]> = {
   EXPLORE: ["workflow", "knowledge", "operations"],
 };
 
-export function recommendServices(outcome: Outcome): ServiceRecommendation[] {
-  return BY_OUTCOME[outcome].map((key) => SERVICES[key]);
+/**
+ * Services for an outcome, with `why` resolved against the reader's workflow so
+ * the result is safe to serialize.
+ */
+export function recommendServices(
+  outcome: Outcome,
+  workflow: string
+): ServiceRecommendation[] {
+  return BY_OUTCOME[outcome].map((key) => {
+    const { why, ...rest } = SERVICES[key];
+    return { ...rest, why: why(workflow) };
+  });
 }
 
 export function serviceKeys(outcome: Outcome): ServiceKey[] {
