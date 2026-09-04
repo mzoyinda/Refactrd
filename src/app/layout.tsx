@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { AnalyticsProvider } from "./providers";
+import ChatWidget from "@/components/layout/ChatWidget";
 
 // Google Fonts
 const jakarta = Plus_Jakarta_Sans({
@@ -129,6 +130,7 @@ export default function RootLayout({
         className={`${jakarta.variable} ${montserrat.variable} ${clash.variable} ${codec.variable} antialiased`}
       >
         <AnalyticsProvider>{children}</AnalyticsProvider>
+        <ChatWidget />
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
     </html>
